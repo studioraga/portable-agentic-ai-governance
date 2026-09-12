@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"AI System","type":"object","required":["system_id","name","business_owner","technical_owner","criticality"],"properties":{"criticality":{"enum":["low","moderate","high","critical"]},"autonomy_level":{"type":"integer","minimum":0,"maximum":5}}}

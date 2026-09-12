@@ -1,0 +1,27 @@
+{
+  "mapping_version": "2026-09-bootstrap",
+  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. Validate against the organization's adopted framework revision before compliance use.",
+  "controls": {
+    "AIS-GOV-001": {
+      "nist_ai_rmf": ["GOVERN", "MAP"],
+      "nist_csf_2_0": ["GV.OC", "GV.RR", "ID.AM"],
+      "iso_iec_42001": ["governance", "risk_management"],
+      "owasp_genai": ["governance_supporting_control"]
+    },
+    "AIS-RISK-001": {
+      "nist_ai_rmf": ["GOVERN", "MANAGE"],
+      "nist_csf_2_0": ["GV.RM"],
+      "iso_iec_42001": ["risk_management", "human_oversight"]
+    },
+    "AIS-EVID-001": {
+      "nist_ai_rmf": ["MEASURE", "MANAGE"],
+      "nist_csf_2_0": ["PR.DS", "DE.CM"],
+      "nist_ssdf": ["protect_and_preserve_release_integrity"]
+    },
+    "AIS-AUTH-001": {
+      "nist_ai_rmf": ["GOVERN", "MANAGE"],
+      "nist_csf_2_0": ["PR.AA"],
+      "owasp_genai": ["excessive_agency_mitigation"]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"agent_id":"GOV-03","version":"0.1.0","purpose":"Assess and propose AI risks without accepting them","permissions":{"read":["risk","controls"],"propose":["risk.register"],"deny":["risk.accept"]},"budget":{"max_steps":5,"max_tool_calls":3}}

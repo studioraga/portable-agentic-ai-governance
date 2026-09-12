@@ -1,0 +1,29 @@
+{
+  "system": {
+    "system_id": "AISYS-GOLDEN-001",
+    "name": "Sovereign Evidence Analyst",
+    "system_types": ["computer_vision", "retrieval", "agentic_ai"],
+    "business_owner": "security_operations",
+    "technical_owner": "ai_platform",
+    "environments": ["development", "production"],
+    "data_classes": ["restricted", "personal_data"],
+    "models": ["MODEL-CV-001", "MODEL-EMBED-001", "MODEL-RERANK-001"],
+    "external_providers": [],
+    "autonomy_level": 1,
+    "human_oversight": "required",
+    "criticality": "high"
+  },
+  "risks": [
+    {
+      "risk_id": "AIR-001",
+      "system_id": "AISYS-GOLDEN-001",
+      "statement": "Unauthorized principal accesses restricted evidence through AI retrieval.",
+      "likelihood": 4,
+      "impact": 5,
+      "controls": ["AIS-AUTH-001", "AIS-EVID-001"],
+      "owner": "ai_security",
+      "treatment": "mitigate"
+    }
+  ],
+  "controls": ["AIS-GOV-001", "AIS-RISK-001", "AIS-EVID-001", "AIS-AUTH-001"]
+}

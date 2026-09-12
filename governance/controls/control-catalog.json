@@ -1,0 +1,38 @@
+{
+  "catalog_version": "0.1.0",
+  "controls": [
+    {
+      "control_id": "AIS-GOV-001",
+      "title": "AI system onboarding is policy gated",
+      "enabled": true,
+      "required_roles": ["ai_governance_admin", "ai_risk_manager"],
+      "predicates": {"workflow": "ai_system_onboarding"},
+      "approval_required": false,
+      "failure_action": "block",
+      "implementation": ["src/portable_ai_governance/workflows/onboarding.py"],
+      "evidence": ["signed governance ledger", "framework mapping", "risk record"]
+    },
+    {
+      "control_id": "AIS-RISK-001",
+      "title": "Risk acceptance requires human authority",
+      "enabled": true,
+      "required_roles": ["ai_risk_manager"],
+      "failure_action": "block",
+      "implementation": ["src/portable_ai_governance/agents/governance/risk.py"]
+    },
+    {
+      "control_id": "AIS-EVID-001",
+      "title": "Governance evidence is chained and cryptographically signed",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": ["src/portable_ai_governance/kernel/evidence.py"]
+    },
+    {
+      "control_id": "AIS-AUTH-001",
+      "title": "Privileged governance workflows require explicit role authorization",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": ["src/portable_ai_governance/kernel/authorization.py"]
+    }
+  ]
+}

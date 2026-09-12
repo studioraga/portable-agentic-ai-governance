@@ -1,0 +1,1 @@
+{"agent_id":"GOV-10","version":"0.1.0","purpose":"Record and verify governance evidence","permissions":{"read":["evidence"],"execute":["evidence.append","evidence.verify"],"deny":["evidence.delete"]},"budget":{"max_steps":5,"max_tool_calls":3}}

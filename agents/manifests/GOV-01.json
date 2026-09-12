@@ -1,0 +1,1 @@
+{"agent_id":"GOV-01","version":"0.1.0","purpose":"Maintain normalized AI system inventory","permissions":{"read":["inventory"],"propose":["inventory.register"],"deny":["policy.modify","risk.accept"]},"budget":{"max_steps":5,"max_tool_calls":2}}

@@ -1,0 +1,1 @@
+{"agent_id":"GOV-06","version":"0.1.0","purpose":"Map implementation controls to versioned governance frameworks","permissions":{"read":["controls","mappings"],"deny":["policy.modify"]},"budget":{"max_steps":5,"max_tool_calls":2}}

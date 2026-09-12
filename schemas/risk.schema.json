@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"AI Risk","type":"object","required":["risk_id","system_id","statement","likelihood","impact","owner","treatment"],"properties":{"likelihood":{"type":"integer","minimum":1,"maximum":5},"impact":{"type":"integer","minimum":1,"maximum":5},"treatment":{"enum":["mitigate","avoid","transfer","accept"]}}}

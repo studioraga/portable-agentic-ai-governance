@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Control","type":"object","required":["control_id","title","enabled","failure_action"],"properties":{"control_id":{"type":"string","pattern":"^AIS-[A-Z]+-[0-9]{3}$"},"title":{"type":"string"},"enabled":{"type":"boolean"},"failure_action":{"enum":["block","warn","observe"]}}}
