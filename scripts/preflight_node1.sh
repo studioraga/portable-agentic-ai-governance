@@ -86,6 +86,14 @@ if [ "${PAG_SECURITY_PROFILE:-lab}" = production ]; then
     value="${!v:-}"
     if [ "${#value}" -ge 32 ]; then pass "$v" 'present, length >=32'; else err "$v" 'missing or shorter than 32 characters'; fi
   done
+  if [ "${PAG_EVIDENCE_SIGNING_KEY:-}" = "${PAG_REQUEST_SIGNING_KEY:-}" ] || \
+     [ "${PAG_EVIDENCE_SIGNING_KEY:-}" = "${PAG_APPROVAL_SIGNING_KEY:-}" ] || \
+     [ "${PAG_REQUEST_SIGNING_KEY:-}" = "${PAG_APPROVAL_SIGNING_KEY:-}" ]; then
+    err signing-key-separation \
+      'evidence, request and approval signing keys must be independent'
+  else
+    pass signing-key-separation independent
+  fi
 else
   pass security-profile "${PAG_SECURITY_PROFILE:-lab}"
 fi

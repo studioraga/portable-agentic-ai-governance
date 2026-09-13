@@ -153,6 +153,18 @@ var/state/
 
 with mode `0700`. They contain local runtime material and must not be committed or included in release archives.
 
+Runtime files created beneath these directories must be owner-only mode `0600`. The deployment and validation entry points set `umask 077`, and the evidence writer additionally enforces `0600` explicitly after append/fsync. Acceptance checks must confirm that no file beneath `var/` is group-writable or world-writable.
+
+Verify manually:
+
+```bash
+stat -c '%a %U:%G %n' var var/evidence var/runs var/state
+find var -type f -perm -0020 -print
+find var -type f -perm -0002 -print
+```
+
+The two `find` commands must produce no output for the frozen M0-M1 baseline.
+
 ## 8. Environment variables
 
 ### Lab validation
@@ -175,13 +187,21 @@ PAG_REQUEST_SIGNING_KEY
 PAG_APPROVAL_SIGNING_KEY
 ```
 
-Each bootstrap secret must be independent and at least 32 characters for this M0-M1 contract validator. Generate independent values, for example:
+Each bootstrap secret must be at least 32 characters and cryptographically independent from the other two for this M0-M1 contract validator. Production preflight and runtime validation fail closed when any two required signing keys are identical. Generate independent values, for example:
 
 ```bash
 openssl rand -hex 32
 ```
 
-Do not commit the secrets. Do not reuse one secret for multiple purposes. Later milestones replace environment-backed bootstrap secrets with KMS/Vault/HSM adapters and managed rotation.
+Do not commit the secrets. Do not reuse one secret for multiple purposes. The three cryptographic domains are:
+
+```text
+PAG_EVIDENCE_SIGNING_KEY   governance/evidence envelopes
+PAG_REQUEST_SIGNING_KEY    signed request authentication/integrity
+PAG_APPROVAL_SIGNING_KEY   privileged approval artifacts
+```
+
+M0-M1 deliberately uses environment-provided symmetric bootstrap secrets only. Milestone 2 adds a `SecretProvider` abstraction, Vault/KMS/HSM adapters, key identifiers/versioning, rotation, historical-key verification, workload identity, and stronger lifecycle controls.
 
 ## 9. Git prerequisites and initial commit
 
@@ -217,4 +237,18 @@ A valid baseline ends with:
 PREFLIGHT: PASS
 ```
 
-Warnings such as missing Git or pytest identify optional/full-acceptance capabilities. Missing Python, venv, OpenSSL, archive/hash utilities, required repository paths, write access, or minimum disk space are hard failures.
+Warnings such as missing Git or pytest identify optional/full-acceptance capabilities. Missing Python, venv, OpenSSL, archive/hash utilities, required repository paths, write access, or minimum disk space are hard failures. In `production`, preflight also hard-fails when `PAG_FAIL_CLOSED` is disabled, a required signing key is missing/short, or signing keys are reused.
+
+For the hardened M0-M1 acceptance gate, also run:
+
+```bash
+PYTHONPATH="$PWD/src" python scripts/check_production_key_separation.py
+PYTHONPATH="$PWD/src" python scripts/check_runtime_permissions.py
+```
+
+Expected summaries:
+
+```text
+KEY-SEPARATION TESTS PASS: 5/5
+RUNTIME-PERMISSION TESTS PASS
+```

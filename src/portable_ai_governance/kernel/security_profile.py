@@ -17,19 +17,104 @@ class SecurityReport:
         return all(c.ok for c in self.checks)
 
 
-def evaluate_security_profile(environ: dict[str, str] | None = None) -> SecurityReport:
+def evaluate_security_profile(
+    environ: dict[str, str] | None = None,
+) -> SecurityReport:
     env = dict(os.environ if environ is None else environ)
-    profile = env.get("PAG_SECURITY_PROFILE", "lab").strip().lower()
+
+    profile = (
+        env.get("PAG_SECURITY_PROFILE", "lab")
+        .strip()
+        .lower()
+    )
+
     checks: list[SecurityCheck] = []
+
     if profile not in {"lab", "production"}:
-        return SecurityReport(profile, (SecurityCheck("profile", False, "must be lab or production"),))
-    checks.append(SecurityCheck("profile", True, profile))
+        return SecurityReport(
+            profile,
+            (
+                SecurityCheck(
+                    "profile",
+                    False,
+                    "must be lab or production",
+                ),
+            ),
+        )
+
+    checks.append(
+        SecurityCheck(
+            "profile",
+            True,
+            profile,
+        )
+    )
+
     if profile == "production":
-        for var in ("PAG_EVIDENCE_SIGNING_KEY", "PAG_REQUEST_SIGNING_KEY", "PAG_APPROVAL_SIGNING_KEY"):
+        secret_names = (
+            "PAG_EVIDENCE_SIGNING_KEY",
+            "PAG_REQUEST_SIGNING_KEY",
+            "PAG_APPROVAL_SIGNING_KEY",
+        )
+
+        validated_values: list[str] = []
+
+        for var in secret_names:
             value = env.get(var, "")
-            checks.append(SecurityCheck(var, len(value) >= 32 and "change" not in value.lower(), "configured" if len(value) >= 32 else "missing/too short"))
-        checks.append(SecurityCheck("fail_closed", env.get("PAG_FAIL_CLOSED", "1") == "1", "must be enabled"))
-    return SecurityReport(profile, tuple(checks))
+
+            valid = (
+                len(value) >= 32
+                and "change" not in value.lower()
+            )
+
+            checks.append(
+                SecurityCheck(
+                    var,
+                    valid,
+                    (
+                        "configured"
+                        if valid
+                        else "missing/too short/placeholder"
+                    ),
+                )
+            )
+
+            if valid:
+                validated_values.append(value)
+
+        key_separation_ok = (
+            len(validated_values) == len(secret_names)
+            and len(set(validated_values))
+                == len(secret_names)
+        )
+
+        checks.append(
+            SecurityCheck(
+                "signing_key_separation",
+                key_separation_ok,
+                (
+                    "independent"
+                    if key_separation_ok
+                    else (
+                        "evidence, request and approval "
+                        "signing keys must be independent"
+                    )
+                ),
+            )
+        )
+
+        checks.append(
+            SecurityCheck(
+                "fail_closed",
+                env.get("PAG_FAIL_CLOSED", "1") == "1",
+                "must be enabled",
+            )
+        )
+
+    return SecurityReport(
+        profile,
+        tuple(checks),
+    )
 
 
 def require_security_profile(environ: dict[str, str] | None = None) -> SecurityReport:

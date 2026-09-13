@@ -9,7 +9,7 @@ cd portable-agentic-ai-governance
 ./scripts/preflight_node1.sh
 ```
 
-This checks OS context, commands, Python >=3.11, venv support, pytest availability, repository completeness, write permission, disk space, and—when `PAG_SECURITY_PROFILE=production`—the mandatory fail-closed secret contract.
+This checks OS context, commands, Python >=3.11, venv support, pytest availability, repository completeness, write permission, disk space, and—when `PAG_SECURITY_PROFILE=production`—the mandatory fail-closed secret contract, minimum secret length, and signing-key separation.
 
 ## 2. One-shot Node1 deployment and validation
 
@@ -131,6 +131,46 @@ python -m portable_ai_governance.cli validate-security
 
 The keys must be independent. These environment variables are bootstrap validation only; later milestones move keys into managed secret/KMS/HSM providers.
 
+### Layer H — production signing-key separation
+
+```bash
+PYTHONPATH="$PWD/src" python scripts/check_production_key_separation.py
+```
+
+Expected:
+
+```text
+PASS production-independent-signing-keys
+PASS production-all-key-reuse-rejected
+PASS production-evidence-request-reuse-rejected
+PASS production-evidence-approval-reuse-rejected
+PASS production-request-approval-reuse-rejected
+KEY-SEPARATION TESTS PASS: 5/5
+```
+
+### Layer I — runtime filesystem privacy
+
+```bash
+PYTHONPATH="$PWD/src" python scripts/check_runtime_permissions.py
+```
+
+Expected:
+
+```text
+PASS evidence-ledger-mode-0600
+RUNTIME-PERMISSION TESTS PASS
+```
+
+Operational checks:
+
+```bash
+stat -c '%a %U:%G %n' var var/evidence var/runs var/state
+find var -type f -perm -0020 -print
+find var -type f -perm -0002 -print
+```
+
+Directories must be `0700`; runtime files must be `0600`; the two `find` commands must produce no output.
+
 ## 4. Mandatory negative coverage
 
 M0-M1 must demonstrate at least:
@@ -142,7 +182,12 @@ M0-M1 must demonstrate at least:
 - an AI Risk Agent cannot accept risk;
 - unauthorized onboarding is denied;
 - evidence modification breaks chain/signature verification;
-- an unmapped mandatory control fails acceptance.
+- an unmapped mandatory control fails acceptance;
+- production rejects reuse of all three signing keys;
+- production rejects every partial two-key reuse combination;
+- production accepts three valid independent signing keys;
+- evidence ledger files are created mode `0600`;
+- no runtime file is group-writable or world-writable.
 
 ## 5. Troubleshooting
 
@@ -173,7 +218,18 @@ sudo apt install python3-venv
 
 ### production profile fails
 
-Check `PAG_FAIL_CLOSED=1`, ensure all three secrets are present and independent, and do not include whitespace introduced by a malformed environment file.
+Check `PAG_FAIL_CLOSED=1`, ensure all three secrets are present, at least 32 characters, and pairwise independent, and do not include whitespace introduced by a malformed environment file. Run `scripts/check_production_key_separation.py` to distinguish key-domain failures from other production-profile failures.
+
+### runtime files are group-writable
+
+Correct existing local runtime state with:
+
+```bash
+find var -type f -exec chmod 600 {} +
+find var -type d -exec chmod 700 {} +
+```
+
+The hardened deploy/validation scripts use `umask 077`, and `EvidenceLedger` explicitly forces its ledger to `0600`, so newly created M0-M1 runtime artifacts must not regain group/world write permission.
 
 ## 6. Node2
 

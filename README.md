@@ -7,6 +7,7 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 ## Release status
 
 **v0.1.1 — Milestones 0 and 1.** This revision hardens portable deployment, src-layout imports, prerequisites, clean source packaging, and validation after Node1 testing exposed a pytest import-path defect in v0.1.0.
+**v0.1.2 — Milestones 0 and 1 security-hardened freeze candidate.
 
 ## Implemented
 
@@ -20,6 +21,8 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 - Signed append-only chained governance evidence ledger.
 - Artifact digest verification primitive.
 - Production-vs-lab fail-closed security-profile contract.
+- Production signing-key domain separation: evidence, request, and approval signing keys must be independent.
+- Private-by-default runtime filesystem: validation/deployment use `umask 077`; evidence ledgers are explicitly forced to mode `0600`.
 - GOV-01 AI System Inventory Agent.
 - GOV-03 AI Risk Agent; the agent is prohibited from accepting risk.
 - GOV-06 Control Mapping Agent.
@@ -28,6 +31,7 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 - Framework mapping data foundation for NIST AI RMF, NIST CSF 2.0, ISO/IEC 42001, and OWASP-oriented controls.
 - Built-in sovereign self-tests plus extended pytest tests.
 - One-shot Node1 preflight, deployment, validation, and clean release packaging.
+- Standalone security validators for production signing-key separation and runtime evidence permissions.
 
 ## Prerequisites first
 
@@ -82,7 +86,19 @@ export PAG_APPROVAL_SIGNING_KEY="$(openssl rand -hex 32)"
 python -m portable_ai_governance.cli validate-security
 ```
 
-These are bootstrap validation secrets, not the final enterprise secret-management design. Milestone 2 introduces managed identity and secrets-provider interfaces.
+These are bootstrap validation secrets, not the final enterprise secret-management design. All three values must be independent; production preflight and runtime validation fail closed when any required key is absent, weak, or reused across domains.
+
+Runtime privacy for M0-M1 is also part of the acceptance boundary:
+
+```text
+var/            0700
+var/evidence/   0700
+var/runs/       0700
+var/state/      0700
+runtime files   0600
+```
+
+Deployment and validation run with `umask 077`, and the evidence ledger explicitly enforces mode `0600`. Milestone 2 introduces managed identity, a `SecretProvider` abstraction, Vault/KMS/HSM adapters, key IDs/versioning, rotation, historical verification, and workload identity.
 
 ## Reuse from the sovereign edge-AI source project
 

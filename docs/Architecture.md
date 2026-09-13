@@ -150,3 +150,34 @@ Mandatory gates: Security, Privacy, AI Evaluation, Supply Chain, Threat Assessme
 ## 14. Decision rule — workflow 99
 
 No weighted average may hide a mandatory control failure. A mandatory security/privacy/safety control failure yields `RELEASE_BLOCKED` regardless of high model accuracy.
+
+## 15. M0-M1 production cryptographic-domain separation
+
+The bootstrap production profile has three independent symmetric-key domains:
+
+```text
+PAG_EVIDENCE_SIGNING_KEY
+    -> governance/evidence envelope integrity
+
+PAG_REQUEST_SIGNING_KEY
+    -> signed request authentication and body integrity
+
+PAG_APPROVAL_SIGNING_KEY
+    -> privileged approval artifact integrity
+```
+
+The same secret MUST NOT be reused across any pair of these domains. Production preflight and the deterministic security-profile evaluator both enforce this rule and fail closed on full or partial reuse. This is an M0-M1 bootstrap control; M2 replaces direct environment-secret dependency with a provider abstraction and managed key lifecycle.
+
+## 16. M0-M1 runtime privacy boundary
+
+Runtime governance evidence and workflow state are private-by-default local security material. The required filesystem contract is:
+
+```text
+var/            0700
+var/evidence/   0700
+var/runs/       0700
+var/state/      0700
+runtime files   0600
+```
+
+Deployment and validation execute with `umask 077`. The evidence ledger also forces its file to `0600` after append and `fsync`, so its confidentiality does not depend solely on the invoking shell's umask. Runtime permission validation is part of the M0-M1 acceptance evidence.

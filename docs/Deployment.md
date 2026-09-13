@@ -25,7 +25,7 @@ Resolve every `FAIL`. Review any `WARN`, especially pytest availability if you i
 ./deploy/deploy_node1.sh
 ```
 
-The deployer is idempotent for the current milestone: it removes and recreates only the local `.venv`, recreates protected runtime directories, and runs validation. It does not modify systemd, firewall, network, user accounts, or external services because M0-M1 has no daemon or listening API.
+The deployer is idempotent for the current milestone: it removes and recreates only the local `.venv`, recreates protected runtime directories, and runs validation. Both deployment and validation execute with `umask 077`, so newly created runtime artifacts are private by default. It does not modify systemd, firewall, network, user accounts, or external services because M0-M1 has no daemon or listening API.
 
 ## 4. Why the source package is not `pip install -e .` by default
 
@@ -69,7 +69,14 @@ chmod 700 "$HOME/.config/portable-ai-governance"
 chmod 600 "$HOME/.config/portable-ai-governance/production.env"
 ```
 
-Do not commit or package this file.
+Do not commit or package this file. The three signing values must remain pairwise independent. Production preflight fails closed when any required key is missing/short, `PAG_FAIL_CLOSED` is not `1`, or any two signing keys are identical.
+
+Verify explicitly:
+
+```bash
+./scripts/preflight_node1.sh
+PYTHONPATH="$PWD/src" python scripts/check_production_key_separation.py
+```
 
 ## 6. Runtime filesystem
 
@@ -81,7 +88,18 @@ var/runs/       workflow outputs
 var/state/      replay/state material
 ```
 
-These directories are mode `0700` and ignored by Git/release packaging.
+These directories are mode `0700` and ignored by Git/release packaging. Runtime files are required to be mode `0600`. `deploy_node1.sh` and `validate_node1.sh` set `umask 077`; the evidence writer additionally forces the ledger to `0600` after durable append.
+
+Verify:
+
+```bash
+stat -c '%a %U:%G %n' var var/evidence var/runs var/state
+find var -type f -perm -0020 -print
+find var -type f -perm -0002 -print
+PYTHONPATH="$PWD/src" python scripts/check_runtime_permissions.py
+```
+
+The two `find` commands must produce no output.
 
 ## 7. Source-control bootstrap
 
@@ -100,7 +118,7 @@ git commit -m 'feat: bootstrap portable AI governance M0-M1'
 Use:
 
 ```bash
-./scripts/package_release.sh 0.1.1
+./scripts/package_release.sh 0.1.2
 ```
 
 The release script excludes machine-local/generated content and regenerates `release/source-manifest.sha256` from the clean payload before creating the tarball and outer SHA-256 file.

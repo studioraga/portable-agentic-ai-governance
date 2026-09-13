@@ -37,7 +37,10 @@ class EvidenceLedger:
         envelope = {**core, "envelope_sha256": envelope_sha, "signature": signature}
         with self.path.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(envelope, sort_keys=True) + "\n")
-            fh.flush(); os.fsync(fh.fileno())
+            fh.flush()
+            os.fsync(fh.fileno())
+
+        os.chmod(self.path, 0o600)
         return envelope
 
     def verify(self) -> tuple[bool, str]:
