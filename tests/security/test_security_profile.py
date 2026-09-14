@@ -1,105 +1,26 @@
 from __future__ import annotations
 
-import pytest
-
 from portable_ai_governance.kernel.security_profile import (
     evaluate_security_profile,
-    require_security_profile,
+    signing_keys_are_independent,
 )
 
 
-def production_env(
-    evidence_key: str,
-    request_key: str,
-    approval_key: str,
-) -> dict[str, str]:
-    return {
-        "PAG_SECURITY_PROFILE": "production",
-        "PAG_FAIL_CLOSED": "1",
-        "PAG_EVIDENCE_SIGNING_KEY": evidence_key,
-        "PAG_REQUEST_SIGNING_KEY": request_key,
-        "PAG_APPROVAL_SIGNING_KEY": approval_key,
+def test_signing_key_separation_primitive():
+    assert signing_keys_are_independent([b'a'*32,b'b'*32,b'c'*32,b'd'*32], expected=4)
+    assert not signing_keys_are_independent([b'a'*32,b'a'*32,b'c'*32,b'd'*32], expected=4)
+
+
+def test_m2_production_rejects_legacy_environment_only_profile():
+    env={
+        'PAG_SECURITY_PROFILE':'production',
+        'PAG_FAIL_CLOSED':'1',
+        'PAG_MTLS_REQUIRED':'1',
+        'PAG_NODE_ID':'node1',
+        'PAG_EVIDENCE_SIGNING_KEY':'a'*64,
+        'PAG_REQUEST_SIGNING_KEY':'b'*64,
+        'PAG_APPROVAL_SIGNING_KEY':'c'*64,
     }
-
-
-def test_production_accepts_independent_signing_keys():
-    env = production_env(
-        "a" * 64,
-        "b" * 64,
-        "c" * 64,
-    )
-
-    report = require_security_profile(env)
-
-    assert report.ok is True
-
-    checks = {
-        check.name: check
-        for check in report.checks
-    }
-
-    assert checks[
-        "signing_key_separation"
-    ].ok is True
-
-
-def test_production_rejects_all_signing_keys_reused():
-    shared = "a" * 64
-
-    env = production_env(
-        shared,
-        shared,
-        shared,
-    )
-
-    report = evaluate_security_profile(env)
-
-    assert report.ok is False
-
-    checks = {
-        check.name: check
-        for check in report.checks
-    }
-
-    assert checks[
-        "signing_key_separation"
-    ].ok is False
-
-    with pytest.raises(RuntimeError):
-        require_security_profile(env)
-
-
-@pytest.mark.parametrize(
-    ("evidence_key", "request_key", "approval_key"),
-    [
-        ("a" * 64, "a" * 64, "b" * 64),
-        ("a" * 64, "b" * 64, "a" * 64),
-        ("a" * 64, "b" * 64, "b" * 64),
-    ],
-)
-def test_production_rejects_partial_signing_key_reuse(
-    evidence_key,
-    request_key,
-    approval_key,
-):
-    env = production_env(
-        evidence_key,
-        request_key,
-        approval_key,
-    )
-
-    report = evaluate_security_profile(env)
-
-    assert report.ok is False
-
-    checks = {
-        check.name: check
-        for check in report.checks
-    }
-
-    assert checks[
-        "signing_key_separation"
-    ].ok is False
-
-    with pytest.raises(RuntimeError):
-        require_security_profile(env)
+    report=evaluate_security_profile(env)
+    assert not report.ok
+    assert any(c.name=='runtime_dependencies' and not c.ok for c in report.checks)

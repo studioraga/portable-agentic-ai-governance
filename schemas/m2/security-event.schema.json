@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PAG M2 Security Event",
+  "type": "object",
+  "required": ["event_type", "decision", "timestamp"],
+  "properties": {
+    "event_type": {"type": "string", "minLength": 1},
+    "decision": {"enum": ["allow", "deny", "error"]},
+    "principal_id": {"type": "string"},
+    "action": {"type": "string"},
+    "resource": {"type": "string"},
+    "reason": {"type": "string"},
+    "run_id": {"type": "string"},
+    "timestamp": {"type": "integer", "minimum": 0},
+    "attributes": {"type": "object"}
+  },
+  "additionalProperties": false
+}

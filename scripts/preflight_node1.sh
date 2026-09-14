@@ -36,12 +36,12 @@ fi
 
 if python3 - <<'PY' >/dev/null 2>&1
 import sys
-raise SystemExit(0 if sys.version_info >= (3, 11) else 1)
+raise SystemExit(0 if sys.version_info >= (3, 10) else 1)
 PY
 then
   pass python-version "$(python3 -V 2>&1)"
 else
-  err python-version "Python 3.11+ required; found $(python3 -V 2>&1 || true)"
+  err python-version "Python 3.10+ required; found $(python3 -V 2>&1 || true)"
 fi
 
 if python3 -m venv --help >/dev/null 2>&1; then

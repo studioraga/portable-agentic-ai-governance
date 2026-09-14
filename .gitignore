@@ -14,3 +14,6 @@ var/state/*
 !var/evidence/.gitkeep
 !var/runs/.gitkeep
 !var/state/.gitkeep
+var/m2-bootstrap/
+var/m2-validation/
+var/m2-validation*/

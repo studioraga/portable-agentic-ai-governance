@@ -1,38 +1,167 @@
 {
-  "catalog_version": "0.1.0",
+  "catalog_version": "0.2.0",
   "controls": [
     {
       "control_id": "AIS-GOV-001",
       "title": "AI system onboarding is policy gated",
       "enabled": true,
-      "required_roles": ["ai_governance_admin", "ai_risk_manager"],
-      "predicates": {"workflow": "ai_system_onboarding"},
+      "required_roles": [
+        "ai_governance_admin",
+        "ai_risk_manager"
+      ],
+      "predicates": {
+        "workflow": "ai_system_onboarding"
+      },
       "approval_required": false,
       "failure_action": "block",
-      "implementation": ["src/portable_ai_governance/workflows/onboarding.py"],
-      "evidence": ["signed governance ledger", "framework mapping", "risk record"]
+      "implementation": [
+        "src/portable_ai_governance/workflows/onboarding.py"
+      ],
+      "evidence": [
+        "signed governance ledger",
+        "framework mapping",
+        "risk record"
+      ]
     },
     {
       "control_id": "AIS-RISK-001",
       "title": "Risk acceptance requires human authority",
       "enabled": true,
-      "required_roles": ["ai_risk_manager"],
+      "required_roles": [
+        "ai_risk_manager"
+      ],
       "failure_action": "block",
-      "implementation": ["src/portable_ai_governance/agents/governance/risk.py"]
+      "implementation": [
+        "src/portable_ai_governance/agents/governance/risk.py"
+      ]
     },
     {
       "control_id": "AIS-EVID-001",
       "title": "Governance evidence is chained and cryptographically signed",
       "enabled": true,
       "failure_action": "block",
-      "implementation": ["src/portable_ai_governance/kernel/evidence.py"]
+      "implementation": [
+        "src/portable_ai_governance/kernel/evidence.py"
+      ]
     },
     {
       "control_id": "AIS-AUTH-001",
       "title": "Privileged governance workflows require explicit role authorization",
       "enabled": true,
       "failure_action": "block",
-      "implementation": ["src/portable_ai_governance/kernel/authorization.py"]
+      "implementation": [
+        "src/portable_ai_governance/kernel/authorization.py"
+      ]
+    },
+    {
+      "control_id": "AIS-IAM-001",
+      "title": "Production identity uses an explicit non-local provider",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/kernel/identity.py",
+        "src/portable_ai_governance/security/runtime.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-ABAC-001",
+      "title": "Authorization combines RBAC and ABAC with deny-by-default semantics",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/kernel/authorization.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-MTLS-001",
+      "title": "Distributed control-plane traffic requires TLS 1.3 mutual authentication",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security/tls_transport.py",
+        "src/portable_ai_governance/security/workload_identity.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-SIGN-001",
+      "title": "Inter-service requests require body-bound timestamped HMAC signatures",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/kernel/request_signing.py",
+        "src/portable_ai_governance/security/gateway.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-REPLAY-001",
+      "title": "Signed requests use persistent fail-closed anti-replay state",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/kernel/replay_cache.py",
+        "src/portable_ai_governance/security/gateway.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-SECRETS-001",
+      "title": "Production secrets use protected provider abstraction and independent key domains",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security/secrets.py",
+        "src/portable_ai_governance/kernel/security_profile.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-AUDIT-001",
+      "title": "Security decisions are written to a signed chained audit ledger",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security/audit.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-RATE-001",
+      "title": "Security entry points enforce deterministic bounded request rates",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security/rate_limit.py",
+        "src/portable_ai_governance/security/gateway.py"
+      ],
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ]
     }
   ]
 }

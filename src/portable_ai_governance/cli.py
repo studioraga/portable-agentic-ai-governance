@@ -5,7 +5,8 @@ from .agents.governance import ControlMappingAgent, GovernanceEvidenceAgent, AIS
 from .kernel.authorization import AuthorizationEngine, AuthorizationRule
 from .kernel.evidence import EvidenceLedger
 from .kernel.policy import PolicyEngine
-from .kernel.security_profile import require_security_profile
+from .kernel.security_profile import evaluate_security_profile, require_security_profile
+from .security.runtime import build_runtime_dependencies
 from .kernel.types import AgentRequest, Principal
 from .workflows.onboarding import OnboardingWorkflow
 
@@ -13,13 +14,18 @@ def _root() -> Path:
     return Path(os.getenv("PAG_REPO_ROOT", Path.cwd())).resolve()
 
 def cmd_validate_security(_: argparse.Namespace) -> int:
-    report = require_security_profile()
+    report = evaluate_security_profile()
     print(json.dumps({"profile":report.profile,"ok":report.ok,"checks":[c.__dict__ for c in report.checks]}, indent=2))
-    return 0
+    return 0 if report.ok else 2
+
+def _evidence_key() -> bytes:
+    if os.getenv("PAG_SECURITY_PROFILE", "lab") == "production":
+        return build_runtime_dependencies().secrets.get("evidence_signing")
+    return os.getenv("PAG_EVIDENCE_SIGNING_KEY", "lab-evidence-key-0123456789abcdef-0123456789abcdef").encode()
 
 def cmd_onboard(args: argparse.Namespace) -> int:
     root = _root(); require_security_profile()
-    signing = os.getenv("PAG_EVIDENCE_SIGNING_KEY", "lab-evidence-key-0123456789abcdef-0123456789abcdef").encode()
+    signing = _evidence_key()
     ledger = EvidenceLedger(root / "var/evidence/governance.jsonl", signing)
     evidence = GovernanceEvidenceAgent(ledger)
     mapper = ControlMappingAgent(root / "governance/mappings/framework-mapping.json")
@@ -35,7 +41,7 @@ def cmd_onboard(args: argparse.Namespace) -> int:
     print(json.dumps(result, indent=2, default=str)); return 0 if result["status"] == "COMPLETE" else 2
 
 def cmd_verify_evidence(_: argparse.Namespace) -> int:
-    root = _root(); signing = os.getenv("PAG_EVIDENCE_SIGNING_KEY", "lab-evidence-key-0123456789abcdef-0123456789abcdef").encode()
+    root = _root(); signing = _evidence_key()
     ok, detail = EvidenceLedger(root / "var/evidence/governance.jsonl", signing).verify(); print(json.dumps({"ok":ok,"detail":detail})); return 0 if ok else 2
 
 def main(argv=None) -> int:

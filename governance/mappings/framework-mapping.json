@@ -1,27 +1,144 @@
 {
-  "mapping_version": "2026-09-bootstrap",
+  "mapping_version": "2026-09-m2",
   "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. Validate against the organization's adopted framework revision before compliance use.",
   "controls": {
     "AIS-GOV-001": {
-      "nist_ai_rmf": ["GOVERN", "MAP"],
-      "nist_csf_2_0": ["GV.OC", "GV.RR", "ID.AM"],
-      "iso_iec_42001": ["governance", "risk_management"],
-      "owasp_genai": ["governance_supporting_control"]
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RR",
+        "ID.AM"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "risk_management"
+      ],
+      "owasp_genai": [
+        "governance_supporting_control"
+      ]
     },
     "AIS-RISK-001": {
-      "nist_ai_rmf": ["GOVERN", "MANAGE"],
-      "nist_csf_2_0": ["GV.RM"],
-      "iso_iec_42001": ["risk_management", "human_oversight"]
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.RM"
+      ],
+      "iso_iec_42001": [
+        "risk_management",
+        "human_oversight"
+      ]
     },
     "AIS-EVID-001": {
-      "nist_ai_rmf": ["MEASURE", "MANAGE"],
-      "nist_csf_2_0": ["PR.DS", "DE.CM"],
-      "nist_ssdf": ["protect_and_preserve_release_integrity"]
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "protect_and_preserve_release_integrity"
+      ]
     },
     "AIS-AUTH-001": {
-      "nist_ai_rmf": ["GOVERN", "MANAGE"],
-      "nist_csf_2_0": ["PR.AA"],
-      "owasp_genai": ["excessive_agency_mitigation"]
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency_mitigation"
+      ]
+    },
+    "AIS-IAM-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ],
+      "iso_iec_42001": [
+        "access_control"
+      ]
+    },
+    "AIS-ABAC-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency_mitigation"
+      ]
+    },
+    "AIS-MTLS-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "PR.AA"
+      ]
+    },
+    "AIS-SIGN-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS"
+      ]
+    },
+    "AIS-REPLAY-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "DE.CM"
+      ]
+    },
+    "AIS-SECRETS-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA",
+        "PR.DS"
+      ]
+    },
+    "AIS-AUDIT-001": {
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.AN"
+      ]
+    },
+    "AIS-RATE-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "DE.CM"
+      ],
+      "owasp_genai": [
+        "unbounded_consumption_mitigation"
+      ]
     }
   }
 }

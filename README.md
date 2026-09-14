@@ -6,10 +6,29 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 
 ## Release status
 
-**v0.1.1 — Milestones 0 and 1.** This revision hardens portable deployment, src-layout imports, prerequisites, clean source packaging, and validation after Node1 testing exposed a pytest import-path defect in v0.1.0.
-**v0.1.2 — Milestones 0 and 1 security-hardened freeze candidate.
+**v0.2.0 — Milestone 2 security-control-plane implementation candidate.**
+
+The frozen M0-M1 baseline remains tagged `m0-m1-v0.1.2`. Milestone 2 adds deterministic identity, RBAC+ABAC, TLS 1.3 mutual authentication, workload identity, protected secrets, provider-backed crypto, signed requests, persistent anti-replay, rate limiting, signed security audit, and fail-closed production dependency validation.
+
+See `docs/M2-Security-Control-Plane.md`, `docs/Deployment-M2.md`, and `docs/Validation-M2.md`.
 
 ## Implemented
+
+### Milestone 2
+
+- Identity provider interface with bootstrap/local and owner-only file identity adapters.
+- Deterministic RBAC + ABAC authorization with deny-by-default behavior.
+- TLS 1.3 mutual-authentication contexts and SPIFFE-style workload URI SAN identity.
+- Protected workload registry mapping certificates to principals/roles/attributes.
+- Protected `SecretProvider` abstraction with independent evidence/request/approval/audit signing domains.
+- Provider-backed cryptographic HMAC/SHA-256 service.
+- Signed requests integrated with persistent fail-closed anti-replay.
+- Deterministic rate limiting.
+- Signed/chained security decision audit ledger.
+- Fail-closed M2 production profile requiring identity, secrets, policy, mTLS, node identity, audit path and rate-limit dependencies.
+- One-shot Node1/Node2 material deployment, local two-node simulation, remote secure-ping validation, and optional hardened systemd Node1 probe.
+
+### Milestones 0-1 retained
 
 - Deterministic workflow state machine with illegal-transition rejection.
 - Monotonic step/tool budgets.

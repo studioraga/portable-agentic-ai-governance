@@ -2,8 +2,8 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
-VERSION="${1:-0.1.1}"
-OUT="${2:-$ROOT/../portable-agentic-ai-governance-m0-m1-v${VERSION}.tar.gz}"
+VERSION="${1:-0.2.0}"
+OUT="${2:-$ROOT/../portable-agentic-ai-governance-m0-m2-v${VERSION}.tar.gz}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$TMP/portable-agentic-ai-governance"

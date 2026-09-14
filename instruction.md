@@ -9,7 +9,10 @@ Build and operate a portable Agentic AI security and governance control plane. A
 3. `docs/Architecture.md`
 4. `docs/Deployment.md`
 5. `docs/Validation.md`
-6. `docs/Milestones.md`
+6. `docs/M2-Security-Control-Plane.md`
+7. `docs/Deployment-M2.md`
+8. `docs/Validation-M2.md`
+9. `docs/Milestones.md`
 
 Do not claim a milestone passed from architecture or documentation alone; execute the corresponding validation gate.
 
@@ -30,4 +33,4 @@ Do not claim a milestone passed from architecture or documentation alone; execut
 14. Secrets must be purpose-separated, never committed, and eventually replaced by managed secret/KMS/HSM implementations.
 
 ## Current status
-Milestones 0 and 1 are implemented in v0.1.1. Milestones 2-10 have frozen interfaces and acceptance targets in `docs/Architecture.md`; they remain planned until their code and negative/positive validation gates exist.
+Milestones 0 and 1 are frozen at tag `m0-m1-v0.1.2`. Milestone 2 is implemented as the v0.2.0 security-control-plane candidate and must pass its local/distributed and node-specific validation gates before tagging. Milestones 3-10 remain planned.
