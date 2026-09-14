@@ -17,3 +17,10 @@ var/state/*
 var/m2-bootstrap/
 var/m2-validation/
 var/m2-validation*/
+
+var/m3-material/
+var/m3-validation/
+var/m3-validation*/
+
+# M3 generated vulnerability-scanner evidence
+var/m3-scans/

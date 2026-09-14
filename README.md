@@ -6,13 +6,25 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 
 ## Release status
 
-**v0.2.0 — Milestone 2 security-control-plane implementation candidate.**
+**v0.3.0 — Milestone 3 supply-chain implementation candidate.**
 
 The frozen M0-M1 baseline remains tagged `m0-m1-v0.1.2`. Milestone 2 adds deterministic identity, RBAC+ABAC, TLS 1.3 mutual authentication, workload identity, protected secrets, provider-backed crypto, signed requests, persistent anti-replay, rate limiting, signed security audit, and fail-closed production dependency validation.
 
-See `docs/M2-Security-Control-Plane.md`, `docs/Deployment-M2.md`, and `docs/Validation-M2.md`.
+Milestone 2 remains implemented and validated. Milestone 3 adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy.
+
+See `docs/M3-Supply-Chain.md`, `docs/Deployment-M3.md`, and `docs/Validation-M3.md`.
 
 ## Implemented
+
+### Milestone 3
+
+- CycloneDX 1.7 software SBOM and AI/ML BOM generation.
+- SHA-256 model, container, prompt and tool locks.
+- Digest-pinned container references.
+- In-toto Statement v1 with SLSA provenance v1 predicate.
+- Offline Ed25519 release signing and public-key verification.
+- Vulnerability freshness/severity/scanner policy; fixture scans are rejected in production by default.
+- One-shot Node1/Node2 verifier deployment and combined M2+M3 production validation.
 
 ### Milestone 2
 
@@ -72,7 +84,7 @@ If required and permitted:
 ./deploy/install_prerequisites_ubuntu2404.sh
 ```
 
-Minimum M0-M1 dependencies are Python 3.11+, Python venv support, Bash, OpenSSL, tar/gzip, SHA-256 utilities, writable local storage, and the repository files. Pytest is required to execute the full extended acceptance suite. GPU/CUDA, LLMs, databases, vector stores, containers, Internet access, and Node2 are not required.
+Minimum portable dependencies are Python 3.10+, Python venv support, Bash, OpenSSL, tar/gzip, SHA-256 utilities, writable local storage, and the repository files. Pytest is required to execute the full extended acceptance suite. GPU/CUDA, LLMs, databases, vector stores, containers, Internet access, and Node2 are not required.
 
 ## One-shot Node1 validation
 

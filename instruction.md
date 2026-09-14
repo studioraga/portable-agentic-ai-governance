@@ -34,3 +34,7 @@ Do not claim a milestone passed from architecture or documentation alone; execut
 
 ## Current status
 Milestones 0 and 1 are frozen at tag `m0-m1-v0.1.2`. Milestone 2 is implemented as the v0.2.0 security-control-plane candidate and must pass its local/distributed and node-specific validation gates before tagging. Milestones 3-10 remain planned.
+
+## Milestone 3 supply-chain rule
+
+Software, models, containers, prompts, and tools are untrusted until deterministic digest locks, signed BOM/provenance, and vulnerability policy pass. Private release signing keys never deploy to verifier-only workload nodes.

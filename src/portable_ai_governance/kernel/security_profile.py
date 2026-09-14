@@ -101,6 +101,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         rate_ok = False
     checks.append(SecurityCheck("rate_limit", rate_ok, "configured" if rate_ok else "positive integer limit/window required"))
 
+    if env.get("PAG_SUPPLY_CHAIN_REQUIRED", "0") == "1":
+        try:
+            from ..supply_chain.runtime import evaluate_supply_chain
+            supply = evaluate_supply_chain(env)
+            checks.append(SecurityCheck("supply_chain", supply.ok, "verified" if supply.ok else "; ".join(f"{n}:{d}" for n,o,d in supply.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("supply_chain", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

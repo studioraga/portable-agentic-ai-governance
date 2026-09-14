@@ -9,10 +9,7 @@ find . -type f \
   ! -path './.pytest_cache/*' \
   ! -path '*/__pycache__/*' \
   ! -name '*.pyc' \
-  ! -path './var/evidence/*' \
-  ! -path './var/runs/*' \
-  ! -path './var/state/*' \
-  ! -path './var/m2-*/*' \
+  ! -path './var/*' \
   ! -path './release/source-manifest.sha256' \
   -print0 | sort -z | xargs -0 sha256sum > "$TMP"
 install -m 644 "$TMP" release/source-manifest.sha256

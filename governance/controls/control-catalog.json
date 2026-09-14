@@ -1,5 +1,5 @@
 {
-  "catalog_version": "0.2.0",
+  "catalog_version": "0.3.0",
   "controls": [
     {
       "control_id": "AIS-GOV-001",
@@ -161,6 +161,85 @@
       "evidence": [
         "M2 security validation",
         "signed security audit"
+      ]
+    },
+    {
+      "control_id": "AIS-SBOM-001",
+      "title": "Software releases generate a signed CycloneDX SBOM",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/supply_chain/bom.py"
+      ],
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ]
+    },
+    {
+      "control_id": "AIS-AIBOM-001",
+      "title": "AI/model inventory generates a signed CycloneDX AI/ML BOM",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/supply_chain/bom.py"
+      ],
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ]
+    },
+    {
+      "control_id": "AIS-LOCK-001",
+      "title": "Models, containers, prompts and tools are digest locked",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/supply_chain/locks.py"
+      ],
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ]
+    },
+    {
+      "control_id": "AIS-PROV-001",
+      "title": "Release subjects carry signed in-toto/SLSA-style provenance",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/supply_chain/provenance.py",
+        "src/portable_ai_governance/supply_chain/signing.py"
+      ],
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ]
+    },
+    {
+      "control_id": "AIS-SIG-001",
+      "title": "Supply-chain artifacts require asymmetric signature verification",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/supply_chain/signing.py"
+      ],
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ]
+    },
+    {
+      "control_id": "AIS-VULN-001",
+      "title": "Vulnerability policy blocks stale, unknown, high and critical findings",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/supply_chain/vulnerability.py"
+      ],
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
       ]
     }
   ]

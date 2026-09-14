@@ -1,5 +1,5 @@
 {
-  "mapping_version": "2026-09-m2",
+  "mapping_version": "2026-09-m3",
   "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. Validate against the organization's adopted framework revision before compliance use.",
   "controls": {
     "AIS-GOV-001": {
@@ -138,6 +138,69 @@
       ],
       "owasp_genai": [
         "unbounded_consumption_mitigation"
+      ]
+    },
+    "AIS-SBOM-001": {
+      "nist_csf_2_0": [
+        "ID.AM",
+        "GV.SC"
+      ],
+      "nist_ssdf": [
+        "PS.3",
+        "PW.4"
+      ]
+    },
+    "AIS-AIBOM-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP"
+      ],
+      "nist_csf_2_0": [
+        "ID.AM",
+        "GV.SC"
+      ]
+    },
+    "AIS-LOCK-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "GV.SC"
+      ],
+      "nist_ssdf": [
+        "PS.1",
+        "PS.2"
+      ]
+    },
+    "AIS-PROV-001": {
+      "nist_csf_2_0": [
+        "GV.SC",
+        "PR.DS"
+      ],
+      "nist_ssdf": [
+        "PS.2",
+        "PS.3"
+      ]
+    },
+    "AIS-SIG-001": {
+      "nist_csf_2_0": [
+        "PR.DS",
+        "GV.SC"
+      ],
+      "nist_ssdf": [
+        "PS.2"
+      ]
+    },
+    "AIS-VULN-001": {
+      "nist_csf_2_0": [
+        "ID.RA",
+        "GV.SC",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "RV.1",
+        "RV.2"
       ]
     }
   }
