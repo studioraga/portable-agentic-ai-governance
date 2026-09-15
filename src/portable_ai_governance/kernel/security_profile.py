@@ -109,6 +109,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         except Exception as exc:
             checks.append(SecurityCheck("supply_chain", False, str(exc)))
 
+    if env.get("PAG_AI_SECURITY_REQUIRED", "0") == "1":
+        try:
+            from ..ai_security.runtime import evaluate_ai_security
+            ai = evaluate_ai_security(env)
+            checks.append(SecurityCheck("ai_security", ai.ok, "verified" if ai.ok else "; ".join(f"{n}:{d}" for n,o,d in ai.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("ai_security", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

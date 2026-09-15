@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PAG M4 Data Provenance","type":"object","required":["records"],"properties":{"records":{"type":"array","items":{"type":"object","required":["record_id","source","sha256","owner","classification","tenant","license_or_consent","collected_at"]}}}}

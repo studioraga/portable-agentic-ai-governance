@@ -181,3 +181,7 @@ runtime files   0600
 ```
 
 Deployment and validation execute with `umask 077`. The evidence ledger also forces its file to `0600` after append and `fsync`, so its confidentiality does not depend solely on the invoking shell's umask. Runtime permission validation is part of the M0-M1 acceptance evidence.
+
+
+## Milestone 4 boundary
+Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.

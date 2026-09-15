@@ -1,5 +1,5 @@
 {
-  "mapping_version": "2026-09-m3",
+  "mapping_version": "2026-09-m4",
   "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. Validate against the organization's adopted framework revision before compliance use.",
   "controls": {
     "AIS-GOV-001": {
@@ -201,6 +201,91 @@
       "nist_ssdf": [
         "RV.1",
         "RV.2"
+      ]
+    },
+    "AIS-MODEL-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MANAGE"
+      ],
+      "owasp_genai": [
+        "data_model_poisoning",
+        "supply_chain"
+      ]
+    },
+    "AIS-DATA-001": {
+      "nist_ai_rmf": [
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "ID.AM",
+        "PR.DS"
+      ],
+      "owasp_genai": [
+        "data_model_poisoning",
+        "sensitive_information_disclosure"
+      ]
+    },
+    "AIS-RAG-001": {
+      "nist_ai_rmf": [
+        "MAP",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA",
+        "PR.DS"
+      ],
+      "owasp_genai": [
+        "sensitive_information_disclosure",
+        "vector_embedding_weaknesses"
+      ]
+    },
+    "AIS-EMBED-001": {
+      "nist_ai_rmf": [
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "owasp_genai": [
+        "vector_embedding_weaknesses",
+        "data_model_poisoning"
+      ]
+    },
+    "AIS-EVAL-001": {
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "owasp_genai": [
+        "ai_security_evaluation"
+      ]
+    },
+    "AIS-THREAT-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP"
+      ],
+      "nist_csf_2_0": [
+        "ID.RA"
+      ],
+      "owasp_genai": [
+        "prompt_injection",
+        "sensitive_information_disclosure",
+        "data_model_poisoning",
+        "vector_embedding_weaknesses",
+        "excessive_agency"
+      ]
+    },
+    "AIS-AUTONOMY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "owasp_genai": [
+        "excessive_agency"
       ]
     }
   }

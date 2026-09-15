@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PAG M4 Model Governance","type":"object","required":["version","models"],"properties":{"version":{"type":"string"},"models":{"type":"array","minItems":1,"items":{"type":"object","required":["name","sha256","status","owner","intended_use","risk_tier","autonomy"]}}}}

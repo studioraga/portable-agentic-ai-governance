@@ -24,3 +24,7 @@ var/m3-validation*/
 
 # M3 generated vulnerability-scanner evidence
 var/m3-scans/
+
+# M4 generated AI-security evidence/material
+var/m4-material/
+var/m4-validation/

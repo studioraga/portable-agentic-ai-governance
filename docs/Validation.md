@@ -234,3 +234,7 @@ The hardened deploy/validation scripts use `umask 077`, and `EvidenceLedger` exp
 ## 6. Node2
 
 Node2 is not required for M0-M1. No camera, media transport, GPU, or edge-service test belongs in the M0-M1 acceptance gate. Milestone 2 introduces generic edge workload/service identity controls; application repositories then supply their own device/media tests.
+
+
+## Milestone 4 boundary
+Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.

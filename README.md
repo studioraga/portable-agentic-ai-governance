@@ -6,15 +6,26 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 
 ## Release status
 
-**v0.3.0 — Milestone 3 supply-chain implementation candidate.**
+**v0.4.0 — Milestone 4 AI-system-security implementation candidate.**
 
 The frozen M0-M1 baseline remains tagged `m0-m1-v0.1.2`. Milestone 2 adds deterministic identity, RBAC+ABAC, TLS 1.3 mutual authentication, workload identity, protected secrets, provider-backed crypto, signed requests, persistent anti-replay, rate limiting, signed security audit, and fail-closed production dependency validation.
 
-Milestone 2 remains implemented and validated. Milestone 3 adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy.
+Milestone 2 remains implemented and validated. Milestone 3 is frozen and adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy. Milestone 4 adds model governance, data provenance, pre-retrieval authorization, embedding controls, deterministic AI evaluation, AI threat modeling, and an explicit no-LLM-autonomy gate.
 
-See `docs/M3-Supply-Chain.md`, `docs/Deployment-M3.md`, and `docs/Validation-M3.md`.
+See `docs/M4-AI-System-Security.md`, `docs/Prerequisites-M4.md`, `docs/Deployment-M4.md`, and `docs/Validation-M4.md`.
 
 ## Implemented
+
+### Milestone 4
+
+- Model governance records bound to immutable M3 model digests.
+- Data provenance records with source, ownership, classification, tenant and license/consent evidence.
+- Default-deny authorization before retrieval with cross-tenant and clearance enforcement.
+- Tenant-partitioned, provenance-bound embedding controls with blocked classifications and dimension limits.
+- Deterministic AI-security evaluation suite and minimum-score release gate.
+- AI threat model covering prompt injection, sensitive disclosure, poisoning, vector/embedding weaknesses, model theft, retrieval bypass and excessive agency.
+- Signed SHA-256 AI-security manifest and verifier-only Node2 deployment.
+- Explicit `llm_agent_autonomy=false` and `llm_tool_execution=false` requirement.
 
 ### Milestone 3
 

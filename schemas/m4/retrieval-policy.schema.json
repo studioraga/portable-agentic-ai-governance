@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PAG M4 Retrieval Policy","type":"object","required":["default_decision","pre_retrieval_authorization","deny_cross_tenant"]}

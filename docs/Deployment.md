@@ -130,3 +130,7 @@ No Node2 deployment exists for M0-M1 because none is required. Milestone 2 will 
 ## 10. Future production deployment gates
 
 Milestones 2-9 progressively add mandatory gates for enterprise IdP/OIDC and workload identity, mTLS, ABAC/policy service, managed secrets/KMS, signed software/model/prompt/tool/agent artifacts, SBOM/VEX/vulnerability policy, privacy/retention, SIEM, incident response, backup/restore, and recovery tests. Missing mandatory controls will block production deployment rather than downgrade silently.
+
+
+## Milestone 4 boundary
+Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.

@@ -252,3 +252,7 @@ Expected summaries:
 KEY-SEPARATION TESTS PASS: 5/5
 RUNTIME-PERMISSION TESTS PASS
 ```
+
+
+## Milestone 4 boundary
+Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.

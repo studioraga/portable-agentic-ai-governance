@@ -1,5 +1,5 @@
 {
-  "catalog_version": "0.3.0",
+  "catalog_version": "0.4.0",
   "controls": [
     {
       "control_id": "AIS-GOV-001",
@@ -240,6 +240,98 @@
       "evidence": [
         "M3 supply-chain validation",
         "signed SBOM/AI BOM/provenance"
+      ]
+    },
+    {
+      "control_id": "AIS-MODEL-001",
+      "title": "Production models require approved governance records bound to immutable M3 model digests",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/ai_security/model_governance.py"
+      ],
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-DATA-001",
+      "title": "AI data requires provenance, ownership, classification, tenant and license/consent evidence",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/ai_security/provenance.py"
+      ],
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-RAG-001",
+      "title": "Retrieval authorization executes before retrieval with tenant and classification default-deny controls",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/ai_security/retrieval.py"
+      ],
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-EMBED-001",
+      "title": "Embeddings require provenance, tenant partitioning, approved dimensions and classification policy",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/ai_security/embeddings.py"
+      ],
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-EVAL-001",
+      "title": "AI security evaluations are deterministic release gates with mandatory passing results",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/ai_security/evaluation.py"
+      ],
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-THREAT-001",
+      "title": "AI threat model covers model/data/RAG/embedding/injection/disclosure threats and mitigations",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/ai_security/threat_model.py"
+      ],
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-AUTONOMY-001",
+      "title": "Milestone 4 prohibits LLM agent autonomy and LLM-directed tool execution",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/ai_security/threat_model.py",
+        "src/portable_ai_governance/ai_security/runtime.py"
+      ],
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
       ]
     }
   ]

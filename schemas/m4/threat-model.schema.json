@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PAG M4 AI Threat Model","type":"object","required":["llm_agent_autonomy","llm_tool_execution","threats"]}

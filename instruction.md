@@ -38,3 +38,7 @@ Milestones 0 and 1 are frozen at tag `m0-m1-v0.1.2`. Milestone 2 is implemented 
 ## Milestone 3 supply-chain rule
 
 Software, models, containers, prompts, and tools are untrusted until deterministic digest locks, signed BOM/provenance, and vulnerability policy pass. Private release signing keys never deploy to verifier-only workload nodes.
+
+
+## Milestone 4 boundary
+Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
