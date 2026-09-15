@@ -6,7 +6,7 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 
 ## Release status
 
-**v0.5.0 — Milestone 5 compliance and risk automation implementation candidate.**
+**v0.6.0 — Milestone 6 first bounded read-only Evidence Analyst implementation candidate.**
 
 The frozen M0-M1 baseline remains tagged `m0-m1-v0.1.2`. Milestone 2 adds deterministic identity, RBAC+ABAC, TLS 1.3 mutual authentication, workload identity, protected secrets, provider-backed crypto, signed requests, persistent anti-replay, rate limiting, signed security audit, and fail-closed production dependency validation.
 
@@ -166,3 +166,9 @@ M0-M1 generalizes proven patterns from the supplied edge-AI evidence project: fa
 - `docs/Validation.md` — exact Node1 validation, negative tests, troubleshooting, and Node2 applicability.
 - `docs/Deployment.md` — prerequisite installation, one-shot deployment, production-profile bootstrap, and clean release packaging.
 - `docs/Milestones.md` — implementation/acceptance matrix.
+
+## Milestone 6 — First bounded agent
+
+M6 introduces `EVIDENCE-ANALYST-001`, the first bounded production agent. It is read-only, deny-by-default, evidence-catalog constrained, digest-bound to its inputs, budget-limited, and cryptographically chained to M5. It has no shell/network/write/delete/approval/risk-acceptance/compliance-certification/delegation capability. The deterministic M2–M5 controls remain the security and governance boundary.
+
+See `docs/M6-Bounded-Evidence-Analyst.md`, `docs/Prerequisites-M6.md`, `docs/Deployment-M6.md`, and `docs/Validation-M6.md`.

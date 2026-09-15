@@ -1,5 +1,5 @@
 {
-  "mapping_version": "2026-09-m5",
+  "mapping_version": "0.6.0",
   "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. M5 reports are evidence summaries, not certification or legal opinions; validate the organization's adopted framework/privacy revision before compliance use.",
   "controls": {
     "AIS-GOV-001": {
@@ -350,6 +350,106 @@
       "nist_csf_2_0": [
         "GV.OV",
         "RS.AN"
+      ]
+    },
+    "AIS-AGENT-BOUND-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-RO-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-EVID-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-BUDGET-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-BOUNDARY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
       ]
     }
   }

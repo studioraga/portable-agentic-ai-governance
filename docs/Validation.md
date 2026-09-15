@@ -243,3 +243,7 @@ Milestone 4 adds deterministic AI-system-security controls for model governance,
 ## Milestone 5 validation
 
 Run dependency preflight first, then `scripts/m5/validate_m5_local.sh`. Required negative gates reject expired/self-approved exceptions, required-but-unapproved DPIAs, stale continuous controls and automated certification claims. Production acceptance requires `scripts/m5/validate_combined_node.sh` to pass M2+M3+M4+M5 simultaneously.
+
+## Milestone 6 validation
+
+Run `scripts/m6/preflight_dependencies.sh`, then `scripts/m6/validate_m6_local.sh`. Negative gates reject side-effecting operations, catalog path traversal, evidence digest tampering and M5 binding drift. `scripts/m6/validate_combined_node.sh` requires the M2+M3+M4+M5+M6 production profile to pass as one fail-closed gate.

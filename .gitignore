@@ -32,3 +32,7 @@ var/m4-validation/
 # M5 generated compliance/risk evidence/material
 var/m5-material/
 var/m5-validation/
+
+# M6 generated bounded-agent evidence/material
+var/m6-material/
+var/m6-validation/

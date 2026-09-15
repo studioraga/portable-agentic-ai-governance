@@ -1,5 +1,5 @@
 {
-  "catalog_version": "0.4.0",
+  "catalog_version": "0.6.0",
   "controls": [
     {
       "control_id": "AIS-GOV-001",
@@ -410,6 +410,75 @@
       "evidence": [
         "M5 compliance/risk validation",
         "signed M5 compliance-risk manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-AGENT-BOUND-001",
+      "title": "Evidence Analyst capabilities are explicitly allowlisted, bounded, and deny-by-default",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/evidence_analyst/policy.py"
+      ],
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-AGENT-RO-001",
+      "title": "First production agent is read-only and has no side-effecting tools",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/evidence_analyst/agent.py",
+        "src/portable_ai_governance/evidence_analyst/tools.py"
+      ],
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-AGENT-EVID-001",
+      "title": "Evidence Analyst reads only digest-bound allowlisted evidence chained to M5",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/evidence_analyst/catalog.py",
+        "src/portable_ai_governance/evidence_analyst/runtime.py"
+      ],
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-AGENT-BUDGET-001",
+      "title": "Evidence Analyst execution is constrained by deterministic step, tool-call, read-size and output budgets",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/evidence_analyst/policy.py",
+        "src/portable_ai_governance/evidence_analyst/agent.py"
+      ],
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-AGENT-BOUNDARY-001",
+      "title": "Evidence Analyst cannot become security, approval, risk-acceptance or compliance boundary",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/evidence_analyst/policy.py",
+        "src/portable_ai_governance/kernel/security_profile.py"
+      ],
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
       ]
     }
   ]

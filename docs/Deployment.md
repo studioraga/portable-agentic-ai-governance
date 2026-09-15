@@ -139,3 +139,7 @@ Milestone 4 adds deterministic AI-system-security controls for model governance,
 ## Milestone 5 deployment
 
 Use `deploy/m5/one_shot_node1.sh <m4-material> <m5-material>` on the release-authority node and package verifier-only material with `deploy/m5/package_verifier_material.sh`. Node2 must never receive `signing-private.pem`. Full-stack deployment is available through `deploy/m5/one_shot_node1_full.sh` and `deploy/m5/one_shot_node2_full.sh`. M5 verifier directories are `0700` and files are `0600`.
+
+## Milestone 6 deployment
+
+Use `deploy/m6/one_shot_node1.sh <m3-material> <m4-material> <m5-material> <m6-material>` on the release authority. Package verifier-only material with `deploy/m6/package_verifier_material.sh`; never transfer `signing-private.pem`. Deploy verifier material on Node2 with `deploy/m6/one_shot_node2.sh`. Full M0–M6 one-shot scripts are provided for both nodes.

@@ -192,3 +192,7 @@ Milestone 4 adds deterministic AI-system-security controls for model governance,
 M5 consumes the secured M4 AI-system substrate and adds deterministic governance automation: impact assessment, privacy assessment, exception lifecycle, third-party risk, continuous-control freshness and evidence-backed reporting. M5 artifacts are digest-bound and signed, and the M5 manifest is cryptographically bound to the M4 AI-security manifest. The production profile requires M2 security, M3 supply-chain, M4 AI security and M5 compliance/risk gates simultaneously.
 
 Automation boundary: M5 can assess and report, but cannot accept risk, approve its own exceptions, certify compliance, render legal opinions, or introduce LLM agent autonomy.
+
+## Milestone 6 — First bounded Evidence Analyst
+
+M6 adds a read-only evidence-consumption layer above the deterministic M2–M5 control plane. A signed capability policy exposes only list/metadata/read/verify/summarize operations over a deny-by-default SHA-256 evidence catalog. No side-effecting tool exists. The M6 manifest is Ed25519 signed and bound to the exact M5 manifest. Initial portable evidence snapshots contain non-secret M3–M5 artifacts; M2 remains independently enforced by the combined production profile rather than exposing secret M2 runtime material to the agent.

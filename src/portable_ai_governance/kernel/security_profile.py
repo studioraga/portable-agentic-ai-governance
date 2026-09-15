@@ -125,6 +125,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         except Exception as exc:
             checks.append(SecurityCheck("compliance_risk", False, str(exc)))
 
+    if env.get("PAG_EVIDENCE_ANALYST_REQUIRED", "0") == "1":
+        try:
+            from ..evidence_analyst.runtime import evaluate_evidence_analyst
+            ea = evaluate_evidence_analyst(env)
+            checks.append(SecurityCheck("evidence_analyst", ea.ok, "verified-read-only" if ea.ok else "; ".join(f"{n}:{d}" for n,o,d in ea.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("evidence_analyst", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

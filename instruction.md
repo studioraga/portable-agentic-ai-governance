@@ -47,3 +47,7 @@ Milestone 4 adds deterministic AI-system-security controls for model governance,
 ## Milestone 5 operating rule
 
 Compliance/risk automation may calculate, validate, monitor and report. It may not accept risk, self-approve exceptions, certify compliance, provide legal conclusions, or become an authorization boundary. Exception approval and compliance/accountability decisions remain explicit human responsibilities.
+
+## Milestone 6 operating rule
+
+The Evidence Analyst is read-only. It may list, inspect, verify and summarize allowlisted evidence. It must never write/delete evidence, execute shell/network actions, modify policy, accept risk, approve exceptions, certify compliance, delegate to another agent, or replace deterministic authorization. Any future LLM reasoning adapter remains subordinate to this signed capability boundary.

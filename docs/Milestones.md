@@ -13,3 +13,7 @@
 | 8 Approval actions | Planned | signed approval tokens | HITL gate |
 | 9 SecOps | Planned | SIEM/IR/recovery | respond/recover gate |
 | 10 Multi-agent | Planned | supervisor + specialists | bounded orchestration gate |
+
+## Milestone 6 — First bounded agent
+
+Status: implementation candidate. Implements Evidence Analyst only, with read-only allowlisted evidence tools, deterministic budgets, signed capability/evidence manifests, no side-effecting tools, no delegation, and no security/approval/risk/compliance authority.

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "portable-agentic-ai-governance"
-version = "0.5.0"
+version = "0.6.0"
 description = "Portable deterministic AI security/governance control plane and bounded governance agents for enterprise AI security and governance."
 requires-python = ">=3.10"
 dependencies = []

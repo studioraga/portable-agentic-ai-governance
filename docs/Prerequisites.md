@@ -261,3 +261,7 @@ Milestone 4 adds deterministic AI-system-security controls for model governance,
 ## Milestone 5 dependencies
 
 M5 requires Python 3.10+, Bash, OpenSSL with Ed25519 support, SHA-256 utilities, tar/gzip/install, writable owner-private storage, a validated M4 material set and its signed AI-security manifest. M5 currently declares zero third-party Python runtime dependencies. Jurisdiction-specific privacy/legal frameworks, enterprise GRC APIs and third-party assurance feeds are deployment-specific adapters and are not required for the deterministic reference validation. Run `scripts/m5/preflight_dependencies.sh` before M5 verification on every node.
+
+## Milestone 6 dependencies
+
+M6 requires Python 3.10+, Bash, OpenSSL Ed25519, SHA-256 utilities, tar/gzip/install, owner-private storage, and validated M3/M4/M5 material. It declares zero third-party Python runtime dependencies and deliberately requires no LLM SDK or side-effecting tool integration. Run `scripts/m6/preflight_dependencies.sh` on every node.

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PAG M6 Evidence Analyst Policy","type":"object","required":["version","agent_id","mode","permissions","budget","limits","decision_boundaries"],"properties":{"agent_id":{"const":"EVIDENCE-ANALYST-001"},"mode":{"const":"read-only"},"side_effecting_tools":{"type":"boolean"}}}

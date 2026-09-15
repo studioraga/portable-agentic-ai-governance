@@ -1,0 +1,39 @@
+{
+  "agent_id": "EVIDENCE-ANALYST-001",
+  "version": "0.6.0",
+  "purpose": "Bounded read-only analysis of allowlisted signed governance/security evidence",
+  "permissions": {
+    "read": [
+      "M3 supply-chain evidence",
+      "M4 AI-security evidence",
+      "M5 compliance/risk evidence"
+    ],
+    "tools": [
+      "evidence.list",
+      "evidence.metadata",
+      "evidence.read",
+      "evidence.verify",
+      "evidence.summarize"
+    ],
+    "deny": [
+      "write",
+      "append",
+      "delete",
+      "execute",
+      "shell",
+      "network",
+      "policy.modify",
+      "risk.accept",
+      "exception.approve",
+      "compliance.certify",
+      "tool.side_effect",
+      "agent.delegate"
+    ]
+  },
+  "budget": {
+    "max_steps": 6,
+    "max_tool_calls": 6,
+    "max_output_chars": 12000
+  },
+  "decision_boundary": "deterministic control plane"
+}
