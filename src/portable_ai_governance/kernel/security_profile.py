@@ -117,6 +117,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         except Exception as exc:
             checks.append(SecurityCheck("ai_security", False, str(exc)))
 
+    if env.get("PAG_COMPLIANCE_RISK_REQUIRED", "0") == "1":
+        try:
+            from ..compliance_risk.runtime import evaluate_compliance_risk
+            cr = evaluate_compliance_risk(env)
+            checks.append(SecurityCheck("compliance_risk", cr.ok, "verified" if cr.ok else "; ".join(f"{n}:{d}" for n,o,d in cr.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("compliance_risk", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

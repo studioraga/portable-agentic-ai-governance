@@ -333,6 +333,84 @@
         "M4 AI-security validation",
         "signed AI-security manifest"
       ]
+    },
+    {
+      "control_id": "AIS-IMPACT-001",
+      "title": "AI systems require evidence-backed impact assessment and residual-risk decision",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/compliance_risk/impact.py"
+      ],
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-PRIVACY-001",
+      "title": "Privacy assessment requires purpose, data categories, legal basis, retention, rights and DPIA/transfer safeguards",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/compliance_risk/privacy.py"
+      ],
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-EXCEPT-001",
+      "title": "Control exceptions require independent approval, compensating controls and explicit expiry",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/compliance_risk/exceptions.py"
+      ],
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-TPRM-001",
+      "title": "Third parties require assessment, contract/data terms, residency, review and exit planning",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/compliance_risk/third_parties.py"
+      ],
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-CONTROL-001",
+      "title": "Continuous controls require current evidence, blocking failure action and freshness limits",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/compliance_risk/continuous_controls.py"
+      ],
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-COMPLY-001",
+      "title": "Compliance reports are evidence-backed summaries and cannot self-certify compliance",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/compliance_risk/reports.py"
+      ],
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ]
     }
   ]
 }

@@ -256,3 +256,8 @@ RUNTIME-PERMISSION TESTS PASS
 
 ## Milestone 4 boundary
 Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
+
+
+## Milestone 5 dependencies
+
+M5 requires Python 3.10+, Bash, OpenSSL with Ed25519 support, SHA-256 utilities, tar/gzip/install, writable owner-private storage, a validated M4 material set and its signed AI-security manifest. M5 currently declares zero third-party Python runtime dependencies. Jurisdiction-specific privacy/legal frameworks, enterprise GRC APIs and third-party assurance feeds are deployment-specific adapters and are not required for the deterministic reference validation. Run `scripts/m5/preflight_dependencies.sh` before M5 verification on every node.

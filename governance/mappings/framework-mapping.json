@@ -1,6 +1,6 @@
 {
-  "mapping_version": "2026-09-m4",
-  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. Validate against the organization's adopted framework revision before compliance use.",
+  "mapping_version": "2026-09-m5",
+  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. M5 reports are evidence summaries, not certification or legal opinions; validate the organization's adopted framework/privacy revision before compliance use.",
   "controls": {
     "AIS-GOV-001": {
       "nist_ai_rmf": [
@@ -286,6 +286,70 @@
       ],
       "owasp_genai": [
         "excessive_agency"
+      ]
+    },
+    "AIS-IMPACT-001": {
+      "nist_ai_rmf": [
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "iso_iec_42001": [
+        "impact_assessment",
+        "risk_management"
+      ]
+    },
+    "AIS-PRIVACY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MANAGE"
+      ],
+      "nist_privacy_framework": [
+        "IDENTIFY-P",
+        "GOVERN-P",
+        "CONTROL-P"
+      ]
+    },
+    "AIS-EXCEPT-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.RM",
+        "GV.RR"
+      ]
+    },
+    "AIS-TPRM-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.SC"
+      ]
+    },
+    "AIS-CONTROL-001": {
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "GV.OV"
+      ]
+    },
+    "AIS-COMPLY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "RS.AN"
       ]
     }
   }

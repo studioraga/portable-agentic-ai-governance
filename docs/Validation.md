@@ -238,3 +238,8 @@ Node2 is not required for M0-M1. No camera, media transport, GPU, or edge-servic
 
 ## Milestone 4 boundary
 Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
+
+
+## Milestone 5 validation
+
+Run dependency preflight first, then `scripts/m5/validate_m5_local.sh`. Required negative gates reject expired/self-approved exceptions, required-but-unapproved DPIAs, stale continuous controls and automated certification claims. Production acceptance requires `scripts/m5/validate_combined_node.sh` to pass M2+M3+M4+M5 simultaneously.

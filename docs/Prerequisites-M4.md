@@ -21,3 +21,9 @@ M4 declares zero third-party Python runtime dependencies. If `pyproject.toml` ga
 ## Node2 verifier
 
 Node2 requires Python >= 3.10, OpenSSL, the same M4 source, the M3 artifact lock, and verifier-only M4 material. It does not require the M4 private signing key or an LLM/embedding runtime.
+
+## Python 3.10 TOML compatibility
+
+M4 supports Python 3.10 and later. The dependency preflight does not directly import
+`tomllib`; it uses the repository's Python-3.10-safe deterministic dependency inventory.
+No `tomli` runtime dependency is required on verifier nodes.

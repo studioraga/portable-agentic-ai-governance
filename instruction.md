@@ -42,3 +42,8 @@ Software, models, containers, prompts, and tools are untrusted until determinist
 
 ## Milestone 4 boundary
 Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
+
+
+## Milestone 5 operating rule
+
+Compliance/risk automation may calculate, validate, monitor and report. It may not accept risk, self-approve exceptions, certify compliance, provide legal conclusions, or become an authorization boundary. Exception approval and compliance/accountability decisions remain explicit human responsibilities.

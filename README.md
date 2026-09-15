@@ -6,15 +6,27 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 
 ## Release status
 
-**v0.4.0 — Milestone 4 AI-system-security implementation candidate.**
+**v0.5.0 — Milestone 5 compliance and risk automation implementation candidate.**
 
 The frozen M0-M1 baseline remains tagged `m0-m1-v0.1.2`. Milestone 2 adds deterministic identity, RBAC+ABAC, TLS 1.3 mutual authentication, workload identity, protected secrets, provider-backed crypto, signed requests, persistent anti-replay, rate limiting, signed security audit, and fail-closed production dependency validation.
 
-Milestone 2 remains implemented and validated. Milestone 3 is frozen and adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy. Milestone 4 adds model governance, data provenance, pre-retrieval authorization, embedding controls, deterministic AI evaluation, AI threat modeling, and an explicit no-LLM-autonomy gate.
+Milestone 2 remains implemented and validated. Milestone 3 is frozen and adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy. Milestone 4 is frozen and adds model governance, data provenance, pre-retrieval authorization, embedding controls, deterministic AI evaluation, AI threat modeling, and an explicit no-LLM-autonomy gate. Milestone 5 adds deterministic impact/privacy assessments, exception governance, third-party risk, continuous-control freshness, and evidence-backed compliance reporting without autonomous approval or certification claims.
 
-See `docs/M4-AI-System-Security.md`, `docs/Prerequisites-M4.md`, `docs/Deployment-M4.md`, and `docs/Validation-M4.md`.
+See `docs/M5-Compliance-Risk-Automation.md`, `docs/Prerequisites-M5.md`, `docs/Deployment-M5.md`, and `docs/Validation-M5.md`.
 
 ## Implemented
+
+### Milestone 5
+
+- Evidence-backed AI/system impact assessments with inherent/residual risk and accountable decisions.
+- Privacy assessments covering purpose, data categories, legal basis, retention, data-subject rights, DPIA and transfer safeguards.
+- Default-deny exception register with independent approval, compensating controls and expiration.
+- Third-party/provider register with security assessment, contract/data terms, residency, review and exit planning.
+- Continuous-control records with signed evidence digests, blocking failure action and freshness limits, plus a release-authority refresh workflow and optional six-hour systemd timer.
+- Evidence-backed compliance reports that explicitly prohibit automated certification claims.
+- Signed SHA-256 M5 compliance/risk manifest bound to the M4 AI-security manifest.
+- Combined fail-closed M2+M3+M4+M5 production profile.
+- No LLM agent autonomy and no automated risk acceptance, exception approval, legal opinion or certification.
 
 ### Milestone 4
 

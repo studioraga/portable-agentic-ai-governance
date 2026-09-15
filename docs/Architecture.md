@@ -185,3 +185,10 @@ Deployment and validation execute with `umask 077`. The evidence ledger also for
 
 ## Milestone 4 boundary
 Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
+
+
+## Milestone 5 — Compliance and risk automation
+
+M5 consumes the secured M4 AI-system substrate and adds deterministic governance automation: impact assessment, privacy assessment, exception lifecycle, third-party risk, continuous-control freshness and evidence-backed reporting. M5 artifacts are digest-bound and signed, and the M5 manifest is cryptographically bound to the M4 AI-security manifest. The production profile requires M2 security, M3 supply-chain, M4 AI security and M5 compliance/risk gates simultaneously.
+
+Automation boundary: M5 can assess and report, but cannot accept risk, approve its own exceptions, certify compliance, render legal opinions, or introduce LLM agent autonomy.
