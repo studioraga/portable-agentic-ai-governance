@@ -274,3 +274,8 @@ M7 requires Python 3.10+, Bash, OpenSSL with Ed25519 support, sha256sum, install
 
 ## Milestone 8 — Approval-controlled actions
 M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
+
+
+## Milestone 9 — Security operations
+
+See `docs/Prerequisites-M9.md`. M9 adds no third-party Python runtime dependency.

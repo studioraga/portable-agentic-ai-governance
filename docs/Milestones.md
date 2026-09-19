@@ -10,8 +10,8 @@
 | 5 Risk/compliance automation | Implemented/validated | impact/privacy/exceptions/third parties/continuous controls/compliance reports | signed compliance/risk + continuous-control gate |
 | 6 First bounded agent | Implemented/validated | read-only analyst | grounded/citation/eval gate |
 | 7 Tool-using agent | Implemented/validated | typed mediated tools | schema+authorization+policy+budget+audit gate |
-| 8 Approval actions | Implementation candidate | four approval-controlled typed side effects | signed independent approval + replay/audit gate |
-| 9 SecOps | Planned | SIEM/IR/recovery | respond/recover gate |
+| 8 Approval actions | Implemented/validated | four approval-controlled typed side effects | signed independent approval + replay/audit gate |
+| 9 SecOps | Implementation candidate | SIEM/IR/recovery | respond/recover gate |
 | 10 Multi-agent | Planned | supervisor + specialists | bounded orchestration gate |
 
 ## Milestone 6 — First bounded agent
@@ -26,3 +26,7 @@ Status: implementation candidate. Adds `TOOL-ANALYST-001`, a signed typed-tool r
 
 ## Milestone 8 — Approval-controlled actions
 M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
+
+
+## Milestone 9 — Security operations
+M9 adds deterministic SIEM ingestion, incident response, bounded local containment, recovery verification and incident evidence preservation. See `docs/M9-Security-Operations.md`.

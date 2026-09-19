@@ -687,6 +687,97 @@
         "M8 validation suite",
         "signed M8 action audit"
       ]
+    },
+    {
+      "control_id": "AIS-SECOPS-SIEM-001",
+      "title": "M9 SIEM events are normalized, append-only and hash-chained",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security_ops/siem.py"
+      ],
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-SECOPS-INCIDENT-001",
+      "title": "M9 security incidents use deterministic severity gates and lifecycle transitions",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security_ops/incidents.py"
+      ],
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-SECOPS-CONTAIN-001",
+      "title": "M9 automated containment is restricted to signed-runbook local reversible actions",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security_ops/containment.py"
+      ],
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-SECOPS-RECOVER-001",
+      "title": "M9 recovery requires contained state, operator identity, passing checks and verified evidence",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security_ops/engine.py"
+      ],
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-SECOPS-EVIDENCE-001",
+      "title": "M9 incident evidence is copied into owner-private digest-verified preservation vaults",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security_ops/evidence.py"
+      ],
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-SECOPS-BIND-001",
+      "title": "M9 security-operations material is signed and bound to the exact M8 release manifest",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security_ops/runtime.py"
+      ],
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-SECOPS-BOUNDARY-001",
+      "title": "M9 has no LLM decision authority and external side effects remain behind M8/enterprise controls",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security_ops/runtime.py"
+      ],
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ]
     }
   ]
 }

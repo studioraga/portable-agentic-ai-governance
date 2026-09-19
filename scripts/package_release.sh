@@ -2,8 +2,8 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
-VERSION="${1:-0.8.0}"
-OUT="${2:-$ROOT/../portable-agentic-ai-governance-m0-m8-v${VERSION}.tar.gz}"
+VERSION="${1:-0.9.0}"
+OUT="${2:-$ROOT/../portable-agentic-ai-governance-m0-m9-v${VERSION}.tar.gz}"
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$TMP/portable-agentic-ai-governance"
 tar --exclude='./.git' --exclude='./.git/*' --exclude='./.venv' --exclude='./.venv/*' --exclude='./.pytest_cache' --exclude='./.pytest_cache/*' --exclude='*/__pycache__' --exclude='*/__pycache__/*' --exclude='*.pyc' --exclude='./var/*' -cf - . | tar -C "$TMP/portable-agentic-ai-governance" -xf -

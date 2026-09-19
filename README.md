@@ -198,3 +198,8 @@ For an M7 production release, M4, M5, M6 and M7 are one cryptographically cohere
 M8 introduces `ACTION-AGENT-001` and exactly four side-effect tools: `incident.create`, `rerun.request`, `ticket.create`, and `model.quarantine`. The agent cannot self-approve. Every call passes schema, authorization, policy, budget, independent Ed25519 approval, and fail-closed signed audit before the executor is reachable. Approvals bind the exact arguments and run/call identity, expire, and are persistently single-use. Node1 retains approval-signing private authority; Node2 receives only the approval public key. Reference side effects are durable local owner-private records; external ticket/SIEM/model-registry systems are optional adapters.
 
 See `docs/M8-Approval-Controlled-Actions.md`, `docs/Prerequisites-M8.md`, `docs/Deployment-M8.md`, and `docs/Validation-M8.md`.
+
+
+## Milestone 9 — Security operations
+
+M9 adds deterministic SIEM ingestion, incident lifecycle, signed-runbook local containment, recovery verification, and SHA-256 evidence preservation. External side effects remain behind M8 approvals or enterprise adapters. See `docs/M9-Security-Operations.md`.

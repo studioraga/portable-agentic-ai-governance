@@ -663,6 +663,139 @@
         "access_control",
         "traceability"
       ]
+    },
+    "AIS-SECOPS-SIEM-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ]
+    },
+    "AIS-SECOPS-INCIDENT-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ]
+    },
+    "AIS-SECOPS-CONTAIN-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ]
+    },
+    "AIS-SECOPS-RECOVER-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ]
+    },
+    "AIS-SECOPS-EVIDENCE-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ]
+    },
+    "AIS-SECOPS-BIND-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ]
+    },
+    "AIS-SECOPS-BOUNDARY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ]
     }
   }
 }

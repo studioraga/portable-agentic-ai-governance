@@ -1,0 +1,20 @@
+{
+  "artifacts": {
+    "recovery-signing-public.pem": "2352d6c450a76d7008fb6b550bcefe4609d1c028ac4b97ef81ff28a455ed5aed",
+    "security-ops-policy.json": "3432dcf4063bc759646193456e031d52f1d69cfe17842eac315f7e4143a43f1c"
+  },
+  "boundary": {
+    "external_side_effects": false,
+    "llm_decision_authority": false,
+    "m8_external_action_boundary": true
+  },
+  "capabilities": [
+    "siem",
+    "incidents",
+    "automated-local-containment",
+    "recovery",
+    "evidence-preservation"
+  ],
+  "m8_manifest_sha256": "a97e16746de7711bf3cfdba955238e5304a0fbd981c940f65c210d75a4e61248",
+  "version": "0.9.0"
+}

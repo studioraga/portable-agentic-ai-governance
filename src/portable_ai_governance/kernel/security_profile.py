@@ -149,6 +149,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         except Exception as exc:
             checks.append(SecurityCheck("action_agent", False, str(exc)))
 
+    if env.get("PAG_SECURITY_OPS_REQUIRED", "0") == "1":
+        try:
+            from ..security_ops.runtime import evaluate_security_ops
+            so = evaluate_security_ops(env)
+            checks.append(SecurityCheck("security_ops", so.ok, "verified-siem-ir-containment-recovery-evidence" if so.ok else "; ".join(f"{n}:{d}" for n,o,d in so.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("security_ops", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

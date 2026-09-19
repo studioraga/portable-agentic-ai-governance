@@ -152,3 +152,8 @@ Node1 generates M7 material with `deploy/m7/one_shot_node1.sh <m6-material> <m7-
 
 ## Milestone 8 — Approval-controlled actions
 M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
+
+
+## Milestone 9 — Security operations
+
+See `docs/Deployment-M9.md` for Node1 generation, verifier-only Node2 deployment, M4-M9 chain packaging, and full one-shot deployment.

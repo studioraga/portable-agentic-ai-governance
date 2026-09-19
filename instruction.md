@@ -60,3 +60,8 @@ A model or agent never calls an executor directly. Every M7 tool call must use t
 
 ## Milestone 8 — Approval-controlled actions
 M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
+
+
+## Milestone 9 — Security operations
+
+Add deterministic SIEM, incidents, bounded automated containment, recovery verification, and evidence preservation without bypassing the M8 approval boundary for external side effects.

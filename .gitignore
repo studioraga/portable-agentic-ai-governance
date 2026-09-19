@@ -47,3 +47,8 @@ var/m7-coherent/
 var/m8-material/
 var/m8-validation/
 var/m8-validation*/
+
+# M9 generated approval-controlled action material/state
+var/m9-material/
+var/m9-validation/
+var/m9-validation*/

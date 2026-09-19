@@ -256,3 +256,8 @@ Run `scripts/m7/preflight_dependencies.sh` and `scripts/m7/validate_m7_local.sh`
 
 ## Milestone 8 — Approval-controlled actions
 M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
+
+
+## Milestone 9 — Security operations
+
+See `docs/Validation-M9.md` for SIEM-chain, incident, containment, recovery, evidence-preservation, distributed-node and clean-release acceptance gates.
