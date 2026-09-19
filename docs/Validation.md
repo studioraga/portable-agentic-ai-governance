@@ -252,3 +252,7 @@ Run `scripts/m6/preflight_dependencies.sh`, then `scripts/m6/validate_m6_local.s
 ## Milestone 7 validation
 
 Run `scripts/m7/preflight_dependencies.sh` and `scripts/m7/validate_m7_local.sh`. Required negative gates cover malformed tool arguments, unknown tools, failed authorization, failed policy, exhausted budget, unavailable pre-execution audit, invalid output schema, side-effecting registry entries, and M6 binding drift. Physical Node1/Node2 acceptance must also execute a permitted tool through `scripts/m7/run_tool_agent.py`, verify the signed tool audit chain, run the combined M2-M7 production profile, and re-prove Node2-to-Node1 mTLS.
+
+
+## Milestone 8 — Approval-controlled actions
+M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.

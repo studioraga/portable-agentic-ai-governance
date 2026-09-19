@@ -9,8 +9,8 @@
 | 4 AI security | Implemented/validated | model governance/data provenance/RAG authorization/embedding controls/evals/threat model | signed deterministic AI-security/eval gate |
 | 5 Risk/compliance automation | Implemented/validated | impact/privacy/exceptions/third parties/continuous controls/compliance reports | signed compliance/risk + continuous-control gate |
 | 6 First bounded agent | Implemented/validated | read-only analyst | grounded/citation/eval gate |
-| 7 Tool-using agent | Implementation candidate | typed mediated tools | schema+authorization+policy+budget+audit gate |
-| 8 Approval actions | Planned | signed approval tokens | HITL gate |
+| 7 Tool-using agent | Implemented/validated | typed mediated tools | schema+authorization+policy+budget+audit gate |
+| 8 Approval actions | Implementation candidate | four approval-controlled typed side effects | signed independent approval + replay/audit gate |
 | 9 SecOps | Planned | SIEM/IR/recovery | respond/recover gate |
 | 10 Multi-agent | Planned | supervisor + specialists | bounded orchestration gate |
 
@@ -22,3 +22,7 @@ Status: implementation candidate. Implements Evidence Analyst only, with read-on
 ## Milestone 7 — Tool-using agent
 
 Status: implementation candidate. Adds `TOOL-ANALYST-001`, a signed typed-tool registry, signed agent/authorization policy, and a deterministic tool broker. Executors are unreachable until schema, authorization, policy and budget gates pass and the signed pre-execution audit is persisted. Side-effecting tools, direct executor access, delegation, approval, risk acceptance and compliance certification remain prohibited.
+
+
+## Milestone 8 — Approval-controlled actions
+M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.

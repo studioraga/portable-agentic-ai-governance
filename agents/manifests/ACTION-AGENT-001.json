@@ -1,0 +1,25 @@
+{
+  "agent_id": "ACTION-AGENT-001",
+  "budget": {
+    "max_steps": 6,
+    "max_tool_calls": 4
+  },
+  "permissions": {
+    "deny": [
+      "approval.issue",
+      "approval.self",
+      "risk.accept",
+      "exception.approve",
+      "compliance.certify",
+      "agent.delegate"
+    ],
+    "request": [
+      "incident.create",
+      "rerun.request",
+      "ticket.create",
+      "model.quarantine"
+    ]
+  },
+  "purpose": "Execute four bounded side effects only after independent signed approval",
+  "version": "0.8.0"
+}

@@ -192,3 +192,9 @@ See `docs/M7-Tool-Using-Agent.md`, `docs/Prerequisites-M7.md`, `docs/Deployment-
 ### M7 release-chain invariant
 
 For an M7 production release, M4, M5, M6 and M7 are one cryptographically coherent generation. The final M5 release snapshot is frozen once M6/M7 bind it; the M5 continuous-control timer must not mutate that directory in place. New M5 evidence requires a new downstream M6/M7 attestation generation.
+
+
+## Milestone 8 — Approval-controlled actions
+M8 introduces `ACTION-AGENT-001` and exactly four side-effect tools: `incident.create`, `rerun.request`, `ticket.create`, and `model.quarantine`. The agent cannot self-approve. Every call passes schema, authorization, policy, budget, independent Ed25519 approval, and fail-closed signed audit before the executor is reachable. Approvals bind the exact arguments and run/call identity, expire, and are persistently single-use. Node1 retains approval-signing private authority; Node2 receives only the approval public key. Reference side effects are durable local owner-private records; external ticket/SIEM/model-registry systems are optional adapters.
+
+See `docs/M8-Approval-Controlled-Actions.md`, `docs/Prerequisites-M8.md`, `docs/Deployment-M8.md`, and `docs/Validation-M8.md`.

@@ -270,3 +270,7 @@ M6 requires Python 3.10+, Bash, OpenSSL Ed25519, SHA-256 utilities, tar/gzip/ins
 ## Milestone 7 dependencies
 
 M7 requires Python 3.10+, Bash, OpenSSL with Ed25519 support, sha256sum, install, tar/gzip, validated M2 and M6 runtime material, and owner-private local storage. It adds zero third-party Python runtime dependencies. The M2 `audit_signing` secret and policy catalog are runtime dependencies for real tool invocation. Run `scripts/m7/preflight_dependencies.sh` on every node before deployment.
+
+
+## Milestone 8 — Approval-controlled actions
+M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.

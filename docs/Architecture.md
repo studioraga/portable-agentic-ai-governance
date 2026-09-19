@@ -73,7 +73,7 @@ Add one read-only Evidence/Assurance Analyst with versioned model/prompt/tool id
 Add typed least-privilege tools. Every tool call passes schema -> principal authorization -> agent authorization -> policy -> budget -> audit.
 
 ### Milestone 8 — Approval-controlled actions
-Permit only narrowly bounded side effects such as create incident, request rerun, create ticket, or quarantine candidate model. High-impact actions require signed human approval.
+Permit exactly four bounded reference side effects: `incident.create`, `rerun.request`, `ticket.create`, and `model.quarantine`. Every call passes schema -> authorization -> policy -> budget -> approval -> audit. Approval is an independent Ed25519-signed, exact-arguments-bound, short-lived, single-use artifact; ACTION-AGENT-001 cannot sign or self-approve it. Node2 receives the approval public key only. Reference executors write owner-private durable local state; external systems remain deployment adapters behind the same boundary.
 
 ### Milestone 9 — Security operations
 Add SIEM/OpenTelemetry security events, incident triage, evidence preservation, containment, credential/key incident response, recovery and postmortem control feedback.

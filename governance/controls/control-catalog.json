@@ -574,6 +574,119 @@
         "M7 side-effect boundary test",
         "signed M7 tool-agent manifest"
       ]
+    },
+    {
+      "control_id": "AIS-ACTION-SCHEMA-001",
+      "title": "Every M8 side-effect action has strict typed input and output schemas",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ]
+    },
+    {
+      "control_id": "AIS-ACTION-AUTH-001",
+      "title": "Every M8 side-effect action requires deterministic RBAC/ABAC authorization",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ]
+    },
+    {
+      "control_id": "AIS-ACTION-POLICY-001",
+      "title": "M8 side effects require deterministic policy with approval_required=true",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
+      "required_roles": [
+        "action_agent"
+      ],
+      "predicates": {
+        "tool_gateway": true,
+        "side_effecting": true,
+        "approval_required": true
+      },
+      "approval_required": true
+    },
+    {
+      "control_id": "AIS-ACTION-BUDGET-001",
+      "title": "M8 side-effect attempts consume bounded execution budget",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ]
+    },
+    {
+      "control_id": "AIS-ACTION-APPROVAL-001",
+      "title": "M8 side effects require independently issued signed argument-bound approvals",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ]
+    },
+    {
+      "control_id": "AIS-ACTION-REPLAY-001",
+      "title": "M8 approvals are single-use and persistently replay-protected",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ]
+    },
+    {
+      "control_id": "AIS-ACTION-AUDIT-001",
+      "title": "M8 actions require signed pre-execution and result audit evidence",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ]
+    },
+    {
+      "control_id": "AIS-ACTION-BOUNDARY-001",
+      "title": "M8 agent cannot self-approve, accept risk, certify compliance, delegate or bypass executors",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ]
     }
   ]
 }

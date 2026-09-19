@@ -56,3 +56,7 @@ The Evidence Analyst is read-only. It may list, inspect, verify and summarize al
 ## Milestone 7 operating rule
 
 A model or agent never calls an executor directly. Every M7 tool call must use the signed registry and pass input schema validation, deterministic RBAC/ABAC authorization, deterministic policy, monotonic budget, and a signed pre-execution audit before the executor can run. Tool output is schema checked and result-audited. M7 side effects are prohibited; approval-controlled side effects begin only at M8.
+
+
+## Milestone 8 — Approval-controlled actions
+M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.

@@ -141,6 +141,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         except Exception as exc:
             checks.append(SecurityCheck("tool_agent", False, str(exc)))
 
+    if env.get("PAG_ACTION_AGENT_REQUIRED", "0") == "1":
+        try:
+            from ..action_agent.runtime import evaluate_action_agent
+            aa = evaluate_action_agent(env)
+            checks.append(SecurityCheck("action_agent", aa.ok, "verified-approval-controlled-actions" if aa.ok else "; ".join(f"{n}:{d}" for n,o,d in aa.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("action_agent", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

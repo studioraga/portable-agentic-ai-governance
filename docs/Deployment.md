@@ -148,3 +148,7 @@ Use `deploy/m6/one_shot_node1.sh <m3-material> <m4-material> <m5-material> <m6-m
 ## Milestone 7 deployment
 
 Node1 generates M7 material with `deploy/m7/one_shot_node1.sh <m6-material> <m7-material>`. Package verifier-only material with `deploy/m7/package_verifier_material.sh` and never transfer `signing-private.pem`. Node2 uses `deploy/m7/one_shot_node2.sh <m7-verifier-material> <m6-manifest>`. Full M0-M7 one-shot scripts are provided for both nodes. Runtime tool smoke tests additionally use the installed M2 environment for policy and signed audit, and the installed M6 environment for evidence tools.
+
+
+## Milestone 8 — Approval-controlled actions
+M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
