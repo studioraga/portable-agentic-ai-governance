@@ -36,3 +36,9 @@ var/m5-validation/
 # M6 generated bounded-agent evidence/material
 var/m6-material/
 var/m6-validation/
+
+# M7 generated typed-tool agent evidence/material
+var/m7-material/
+var/m7-validation/
+var/m7-validation*/
+var/m7-coherent/

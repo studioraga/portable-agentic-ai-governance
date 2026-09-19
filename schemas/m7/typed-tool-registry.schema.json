@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M7 typed tool registry",
+  "type": "object",
+  "required": [
+    "version",
+    "default",
+    "tools"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.7.0"
+    },
+    "default": {
+      "const": "deny"
+    },
+    "side_effecting_tools": {
+      "const": false
+    },
+    "tools": {
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

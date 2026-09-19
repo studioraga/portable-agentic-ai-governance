@@ -143,3 +143,8 @@ Use `deploy/m5/one_shot_node1.sh <m4-material> <m5-material>` on the release-aut
 ## Milestone 6 deployment
 
 Use `deploy/m6/one_shot_node1.sh <m3-material> <m4-material> <m5-material> <m6-material>` on the release authority. Package verifier-only material with `deploy/m6/package_verifier_material.sh`; never transfer `signing-private.pem`. Deploy verifier material on Node2 with `deploy/m6/one_shot_node2.sh`. Full M0–M6 one-shot scripts are provided for both nodes.
+
+
+## Milestone 7 deployment
+
+Node1 generates M7 material with `deploy/m7/one_shot_node1.sh <m6-material> <m7-material>`. Package verifier-only material with `deploy/m7/package_verifier_material.sh` and never transfer `signing-private.pem`. Node2 uses `deploy/m7/one_shot_node2.sh <m7-verifier-material> <m6-manifest>`. Full M0-M7 one-shot scripts are provided for both nodes. Runtime tool smoke tests additionally use the installed M2 environment for policy and signed audit, and the installed M6 environment for evidence tools.

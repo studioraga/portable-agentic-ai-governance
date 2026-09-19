@@ -6,15 +6,24 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 
 ## Release status
 
-**v0.6.0 — Milestone 6 first bounded read-only Evidence Analyst implementation candidate.**
+**v0.7.0 — Milestone 7 mediated typed-tool agent implementation candidate.**
 
 The frozen M0-M1 baseline remains tagged `m0-m1-v0.1.2`. Milestone 2 adds deterministic identity, RBAC+ABAC, TLS 1.3 mutual authentication, workload identity, protected secrets, provider-backed crypto, signed requests, persistent anti-replay, rate limiting, signed security audit, and fail-closed production dependency validation.
 
-Milestone 2 remains implemented and validated. Milestone 3 is frozen and adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy. Milestone 4 is frozen and adds model governance, data provenance, pre-retrieval authorization, embedding controls, deterministic AI evaluation, AI threat modeling, and an explicit no-LLM-autonomy gate. Milestone 5 adds deterministic impact/privacy assessments, exception governance, third-party risk, continuous-control freshness, and evidence-backed compliance reporting without autonomous approval or certification claims.
+Milestone 2 remains implemented and validated. Milestone 3 is frozen and adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy. Milestone 4 is frozen and adds model governance, data provenance, pre-retrieval authorization, embedding controls, deterministic AI evaluation, AI threat modeling, and an explicit no-LLM-autonomy gate. Milestone 5 adds deterministic impact/privacy assessments, exception governance, third-party risk, continuous-control freshness, and evidence-backed compliance reporting without autonomous approval or certification claims. Milestone 6 is frozen and adds the bounded read-only Evidence Analyst. Milestone 7 adds a typed-tool broker that mediates every tool call through schema validation, deterministic authorization, governance policy, monotonic budget, and signed audit; side effects remain prohibited until M8.
 
 See `docs/M5-Compliance-Risk-Automation.md`, `docs/Prerequisites-M5.md`, `docs/Deployment-M5.md`, and `docs/Validation-M5.md`.
 
 ## Implemented
+
+### Milestone 7
+
+- Adds `TOOL-ANALYST-001` and a signed typed-tool registry.
+- Every tool invocation is mediated by input schema -> RBAC/ABAC authorization -> deterministic policy -> step/tool budget -> signed pre-execution audit.
+- Tool outputs are schema validated and a signed result audit record is appended.
+- Audit unavailability fails closed before executor invocation.
+- M7 rejects side-effecting tools and direct executor access; M8 remains the approval-controlled side-effect milestone.
+- M7 is cryptographically bound to the exact M6 Evidence Analyst manifest and composes with the M2-M6 production profile.
 
 ### Milestone 5
 
@@ -172,3 +181,14 @@ M0-M1 generalizes proven patterns from the supplied edge-AI evidence project: fa
 M6 introduces `EVIDENCE-ANALYST-001`, the first bounded production agent. It is read-only, deny-by-default, evidence-catalog constrained, digest-bound to its inputs, budget-limited, and cryptographically chained to M5. It has no shell/network/write/delete/approval/risk-acceptance/compliance-certification/delegation capability. The deterministic M2–M5 controls remain the security and governance boundary.
 
 See `docs/M6-Bounded-Evidence-Analyst.md`, `docs/Prerequisites-M6.md`, `docs/Deployment-M6.md`, and `docs/Validation-M6.md`.
+
+
+## Milestone 7 — Tool-using agent
+
+M7 introduces `TOOL-ANALYST-001`. It does not grant free-form execution. Its only executable capabilities come from the signed typed-tool registry, and every call passes the mandatory deterministic mediation path: schema, authorization, policy, budget, and fail-closed signed audit. M7 deliberately permits only non-side-effecting evidence tools; approval-controlled writes remain M8 scope.
+
+See `docs/M7-Tool-Using-Agent.md`, `docs/Prerequisites-M7.md`, `docs/Deployment-M7.md`, and `docs/Validation-M7.md`.
+
+### M7 release-chain invariant
+
+For an M7 production release, M4, M5, M6 and M7 are one cryptographically coherent generation. The final M5 release snapshot is frozen once M6/M7 bind it; the M5 continuous-control timer must not mutate that directory in place. New M5 evidence requires a new downstream M6/M7 attestation generation.

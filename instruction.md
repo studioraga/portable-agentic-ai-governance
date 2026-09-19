@@ -33,7 +33,7 @@ Do not claim a milestone passed from architecture or documentation alone; execut
 14. Secrets must be purpose-separated, never committed, and eventually replaced by managed secret/KMS/HSM implementations.
 
 ## Current status
-Milestones 0 and 1 are frozen at tag `m0-m1-v0.1.2`. Milestone 2 is implemented as the v0.2.0 security-control-plane candidate and must pass its local/distributed and node-specific validation gates before tagging. Milestones 3-10 remain planned.
+Milestones 0 and 1 are frozen at tag `m0-m1-v0.1.2`. Milestone 2 is implemented as the v0.2.0 security-control-plane candidate and must pass its local/distributed and node-specific validation gates before tagging. Milestones 0-6 are frozen/validated baselines; Milestone 7 is the current implementation candidate. Milestones 8-10 remain planned.
 
 ## Milestone 3 supply-chain rule
 
@@ -51,3 +51,8 @@ Compliance/risk automation may calculate, validate, monitor and report. It may n
 ## Milestone 6 operating rule
 
 The Evidence Analyst is read-only. It may list, inspect, verify and summarize allowlisted evidence. It must never write/delete evidence, execute shell/network actions, modify policy, accept risk, approve exceptions, certify compliance, delegate to another agent, or replace deterministic authorization. Any future LLM reasoning adapter remains subordinate to this signed capability boundary.
+
+
+## Milestone 7 operating rule
+
+A model or agent never calls an executor directly. Every M7 tool call must use the signed registry and pass input schema validation, deterministic RBAC/ABAC authorization, deterministic policy, monotonic budget, and a signed pre-execution audit before the executor can run. Tool output is schema checked and result-audited. M7 side effects are prohibited; approval-controlled side effects begin only at M8.

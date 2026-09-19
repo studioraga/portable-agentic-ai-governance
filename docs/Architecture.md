@@ -196,3 +196,12 @@ Automation boundary: M5 can assess and report, but cannot accept risk, approve i
 ## Milestone 6 — First bounded Evidence Analyst
 
 M6 adds a read-only evidence-consumption layer above the deterministic M2–M5 control plane. A signed capability policy exposes only list/metadata/read/verify/summarize operations over a deny-by-default SHA-256 evidence catalog. No side-effecting tool exists. The M6 manifest is Ed25519 signed and bound to the exact M5 manifest. Initial portable evidence snapshots contain non-secret M3–M5 artifacts; M2 remains independently enforced by the combined production profile rather than exposing secret M2 runtime material to the agent.
+
+
+## Milestone 7 — Mediated typed-tool agent
+
+M7 places a deterministic `ToolBroker` between agent reasoning and executors. A registered call follows `input schema -> RBAC/ABAC authorization -> deterministic control policy -> RunBudget -> signed pre-execution audit -> executor -> output schema -> signed result audit`. Failure at any gate is denied and audited; failure to persist the pre-execution audit prevents executor invocation. The signed M7 manifest binds policy, registry and authorization rules to the exact M6 manifest. M7 allows only non-side-effecting evidence tools; M8 owns approval-controlled side effects.
+
+### Signed-generation immutability
+
+Signed cross-milestone manifests form a generation chain. Once a downstream milestone binds an upstream manifest, the bound upstream release directory is immutable. Operational refresh that changes a signed upstream manifest is a new attestation generation and requires downstream rebuild/re-signing; background mutation of a release-bound directory is fail-closed.

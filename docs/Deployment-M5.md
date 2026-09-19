@@ -63,3 +63,7 @@ Optional six-hour systemd timer:
 ```
 
 The timer exists only on the signing/release-authority node. Verifier-only nodes never receive the private M5 signing key; refreshed verifier material must be redistributed through the approved deployment channel.
+
+## Downstream-bound M5 material (M6/M7 and later)
+
+When M6/M7 bind an M5 release, `var/m5-material/.pag-downstream-bound.json` marks that M5 directory immutable. The M5 builder, refresh command, and timer installer refuse to mutate it. To produce new continuous-control evidence after downstream agents exist, create a new release generation through the latest downstream full release workflow so M5, M6, M7 (and later milestones) are rebuilt/re-signed in dependency order and redistributed together.

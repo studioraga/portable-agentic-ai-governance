@@ -1,0 +1,15 @@
+{
+  "agent_id": "TOOL-ANALYST-001",
+  "milestone": "M7",
+  "mode": "typed-tools-mediated",
+  "description": "Bounded tool-using agent. All calls require schema, authorization, policy, budget and signed audit mediation. Side effects are prohibited until M8.",
+  "required_pipeline": [
+    "schema",
+    "authorization",
+    "policy",
+    "budget",
+    "audit"
+  ],
+  "side_effecting_tools": false,
+  "direct_executor_access": false
+}

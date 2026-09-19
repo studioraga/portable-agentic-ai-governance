@@ -1,6 +1,6 @@
 {
-  "mapping_version": "0.6.0",
-  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. M5 reports are evidence summaries, not certification or legal opinions; validate the organization's adopted framework/privacy revision before compliance use.",
+  "mapping_version": "0.7.0",
+  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. M7 mappings emphasize typed tool mediation, least privilege, authorization, audit/non-repudiation, budget limits and continued prohibition of side effects until M8.",
   "controls": {
     "AIS-GOV-001": {
       "nist_ai_rmf": [
@@ -446,6 +446,90 @@
         "governance",
         "human_oversight",
         "monitoring"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-TOOL-SCHEMA-001": {
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "DE.CM"
+      ],
+      "owasp_genai": [
+        "agent_tool_validation",
+        "excessive_agency_mitigation"
+      ]
+    },
+    "AIS-TOOL-AUTH-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency_mitigation"
+      ]
+    },
+    "AIS-TOOL-POLICY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency_mitigation"
+      ]
+    },
+    "AIS-TOOL-BUDGET-001": {
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "DE.CM"
+      ],
+      "owasp_genai": [
+        "unbounded_consumption_mitigation"
+      ]
+    },
+    "AIS-TOOL-AUDIT-001": {
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.AN"
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "traceability"
+      ]
+    },
+    "AIS-TOOL-BOUNDARY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control"
       ],
       "owasp_genai": [
         "excessive_agency",

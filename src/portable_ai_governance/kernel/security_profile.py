@@ -133,6 +133,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         except Exception as exc:
             checks.append(SecurityCheck("evidence_analyst", False, str(exc)))
 
+    if env.get("PAG_TOOL_AGENT_REQUIRED", "0") == "1":
+        try:
+            from ..tool_agent.runtime import evaluate_tool_agent
+            ta = evaluate_tool_agent(env)
+            checks.append(SecurityCheck("tool_agent", ta.ok, "verified-mediated-typed-tools" if ta.ok else "; ".join(f"{n}:{d}" for n,o,d in ta.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("tool_agent", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

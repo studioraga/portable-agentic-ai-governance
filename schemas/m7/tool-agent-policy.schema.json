@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M7 tool agent policy",
+  "type": "object",
+  "required": [
+    "version",
+    "agent_id",
+    "required_pipeline",
+    "budget",
+    "side_effecting_tools"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.7.0"
+    },
+    "agent_id": {
+      "const": "TOOL-ANALYST-001"
+    },
+    "side_effecting_tools": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

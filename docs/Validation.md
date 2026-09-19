@@ -247,3 +247,8 @@ Run dependency preflight first, then `scripts/m5/validate_m5_local.sh`. Required
 ## Milestone 6 validation
 
 Run `scripts/m6/preflight_dependencies.sh`, then `scripts/m6/validate_m6_local.sh`. Negative gates reject side-effecting operations, catalog path traversal, evidence digest tampering and M5 binding drift. `scripts/m6/validate_combined_node.sh` requires the M2+M3+M4+M5+M6 production profile to pass as one fail-closed gate.
+
+
+## Milestone 7 validation
+
+Run `scripts/m7/preflight_dependencies.sh` and `scripts/m7/validate_m7_local.sh`. Required negative gates cover malformed tool arguments, unknown tools, failed authorization, failed policy, exhausted budget, unavailable pre-execution audit, invalid output schema, side-effecting registry entries, and M6 binding drift. Physical Node1/Node2 acceptance must also execute a permitted tool through `scripts/m7/run_tool_agent.py`, verify the signed tool audit chain, run the combined M2-M7 production profile, and re-prove Node2-to-Node1 mTLS.

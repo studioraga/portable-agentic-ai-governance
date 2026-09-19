@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M7 tool authorization rules",
+  "type": "object",
+  "required": [
+    "version",
+    "default",
+    "rules"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.7.0"
+    },
+    "default": {
+      "const": "deny"
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

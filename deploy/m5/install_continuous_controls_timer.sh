@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"; M4="${1:?usage: install_continuous_controls_timer.sh <m4-material> <m5-material>}"; M5="${2:?m5 material}"
+[ ! -f "$M5/.pag-downstream-bound.json" ] || { echo "FAIL: refusing timer install on downstream-bound M5 release material; create a separate pre-M6 operational M5 generation or a new downstream attestation generation"; exit 2; }
 USER_NAME="${PAG_SERVICE_USER:-$USER}"; PY="${PAG_PYTHON:-$(command -v python3)}"
 sudo tee /etc/systemd/system/pag-m5-continuous-controls.service >/dev/null <<EOF2
 [Unit]

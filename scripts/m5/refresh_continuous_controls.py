@@ -11,6 +11,9 @@ from portable_ai_governance.supply_chain.signing import sign_blob
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--m4-material',required=True); ap.add_argument('--m5-material',required=True); a=ap.parse_args()
     m4=Path(a.m4_material).resolve(); m5=Path(a.m5_material).resolve(); key=m5/'signing-private.pem'
+    freeze=m5/'.pag-downstream-bound.json'
+    if freeze.is_file():
+        raise SystemExit('FAIL: M5 material is downstream-bound/frozen by M6/M7. Create a new release generation and rebuild downstream attestations instead of refreshing this directory in place.')
     if not key.is_file(): raise SystemExit('FAIL: M5 release-authority signing-private.pem required for refresh')
     now=datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
     evidence={'AIS-IAM-001':m4/'ai-security-manifest.json','AIS-LOCK-001':m4/'ai-security-manifest.json','AIS-MODEL-001':m4/'model-governance.json','AIS-RAG-001':m4/'retrieval-policy.json','AIS-EVAL-001':m4/'evaluation-results.json'}

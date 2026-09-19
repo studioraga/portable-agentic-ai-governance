@@ -13,6 +13,9 @@ def main():
     os.umask(0o077)
     ap=argparse.ArgumentParser(); ap.add_argument('--m4-material',required=True); ap.add_argument('--out',required=True); a=ap.parse_args()
     m4=Path(a.m4_material).resolve(); out=Path(a.out).resolve(); out.mkdir(parents=True,exist_ok=True,mode=0o700)
+    freeze=out/'.pag-downstream-bound.json'
+    if freeze.is_file():
+        raise SystemExit('FAIL: refusing to rebuild downstream-bound/frozen M5 material in place. Use the M7 full release-generation workflow so M6/M7 are rebuilt and re-bound atomically in sequence.')
     m4manifest=m4/'ai-security-manifest.json'
     if not m4manifest.is_file(): raise SystemExit(f'FAIL: M4 manifest missing: {m4manifest}')
     now=datetime.now(timezone.utc); nowz=now.isoformat().replace('+00:00','Z'); review=(now+timedelta(days=90)).date().isoformat()

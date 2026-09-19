@@ -1,5 +1,5 @@
 {
-  "catalog_version": "0.6.0",
+  "catalog_version": "0.7.0",
   "controls": [
     {
       "control_id": "AIS-GOV-001",
@@ -479,6 +479,100 @@
       "evidence": [
         "M6 bounded-agent validation",
         "signed M6 Evidence Analyst manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-TOOL-SCHEMA-001",
+      "title": "Every M7 tool call requires typed input and output schema validation",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/tool_agent/schema.py",
+        "src/portable_ai_governance/tool_agent/broker.py"
+      ],
+      "evidence": [
+        "M7 typed-tool validation",
+        "signed M7 tool-agent manifest",
+        "signed M7 tool audit"
+      ]
+    },
+    {
+      "control_id": "AIS-TOOL-AUTH-001",
+      "title": "Every M7 tool call is authorized through deterministic RBAC/ABAC before execution",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/tool_agent/authorization.py",
+        "src/portable_ai_governance/tool_agent/broker.py"
+      ],
+      "evidence": [
+        "M7 authorization negative tests",
+        "signed M7 tool audit"
+      ]
+    },
+    {
+      "control_id": "AIS-TOOL-POLICY-001",
+      "title": "Every M7 tool call requires deterministic governance policy satisfaction",
+      "enabled": true,
+      "required_roles": [
+        "tool_agent"
+      ],
+      "predicates": {
+        "tool_gateway": true,
+        "side_effecting": false
+      },
+      "approval_required": false,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security/policy_adapter.py",
+        "src/portable_ai_governance/tool_agent/broker.py"
+      ],
+      "evidence": [
+        "M7 policy negative tests",
+        "signed M7 tool audit"
+      ]
+    },
+    {
+      "control_id": "AIS-TOOL-BUDGET-001",
+      "title": "Every M7 tool call consumes deterministic step and tool-call budget before execution",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/kernel/budgets.py",
+        "src/portable_ai_governance/tool_agent/broker.py"
+      ],
+      "evidence": [
+        "M7 budget exhaustion test",
+        "signed M7 tool audit"
+      ]
+    },
+    {
+      "control_id": "AIS-TOOL-AUDIT-001",
+      "title": "M7 tool execution requires fail-closed signed pre-execution and result audit records",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/security/audit.py",
+        "src/portable_ai_governance/tool_agent/broker.py"
+      ],
+      "evidence": [
+        "signed chained M7 tool audit",
+        "audit-unavailable negative test"
+      ]
+    },
+    {
+      "control_id": "AIS-TOOL-BOUNDARY-001",
+      "title": "M7 tool registry prohibits side effects, direct executor bypass, delegation and approval authority",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/tool_agent/registry.py",
+        "src/portable_ai_governance/tool_agent/policy.py",
+        "src/portable_ai_governance/kernel/security_profile.py"
+      ],
+      "evidence": [
+        "M7 side-effect boundary test",
+        "signed M7 tool-agent manifest"
       ]
     }
   ]
