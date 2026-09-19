@@ -205,3 +205,7 @@ M7 places a deterministic `ToolBroker` between agent reasoning and executors. A 
 ### Signed-generation immutability
 
 Signed cross-milestone manifests form a generation chain. Once a downstream milestone binds an upstream manifest, the bound upstream release directory is immutable. Operational refresh that changes a signed upstream manifest is a new attestation generation and requires downstream rebuild/re-signing; background mutation of a release-bound directory is fail-closed.
+
+## M10 implemented architecture — supervised multi-agent workflow
+
+M10 implements the planned supervisor-directed specialist workflow as a fixed signed topology. Risk, Threat and Privacy specialists emit typed digest-bound handoffs; Control maps findings to deterministic controls; Assurance checks evidence/control coverage; a separate human workflow decision key finalizes the governance disposition. Direct peer calls, agent delegation, side effects, M8 approval authority and M9 SecOps authority remain prohibited to M10 agents.

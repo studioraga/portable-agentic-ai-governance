@@ -6,15 +6,26 @@ The repository is deliberately framework-neutral. LangGraph, CrewAI, custom stat
 
 ## Release status
 
-**v0.7.0 — Milestone 7 mediated typed-tool agent implementation candidate.**
+**v0.10.0 — Milestone 10 supervised multi-agent workflow implementation candidate.**
 
 The frozen M0-M1 baseline remains tagged `m0-m1-v0.1.2`. Milestone 2 adds deterministic identity, RBAC+ABAC, TLS 1.3 mutual authentication, workload identity, protected secrets, provider-backed crypto, signed requests, persistent anti-replay, rate limiting, signed security audit, and fail-closed production dependency validation.
 
-Milestone 2 remains implemented and validated. Milestone 3 is frozen and adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy. Milestone 4 is frozen and adds model governance, data provenance, pre-retrieval authorization, embedding controls, deterministic AI evaluation, AI threat modeling, and an explicit no-LLM-autonomy gate. Milestone 5 adds deterministic impact/privacy assessments, exception governance, third-party risk, continuous-control freshness, and evidence-backed compliance reporting without autonomous approval or certification claims. Milestone 6 is frozen and adds the bounded read-only Evidence Analyst. Milestone 7 adds a typed-tool broker that mediates every tool call through schema validation, deterministic authorization, governance policy, monotonic budget, and signed audit; side effects remain prohibited until M8.
+Milestone 2 remains implemented and validated. Milestone 3 is frozen and adds signed CycloneDX software and AI/ML BOMs, model/container/prompt/tool digest locks, in-toto/SLSA-style provenance, Ed25519 verification, and fail-closed vulnerability policy. Milestone 4 is frozen and adds model governance, data provenance, pre-retrieval authorization, embedding controls, deterministic AI evaluation, AI threat modeling, and an explicit no-LLM-autonomy gate. Milestone 5 adds deterministic impact/privacy assessments, exception governance, third-party risk, continuous-control freshness, and evidence-backed compliance reporting without autonomous approval or certification claims. Milestone 6 is frozen and adds the bounded read-only Evidence Analyst. Milestone 7 adds typed-tool mediation. Milestone 8 adds independently approved bounded side effects. Milestone 9 adds deterministic security operations, containment, recovery, and evidence preservation. Milestone 10 adds a fixed supervised multi-agent governance workflow with typed digest-bound handoffs, assurance gating, and independent human workflow decision while preserving all M8/M9 authority boundaries.
 
 See `docs/M5-Compliance-Risk-Automation.md`, `docs/Prerequisites-M5.md`, `docs/Deployment-M5.md`, and `docs/Validation-M5.md`.
 
 ## Implemented
+
+### Milestone 10
+
+- Adds `GOVERNANCE-SUPERVISOR-001`, `RISK-AGENT-001`, `THREAT-AGENT-001`, `PRIVACY-AGENT-001`, `CONTROL-AGENT-001`, and `ASSURANCE-AGENT-001`.
+- Uses a signed fixed topology; specialist agents cannot directly call one another.
+- Every handoff is typed and SHA-256 digest-bound to its output and preceding stage.
+- The Control Agent maps findings to deterministic control recommendations but has no execution authority.
+- The Assurance Agent verifies evidence/control coverage and can block human approval.
+- Final workflow disposition requires an independent Ed25519-signed human decision.
+- M10 approvals finalize governance proposals only; they do not authorize M8 side effects or M9 containment/recovery.
+- Workflow lifecycle is recorded in an owner-private hash-chained journal with persistent single-use decision replay protection.
 
 ### Milestone 7
 
@@ -203,3 +214,10 @@ See `docs/M8-Approval-Controlled-Actions.md`, `docs/Prerequisites-M8.md`, `docs/
 ## Milestone 9 — Security operations
 
 M9 adds deterministic SIEM ingestion, incident lifecycle, signed-runbook local containment, recovery verification, and SHA-256 evidence preservation. External side effects remain behind M8 approvals or enterprise adapters. See `docs/M9-Security-Operations.md`.
+
+
+## Milestone 10 — Multi-agent workflows
+
+M10 introduces a fixed Governance Supervisor -> Risk/Threat/Privacy specialists -> Control Agent -> Assurance Agent -> Human Decision workflow. Cooperation is typed, digest-bound, budgeted and hash-chain audited. No M10 agent receives side-effect, risk-acceptance, compliance-certification, approval-signing or SecOps authority. M8 remains the side-effect boundary and M9 remains the containment/recovery boundary. The reference reasoning backend is deterministic and offline; an LLM adapter may be added later only behind the same contracts and evaluation gates.
+
+See `docs/M10-Multi-Agent-Workflows.md`, `docs/Prerequisites-M10.md`, `docs/Deployment-M10.md`, and `docs/Validation-M10.md`.

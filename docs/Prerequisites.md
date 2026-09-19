@@ -279,3 +279,7 @@ M8 adds exactly four typed side effects behind independently issued signed singl
 ## Milestone 9 — Security operations
 
 See `docs/Prerequisites-M9.md`. M9 adds no third-party Python runtime dependency.
+
+## Milestone 10 prerequisites
+
+M10 adds no third-party Python runtime dependency. It requires Python 3.10+, stdlib `fcntl`, OpenSSL Ed25519 support, SHA-256 utilities, owner-private local storage and a validated coherent M9 generation. GPU/LLM/orchestrator frameworks remain optional and are not trusted security dependencies. See `docs/Prerequisites-M10.md`.

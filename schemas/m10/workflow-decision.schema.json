@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PAG M10 Signed Workflow Decision",
+  "type": "object",
+  "required": ["schema","grant","signature"],
+  "properties": {"schema":{"const":"pag-m10-signed-workflow-decision-v1"}},
+  "additionalProperties": false
+}

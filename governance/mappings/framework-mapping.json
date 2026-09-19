@@ -1,6 +1,6 @@
 {
-  "mapping_version": "0.8.0",
-  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. M7 mappings emphasize typed tool mediation, least privilege, authorization, audit/non-repudiation, budget limits and continued prohibition of side effects until M8.",
+  "mapping_version": "0.10.0",
+  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. M10 adds supervised typed multi-agent cooperation, assurance, human decision, traceability, and preserved M8/M9 authority boundaries.",
   "controls": {
     "AIS-GOV-001": {
       "nist_ai_rmf": [
@@ -795,6 +795,186 @@
         "incident_management",
         "traceability",
         "human_oversight"
+      ]
+    },
+    "AIS-MULTI-TOPOLOGY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-HANDOFF-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-BUDGET-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-SUPERVISOR-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-CONTROL-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-ASSURANCE-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-APPROVAL-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-AUDIT-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ]
+    },
+    "AIS-MULTI-BOUNDARY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ],
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
       ]
     }
   }

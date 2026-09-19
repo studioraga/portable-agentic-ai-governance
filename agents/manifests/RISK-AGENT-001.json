@@ -1,0 +1,16 @@
+{
+  "agent_id": "RISK-AGENT-001",
+  "version": "0.10.0",
+  "role": "Risk Agent",
+  "purpose": "produces bounded risk findings only",
+  "permissions": {
+    "reason": true,
+    "direct_peer_calls": false,
+    "side_effects": false,
+    "approval": false,
+    "risk_acceptance": false,
+    "compliance_certification": false,
+    "secops_authority": false
+  },
+  "decision_boundary": "deterministic control plane and human workflow decision"
+}

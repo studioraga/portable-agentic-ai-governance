@@ -157,3 +157,7 @@ M8 adds exactly four typed side effects behind independently issued signed singl
 ## Milestone 9 — Security operations
 
 See `docs/Deployment-M9.md` for Node1 generation, verifier-only Node2 deployment, M4-M9 chain packaging, and full one-shot deployment.
+
+## Milestone 10 deployment
+
+M10 material is generated only by the release authority and is bound to the exact M9 security-operations manifest. Use `deploy/m10/one_shot_node1_full.sh` to create the final M0-M10 generation, then package one coherent verifier chain with `deploy/m10/package_verifier_chain.sh`. Node2 receives `workflow-decision-public.pem` but never `workflow-decision-private.pem` or the M10 release signing private key. See `docs/Deployment-M10.md`.

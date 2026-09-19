@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PAG M10 Agent Handoff",
+  "type": "object",
+  "required": ["schema","agent_id","role","case_id","input_sha256","output","output_sha256"],
+  "properties": {"schema":{"const":"pag-m10-agent-handoff-v1"}},
+  "additionalProperties": false
+}

@@ -157,6 +157,14 @@ def evaluate_security_profile(environ: dict[str, str] | None = None) -> Security
         except Exception as exc:
             checks.append(SecurityCheck("security_ops", False, str(exc)))
 
+    if env.get("PAG_MULTI_AGENT_REQUIRED", "0") == "1":
+        try:
+            from ..multi_agent.runtime import evaluate_multi_agent
+            ma = evaluate_multi_agent(env)
+            checks.append(SecurityCheck("multi_agent", ma.ok, "verified-supervised-typed-human-approved-workflow" if ma.ok else "; ".join(f"{n}:{d}" for n,o,d in ma.checks if not o)))
+        except Exception as exc:
+            checks.append(SecurityCheck("multi_agent", False, str(exc)))
+
     return SecurityReport(profile, tuple(checks))
 
 

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PAG M10 Multi-Agent Policy",
+  "type": "object",
+  "required": ["version","purpose","reasoning_backend","side_effect_authority","direct_agent_delegation","m8_side_effect_boundary","m9_secops_boundary","budgets","human_decision"],
+  "properties": {
+    "version": {"const":"0.10.0"},
+    "side_effect_authority": {"const":false},
+    "direct_agent_delegation": {"const":false},
+    "m8_side_effect_boundary": {"const":true},
+    "m9_secops_boundary": {"const":true}
+  },
+  "additionalProperties": true
+}

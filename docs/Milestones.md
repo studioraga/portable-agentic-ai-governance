@@ -11,8 +11,8 @@
 | 6 First bounded agent | Implemented/validated | read-only analyst | grounded/citation/eval gate |
 | 7 Tool-using agent | Implemented/validated | typed mediated tools | schema+authorization+policy+budget+audit gate |
 | 8 Approval actions | Implemented/validated | four approval-controlled typed side effects | signed independent approval + replay/audit gate |
-| 9 SecOps | Implementation candidate | SIEM/IR/recovery | respond/recover gate |
-| 10 Multi-agent | Planned | supervisor + specialists | bounded orchestration gate |
+| 9 SecOps | Implemented/validated | SIEM/IR/recovery | respond/recover gate |
+| 10 Multi-agent | Implementation candidate | supervisor + Risk/Threat/Privacy + Control + Assurance + human decision | typed handoff + assurance + human-decision gate |
 
 ## Milestone 6 — First bounded agent
 
@@ -30,3 +30,7 @@ M8 adds exactly four typed side effects behind independently issued signed singl
 
 ## Milestone 9 — Security operations
 M9 adds deterministic SIEM ingestion, incident response, bounded local containment, recovery verification and incident evidence preservation. See `docs/M9-Security-Operations.md`.
+
+
+## Milestone 10 — Multi-agent workflows
+M10 adds the first cooperating reasoning-agent workflow only after M2-M9 controls exist. The signed fixed topology is Governance Supervisor -> Risk/Threat/Privacy specialists -> Control Agent -> Assurance Agent -> independent human workflow decision. Handoffs are typed and digest-bound, workflow state is hash-chain journaled, budgets are deterministic, and M10 has no direct side-effect or SecOps authority. See `docs/M10-Multi-Agent-Workflows.md`.

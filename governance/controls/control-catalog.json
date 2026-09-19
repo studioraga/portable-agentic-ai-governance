@@ -778,6 +778,123 @@
         "M9 validation suite",
         "signed M9 security-operations manifest"
       ]
+    },
+    {
+      "control_id": "AIS-MULTI-TOPOLOGY-001",
+      "title": "M10 uses a fixed signed supervisor-specialist-control-assurance topology",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/runtime.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-HANDOFF-001",
+      "title": "M10 agent handoffs are typed and digest-bound",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/contracts.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-BUDGET-001",
+      "title": "M10 workflows enforce bounded agent and signal budgets",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/workflow.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-SUPERVISOR-001",
+      "title": "M10 Governance Supervisor may orchestrate but cannot approve or execute side effects",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/workflow.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-CONTROL-001",
+      "title": "M10 Control Agent produces deterministic control recommendations without execution authority",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/agents.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-ASSURANCE-001",
+      "title": "M10 Assurance Agent gates human approval on evidence and control coverage",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/agents.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-APPROVAL-001",
+      "title": "M10 final workflow disposition requires independently signed human decision",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/approval.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-AUDIT-001",
+      "title": "M10 workflow lifecycle is written to a hash-chained journal",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/store.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
+    },
+    {
+      "control_id": "AIS-MULTI-BOUNDARY-001",
+      "title": "M10 agents cannot bypass M8 side-effect or M9 security-operations authority boundaries",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/multi_agent/runtime.py"
+      ],
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ]
     }
   ]
 }

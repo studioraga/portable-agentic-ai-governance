@@ -65,3 +65,7 @@ M8 adds exactly four typed side effects behind independently issued signed singl
 ## Milestone 9 — Security operations
 
 Add deterministic SIEM, incidents, bounded automated containment, recovery verification, and evidence preservation without bypassing the M8 approval boundary for external side effects.
+
+
+## M10 multi-agent invariant
+Multiple agents may reason and propose only through the signed fixed topology. Direct peer delegation is prohibited. The Governance Supervisor orchestrates but does not authorize side effects, accept risk, certify compliance, override policy, contain workloads or approve recovery. M8 remains the side-effect approval boundary; M9 remains the SecOps containment/recovery boundary; final M10 workflow disposition requires an independently signed human decision.
