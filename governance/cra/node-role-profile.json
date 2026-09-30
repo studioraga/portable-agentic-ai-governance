@@ -1,0 +1,41 @@
+{
+  "boundaries": {
+    "m11_network_reporting": false,
+    "m11_reporting_side_effects": false,
+    "m12_to_m20_not_implemented": true,
+    "node2_verifier_only": true,
+    "private_signing_keys_node1_only": true
+  },
+  "nodes": {
+    "node1": {
+      "may": [
+        "maintain_cra_requirement_baseline",
+        "generate_cra_coverage_report",
+        "build_signed_m11_manifest",
+        "hold_m11_private_signing_key"
+      ],
+      "must_not": [
+        "claim_cra_conformity_from_m11_alone",
+        "submit_enisa_srp_notifications_in_m11"
+      ],
+      "role": "cra_release_authority"
+    },
+    "node2": {
+      "may": [
+        "verify_m11_manifest_signature",
+        "verify_requirement_matrix_digest",
+        "verify_node_role_profile_digest",
+        "run_read_only_m11_validation"
+      ],
+      "must_not": [
+        "receive_m11_private_signing_key",
+        "modify_authoritative_requirement_baseline",
+        "claim_cra_conformity_from_m11_alone",
+        "submit_enisa_srp_notifications_in_m11"
+      ],
+      "role": "cra_independent_verifier"
+    }
+  },
+  "purpose": "M11 CRA Node1/Node2 authority separation",
+  "version": "0.11.0"
+}

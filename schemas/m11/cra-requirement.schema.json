@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "current_status": {
+      "enum": [
+        "met",
+        "partial",
+        "gap"
+      ]
+    },
+    "domain": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "legal_reference": {
+      "minLength": 3,
+      "type": "string"
+    },
+    "mapped_controls": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "mapped_implementation": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "obligation_summary": {
+      "minLength": 8,
+      "type": "string"
+    },
+    "proposed_control_id": {
+      "pattern": "^CRA-[A-Z0-9-]+$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "requirement_id": {
+      "pattern": "^CRA-REQ-[0-9]{3}$",
+      "type": "string"
+    },
+    "target_milestone": {
+      "pattern": "^M(1[1-9]|20)$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "requirement_id",
+    "legal_reference",
+    "obligation_summary",
+    "domain",
+    "current_status",
+    "mapped_controls",
+    "mapped_implementation",
+    "proposed_control_id",
+    "target_milestone"
+  ],
+  "title": "M11 CRA Requirement",
+  "type": "object"
+}

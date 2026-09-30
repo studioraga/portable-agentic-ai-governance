@@ -57,3 +57,10 @@ var/m9-validation*/
 var/m10-material/
 var/m10-validation/
 var/m10-validation*/
+
+# M11 generated CRA foundation material/evidence
+var/m11-material/
+var/m11-verifier.tar.gz
+var/m11-verifier.tar.gz.sha256
+var/m11-validation/
+var/m11-validation*/

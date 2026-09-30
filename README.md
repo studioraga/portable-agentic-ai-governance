@@ -221,3 +221,8 @@ M9 adds deterministic SIEM ingestion, incident lifecycle, signed-runbook local c
 M10 introduces a fixed Governance Supervisor -> Risk/Threat/Privacy specialists -> Control Agent -> Assurance Agent -> Human Decision workflow. Cooperation is typed, digest-bound, budgeted and hash-chain audited. No M10 agent receives side-effect, risk-acceptance, compliance-certification, approval-signing or SecOps authority. M8 remains the side-effect boundary and M9 remains the containment/recovery boundary. The reference reasoning backend is deterministic and offline; an LLM adapter may be added later only behind the same contracts and evaluation gates.
 
 See `docs/M10-Multi-Agent-Workflows.md`, `docs/Prerequisites-M10.md`, `docs/Deployment-M10.md`, and `docs/Validation-M10.md`.
+
+
+## Milestone 11 — CRA Product Security Foundation
+
+M11 adds the authoritative CRA manufacturer/product-security requirements matrix and a signed Node1 release-authority / Node2 verifier-only baseline. It deliberately makes no CRA conformity claim and performs no ENISA reporting side effects. See `docs/M11-CRA-Product-Security-Foundation.md` and `docs/Validation-M11.md`.

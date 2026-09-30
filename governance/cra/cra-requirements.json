@@ -1,0 +1,1271 @@
+{
+  "authoritative_source": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+  "matrix_version": "0.11.0",
+  "regulation": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+  "requirements": [
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "product_security",
+      "legal_reference": "Article 13(1)",
+      "mapped_controls": [
+        "AIS-THREAT-001",
+        "AIS-AUTH-001",
+        "AIS-MTLS-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/ai_security/threat_model.py"
+      ],
+      "obligation_summary": "Ensure products are designed, developed and produced in accordance with Annex I Part I.",
+      "proposed_control_id": "CRA-PSF-001",
+      "requirement_id": "CRA-REQ-001",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "risk_management",
+      "legal_reference": "Article 13(2)",
+      "mapped_controls": [
+        "AIS-IMPACT-001",
+        "AIS-RISK-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/compliance_risk/impact.py"
+      ],
+      "obligation_summary": "Perform product cybersecurity risk assessment and use it across planning, design, development, production, delivery and maintenance.",
+      "proposed_control_id": "CRA-RISK-001",
+      "requirement_id": "CRA-REQ-002",
+      "target_milestone": "M11"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "risk_management",
+      "legal_reference": "Article 13(3)",
+      "mapped_controls": [
+        "AIS-IMPACT-001",
+        "AIS-THREAT-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/compliance_risk/impact.py",
+        "src/portable_ai_governance/ai_security/threat_model.py"
+      ],
+      "obligation_summary": "Document and maintain the cybersecurity risk assessment over the support period, including applicability and implementation of Annex I requirements.",
+      "proposed_control_id": "CRA-RISK-002",
+      "requirement_id": "CRA-REQ-003",
+      "target_milestone": "M11"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Article 13(4)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Include the cybersecurity risk assessment in technical documentation and justify non-applicable essential requirements.",
+      "proposed_control_id": "CRA-DOC-001",
+      "requirement_id": "CRA-REQ-004",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "supply_chain",
+      "legal_reference": "Article 13(5)",
+      "mapped_controls": [
+        "AIS-TPRM-001",
+        "AIS-SBOM-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/compliance_risk/third_parties.py",
+        "src/portable_ai_governance/supply_chain/bom.py"
+      ],
+      "obligation_summary": "Exercise cybersecurity due diligence when integrating third-party and open-source components.",
+      "proposed_control_id": "CRA-SC-001",
+      "requirement_id": "CRA-REQ-005",
+      "target_milestone": "M12"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Article 13(6)",
+      "mapped_controls": [
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/supply_chain/vulnerability.py"
+      ],
+      "obligation_summary": "Notify component maintainers of discovered component vulnerabilities and share relevant fixes/documentation where appropriate.",
+      "proposed_control_id": "CRA-CVD-001",
+      "requirement_id": "CRA-REQ-006",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "risk_management",
+      "legal_reference": "Article 13(7)",
+      "mapped_controls": [
+        "AIS-AUDIT-001",
+        "AIS-EVID-001",
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security/audit.py",
+        "src/portable_ai_governance/kernel/evidence.py"
+      ],
+      "obligation_summary": "Systematically document product cybersecurity aspects and vulnerabilities, and update risk assessment where applicable.",
+      "proposed_control_id": "CRA-RISK-003",
+      "requirement_id": "CRA-REQ-007",
+      "target_milestone": "M11"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "product_lifecycle",
+      "legal_reference": "Article 13(8)",
+      "mapped_controls": [
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/supply_chain/vulnerability.py"
+      ],
+      "obligation_summary": "Handle product/component vulnerabilities effectively for the support period and determine/document an appropriate support period.",
+      "proposed_control_id": "CRA-LIFE-001",
+      "requirement_id": "CRA-REQ-008",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "secure_update",
+      "legal_reference": "Article 13(9)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Keep each support-period security update available for at least ten years or the remainder of the support period, whichever is longer.",
+      "proposed_control_id": "CRA-UPD-001",
+      "requirement_id": "CRA-REQ-009",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "product_lifecycle",
+      "legal_reference": "Article 13(10)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "For substantially modified software versions, satisfy conditions governing support of the latest version and free user access.",
+      "proposed_control_id": "CRA-LIFE-002",
+      "requirement_id": "CRA-REQ-010",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Article 13(11)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "When historical software archives are maintained, clearly warn users about unsupported-version risks.",
+      "proposed_control_id": "CRA-USER-001",
+      "requirement_id": "CRA-REQ-011",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "conformity",
+      "legal_reference": "Article 13(12)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Before market placement, prepare technical documentation, perform conformity assessment, draw up EU declaration and affix CE marking after demonstrated conformity.",
+      "proposed_control_id": "CRA-CONF-001",
+      "requirement_id": "CRA-REQ-012",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "records_retention",
+      "legal_reference": "Article 13(13)",
+      "mapped_controls": [
+        "AIS-EVID-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/kernel/evidence.py"
+      ],
+      "obligation_summary": "Retain technical documentation and EU declaration for at least ten years after market placement or the support period, whichever is longer.",
+      "proposed_control_id": "CRA-DOC-002",
+      "requirement_id": "CRA-REQ-013",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "change_management",
+      "legal_reference": "Article 13(14)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Maintain production-series conformity and account for product/process/standards/certification/common-specification changes.",
+      "proposed_control_id": "CRA-CONF-002",
+      "requirement_id": "CRA-REQ-014",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "product_identity",
+      "legal_reference": "Article 13(15)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide product type, batch, serial number or another identification element.",
+      "proposed_control_id": "CRA-PROD-001",
+      "requirement_id": "CRA-REQ-015",
+      "target_milestone": "M11"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "manufacturer_identity",
+      "legal_reference": "Article 13(16)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide manufacturer identity and contact details as required with the product/packaging/documentation.",
+      "proposed_control_id": "CRA-PROD-002",
+      "requirement_id": "CRA-REQ-016",
+      "target_milestone": "M11"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "psirt_cvd",
+      "legal_reference": "Article 13(17)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Designate an easily identifiable single point of contact that enables direct and rapid user communication, including vulnerability reporting.",
+      "proposed_control_id": "CRA-PSIRT-001",
+      "requirement_id": "CRA-REQ-017",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Article 13(18)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide Annex II user information/instructions in understandable form and retain availability for the required period.",
+      "proposed_control_id": "CRA-USER-002",
+      "requirement_id": "CRA-REQ-018",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "product_lifecycle",
+      "legal_reference": "Article 13(19)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Clearly communicate support-period end date and, where technically feasible, notify users at end of support.",
+      "proposed_control_id": "CRA-LIFE-003",
+      "requirement_id": "CRA-REQ-019",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "conformity",
+      "legal_reference": "Article 13(20)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide the EU declaration of conformity or a simplified declaration with access to the full declaration.",
+      "proposed_control_id": "CRA-CONF-003",
+      "requirement_id": "CRA-REQ-020",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "corrective_action",
+      "legal_reference": "Article 13(21)",
+      "mapped_controls": [
+        "AIS-SECOPS-CONTAIN-001",
+        "AIS-SECOPS-RECOVER-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security_ops/containment.py",
+        "src/portable_ai_governance/security_ops/recovery.py"
+      ],
+      "obligation_summary": "When non-conformity is known or reasonably suspected, immediately take corrective measures, withdrawal or recall as appropriate.",
+      "proposed_control_id": "CRA-CORR-001",
+      "requirement_id": "CRA-REQ-021",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "regulatory_cooperation",
+      "legal_reference": "Article 13(22)",
+      "mapped_controls": [
+        "AIS-EVID-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/kernel/evidence.py"
+      ],
+      "obligation_summary": "On reasoned market-surveillance request, provide conformity information/documentation and cooperate on risk elimination measures.",
+      "proposed_control_id": "CRA-REG-001",
+      "requirement_id": "CRA-REQ-022",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(1)",
+      "mapped_controls": [
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/supply_chain/vulnerability.py"
+      ],
+      "obligation_summary": "Notify any actively exploited vulnerability of which the manufacturer becomes aware to the coordinator CSIRT and ENISA through the Single Reporting Platform.",
+      "proposed_control_id": "CRA-REP-AEV-001",
+      "requirement_id": "CRA-REQ-023",
+      "target_milestone": "M12"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(2)(a)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Submit AEV early warning without undue delay and within 24 hours of awareness, including affected Member States where applicable.",
+      "proposed_control_id": "CRA-CLOCK-AEV-24H",
+      "requirement_id": "CRA-REQ-024",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(2)(b)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Submit AEV notification without undue delay and within 72 hours with product/exploit/vulnerability and mitigation information.",
+      "proposed_control_id": "CRA-REP-AEV-072H",
+      "requirement_id": "CRA-REQ-025",
+      "target_milestone": "M14"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(2)(c)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Submit AEV final report no later than 14 days after a corrective or mitigating measure is available.",
+      "proposed_control_id": "CRA-REP-AEV-FINAL",
+      "requirement_id": "CRA-REQ-026",
+      "target_milestone": "M14"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(2)(c)(i)",
+      "mapped_controls": [
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/supply_chain/vulnerability.py"
+      ],
+      "obligation_summary": "Include vulnerability severity and impact in the AEV final report.",
+      "proposed_control_id": "CRA-REP-AEV-SEVERITY",
+      "requirement_id": "CRA-REQ-027",
+      "target_milestone": "M14"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "threat_intelligence",
+      "legal_reference": "Article 14(2)(c)(ii)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Include available information concerning malicious actors exploiting the vulnerability.",
+      "proposed_control_id": "CRA-THREAT-001",
+      "requirement_id": "CRA-REQ-028",
+      "target_milestone": "M12"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "secure_update",
+      "legal_reference": "Article 14(2)(c)(iii)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Include details of security updates or other corrective measures made available.",
+      "proposed_control_id": "CRA-UPD-002",
+      "requirement_id": "CRA-REQ-029",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(3)",
+      "mapped_controls": [
+        "AIS-SECOPS-INCIDENT-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security_ops/incidents.py"
+      ],
+      "obligation_summary": "Notify any severe incident affecting product security to the coordinator CSIRT and ENISA through the Single Reporting Platform.",
+      "proposed_control_id": "CRA-REP-INC-001",
+      "requirement_id": "CRA-REQ-030",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(4)(a)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Submit severe-incident early warning without undue delay and within 24 hours, including malicious-act suspicion and affected Member States where applicable.",
+      "proposed_control_id": "CRA-CLOCK-INC-24H",
+      "requirement_id": "CRA-REQ-031",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(4)(b)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Submit severe-incident notification without undue delay and within 72 hours with nature, initial assessment and mitigation information.",
+      "proposed_control_id": "CRA-REP-INC-072H",
+      "requirement_id": "CRA-REQ-032",
+      "target_milestone": "M14"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "cra_reporting",
+      "legal_reference": "Article 14(4)(c)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Submit severe-incident final report within one month after the 72-hour notification.",
+      "proposed_control_id": "CRA-REP-INC-FINAL",
+      "requirement_id": "CRA-REQ-033",
+      "target_milestone": "M14"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "incident_management",
+      "legal_reference": "Article 14(4)(c)(i)",
+      "mapped_controls": [
+        "AIS-SECOPS-INCIDENT-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security_ops/incidents.py"
+      ],
+      "obligation_summary": "Final incident report contains detailed incident severity and impact.",
+      "proposed_control_id": "CRA-INC-SEVERITY",
+      "requirement_id": "CRA-REQ-034",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "incident_management",
+      "legal_reference": "Article 14(4)(c)(ii)",
+      "mapped_controls": [
+        "AIS-SECOPS-EVIDENCE-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security_ops/evidence.py"
+      ],
+      "obligation_summary": "Final incident report identifies likely threat type or root cause.",
+      "proposed_control_id": "CRA-INC-ROOTCAUSE",
+      "requirement_id": "CRA-REQ-035",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "incident_management",
+      "legal_reference": "Article 14(4)(c)(iii)",
+      "mapped_controls": [
+        "AIS-SECOPS-CONTAIN-001",
+        "AIS-SECOPS-RECOVER-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security_ops/containment.py",
+        "src/portable_ai_governance/security_ops/recovery.py"
+      ],
+      "obligation_summary": "Final incident report records applied and ongoing mitigation measures.",
+      "proposed_control_id": "CRA-INC-MITIGATION",
+      "requirement_id": "CRA-REQ-036",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "incident_classification",
+      "legal_reference": "Article 14(5)(a)",
+      "mapped_controls": [
+        "AIS-SECOPS-INCIDENT-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security_ops/incidents.py"
+      ],
+      "obligation_summary": "Classify as severe where availability, authenticity, integrity or confidentiality of sensitive/important data or functions is negatively affected or capable of being affected.",
+      "proposed_control_id": "CRA-INC-AICAA",
+      "requirement_id": "CRA-REQ-037",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "incident_classification",
+      "legal_reference": "Article 14(5)(b)",
+      "mapped_controls": [
+        "AIS-SECOPS-INCIDENT-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/security_ops/incidents.py"
+      ],
+      "obligation_summary": "Classify as severe where malicious code has been or can be introduced/executed in the product or a user network/information system.",
+      "proposed_control_id": "CRA-INC-MALCODE",
+      "requirement_id": "CRA-REQ-038",
+      "target_milestone": "M13"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_notification",
+      "legal_reference": "Article 14(8)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Inform affected users and, where appropriate, all users about AEVs/severe incidents and available mitigation or corrective measures, using structured machine-readable format where applicable.",
+      "proposed_control_id": "CRA-USER-NOTIFY-001",
+      "requirement_id": "CRA-REQ-039",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Article 31(1)",
+      "mapped_controls": [
+        "AIS-EVID-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/kernel/evidence.py"
+      ],
+      "obligation_summary": "Technical documentation contains relevant evidence showing product/process compliance with Annex I and at least Annex VII content.",
+      "proposed_control_id": "CRA-DOC-010",
+      "requirement_id": "CRA-REQ-040",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Article 31(2)",
+      "mapped_controls": [
+        "AIS-EVID-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/kernel/evidence.py"
+      ],
+      "obligation_summary": "Technical documentation is prepared before market placement and continuously updated as appropriate during the support period.",
+      "proposed_control_id": "CRA-DOC-011",
+      "requirement_id": "CRA-REQ-041",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Article 31(3)",
+      "mapped_controls": [
+        "AIS-EVID-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/kernel/evidence.py"
+      ],
+      "obligation_summary": "Where other Union product law also requires technical documentation, maintain a single documentation set containing both sets of required information.",
+      "proposed_control_id": "CRA-DOC-012",
+      "requirement_id": "CRA-REQ-042",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Article 31(4)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Use an official language of the notified body Member State or another language accepted by that body for conformity documentation/correspondence.",
+      "proposed_control_id": "CRA-DOC-013",
+      "requirement_id": "CRA-REQ-043",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(1)",
+      "mapped_controls": [
+        "AIS-THREAT-001",
+        "AIS-IMPACT-001"
+      ],
+      "mapped_implementation": [
+        "src/portable_ai_governance/ai_security/threat_model.py"
+      ],
+      "obligation_summary": "Provide an appropriate level of cybersecurity based on product risks.",
+      "proposed_control_id": "CRA-ER-001",
+      "requirement_id": "CRA-REQ-044",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(a)",
+      "mapped_controls": [
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "No known exploitable vulnerabilities at market placement",
+      "proposed_control_id": "CRA-ER-002",
+      "requirement_id": "CRA-REQ-045",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(b)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Secure-by-default configuration and reset capability",
+      "proposed_control_id": "CRA-ER-003",
+      "requirement_id": "CRA-REQ-046",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(c)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Enable vulnerabilities to be addressed through security updates, including appropriate automatic-update behavior where applicable",
+      "proposed_control_id": "CRA-ER-004",
+      "requirement_id": "CRA-REQ-047",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(d)",
+      "mapped_controls": [
+        "AIS-IAM-001",
+        "AIS-ABAC-001",
+        "AIS-AUDIT-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Protect against unauthorised access using authentication/identity/access controls and report possible unauthorised access",
+      "proposed_control_id": "CRA-ER-005",
+      "requirement_id": "CRA-REQ-048",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(e)",
+      "mapped_controls": [
+        "AIS-MTLS-001",
+        "AIS-SECRETS-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Protect confidentiality of stored, transmitted and processed data using appropriate state-of-the-art mechanisms",
+      "proposed_control_id": "CRA-ER-006",
+      "requirement_id": "CRA-REQ-049",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(f)",
+      "mapped_controls": [
+        "AIS-SIGN-001",
+        "AIS-SIG-001",
+        "AIS-AUDIT-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Protect integrity of data, commands, programs and configuration and report corruption",
+      "proposed_control_id": "CRA-ER-007",
+      "requirement_id": "CRA-REQ-050",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(g)",
+      "mapped_controls": [
+        "AIS-PRIVACY-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Apply data minimisation to intended product purpose",
+      "proposed_control_id": "CRA-ER-008",
+      "requirement_id": "CRA-REQ-051",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(h)",
+      "mapped_controls": [
+        "AIS-RATE-001",
+        "AIS-SECOPS-RECOVER-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Protect availability of essential/basic functions including after incidents and against denial-of-service",
+      "proposed_control_id": "CRA-ER-009",
+      "requirement_id": "CRA-REQ-052",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(i)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Minimise negative impact on availability of services provided by other devices/networks",
+      "proposed_control_id": "CRA-ER-010",
+      "requirement_id": "CRA-REQ-053",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(j)",
+      "mapped_controls": [
+        "AIS-THREAT-001",
+        "AIS-ABAC-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Limit attack surfaces including external interfaces",
+      "proposed_control_id": "CRA-ER-011",
+      "requirement_id": "CRA-REQ-054",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(k)",
+      "mapped_controls": [
+        "AIS-SECOPS-CONTAIN-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Reduce incident impact with exploitation-mitigation mechanisms and techniques",
+      "proposed_control_id": "CRA-ER-012",
+      "requirement_id": "CRA-REQ-055",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(l)",
+      "mapped_controls": [
+        "AIS-AUDIT-001",
+        "AIS-SECOPS-SIEM-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Record/monitor security-relevant internal activity with user opt-out mechanism where required",
+      "proposed_control_id": "CRA-ER-013",
+      "requirement_id": "CRA-REQ-056",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "essential_requirement",
+      "legal_reference": "Annex I Part I(2)(m)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Allow users to securely and permanently remove data/settings and securely transfer data where applicable",
+      "proposed_control_id": "CRA-ER-014",
+      "requirement_id": "CRA-REQ-057",
+      "target_milestone": "M17"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(1)",
+      "mapped_controls": [
+        "AIS-SBOM-001",
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Identify/document product vulnerabilities and components and maintain a machine-readable SBOM covering at least top-level dependencies",
+      "proposed_control_id": "CRA-VH-001",
+      "requirement_id": "CRA-REQ-058",
+      "target_milestone": "M12"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(2)",
+      "mapped_controls": [
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Address and remediate vulnerabilities without delay, including security updates; separate security/functionality updates where technically feasible",
+      "proposed_control_id": "CRA-VH-002",
+      "requirement_id": "CRA-REQ-059",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(3)",
+      "mapped_controls": [
+        "AIS-EVAL-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Apply effective and regular product security tests and reviews",
+      "proposed_control_id": "CRA-VH-003",
+      "requirement_id": "CRA-REQ-060",
+      "target_milestone": "M19"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(4)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "After a security update, disclose fixed-vulnerability information, affected product, impact/severity and remediation guidance, subject to justified delayed disclosure",
+      "proposed_control_id": "CRA-VH-004",
+      "requirement_id": "CRA-REQ-061",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(5)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Put in place and enforce a coordinated vulnerability disclosure policy",
+      "proposed_control_id": "CRA-VH-005",
+      "requirement_id": "CRA-REQ-062",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(6)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Facilitate vulnerability information sharing and provide a vulnerability-reporting contact address",
+      "proposed_control_id": "CRA-VH-006",
+      "requirement_id": "CRA-REQ-063",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(7)",
+      "mapped_controls": [
+        "AIS-SIG-001",
+        "AIS-PROV-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Securely distribute updates so vulnerabilities are fixed/mitigated timely and automatically where applicable",
+      "proposed_control_id": "CRA-VH-007",
+      "requirement_id": "CRA-REQ-064",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "vulnerability_handling",
+      "legal_reference": "Annex I Part II(8)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Disseminate security updates without delay, generally free of charge, with relevant user advisories",
+      "proposed_control_id": "CRA-VH-008",
+      "requirement_id": "CRA-REQ-065",
+      "target_milestone": "M16"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(1)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide manufacturer name/trade identity plus postal and digital contact details and website where available.",
+      "proposed_control_id": "CRA-USER-010",
+      "requirement_id": "CRA-REQ-066",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(2)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide the vulnerability-reporting single point of contact and location of the coordinated vulnerability disclosure policy.",
+      "proposed_control_id": "CRA-USER-011",
+      "requirement_id": "CRA-REQ-067",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(3)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide product name/type and additional information enabling unique product identification.",
+      "proposed_control_id": "CRA-USER-012",
+      "requirement_id": "CRA-REQ-068",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(4)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "State intended purpose, manufacturer-provided security environment, essential functions and security properties.",
+      "proposed_control_id": "CRA-USER-013",
+      "requirement_id": "CRA-REQ-069",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(5)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Describe known or foreseeable use/misuse circumstances that may lead to significant cybersecurity risks.",
+      "proposed_control_id": "CRA-USER-014",
+      "requirement_id": "CRA-REQ-070",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(6)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide the internet address for the EU declaration of conformity where applicable.",
+      "proposed_control_id": "CRA-USER-015",
+      "requirement_id": "CRA-REQ-071",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(7)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "State technical security support and the support-period end date.",
+      "proposed_control_id": "CRA-USER-016",
+      "requirement_id": "CRA-REQ-072",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(8)(a)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide measures required during initial commissioning and product lifetime for secure use.",
+      "proposed_control_id": "CRA-USER-017",
+      "requirement_id": "CRA-REQ-073",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(8)(b)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Explain how product changes can affect data security.",
+      "proposed_control_id": "CRA-USER-018",
+      "requirement_id": "CRA-REQ-074",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(8)(c)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Explain how security-relevant updates can be installed.",
+      "proposed_control_id": "CRA-USER-019",
+      "requirement_id": "CRA-REQ-075",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(8)(d)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Provide secure decommissioning instructions, including secure removal of user data.",
+      "proposed_control_id": "CRA-USER-020",
+      "requirement_id": "CRA-REQ-076",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(8)(e)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Explain how the default automatic-security-update setting can be turned off where applicable.",
+      "proposed_control_id": "CRA-USER-021",
+      "requirement_id": "CRA-REQ-077",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(8)(f)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "For products intended for integration, provide information needed by the integrator for Annex I and Annex VII compliance.",
+      "proposed_control_id": "CRA-USER-022",
+      "requirement_id": "CRA-REQ-078",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "user_information",
+      "legal_reference": "Annex II(9)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "If the manufacturer makes the SBOM available to users, state where it can be accessed.",
+      "proposed_control_id": "CRA-USER-023",
+      "requirement_id": "CRA-REQ-079",
+      "target_milestone": "M15"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(1)(a)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Technical file states intended purpose",
+      "proposed_control_id": "CRA-TF-001",
+      "requirement_id": "CRA-REQ-080",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(1)(b)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Technical file identifies software versions affecting compliance",
+      "proposed_control_id": "CRA-TF-002",
+      "requirement_id": "CRA-REQ-081",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(1)(c)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "For hardware products, technical file includes relevant product illustrations/marking/internal-layout information",
+      "proposed_control_id": "CRA-TF-003",
+      "requirement_id": "CRA-REQ-082",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(1)(d)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Technical file includes Annex II user information/instructions",
+      "proposed_control_id": "CRA-TF-004",
+      "requirement_id": "CRA-REQ-083",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(2)(a)",
+      "mapped_controls": [
+        "AIS-AIBOM-001",
+        "AIS-THREAT-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Document design/development and architecture, including component relationships and integration",
+      "proposed_control_id": "CRA-TF-005",
+      "requirement_id": "CRA-REQ-084",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(2)(b)",
+      "mapped_controls": [
+        "AIS-SBOM-001",
+        "AIS-VULN-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Document vulnerability-handling process including SBOM, CVD policy, reporting contact and secure-update distribution solution",
+      "proposed_control_id": "CRA-TF-006",
+      "requirement_id": "CRA-REQ-085",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(2)(c)",
+      "mapped_controls": [
+        "AIS-AUDIT-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Document production and monitoring processes and their validation",
+      "proposed_control_id": "CRA-TF-007",
+      "requirement_id": "CRA-REQ-086",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(3)",
+      "mapped_controls": [
+        "AIS-IMPACT-001",
+        "AIS-THREAT-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Include product cybersecurity risk assessment and Annex I applicability",
+      "proposed_control_id": "CRA-TF-008",
+      "requirement_id": "CRA-REQ-087",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(4)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "List applied harmonised standards/common specifications/certification or other technical specifications and explain partial/non-application",
+      "proposed_control_id": "CRA-TF-009",
+      "requirement_id": "CRA-REQ-088",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(5)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Include reports of conformity assessment activities where applicable",
+      "proposed_control_id": "CRA-TF-010",
+      "requirement_id": "CRA-REQ-089",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(6)",
+      "mapped_controls": [
+        "AIS-EVAL-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Include product and vulnerability-handling test reports",
+      "proposed_control_id": "CRA-TF-011",
+      "requirement_id": "CRA-REQ-090",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "gap",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(7)",
+      "mapped_controls": [],
+      "mapped_implementation": [],
+      "obligation_summary": "Include EU declaration of conformity",
+      "proposed_control_id": "CRA-TF-012",
+      "requirement_id": "CRA-REQ-091",
+      "target_milestone": "M18"
+    },
+    {
+      "applicability": "manufacturer_product_with_digital_elements",
+      "current_status": "partial",
+      "domain": "technical_documentation",
+      "legal_reference": "Annex VII(8)",
+      "mapped_controls": [
+        "AIS-SBOM-001"
+      ],
+      "mapped_implementation": [],
+      "obligation_summary": "Make SBOM available to market surveillance authority following a reasoned request where needed to check Annex I compliance",
+      "proposed_control_id": "CRA-TF-013",
+      "requirement_id": "CRA-REQ-092",
+      "target_milestone": "M18"
+    }
+  ],
+  "scope_note": "M11 manufacturer/product-security baseline. Obligation summaries are engineering paraphrases; legal_reference is the controlling locator. This matrix is not a legal opinion or certification.",
+  "status_definitions": {
+    "gap": "No sufficient M0-M10 implementation currently exists.",
+    "met": "Existing M0-M10 implementation and evidence fully satisfy the engineering interpretation for this row.",
+    "partial": "Reusable M0-M10 implementation exists but CRA-specific semantics/evidence are incomplete."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "boundaries": {
+      "required": [
+        "private_signing_keys_node1_only",
+        "node2_verifier_only",
+        "m11_reporting_side_effects",
+        "m11_network_reporting",
+        "m12_to_m20_not_implemented"
+      ],
+      "type": "object"
+    },
+    "nodes": {
+      "required": [
+        "node1",
+        "node2"
+      ],
+      "type": "object"
+    },
+    "version": {
+      "const": "0.11.0"
+    }
+  },
+  "required": [
+    "version",
+    "purpose",
+    "nodes",
+    "boundaries"
+  ],
+  "title": "M11 CRA Node Role Profile",
+  "type": "object"
+}

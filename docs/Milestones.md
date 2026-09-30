@@ -1,3 +1,14 @@
+# Milestones
+
+### Milestone 11
+
+- Authoritative CRA engineering matrix with Article/Annex subparagraph locators.
+- Existing M0-M10 control/source mapping and explicit `met`/`partial`/`gap` status.
+- A proposed `CRA-*` control ID for every partial/gap row and target milestone M11-M20.
+- Deterministic coverage report that explicitly forbids a CRA conformity claim.
+- Node1 signing authority and Node2 verifier-only separation.
+- Signed digest-bound M11 manifest and positive/negative acceptance tests.
+
 # Milestone Matrix
 
 | Milestone | Status | Primary deliverable | Release gate |
