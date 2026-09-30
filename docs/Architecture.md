@@ -213,3 +213,7 @@ M10 implements the planned supervisor-directed specialist workflow as a fixed si
 ## M12 CRA vulnerability/exploitation intelligence layer
 
 M12 sits between M3 supply-chain vulnerability evidence and the future M13 statutory-clock layer. It normalizes vulnerability identifiers/aliases, correlates affected components to the product inventory, evaluates approved exploitation evidence, and emits signed AEV candidate assessments. Node1 remains the authority; Node2 independently verifies evidence. The M12 boundary explicitly keeps `starts_statutory_clock=false`, `enisa_submission=false`, and `cra_conformity_claim=false`.
+
+## M13 integration boundary
+
+M13 adds deterministic CRA Article 14(5) severe-incident classification and a signed statutory-clock evidence layer. It consumes M9 security-event facts and M12 AEV candidate evidence while preserving M11 as the authoritative CRA requirement baseline. M13 records an immutable manufacturer-awareness T0, derives the applicable 24-hour and 72-hour deadlines, derives the AEV final-report deadline from corrective/mitigating-measure availability, and derives the severe-incident final-report deadline as one calendar month after the incident notification. M13 does **not** submit to ENISA/SRP, generate the M14 reporting pack, or make a CRA conformity claim. See `docs/M13-CRA-Incident-Classification-Statutory-Clock.md`, `docs/Prerequisites-M13.md`, `docs/Deployment-M13.md`, and `docs/Validation-M13.md`.

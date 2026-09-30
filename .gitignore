@@ -70,3 +70,9 @@ var/m12-verifier.tar.gz
 var/m12-verifier.tar.gz.sha256
 var/m12-validation/
 var/m12-validation*/
+# M13 generated CRA incident-classification/statutory-clock material/evidence
+var/m13-material/
+var/m13-verifier.tar.gz
+var/m13-verifier.tar.gz.sha256
+var/m13-validation/
+var/m13-validation*/

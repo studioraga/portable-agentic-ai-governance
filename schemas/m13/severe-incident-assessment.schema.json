@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["assessment_id","decision","article_14_5_a","article_14_5_b","reason_codes"],"properties":{"decision":{"enum":["SEVERE_INCIDENT","NOT_SEVERE","INCOMPLETE"]},"article_14_5_a":{"type":"boolean"},"article_14_5_b":{"type":"boolean"},"reason_codes":{"type":"array","items":{"type":"string"}}}}

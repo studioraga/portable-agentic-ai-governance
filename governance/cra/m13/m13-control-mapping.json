@@ -1,0 +1,22 @@
+{
+  "version": "0.13.0",
+  "milestone": "M13",
+  "controls": [
+    {"control_id":"CRA-INC-001","title":"Severe incident security-impact classification","m11_requirements":["CRA-REQ-032","CRA-REQ-033"],"target":"Article 14(5)(a)"},
+    {"control_id":"CRA-INC-002","title":"Malicious-code severe incident classification","m11_requirements":["CRA-REQ-034"],"target":"Article 14(5)(b)"},
+    {"control_id":"CRA-CLOCK-001","title":"Immutable manufacturer awareness timestamp","m11_requirements":["CRA-REQ-024","CRA-REQ-029"],"target":"Article 14(2)(a), 14(4)(a)"},
+    {"control_id":"CRA-CLOCK-002","title":"24-hour early-warning deadline","m11_requirements":["CRA-REQ-024","CRA-REQ-029"],"target":"Article 14(2)(a), 14(4)(a)"},
+    {"control_id":"CRA-CLOCK-003","title":"72-hour notification deadline","m11_requirements":["CRA-REQ-025","CRA-REQ-030"],"target":"Article 14(2)(b), 14(4)(b)"},
+    {"control_id":"CRA-CLOCK-004","title":"AEV final-report deadline anchor","m11_requirements":["CRA-REQ-026"],"target":"Article 14(2)(c)"},
+    {"control_id":"CRA-CLOCK-005","title":"Severe-incident final-report deadline anchor","m11_requirements":["CRA-REQ-031"],"target":"Article 14(4)(c)"},
+    {"control_id":"CRA-CLOCK-006","title":"Deadline state and breach detection","m11_requirements":["CRA-REQ-024","CRA-REQ-025","CRA-REQ-026","CRA-REQ-029","CRA-REQ-030","CRA-REQ-031"],"target":"Article 14 statutory timing"},
+    {"control_id":"CRA-CLOCK-007","title":"Hash-chained awareness/clock evidence","m11_requirements":["CRA-REQ-024","CRA-REQ-029"],"target":"Evidence integrity"}
+  ],
+  "boundaries": {
+    "classification_and_clock_only": true,
+    "enisa_submission": false,
+    "report_generation": false,
+    "cra_conformity_claim": false,
+    "node2_verifier_only": true
+  }
+}

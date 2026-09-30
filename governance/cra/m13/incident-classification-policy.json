@@ -1,0 +1,17 @@
+{
+  "version":"0.13.0",
+  "article":"CRA Article 14(5)",
+  "severe_if_any_security_property_impact": ["availability","authenticity","integrity","confidentiality"],
+  "requires_sensitive_or_important_data_or_function_for_14_5_a": true,
+  "severe_if_malicious_code_introduced_or_executed": true,
+  "malicious_code_scopes": ["product","user_network_or_information_system"],
+  "unknown_behavior":"INCOMPLETE",
+  "clock_policy": {
+    "aev_early_warning_hours":24,
+    "aev_notification_hours":72,
+    "aev_final_days_after_corrective_available":14,
+    "incident_early_warning_hours":24,
+    "incident_notification_hours":72,
+    "incident_final_months_after_notification":1
+  }
+}

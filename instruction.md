@@ -73,3 +73,7 @@ Multiple agents may reason and propose only through the signed fixed topology. D
 ## M12 operating instruction
 
 Treat `governance/cra/cra-requirements.json` from M11 as immutable input. M12 may add an overlay control mapping but must not rewrite M11 legal requirements. Use deterministic local fixtures for acceptance, preserve source provenance and available malicious-actor information without inventing attribution, fail closed on stale/conflicting intelligence, and keep Node2 verifier-only. M12 output is an AEV **candidate assessment**, not a statutory notification, deadline trigger, or conformity decision.
+
+## M13 integration boundary
+
+M13 adds deterministic CRA Article 14(5) severe-incident classification and a signed statutory-clock evidence layer. It consumes M9 security-event facts and M12 AEV candidate evidence while preserving M11 as the authoritative CRA requirement baseline. M13 records an immutable manufacturer-awareness T0, derives the applicable 24-hour and 72-hour deadlines, derives the AEV final-report deadline from corrective/mitigating-measure availability, and derives the severe-incident final-report deadline as one calendar month after the incident notification. M13 does **not** submit to ENISA/SRP, generate the M14 reporting pack, or make a CRA conformity claim. See `docs/M13-CRA-Incident-Classification-Statutory-Clock.md`, `docs/Prerequisites-M13.md`, `docs/Deployment-M13.md`, and `docs/Validation-M13.md`.

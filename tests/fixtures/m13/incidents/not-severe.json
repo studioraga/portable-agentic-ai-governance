@@ -1,0 +1,1 @@
+{"event_id":"evt-not-severe","product_id":"product-node2","awareness_at":"2026-09-30T09:00:00Z","security_property_impacts":{"availability":false,"authenticity":false,"integrity":false,"confidentiality":false},"sensitive_or_important_data_or_function_affected":false,"malicious_code_introduced":false,"malicious_code_executed":false,"malicious_code_scope":null}
