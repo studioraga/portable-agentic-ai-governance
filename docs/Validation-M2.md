@@ -75,3 +75,7 @@ At minimum demonstrate failure for:
 - replay-cache corruption/unavailability.
 
 `UNKNOWN` or skipped mandatory security tests do not count as PASS.
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

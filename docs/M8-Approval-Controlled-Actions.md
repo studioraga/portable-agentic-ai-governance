@@ -7,3 +7,7 @@ Approvals are independently issued by an operator/human authority and signed wit
 Replay state and action-effect journals are owner-private durable local state under the M8 runtime action root and are preserved across M8 redeployment. An approval is claimed before the pre-execution allow audit; if that audit is unavailable, the approval remains consumed and no side effect runs. If a side effect commits but the result audit cannot be persisted, the CLI reports `effect_committed=true` and writes an owner-private reconciliation record so operators do not mistake the outcome for an unexecuted action.
 
 Reference side effects are owner-private durable local records; external incident/ticket/model-registry adapters are deployment-specific extensions behind the same boundary.
+
+## M12 integration
+
+M12 has no regulatory submission side effect. If later milestones introduce external reporting or notification actions, they must remain behind M8 approval controls rather than being granted directly to the M12 intelligence engine.

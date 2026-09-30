@@ -31,3 +31,7 @@ python scripts/m3/validate_m3_node.py ~/.config/portable-ai-governance/m3/m3.env
 ```
 
 Production acceptance requires `PAG_SUPPLY_CHAIN_REQUIRED=1` and a non-fixture vulnerability report unless an operator explicitly opts into fixture mode for testing.
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

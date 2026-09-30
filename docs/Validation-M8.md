@@ -7,3 +7,7 @@ Replay acceptance must use the exact same signed approval file twice: first exec
 Audit acceptance distinguishes pre-execution and post-effect failures. A pre-execution audit outage after approval claim consumes the approval but must produce no side effect. If the side effect commits and result-audit persistence fails, validation requires `effect_committed=true` plus a durable reconciliation record.
 
 Physical Node1/Node2 must pass combined M2->M8 and full one-shot validation. Node2 must receive the M8 approval public key but no M8 release-signing or approval-signing private key.
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

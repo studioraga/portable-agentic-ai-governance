@@ -265,3 +265,7 @@ See `docs/Validation-M9.md` for SIEM-chain, incident, containment, recovery, evi
 ## Milestone 10 validation
 
 M10 validation proves fixed topology, typed digest-bound handoffs, bounded specialist/supervisor execution, deterministic control synthesis, assurance gating, signed single-use human workflow decision, workflow-journal integrity, Node2 private-key exclusion, M9->M10 release binding, full M0-M10 deployment and combined M2-M10 production validation. See `docs/Validation-M10.md`.
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

@@ -22,3 +22,7 @@ M5 may calculate, validate, monitor and report. It may not accept risk, self-app
 ## Production gate
 
 `PAG_COMPLIANCE_RISK_REQUIRED=1` activates M5 inside the production security profile. M2, M3, M4 and M5 must all verify simultaneously.
+
+## M12 integration
+
+M12 contributes evidence to CRA risk/compliance automation through deterministic vulnerability-to-product and exploitation correlation. It does not promote any M11 requirement to `met` or make a compliance/conformity decision by itself.

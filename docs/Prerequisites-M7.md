@@ -7,3 +7,7 @@ Run:
 ```bash
 ./scripts/m7/preflight_dependencies.sh
 ```
+
+## M12 integration
+
+M12 adds no mandatory cloud dependency. Its deterministic acceptance requires Python 3.10+, OpenSSL/Ed25519, Bash, `tar`, `sha256sum`, and the frozen M11 source baseline. Live vulnerability-feed access is deliberately not required for M12 acceptance.

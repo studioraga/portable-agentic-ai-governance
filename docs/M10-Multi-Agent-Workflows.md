@@ -78,3 +78,7 @@ Decision replay is persistently rejected.
 ## Reference reasoning backend
 
 The v0.10.0 reference backend is deterministic and offline. It normalizes risk/threat/privacy signals, maps them to existing governance controls, and performs deterministic assurance coverage checks. This proves the multi-agent control architecture without making a model runtime part of the security boundary. A future LLM/model adapter must remain behind the same typed contracts, budgets, evidence requirements, evaluations and human approval gate.
+
+## M12 integration
+
+M10 agents may consume M12 signed AEV candidate evidence, but no agent may change the deterministic candidate classification, start the statutory clock, submit to ENISA, or claim CRA conformity.

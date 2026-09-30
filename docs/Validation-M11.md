@@ -20,3 +20,7 @@ Node2 acceptance requires verifier-only material and fails if `signing-private.p
 mkdir -p /tmp/m11-verifier && tar -xzf m11-verifier.tar.gz -C /tmp/m11-verifier
 ./deploy/m11/one_shot_node2.sh /tmp/m11-verifier/m11-material
 ```
+
+## M12 hand-off
+
+M12 consumes the signed/frozen M11 CRA requirement matrix without altering M11's 92-row baseline. M12 validation additionally binds its manifest to the SHA-256 of `governance/cra/cra-requirements.json`, so a changed M11 baseline invalidates M12 verification.

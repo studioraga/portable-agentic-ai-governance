@@ -27,3 +27,7 @@ Node2 requires Python >= 3.10, OpenSSL, the same M4 source, the M3 artifact lock
 M4 supports Python 3.10 and later. The dependency preflight does not directly import
 `tomllib`; it uses the repository's Python-3.10-safe deterministic dependency inventory.
 No `tomli` runtime dependency is required on verifier nodes.
+
+## M12 integration
+
+M12 adds no mandatory cloud dependency. Its deterministic acceptance requires Python 3.10+, OpenSSL/Ed25519, Bash, `tar`, `sha256sum`, and the frozen M11 source baseline. Live vulnerability-feed access is deliberately not required for M12 acceptance.

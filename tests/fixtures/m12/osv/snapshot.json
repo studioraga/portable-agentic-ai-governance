@@ -1,0 +1,11 @@
+{
+  "snapshot_id":"osv-fixture-20260930",
+  "generated_at":"2026-09-30T12:00:00Z",
+  "source_id":"osv",
+  "records":[
+    {"schema_version":"1.7.4","id":"GHSA-SYNTH-0001","aliases":["CVE-2099-9001"],"severity":[{"type":"LABEL","score":"medium"}],"affected":[{"package":{"name":"edgecam-core","purl":"pkg:generic/edgecam-core@1.0.0","ecosystem":"Generic"}}]},
+    {"schema_version":"1.7.4","id":"GHSA-SYNTH-0002","aliases":["CVE-2099-9002"],"severity":[{"type":"LABEL","score":"high"}],"affected":[{"package":{"name":"crypto-lib","purl":"pkg:generic/crypto-lib@2.4.0","ecosystem":"Generic"}}]},
+    {"schema_version":"1.7.4","id":"GHSA-SYNTH-0003","aliases":["CVE-2099-9003"],"severity":[{"type":"LABEL","score":"critical"}],"affected":[{"package":{"name":"absent-lib","purl":"pkg:generic/absent-lib@9.9.9","ecosystem":"Generic"}}]},
+    {"schema_version":"1.7.4","id":"GHSA-SYNTH-0004","aliases":["CVE-2099-9004"],"severity":[{"type":"LABEL","score":"high"}],"affected":[{"package":{"name":"conflict-lib","purl":"pkg:generic/conflict-lib@3.1.0","ecosystem":"Generic"}}]}
+  ]
+}

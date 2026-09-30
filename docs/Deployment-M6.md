@@ -5,3 +5,7 @@ Node1 is the M6 release authority. Generate M6 material from validated M3/M4/M5 
 Node2 deploys only the verifier bundle with `deploy/m6/one_shot_node2.sh`. Full-stack deployment is available through `deploy/m6/one_shot_node1_full.sh` and `deploy/m6/one_shot_node2_full.sh`.
 
 All M6 directories are owner-only (`0700`) and all material files are owner-only (`0600`).
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

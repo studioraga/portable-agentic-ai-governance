@@ -15,3 +15,7 @@ M9 has no LLM decision authority.
 Recovery authorization uses a dedicated M9 Ed25519 authority. Node1 retains `recovery-signing-private.pem`; verifier nodes receive only `recovery-signing-public.pem`. Recovery grants are incident/containment/check-digest bound, short-lived and single-use.
 
 Verified normalized SIEM events can be exported as owner-private NDJSON with `scripts/m9/export_siem.py` for a deployment-specific forwarder. The core framework does not store third-party SIEM credentials or make outbound network calls.
+
+## M12 integration
+
+M12 can ingest approved internal incident evidence as exploitation intelligence, but it does not replace M9 incident lifecycle/containment. M9 remains the security-operations boundary; M12 only preserves and evaluates exploitation evidence for product vulnerability correlation.

@@ -45,3 +45,13 @@ M9 adds deterministic SIEM ingestion, incident response, bounded local containme
 
 ## Milestone 10 — Multi-agent workflows
 M10 adds the first cooperating reasoning-agent workflow only after M2-M9 controls exist. The signed fixed topology is Governance Supervisor -> Risk/Threat/Privacy specialists -> Control Agent -> Assurance Agent -> independent human workflow decision. Handoffs are typed and digest-bound, workflow state is hash-chain journaled, budgets are deterministic, and M10 has no direct side-effect or SecOps authority. See `docs/M10-Multi-Agent-Workflows.md`.
+
+### Milestone 12
+
+- Approved vulnerability/exploitation intelligence source registry and provenance.
+- OSV/vendor normalization with CVE/GHSA/other alias de-duplication.
+- Product/component correlation using inventory/PURL metadata.
+- Deterministic `AEV_CANDIDATE`, `NOT_AEV`, `NOT_AFFECTED`, and `INCOMPLETE` decisions.
+- Fail-closed stale/conflicting/unapproved-source handling.
+- Signed Node1 intelligence material and Node2 verifier-only validation.
+- No M13 clock, M14 ENISA submission, or CRA conformity claim.

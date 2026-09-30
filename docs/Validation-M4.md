@@ -29,3 +29,7 @@ Combined production gate:
   ~/.config/portable-ai-governance/m3/m3.env \
   ~/.config/portable-ai-governance/m4/m4.env
 ```
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

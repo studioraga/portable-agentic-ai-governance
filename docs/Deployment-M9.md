@@ -18,3 +18,7 @@ Node2 receives only `security-ops-manifest.json`, its signature, public verifica
 The M9 deployer preserves `~/.config/portable-ai-governance/m9/runtime/secops` across redeployment so SIEM, incident, containment, recovery and preserved-evidence state remains durable.
 
 Recovery authorization uses a dedicated M9 Ed25519 authority. Node1 retains `recovery-signing-private.pem`; verifier nodes receive only `recovery-signing-public.pem`. Recovery grants are incident/containment/check-digest bound, short-lived and single-use.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

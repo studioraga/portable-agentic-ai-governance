@@ -18,3 +18,7 @@ Milestone 4 introduces deterministic controls for model governance, data provena
 The reference implementation uses deterministic fixtures for model/data/retrieval evaluation so that controls can be validated offline. Production integrations must replace fixture provenance records and evaluation inputs with organization-owned ingestion/catalog/evaluation pipelines while preserving these interfaces and fail-closed invariants.
 
 No model inference SDK, vector database, LLM service, GPU, or embedding runtime is required by M4 itself.
+
+## M12 integration
+
+M12 adds a CRA vulnerability/exploitation-intelligence layer without changing this milestone's authority boundary. M12 consumes existing evidence where relevant, emits signed AEV candidate assessments, and performs no statutory-clock, ENISA-submission, or CRA-conformity side effect.

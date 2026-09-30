@@ -209,3 +209,7 @@ Signed cross-milestone manifests form a generation chain. Once a downstream mile
 ## M10 implemented architecture — supervised multi-agent workflow
 
 M10 implements the planned supervisor-directed specialist workflow as a fixed signed topology. Risk, Threat and Privacy specialists emit typed digest-bound handoffs; Control maps findings to deterministic controls; Assurance checks evidence/control coverage; a separate human workflow decision key finalizes the governance disposition. Direct peer calls, agent delegation, side effects, M8 approval authority and M9 SecOps authority remain prohibited to M10 agents.
+
+## M12 CRA vulnerability/exploitation intelligence layer
+
+M12 sits between M3 supply-chain vulnerability evidence and the future M13 statutory-clock layer. It normalizes vulnerability identifiers/aliases, correlates affected components to the product inventory, evaluates approved exploitation evidence, and emits signed AEV candidate assessments. Node1 remains the authority; Node2 independently verifies evidence. The M12 boundary explicitly keeps `starts_statutory_clock=false`, `enisa_submission=false`, and `cra_conformity_claim=false`.

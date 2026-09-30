@@ -5,3 +5,7 @@ Build M8 from the exact accepted M7 material. Node1 retains M8 release-signing a
 Runtime action state is owner-private under `~/.config/portable-ai-governance/m8/runtime/actions` and is deliberately preserved across M8 redeployment. This includes the single-use approval ledger, effect journals, and reconciliation records. Deployment overwrites signed configuration/verifier material but never resets runtime replay state. Do not manually delete the runtime action directory to make a replay test pass.
 
 The signed M8 policy sets approval TTL defaults/maxima and clock-skew tolerance. For manual physical acceptance testing, issue a fresh approval immediately before execution; do not reuse an expired approval merely to test replay semantics.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

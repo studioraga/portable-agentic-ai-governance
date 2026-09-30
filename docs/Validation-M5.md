@@ -41,3 +41,7 @@ Production acceptance requires all four milestone control planes to verify.
 ## Continuous-control operations gate
 
 Validate that the refresh command succeeds only while the Node1 release-authority private key is present. Confirm the verifier bundle excludes that key. If refreshed evidence is not redistributed before `max_age_hours` expires, Node2/production verification must fail closed as stale.
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

@@ -36,3 +36,7 @@ git ls-files | grep -E '(^|/)(var|\.venv|\.pytest_cache|__pycache__)(/|$)|signin
 ```
 
 Production acceptance requires no matches. If a private key was previously committed, remove it from the current tree, rotate the affected authority, rebuild the downstream generation, and treat the historical key as compromised. If the repository is externally accessible, purge the secret-bearing path from Git history as a separate repository-administration operation.
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

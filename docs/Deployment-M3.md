@@ -158,3 +158,7 @@ find var/m3-scans var/m3-material -type f -perm -0002 -print
 
 Both commands must produce no output before verifier packaging or production
 promotion.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

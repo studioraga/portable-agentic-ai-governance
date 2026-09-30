@@ -1,0 +1,22 @@
+{
+  "schema": "cra.m12.intelligence-source-policy.v1",
+  "version": "0.12.0",
+  "offline_acceptance_only": true,
+  "network_ingestion_enabled": false,
+  "sources": [
+    {"source_id":"enisa-eu-kev","source_type":"kev","approved":true,"active_exploitation_authoritative":true,"minimum_reliability":"high","reference":"https://www.enisa.europa.eu/topics/vulnerability-services"},
+    {"source_id":"cisa-kev","source_type":"kev","approved":true,"active_exploitation_authoritative":true,"minimum_reliability":"high","reference":"https://www.cisa.gov/known-exploited-vulnerabilities-catalog"},
+    {"source_id":"osv","source_type":"vulnerability_database","approved":true,"active_exploitation_authoritative":false,"minimum_reliability":"medium","reference":"https://osv.dev/"},
+    {"source_id":"vendor-psirt","source_type":"vendor_advisory","approved":true,"active_exploitation_authoritative":true,"minimum_reliability":"high","reference":"local-fixture://vendor-psirt"},
+    {"source_id":"internal-ir","source_type":"internal_incident","approved":true,"active_exploitation_authoritative":true,"minimum_reliability":"high","reference":"local-fixture://internal-ir"}
+  ],
+  "classification": {
+    "candidate_requires_product_affected": true,
+    "candidate_requires_active_exploitation": true,
+    "candidate_requires_approved_source": true,
+    "candidate_requires_reliability": ["high"],
+    "conflict_behavior": "incomplete",
+    "stale_snapshot_behavior": "incomplete",
+    "maximum_snapshot_age_hours": 24
+  }
+}

@@ -42,3 +42,7 @@ For complete M0-M4:
   /path/to/m3-verifier-material \
   /path/to/m4-verifier-material
 ```
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

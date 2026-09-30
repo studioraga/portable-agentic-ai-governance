@@ -36,3 +36,7 @@ For release distribution, prefer the chain packager over four independent comman
 ```
 
 It verifies M4->M5->M6->M7 first, creates verifier-only bundles for all four milestones, checks private signing keys are absent, and emits `release-chain.json` plus `verifier-chain.sha256`.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

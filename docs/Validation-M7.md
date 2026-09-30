@@ -33,3 +33,7 @@ python3 scripts/m7/verify_release_chain.py \
 ```
 
 A mismatch at any of M4->M5, M5->M6 or M6->M7 is a release STOP. Do not weaken the digest check; rebuild the downstream attestations from one coherent upstream generation.
+
+## M12 integration
+
+Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.

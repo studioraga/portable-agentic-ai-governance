@@ -161,3 +161,7 @@ See `docs/Deployment-M9.md` for Node1 generation, verifier-only Node2 deployment
 ## Milestone 10 deployment
 
 M10 material is generated only by the release authority and is bound to the exact M9 security-operations manifest. Use `deploy/m10/one_shot_node1_full.sh` to create the final M0-M10 generation, then package one coherent verifier chain with `deploy/m10/package_verifier_chain.sh`. Node2 receives `workflow-decision-public.pem` but never `workflow-decision-private.pem` or the M10 release signing private key. See `docs/Deployment-M10.md`.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

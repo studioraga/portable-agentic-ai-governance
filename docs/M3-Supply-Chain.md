@@ -33,3 +33,7 @@ For enterprise release signing, Sigstore/Cosign may be layered on top of the sam
 - `AIS-PROV-001`
 - `AIS-SIG-001`
 - `AIS-VULN-001`
+
+## M12 integration
+
+M12 consumes M3 vulnerability/SBOM concepts but adds the missing distinction between vulnerability severity and reliable evidence of active exploitation. M3 release blocking therefore remains separate from M12 AEV candidate classification.

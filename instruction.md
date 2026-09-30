@@ -69,3 +69,7 @@ Add deterministic SIEM, incidents, bounded automated containment, recovery verif
 
 ## M10 multi-agent invariant
 Multiple agents may reason and propose only through the signed fixed topology. Direct peer delegation is prohibited. The Governance Supervisor orchestrates but does not authorize side effects, accept risk, certify compliance, override policy, contain workloads or approve recovery. M8 remains the side-effect approval boundary; M9 remains the SecOps containment/recovery boundary; final M10 workflow disposition requires an independently signed human decision.
+
+## M12 operating instruction
+
+Treat `governance/cra/cra-requirements.json` from M11 as immutable input. M12 may add an overlay control mapping but must not rewrite M11 legal requirements. Use deterministic local fixtures for acceptance, preserve source provenance and available malicious-actor information without inventing attribution, fail closed on stale/conflicting intelligence, and keep Node2 verifier-only. M12 output is an AEV **candidate assessment**, not a statutory notification, deadline trigger, or conformity decision.

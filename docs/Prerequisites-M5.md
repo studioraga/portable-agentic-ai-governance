@@ -28,3 +28,7 @@ M5 supports Python 3.10 and later. Python 3.10 does not include the standard-lib
 repository's Python-3.10-safe deterministic dependency inventory and does not require
 `tomli` or another third-party TOML parser. Installing `tomli` is neither required nor
 used by the production preflight.
+
+## M12 integration
+
+M12 adds no mandatory cloud dependency. Its deterministic acceptance requires Python 3.10+, OpenSSL/Ed25519, Bash, `tar`, `sha256sum`, and the frozen M11 source baseline. Live vulnerability-feed access is deliberately not required for M12 acceptance.

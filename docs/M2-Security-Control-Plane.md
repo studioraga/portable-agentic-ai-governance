@@ -121,3 +121,7 @@ M2 is accepted only when:
 - signed security audit verifies;
 - runtime secrets/private keys are owner-only;
 - clean release packaging excludes `.git`, `.venv`, caches and runtime state.
+
+## M12 integration
+
+M12 adds a CRA vulnerability/exploitation-intelligence layer without changing this milestone's authority boundary. M12 consumes existing evidence where relevant, emits signed AEV candidate assessments, and performs no statutory-clock, ENISA-submission, or CRA-conformity side effect.

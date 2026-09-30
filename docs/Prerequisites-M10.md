@@ -21,3 +21,7 @@ python3 scripts/m3/validate_m3_node.py ~/.config/portable-ai-governance/m3/m3.en
 ```
 
 On the release-authority node, keep the M5 continuous-control timer quiesced while generating a downstream release generation.
+
+## M12 integration
+
+M12 adds no mandatory cloud dependency. Its deterministic acceptance requires Python 3.10+, OpenSSL/Ed25519, Bash, `tar`, `sha256sum`, and the frozen M11 source baseline. Live vulnerability-feed access is deliberately not required for M12 acceptance.

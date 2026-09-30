@@ -1,0 +1,9 @@
+{
+  "snapshot_id":"enisa-kev-fixture-20260930",
+  "generated_at":"2026-09-30T12:00:00Z",
+  "source_id":"enisa-eu-kev",
+  "records":[
+    {"cveID":"CVE-2099-9002","dateAdded":"2026-09-30","active_exploitation":true,"reliability":"high","actor_information":"synthetic actor information available from fixture","note":"SYNTHETIC TEST DATA - confirmed exploitation fixture"},
+    {"cveID":"CVE-2099-9003","dateAdded":"2026-09-30","active_exploitation":true,"reliability":"high","note":"SYNTHETIC TEST DATA - product not affected"}
+  ]
+}

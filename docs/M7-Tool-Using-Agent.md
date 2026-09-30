@@ -43,3 +43,7 @@ M7 tools are non-side-effecting. Shell/network execution, writes, deletion, poli
 ## Attestation-generation lifecycle
 
 M7 is bound to the exact M6 manifest, M6 is bound to the exact M5 manifest, and M5 is bound to the exact M4 manifest. Continuous-control refreshes that change M5 are therefore new attestation generations. Once M6/M7 exist, the bound M5 release snapshot is immutable. Refreshing continuous controls requires rebuilding/re-signing M6 and M7 and redistributing the verifier chain.
+
+## M12 integration
+
+Any future live-feed M12 connector must remain behind M7 typed-tool mediation and approved-source policy. The M12 acceptance path intentionally uses offline fixtures and performs no network ingestion.

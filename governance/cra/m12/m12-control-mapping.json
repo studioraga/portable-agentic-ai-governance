@@ -1,0 +1,22 @@
+{
+  "schema": "cra.m12.control-mapping.v1",
+  "version": "0.12.0",
+  "m11_baseline_immutable": true,
+  "controls": [
+    {"control_id":"CRA-VI-001","purpose":"Approved vulnerability/exploitation source registry","m11_requirements":["CRA-REQ-023","CRA-REQ-028"]},
+    {"control_id":"CRA-VI-002","purpose":"Normalize vulnerability identities and aliases","m11_requirements":["CRA-REQ-058"]},
+    {"control_id":"CRA-VI-003","purpose":"Correlate vulnerable components to product inventory","m11_requirements":["CRA-REQ-005","CRA-REQ-058"]},
+    {"control_id":"CRA-AEV-001","purpose":"Preserve exploitation evidence and provenance","m11_requirements":["CRA-REQ-023","CRA-REQ-028"]},
+    {"control_id":"CRA-AEV-002","purpose":"Deterministic AEV candidate classification","m11_requirements":["CRA-REQ-023"]},
+    {"control_id":"CRA-AEV-003","purpose":"Fail closed on stale/conflicting exploitation intelligence","m11_requirements":["CRA-REQ-023"]},
+    {"control_id":"CRA-AEV-004","purpose":"Digest-bind and sign M12 intelligence evidence","m11_requirements":["CRA-REQ-023","CRA-REQ-058"]},
+    {"control_id":"CRA-THREAT-001","purpose":"Preserve available malicious-actor information without inferring identity","m11_requirements":["CRA-REQ-028"]}
+  ],
+  "boundaries": {
+    "starts_statutory_clock": false,
+    "submits_enisa_report": false,
+    "makes_cra_conformity_claim": false,
+    "node1_intelligence_authority": true,
+    "node2_verifier_only": true
+  }
+}

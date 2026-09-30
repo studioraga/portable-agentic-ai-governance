@@ -1,0 +1,8 @@
+{
+  "snapshot_id":"vendor-vuln-fixture-20260930",
+  "generated_at":"2026-09-30T12:00:00Z",
+  "source_id":"vendor-psirt",
+  "records":[
+    {"id":"VENDOR-ADV-42","cve":"CVE-2099-9002","aliases":["GHSA-SYNTH-0002"],"severity":"high","affected_packages":[{"name":"crypto-lib","purl":"pkg:generic/crypto-lib@2.4.0"}]}
+  ]
+}

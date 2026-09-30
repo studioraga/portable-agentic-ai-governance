@@ -17,3 +17,7 @@ The portable initial catalog contains non-secret M3, M4 and M5 evidence. M2 cont
 ## No LLM dependency
 
 The first implementation uses deterministic read-only operations and does not require an LLM runtime or external model API. A later reasoning adapter may consume these tools, but the signed capability policy and deterministic control plane remain authoritative.
+
+## M12 integration
+
+The bounded Evidence Analyst may read M12 signed assessments and provenance, but M12 classification is deterministic and must not be overridden by free-form model reasoning. Any explanation must remain grounded in recorded source/evidence IDs.

@@ -64,3 +64,9 @@ var/m11-verifier.tar.gz
 var/m11-verifier.tar.gz.sha256
 var/m11-validation/
 var/m11-validation*/
+# M12 generated CRA vulnerability/exploitation intelligence material/evidence
+var/m12-material/
+var/m12-verifier.tar.gz
+var/m12-verifier.tar.gz.sha256
+var/m12-validation/
+var/m12-validation*/

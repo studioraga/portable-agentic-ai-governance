@@ -1,0 +1,8 @@
+{
+  "snapshot_id":"internal-ir-fixture-20260930",
+  "generated_at":"2026-09-30T12:00:00Z",
+  "source_id":"internal-ir",
+  "records":[
+    {"cve":"CVE-2099-9004","observed_at":"2026-09-30T11:00:00Z","active_exploitation":false,"reliability":"high","note":"SYNTHETIC TEST DATA - internal investigation contradicts exploitation"}
+  ]
+}

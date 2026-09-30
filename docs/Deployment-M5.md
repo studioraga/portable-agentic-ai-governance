@@ -67,3 +67,7 @@ The timer exists only on the signing/release-authority node. Verifier-only nodes
 ## Downstream-bound M5 material (M6/M7 and later)
 
 When M6/M7 bind an M5 release, `var/m5-material/.pag-downstream-bound.json` marks that M5 directory immutable. The M5 builder, refresh command, and timer installer refuse to mutate it. To produce new continuous-control evidence after downstream agents exist, create a new release generation through the latest downstream full release workflow so M5, M6, M7 (and later milestones) are rebuilt/re-signed in dependency order and redistributed together.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

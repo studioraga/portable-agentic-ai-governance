@@ -41,3 +41,7 @@ After extracting the verifier package:
 ```
 
 A passing M11 validation proves integrity and traceability of the CRA engineering baseline; it does not prove CRA legal conformity.
+
+## M12 implementation hand-off
+
+M12 implements the vulnerability/exploitation-intelligence precursor for selected M11 requirements while leaving the M11 matrix immutable. In particular, M12 advances engineering evidence for `CRA-REQ-005`, `CRA-REQ-023`, `CRA-REQ-028`, and `CRA-REQ-058`; Article 14 reporting submission remains deferred to M14 and the statutory clock remains deferred to M13.

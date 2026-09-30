@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"M12 intelligence snapshot","type":"object","required":["snapshot_id","generated_at","source_id","records"],"properties":{"snapshot_id":{"type":"string"},"generated_at":{"type":"string"},"source_id":{"type":"string"},"records":{"type":"array"}}}

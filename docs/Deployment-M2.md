@@ -123,3 +123,7 @@ sudo ufw allow from <NODE2-IP> to any port 9443 proto tcp
 ```
 
 Expected: HTTP 200 and `PASS: remote Node1 M2 secure ping`.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.

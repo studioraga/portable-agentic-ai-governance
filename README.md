@@ -226,3 +226,7 @@ See `docs/M10-Multi-Agent-Workflows.md`, `docs/Prerequisites-M10.md`, `docs/Depl
 ## Milestone 11 — CRA Product Security Foundation
 
 M11 adds the authoritative CRA manufacturer/product-security requirements matrix and a signed Node1 release-authority / Node2 verifier-only baseline. It deliberately makes no CRA conformity claim and performs no ENISA reporting side effects. See `docs/M11-CRA-Product-Security-Foundation.md` and `docs/Validation-M11.md`.
+
+## Milestone 12 — CRA Vulnerability & Exploitation Intelligence
+
+M12 adds deterministic vulnerability normalization, alias de-duplication, product/component correlation, exploitation-evidence provenance, and fail-closed AEV candidate classification. Node1 is the intelligence/signing authority and Node2 is verifier-only. M12 does not start the statutory clock, submit to ENISA, or claim CRA conformity. See `docs/M12-CRA-Vulnerability-Exploitation-Intelligence.md`, `docs/Prerequisites-M12.md`, `docs/Deployment-M12.md`, and `docs/Validation-M12.md`.

@@ -40,3 +40,7 @@ Node2 must not contain either M10 private key.
 ```
 
 After the final Node1 generation passes, do not regenerate it while validating Node2. Package and transfer one coherent M4-M10 verifier chain.
+
+## M12 integration
+
+Existing deployment semantics remain intact. M12 uses separate `deploy/m12/` one-shot and verifier packaging scripts; Node1 retains M12 private signing material and Node2 receives verifier-only material.
