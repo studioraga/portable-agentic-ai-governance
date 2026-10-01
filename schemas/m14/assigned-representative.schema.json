@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "eu_login_mfa_expected": {
+      "type": "boolean"
+    },
+    "representative_id": {
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "PRIMARY_AR",
+        "SECONDARY_AR"
+      ]
+    },
+    "submission_authorized_in_fixture": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "representative_id",
+    "role",
+    "eu_login_mfa_expected",
+    "submission_authorized_in_fixture"
+  ],
+  "title": "M14 Assigned Representative handoff",
+  "type": "object"
+}

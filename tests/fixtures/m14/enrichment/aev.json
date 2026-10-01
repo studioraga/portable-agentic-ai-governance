@@ -1,0 +1,15 @@
+{
+  "corrective_or_mitigating_measures_taken": "Synthetic fixed package prepared",
+  "general_exploit_nature": "Remote exploitation of synthetic vulnerable component",
+  "impact": "Synthetic confidentiality/integrity impact",
+  "malicious_actor_information": "Unknown actor; no attribution asserted",
+  "pec_justification": null,
+  "pec_requested": false,
+  "security_update_details": "Synthetic update 1.0.1",
+  "sensitivity": "INTERNAL",
+  "severity": "HIGH",
+  "source_ref": "AEV-SYNTH-1",
+  "title": "Synthetic actively exploited vulnerability",
+  "user_mitigation": "Apply synthetic fixed package and restrict exposed service",
+  "vulnerability_description": "Synthetic vulnerability used only for deterministic acceptance"
+}

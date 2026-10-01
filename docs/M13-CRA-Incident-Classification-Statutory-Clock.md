@@ -14,3 +14,7 @@ M13 consumes the frozen M11 CRA baseline, M12 AEV candidate evidence and M9 inci
 ## Explicit boundaries
 
 M13 does not perform ENISA/SRP submission, does not generate the M14 reporting package, and makes no CRA conformity claim.
+
+## M14 integration — CRA reporting / ENISA SRP evidence pack
+
+M14 consumes the frozen M11 requirement baseline, M12 vulnerability/exploitation intelligence and M13 incident/statutory-clock evidence to build signed Early Warning, 72-hour Notification and Final Report evidence packs. M14 is an internal preparation and verification layer only: it performs no CRA SRP/network submission, makes no conformity claim, preserves Node1 signing authority / Node2 verifier-only separation, and requires an authorised Assigned Representative to complete the current SRP web-interface workflow. See `docs/M14-CRA-Reporting-ENISA-SRP-Evidence-Pack.md`, `docs/Prerequisites-M14.md`, `docs/Deployment-M14.md`, and `docs/Validation-M14.md`.

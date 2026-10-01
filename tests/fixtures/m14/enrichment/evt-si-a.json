@@ -1,0 +1,15 @@
+{
+  "applied_and_ongoing_mitigations": "Credential rotation, isolation, monitoring",
+  "corrective_or_mitigating_measures_taken": "Credential rotation and service isolation",
+  "detailed_description": "Synthetic severe incident affecting confidentiality of sensitive telemetry",
+  "impact": "Sensitive telemetry exposure",
+  "incident_nature": "Unauthorized access to synthetic sensitive telemetry",
+  "initial_assessment": "Confidentiality impact on sensitive data",
+  "sensitivity": "INTERNAL",
+  "severity": "HIGH",
+  "source_ref": "evt-si-a",
+  "suspected_unlawful_or_malicious": true,
+  "threat_or_root_cause": "Synthetic compromised credential path",
+  "title": "Synthetic severe incident confidentiality impact",
+  "user_mitigation": "Rotate credentials and install update"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "all_currently_anchored_stages_ready": {
+      "type": "boolean"
+    },
+    "human_submission_required": {
+      "const": true
+    },
+    "srp_submission_performed": {
+      "const": false
+    }
+  },
+  "required": [
+    "pack_id",
+    "all_currently_anchored_stages_ready",
+    "human_submission_required",
+    "srp_submission_performed"
+  ],
+  "title": "M14 SRP submission readiness",
+  "type": "object"
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "deadline_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fields": {
+      "type": "object"
+    },
+    "missing_required_fields": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "readiness": {
+      "enum": [
+        "READY",
+        "NEEDS_DATA",
+        "NOT_YET_ANCHORED"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "EARLY_WARNING_24H",
+        "NOTIFICATION_72H",
+        "FINAL_REPORT"
+      ]
+    }
+  },
+  "required": [
+    "stage",
+    "deadline_at",
+    "readiness",
+    "fields",
+    "missing_required_fields"
+  ],
+  "title": "M14 reporting stage",
+  "type": "object"
+}

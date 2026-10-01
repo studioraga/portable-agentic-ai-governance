@@ -1,0 +1,101 @@
+{
+  "boundaries": {
+    "cra_conformity_claim": false,
+    "evidence_pack_only": true,
+    "network_submission": false,
+    "node2_verifier_only": true,
+    "srp_submission_performed": false
+  },
+  "controls": [
+    {
+      "control_id": "CRA-REP-001",
+      "m11_requirements": [
+        "CRA-REQ-024"
+      ],
+      "target": "Article 14(2)(a)",
+      "title": "AEV early-warning evidence pack"
+    },
+    {
+      "control_id": "CRA-REP-002",
+      "m11_requirements": [
+        "CRA-REQ-025"
+      ],
+      "target": "Article 14(2)(b)",
+      "title": "AEV 72-hour notification evidence pack"
+    },
+    {
+      "control_id": "CRA-REP-003",
+      "m11_requirements": [
+        "CRA-REQ-026",
+        "CRA-REQ-027"
+      ],
+      "target": "Article 14(2)(c)",
+      "title": "AEV final-report evidence pack"
+    },
+    {
+      "control_id": "CRA-REP-004",
+      "m11_requirements": [
+        "CRA-REQ-029"
+      ],
+      "target": "Article 14(4)(a)",
+      "title": "Severe-incident early-warning evidence pack"
+    },
+    {
+      "control_id": "CRA-REP-005",
+      "m11_requirements": [
+        "CRA-REQ-030"
+      ],
+      "target": "Article 14(4)(b)",
+      "title": "Severe-incident 72-hour notification evidence pack"
+    },
+    {
+      "control_id": "CRA-REP-006",
+      "m11_requirements": [
+        "CRA-REQ-031"
+      ],
+      "target": "Article 14(4)(c)",
+      "title": "Severe-incident final-report evidence pack"
+    },
+    {
+      "control_id": "CRA-SRP-001",
+      "m11_requirements": [
+        "CRA-REQ-023",
+        "CRA-REQ-028"
+      ],
+      "target": "Article 14/16 SRP handoff",
+      "title": "SRP field-completeness and stage mapping"
+    },
+    {
+      "control_id": "CRA-SRP-002",
+      "m11_requirements": [
+        "CRA-REQ-023",
+        "CRA-REQ-028"
+      ],
+      "target": "Article 16 operational workflow",
+      "title": "Assigned Representative handoff and human submission boundary"
+    },
+    {
+      "control_id": "CRA-SRP-003",
+      "m11_requirements": [
+        "CRA-REQ-025"
+      ],
+      "target": "Article 16(2) exceptional-circumstance evidence",
+      "title": "PEC evidence flag for AEV 72-hour notification"
+    },
+    {
+      "control_id": "CRA-REP-007",
+      "m11_requirements": [
+        "CRA-REQ-024",
+        "CRA-REQ-025",
+        "CRA-REQ-026",
+        "CRA-REQ-029",
+        "CRA-REQ-030",
+        "CRA-REQ-031"
+      ],
+      "target": "Reporting evidence integrity",
+      "title": "Signed immutable reporting evidence pack"
+    }
+  ],
+  "milestone": "M14",
+  "version": "0.14.0"
+}

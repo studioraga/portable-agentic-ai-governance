@@ -1,0 +1,15 @@
+{
+  "applied_and_ongoing_mitigations": "Quarantine, signed-image replacement, integrity monitoring",
+  "corrective_or_mitigating_measures_taken": "Synthetic image quarantined and replaced",
+  "detailed_description": "Synthetic malicious-code severe incident",
+  "impact": "Product integrity compromised",
+  "incident_nature": "Synthetic malicious code introduced and executed in product",
+  "initial_assessment": "Malicious code execution confirmed by deterministic fixture",
+  "sensitivity": "RESTRICTED",
+  "severity": "CRITICAL",
+  "source_ref": "evt-si-b",
+  "suspected_unlawful_or_malicious": true,
+  "threat_or_root_cause": "Synthetic malicious package substitution",
+  "title": "Synthetic severe incident malicious code",
+  "user_mitigation": "Disconnect affected unit and install signed replacement image"
+}

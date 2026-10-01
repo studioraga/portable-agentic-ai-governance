@@ -1,0 +1,51 @@
+# M14 — CRA Reporting and ENISA SRP Evidence Pack
+
+M14 converts M13 CRA cases and statutory deadlines into deterministic, signed reporting evidence packs for the three Article 14 stages: Early Warning, 72-hour Notification, and Final Report. It does **not** submit to ENISA or a CSIRT and makes no CRA conformity claim.
+
+## Operational boundary
+
+As of the M14 guidance snapshot, the CRA Single Reporting Platform is operational and mandatory manufacturer reporting applies from 11 September 2026. ENISA states that no API is provided in the initial SRP release, so M14 automates internal preparation and verification while an authorised Assigned Representative performs the portal submission.
+
+## Inputs
+
+- frozen M11 CRA requirements matrix;
+- M12 vulnerability/exploitation intelligence controls;
+- M13 AEV/severe-incident cases and statutory clocks;
+- manufacturer, product, Assigned Representative and reporting-enrichment evidence.
+
+## Outputs
+
+- `reporting-packs.json` — per-case, per-stage field payloads;
+- `submission-readiness.json` — deterministic completeness/readiness state;
+- `srp-field-checklist.json` — field checklist suitable for portal handoff;
+- signed `m14-reporting-manifest.json` binding the pack to M11/M12/M13 baselines.
+
+## Report stages
+
+### Actively exploited vulnerability
+
+- 24h early warning;
+- 72h vulnerability notification;
+- final report no later than 14 days after a corrective/mitigating measure becomes available.
+
+### Severe incident
+
+- 24h early warning;
+- 72h incident notification;
+- final report within one month after the 72h notification.
+
+## Particularly Exceptional Circumstances
+
+M14 models the PEC flag only for the AEV 72-hour stage. The system never activates PEC automatically; it records evidence for Assigned Representative judgment and later M14/M15 governance decisions.
+
+## Security properties
+
+Node1 holds the M14 signing key and builds the authoritative pack. Node2 receives verifier-only material. All submission flags remain false; any private key in a Node2 package causes fail-closed rejection.
+
+## Official references
+
+- Regulation (EU) 2024/2847, Article 14 and Article 16: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847
+- European Commission CRA reporting obligations: https://digital-strategy.ec.europa.eu/en/policies/cra-reporting
+- ENISA CRA Single Reporting Platform: https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp
+- ENISA SRP FAQ: https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions
+- ENISA SRP Glossary: https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp/cra-srp-glossary2

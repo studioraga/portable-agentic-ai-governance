@@ -1,0 +1,17 @@
+{
+  "assigned_representative": {
+    "eu_login_mfa_expected": true,
+    "representative_id": "AR-SYNTH-001",
+    "role": "PRIMARY_AR",
+    "submission_authorized_in_fixture": true
+  },
+  "contact_email": "cra-reporting@example.invalid",
+  "country": "DE",
+  "legal_name": "Synthetic Product Manufacturer GmbH",
+  "manufacturer_id": "manufacturer-synth-001",
+  "member_states_product_available": [
+    "DE",
+    "FR"
+  ],
+  "selected_csirt_coordinator": "SYNTHETIC-DE-CDAC"
+}

@@ -76,3 +76,10 @@ var/m13-verifier.tar.gz
 var/m13-verifier.tar.gz.sha256
 var/m13-validation/
 var/m13-validation*/
+
+# M14 generated CRA reporting/SRP evidence material/evidence
+var/m14-material/
+var/m14-verifier.tar.gz
+var/m14-verifier.tar.gz.sha256
+var/m14-validation/
+var/m14-validation*/
