@@ -1,0 +1,11 @@
+{
+  "component": "pkg:generic/vendor/synthetic-lib@2.0",
+  "confidentiality_requested": false,
+  "product_id": "product-node2",
+  "received_at": "2026-10-04T09:00:00Z",
+  "report_id": "RPT-COMP-001",
+  "reporter_contact": "psirt@example.invalid",
+  "source_type": "internal_security",
+  "summary": "Synthetic third-party component issue",
+  "vulnerability_id": "CVE-2099-9003"
+}

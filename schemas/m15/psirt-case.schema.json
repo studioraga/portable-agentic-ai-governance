@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "ack_due_at": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "external_side_effects_performed": {
+      "type": "boolean"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "case_id",
+    "report_id",
+    "state",
+    "product_id",
+    "ack_due_at",
+    "external_side_effects_performed"
+  ],
+  "title": "M15 PSIRT case",
+  "type": "object"
+}

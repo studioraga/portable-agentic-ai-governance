@@ -1,0 +1,11 @@
+{
+  "component": "pkg:pypi/synthetic-parser@1.0.0",
+  "confidentiality_requested": true,
+  "product_id": "product-node2",
+  "received_at": "2026-10-04T08:00:00Z",
+  "report_id": "RPT-EXT-001",
+  "reporter_contact": "researcher@example.invalid",
+  "source_type": "external_researcher",
+  "summary": "Synthetic parser flaw report",
+  "vulnerability_id": "CVE-2099-9002"
+}

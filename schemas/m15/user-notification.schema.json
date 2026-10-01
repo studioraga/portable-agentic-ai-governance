@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "audience": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "case_type": {
+      "enum": [
+        "AEV",
+        "SEVERE_INCIDENT"
+      ]
+    },
+    "mitigations": {
+      "type": "array"
+    },
+    "notification_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "sent": {
+      "type": "boolean"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "notification_id",
+    "case_id",
+    "case_type",
+    "product_id",
+    "audience",
+    "summary",
+    "mitigations",
+    "sent"
+  ],
+  "title": "M15 user notification",
+  "type": "object"
+}

@@ -83,3 +83,9 @@ var/m14-verifier.tar.gz
 var/m14-verifier.tar.gz.sha256
 var/m14-validation/
 var/m14-validation*/
+# M15 generated CRA PSIRT/CVD/user-notification material/evidence
+var/m15-material/
+var/m15-verifier.tar.gz
+var/m15-verifier.tar.gz.sha256
+var/m15-validation/
+var/m15-validation*/

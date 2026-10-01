@@ -1,0 +1,112 @@
+{
+  "boundaries": {
+    "component_maintainer_contacted": false,
+    "cra_conformity_claim": false,
+    "evidence_only": true,
+    "external_dispatch": false,
+    "human_authorization_required": true,
+    "node2_verifier_only": true,
+    "public_disclosure_performed": false,
+    "user_notification_sent": false
+  },
+  "cvd": {
+    "acknowledgement_target_hours": 72,
+    "component_coordination_requires_human_authorization": true,
+    "default_embargo_days": 90,
+    "delayed_disclosure_requires_justification": true,
+    "publication_requires_fix_available": true,
+    "publication_requires_human_authorization": true
+  },
+  "legal_scope": [
+    {
+      "purpose": "third-party component maintainer coordination where appropriate",
+      "reference": "Article 13(6)"
+    },
+    {
+      "purpose": "easily identifiable single contact point enabling direct and rapid communication",
+      "reference": "Article 13(17)"
+    },
+    {
+      "purpose": "inform impacted users and where appropriate all users of AEV/severe incident and mitigations",
+      "reference": "Article 14(8)"
+    },
+    {
+      "purpose": "public disclosure of fixed vulnerability information after security update availability, with justified delay option",
+      "reference": "Annex I Part II(4)"
+    },
+    {
+      "purpose": "put in place and enforce coordinated vulnerability disclosure policy",
+      "reference": "Annex I Part II(5)"
+    },
+    {
+      "purpose": "facilitate vulnerability information sharing and provide reporting contact",
+      "reference": "Annex I Part II(6)"
+    },
+    {
+      "purpose": "manufacturer/contact and vulnerability-reporting/CVD-policy information",
+      "reference": "Annex II(1)-(2)"
+    }
+  ],
+  "milestone": "M15",
+  "name": "CRA PSIRT / Coordinated Vulnerability Disclosure / User Notification",
+  "psirt": {
+    "accepted_sources": [
+      "external_researcher",
+      "customer",
+      "component_maintainer",
+      "internal_security",
+      "m12_intelligence"
+    ],
+    "required_intake_fields": [
+      "report_id",
+      "received_at",
+      "source_type",
+      "product_id",
+      "summary",
+      "reporter_contact",
+      "confidentiality_requested"
+    ],
+    "single_point_of_contact": {
+      "email": "security@example.invalid",
+      "name": "Studio Raga Product Security Response Team",
+      "policy_uri": "https://example.invalid/security/cvd",
+      "reporting_uri": "https://example.invalid/security/report-vulnerability"
+    },
+    "triage_states": [
+      "RECEIVED",
+      "TRIAGED",
+      "VALIDATED",
+      "DUPLICATE",
+      "REJECTED",
+      "REMEDIATION_IN_PROGRESS",
+      "FIX_AVAILABLE",
+      "DISCLOSURE_READY",
+      "CLOSED"
+    ]
+  },
+  "user_notification": {
+    "audiences": [
+      "IMPACTED_USERS",
+      "ALL_USERS_WHERE_APPROPRIATE"
+    ],
+    "required_fields": [
+      "notification_id",
+      "case_id",
+      "case_type",
+      "product_id",
+      "audience",
+      "summary",
+      "risk",
+      "mitigations",
+      "corrective_measures",
+      "published_at_or_planned_at"
+    ],
+    "requires_human_authorization": true,
+    "structured_machine_readable": true,
+    "trigger_case_types": [
+      "AEV",
+      "SEVERE_INCIDENT"
+    ]
+  },
+  "version": "0.15.0"
+}

@@ -1,0 +1,73 @@
+{
+  "controls": [
+    {
+      "control_id": "CRA-CVD-001",
+      "description": "Prepare evidence for component-maintainer coordination without automatic external contact.",
+      "requirement_ids": [
+        "CRA-REQ-006"
+      ]
+    },
+    {
+      "control_id": "CRA-PSIRT-001",
+      "description": "Define identifiable PSIRT single point of contact and deterministic intake/triage.",
+      "requirement_ids": [
+        "CRA-REQ-017"
+      ]
+    },
+    {
+      "control_id": "CRA-USER-NOTIFY-001",
+      "description": "Prepare structured impacted-user/all-user notifications for AEV/severe incidents.",
+      "requirement_ids": [
+        "CRA-REQ-039"
+      ]
+    },
+    {
+      "control_id": "CRA-VH-004",
+      "description": "Prepare fixed-vulnerability disclosure/advisory evidence with delayed-disclosure justification support.",
+      "requirement_ids": [
+        "CRA-REQ-061"
+      ]
+    },
+    {
+      "control_id": "CRA-VH-005",
+      "description": "Represent and validate enforceable coordinated vulnerability disclosure policy.",
+      "requirement_ids": [
+        "CRA-REQ-062"
+      ]
+    },
+    {
+      "control_id": "CRA-VH-006",
+      "description": "Represent vulnerability-reporting contact and information-sharing workflow.",
+      "requirement_ids": [
+        "CRA-REQ-063"
+      ]
+    },
+    {
+      "control_id": "CRA-USER-010",
+      "description": "Expose manufacturer/contact information in M15 user-information evidence.",
+      "requirement_ids": [
+        "CRA-REQ-066"
+      ]
+    },
+    {
+      "control_id": "CRA-USER-011",
+      "description": "Expose vulnerability reporting contact and CVD policy location.",
+      "requirement_ids": [
+        "CRA-REQ-067"
+      ]
+    },
+    {
+      "control_id": "CRA-PSIRT-EVID-001",
+      "description": "Sign digest-bound M15 PSIRT/CVD/user-notification evidence.",
+      "requirement_ids": [
+        "CRA-REQ-017",
+        "CRA-REQ-039",
+        "CRA-REQ-061",
+        "CRA-REQ-062",
+        "CRA-REQ-063"
+      ]
+    }
+  ],
+  "milestone": "M15",
+  "version": "0.15.0"
+}
