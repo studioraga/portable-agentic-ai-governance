@@ -1,0 +1,7 @@
+policy_module(pag_platform_demo, 1.0)
+
+type pag_platform_demo_t;
+type pag_platform_demo_exec_t;
+init_daemon_domain(pag_platform_demo_t, pag_platform_demo_exec_t)
+
+# Intentionally minimal demonstration domain; no rawio, sys_admin, ptrace, or kernel-module permissions.

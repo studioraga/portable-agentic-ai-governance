@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "firmware_id",
+    "version",
+    "payload_sha256",
+    "signed",
+    "rollback_counter"
+  ]
+}

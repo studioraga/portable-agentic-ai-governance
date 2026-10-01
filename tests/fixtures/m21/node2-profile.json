@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M21",
+  "capture_mode": "SIMULATED",
+  "node_id": "node2-fixture",
+  "role": "independent_verifier",
+  "architecture": "aarch64",
+  "os": {
+    "id": "ubuntu",
+    "version_id": "22.04"
+  },
+  "boot": {
+    "uefi": true,
+    "secure_boot": "enabled",
+    "kernel_lockdown": "integrity",
+    "chain": [
+      "BootROM/fuses",
+      "MB1",
+      "MB2",
+      "UEFI",
+      "kernel/DTB/initrd",
+      "rootfs"
+    ]
+  },
+  "firmware": {
+    "bios_vendor": "NVIDIA Jetson fixture",
+    "bios_version": "L4T36",
+    "bmc_present": false,
+    "jetson_ratchet_capable": true
+  },
+  "debug": {
+    "kernel.yama.ptrace_scope": 1,
+    "kernel.kptr_restrict": 1,
+    "kernel.dmesg_restrict": 1,
+    "kernel.perf_event_paranoid": 2,
+    "sysrq": 176
+  },
+  "linux_privilege": {
+    "non_root_demo_user": true,
+    "capability_bounding": true,
+    "no_new_privileges": true
+  },
+  "service_isolation": {
+    "systemd_analyze_available": true
+  },
+  "mac": {
+    "apparmor": {
+      "available": true,
+      "enforcing": true
+    },
+    "selinux": {
+      "available": false,
+      "enforcing": false
+    }
+  },
+  "root_of_trust": {
+    "tpm": {
+      "available": false,
+      "pcrs_available": false
+    },
+    "dice": {
+      "hardware_available": true,
+      "demo_available": true
+    },
+    "platform_hardware_root": true
+  },
+  "source": "fixture"
+}

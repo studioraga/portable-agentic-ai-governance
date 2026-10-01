@@ -1,0 +1,28 @@
+[Unit]
+Description=PAG M21 hardened platform-security demo
+After=network.target
+
+[Service]
+Type=simple
+User=pag-platform-demo
+DynamicUser=yes
+ExecStart=/usr/bin/sleep infinity
+NoNewPrivileges=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+RestrictAddressFamilies=AF_UNIX
+SystemCallArchitectures=native
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

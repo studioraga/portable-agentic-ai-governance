@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M21",
+  "tpm_pcrs": [
+    "0",
+    "2",
+    "4",
+    "7"
+  ],
+  "require_versioned_baseline": true,
+  "dice": {
+    "software_demo_is_hardware_evidence": false,
+    "hardware_evidence_required_for_production_claim": true
+  },
+  "note": "PCR values are version/platform specific and must be approved per release rather than globally hard-coded."
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M21",
+  "method": "STRIDE-inspired platform threat model",
+  "assets": [
+    "boot firmware",
+    "UEFI variables",
+    "BMC firmware",
+    "device firmware",
+    "kernel/initramfs/rootfs",
+    "signing keys",
+    "TPM/DICE secrets",
+    "debug interfaces",
+    "systemd services",
+    "MAC policy"
+  ],
+  "threats": [
+    {
+      "id": "T01",
+      "threat": "Unsigned or malicious boot component",
+      "mitigations": [
+        "secure boot",
+        "signature verification",
+        "measured boot evidence"
+      ]
+    },
+    {
+      "id": "T02",
+      "threat": "Authentic but vulnerable firmware rollback",
+      "mitigations": [
+        "monotonic version policy",
+        "hardware/software ratchet evidence"
+      ]
+    },
+    {
+      "id": "T03",
+      "threat": "Debug/JTAG/ptrace abuse",
+      "mitigations": [
+        "production debug policy",
+        "ptrace/kptr/dmesg/perf restrictions",
+        "fuse-state evidence where available"
+      ]
+    },
+    {
+      "id": "T04",
+      "threat": "Privileged service compromise",
+      "mitigations": [
+        "non-root service identity",
+        "capability bounding",
+        "NoNewPrivileges",
+        "namespaces/systemd isolation"
+      ]
+    },
+    {
+      "id": "T05",
+      "threat": "MAC policy bypass or absence",
+      "mitigations": [
+        "AppArmor/SELinux capability detection",
+        "enforcement evidence",
+        "policy templates"
+      ]
+    },
+    {
+      "id": "T06",
+      "threat": "Firmware signing-key theft",
+      "mitigations": [
+        "offline authority",
+        "private-key isolation",
+        "public verifier bundles",
+        "rotation/revocation process"
+      ]
+    },
+    {
+      "id": "T07",
+      "threat": "Boot measurement spoofing",
+      "mitigations": [
+        "TPM PCR evidence or DICE CDI evidence",
+        "signed evidence provenance"
+      ]
+    },
+    {
+      "id": "T08",
+      "threat": "BMC compromise persists below host OS",
+      "mitigations": [
+        "BMC inventory",
+        "signed updates",
+        "secure boot/update evidence",
+        "network/service isolation"
+      ]
+    },
+    {
+      "id": "T09",
+      "threat": "Supply-chain component vulnerability",
+      "mitigations": [
+        "SBOM",
+        "M12 vulnerability intelligence",
+        "M15 disclosure",
+        "M16 update lifecycle"
+      ]
+    },
+    {
+      "id": "T10",
+      "threat": "Security regression enters release",
+      "mitigations": [
+        "CI/CD platform-security gate",
+        "negative tests",
+        "signed validation evidence"
+      ]
+    }
+  ]
+}

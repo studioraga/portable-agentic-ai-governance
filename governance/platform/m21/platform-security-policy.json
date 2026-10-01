@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M21",
+  "version": "0.21.0",
+  "title": "Embedded Linux & Platform Security Validation",
+  "boundaries": {
+    "evidence_and_safe_demo_only": true,
+    "no_fuse_burn": true,
+    "no_uefi_key_enrollment": true,
+    "no_firmware_flash": true,
+    "no_debug_fuse_change": true,
+    "no_mac_policy_install": true,
+    "no_host_reconfiguration": true,
+    "cra_conformity_claim": false,
+    "node1_signing_authority": true,
+    "node2_verifier_only": true
+  },
+  "required_domains": [
+    "boot_chain",
+    "firmware_update",
+    "rollback",
+    "debug_access",
+    "linux_privilege",
+    "service_isolation",
+    "mac",
+    "root_of_trust",
+    "threat_model",
+    "cicd"
+  ],
+  "debug_sysctls": {
+    "kernel.yama.ptrace_scope": 1,
+    "kernel.kptr_restrict": 1,
+    "kernel.dmesg_restrict": 1,
+    "kernel.perf_event_paranoid": 2
+  },
+  "service_required_directives": [
+    "User=",
+    "DynamicUser=yes",
+    "NoNewPrivileges=true",
+    "CapabilityBoundingSet=",
+    "ProtectSystem=strict",
+    "ProtectHome=true",
+    "PrivateTmp=true",
+    "PrivateDevices=true",
+    "ProtectKernelTunables=true",
+    "ProtectKernelModules=true",
+    "ProtectControlGroups=true",
+    "RestrictSUIDSGID=true",
+    "LockPersonality=true"
+  ],
+  "boot_chains": {
+    "node1": [
+      "hardware-root/firmware",
+      "UEFI",
+      "shim/grub",
+      "kernel",
+      "initramfs",
+      "rootfs",
+      "systemd-services"
+    ],
+    "node2": [
+      "BootROM/fuses",
+      "MB1",
+      "MB2",
+      "UEFI",
+      "kernel/DTB/initrd",
+      "rootfs",
+      "systemd-services"
+    ]
+  },
+  "production_rules": {
+    "secure_boot_must_be_assessed": true,
+    "firmware_signature_required": true,
+    "rollback_protection_required": true,
+    "debug_policy_required": true,
+    "mac_capability_required": true,
+    "hardware_root_evidence_required": true,
+    "ci_gate_required": true
+  }
+}

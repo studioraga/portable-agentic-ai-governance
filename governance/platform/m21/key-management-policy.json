@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M21",
+  "demo_algorithm": "Ed25519",
+  "private_key_location": "Node1 only",
+  "node2_private_key_allowed": false,
+  "rotation_required": true,
+  "revocation_required": true,
+  "uefi_note": "Production UEFI uses platform PK/KEK/db/dbx key hierarchy; demo key is not a UEFI platform key.",
+  "jetson_note": "Production Jetson uses OEM PKC/fuse provisioning and UEFI keys; M21 never burns fuses.",
+  "bmc_note": "BMC/device firmware keys require a separate manufacturer root/update-key hierarchy."
+}

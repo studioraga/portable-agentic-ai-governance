@@ -1,0 +1,8 @@
+#include <tunables/global>
+/usr/bin/sleep flags=(attach_disconnected) {
+  #include <abstractions/base>
+  /usr/bin/sleep mr,
+  /proc/** r,
+  deny /sys/kernel/debug/** rwklx,
+  deny /dev/mem rwklx,
+}

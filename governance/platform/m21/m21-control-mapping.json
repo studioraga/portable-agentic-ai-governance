@@ -1,0 +1,95 @@
+{
+  "version": "0.21.0",
+  "milestone": "M21",
+  "m20_baseline_immutable": true,
+  "controls": [
+    {
+      "id": "PLAT-BOOT-001",
+      "title": "Authenticated/trusted boot chain",
+      "cra_requirements": [
+        "CRA-REQ-046",
+        "CRA-REQ-048",
+        "CRA-REQ-050",
+        "CRA-REQ-054"
+      ]
+    },
+    {
+      "id": "PLAT-FW-001",
+      "title": "Firmware signing and verification",
+      "cra_requirements": [
+        "CRA-REQ-050",
+        "CRA-REQ-064"
+      ]
+    },
+    {
+      "id": "PLAT-FW-002",
+      "title": "Firmware anti-rollback",
+      "cra_requirements": [
+        "CRA-REQ-047",
+        "CRA-REQ-059",
+        "CRA-REQ-064"
+      ]
+    },
+    {
+      "id": "PLAT-DBG-001",
+      "title": "Debug access control and kernel information restrictions",
+      "cra_requirements": [
+        "CRA-REQ-048",
+        "CRA-REQ-054"
+      ]
+    },
+    {
+      "id": "PLAT-LNX-001",
+      "title": "Linux least privilege and service isolation",
+      "cra_requirements": [
+        "CRA-REQ-046",
+        "CRA-REQ-048",
+        "CRA-REQ-054"
+      ]
+    },
+    {
+      "id": "PLAT-MAC-001",
+      "title": "SELinux/AppArmor mandatory access control capability",
+      "cra_requirements": [
+        "CRA-REQ-048",
+        "CRA-REQ-054"
+      ]
+    },
+    {
+      "id": "PLAT-ROT-001",
+      "title": "Hardware root of trust / TPM / DICE evidence",
+      "cra_requirements": [
+        "CRA-REQ-050",
+        "CRA-REQ-060"
+      ]
+    },
+    {
+      "id": "PLAT-TM-001",
+      "title": "Platform threat model",
+      "cra_requirements": [
+        "CRA-REQ-007",
+        "CRA-REQ-060"
+      ]
+    },
+    {
+      "id": "PLAT-CI-001",
+      "title": "Automated platform-security validation in CI/CD",
+      "cra_requirements": [
+        "CRA-REQ-060",
+        "CRA-REQ-090"
+      ]
+    }
+  ],
+  "boundaries": {
+    "evidence_and_safe_demo_only": true,
+    "no_fuse_burn": true,
+    "no_uefi_key_enrollment": true,
+    "no_firmware_flash": true,
+    "no_debug_fuse_change": true,
+    "no_mac_policy_install": true,
+    "no_host_reconfiguration": true,
+    "cra_conformity_claim": false,
+    "node1_signing_authority": true,
+    "node2_verifier_only": true
+  }
+}

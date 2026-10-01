@@ -124,3 +124,10 @@ var/m20-verifier.tar.gz.sha256
 var/m20-validation/
 var/m20-validation*/
 examples/secure-agentic-node1-node2/runtime/
+
+# M21 generated embedded Linux/platform-security material/evidence
+var/m21-material/
+var/m21-verifier.tar.gz
+var/m21-verifier.tar.gz.sha256
+var/m21-validation/
+var/m21-validation*/

@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M21",
+  "capture_mode": "SIMULATED",
+  "node_id": "node1-fixture",
+  "role": "release_authority",
+  "architecture": "x86_64",
+  "os": {
+    "id": "ubuntu",
+    "version_id": "24.04"
+  },
+  "boot": {
+    "uefi": true,
+    "secure_boot": "enabled",
+    "kernel_lockdown": "integrity",
+    "chain": [
+      "firmware",
+      "UEFI",
+      "shim/grub",
+      "kernel",
+      "initramfs",
+      "rootfs"
+    ]
+  },
+  "firmware": {
+    "bios_vendor": "fixture",
+    "bios_version": "1.0",
+    "bmc_present": false
+  },
+  "debug": {
+    "kernel.yama.ptrace_scope": 1,
+    "kernel.kptr_restrict": 1,
+    "kernel.dmesg_restrict": 1,
+    "kernel.perf_event_paranoid": 4,
+    "sysrq": 176
+  },
+  "linux_privilege": {
+    "non_root_demo_user": true,
+    "capability_bounding": true,
+    "no_new_privileges": true
+  },
+  "service_isolation": {
+    "systemd_analyze_available": true
+  },
+  "mac": {
+    "apparmor": {
+      "available": true,
+      "enforcing": true
+    },
+    "selinux": {
+      "available": false,
+      "enforcing": false
+    }
+  },
+  "root_of_trust": {
+    "tpm": {
+      "available": true,
+      "pcrs_available": true
+    },
+    "dice": {
+      "hardware_available": false,
+      "demo_available": true
+    },
+    "platform_hardware_root": true
+  },
+  "source": "fixture"
+}
