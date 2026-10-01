@@ -1,5 +1,46 @@
 # M21 Prerequisites
 
-Required on both nodes: Python 3, OpenSSL, Git, systemd userspace and the M20 source baseline. Useful live-audit tools include `mokutil`, `fwupdmgr`, `aa-status`, `getenforce`, `capsh`, `setpriv`, `systemd-analyze`, and `tpm2-tools`; absence is captured as evidence and does not get silently converted to success.
+M21 uses the common repository prerequisites plus platform-observation tools appropriate to each node.
 
-Node2 Jetson validation may additionally use NVIDIA `nv_fuse_read.sh` when installed/authorized. M21 never invokes fuse-burn or flash commands.
+## Required repository/runtime baseline
+
+Both nodes require:
+
+- the same selected M21 source release;
+- Python 3.10+;
+- Git;
+- OpenSSL/runtime crypto dependencies used by the project;
+- standard Linux user/file utilities;
+- systemd userspace for the reference service contract.
+
+For v0.21.1, both nodes should resolve the release to:
+
+```text
+m21-embedded-linux-platform-security-v0.21.1
+e83ebf03c6d1ce2f4076ab8e3dae8282e4aeb880
+```
+
+## Useful LIVE observation tools
+
+M21 can make use of:
+
+- `mokutil`;
+- `fwupdmgr`;
+- `systemd-analyze`;
+- `aa-status` / `apparmor_parser`;
+- `getenforce` where SELinux userspace is present;
+- `capsh`;
+- `setpriv`;
+- `tpm2-tools`.
+
+Absence of an optional observation tool is recorded as capability state; it must not silently become evidence that the control is enabled.
+
+## Node2 Jetson
+
+Jetson evidence may additionally use NVIDIA platform information and read-only fuse-inspection tooling when already installed and operator-authorized.
+
+M21 does not invoke fuse-programming, firmware-flashing, or irreversible Secure Boot provisioning commands.
+
+## Authority prerequisite
+
+Node1 may contain M21 private signing material during evidence generation. Node2 must not.

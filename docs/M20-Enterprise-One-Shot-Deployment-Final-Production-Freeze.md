@@ -8,3 +8,7 @@ M20 also exposes a Node1/Node2 demonstration built directly on M10 commit `d4ce1
 ## M21 integration — Embedded Linux & Platform Security
 
 M21 extends the frozen M0–M20 governance/CRA baseline into demonstrable platform security for BIOS/UEFI, Jetson/embedded boot firmware, BMC/device firmware inventory, firmware signing and anti-rollback, debug restrictions, Linux least privilege and systemd isolation, AppArmor/SELinux capability evidence, TPM/DICE roots of trust, platform threat modeling and CI/CD gates. It is non-destructive: live acceptance observes platform state and uses synthetic firmware for signing/rollback demonstrations; it never burns fuses, enrolls UEFI keys or flashes firmware. See `docs/M21-Embedded-Linux-Platform-Security-Validation.md`.
+
+## Documentation role
+
+This file is a milestone-specific historical/feature record. For the current repository workflow, use [`../README.md`](../README.md), [`../instruction.md`](../instruction.md), [`Architecture.md`](Architecture.md), [`Validation.md`](Validation.md), and [`Milestones.md`](Milestones.md).

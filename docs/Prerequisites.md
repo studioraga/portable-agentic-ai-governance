@@ -1,320 +1,66 @@
-# Prerequisites — Milestones 0 and 1
+# Common Prerequisites
 
-This document defines the machine, software, security, and repository prerequisites for the M0-M1 portable governance foundation. These are deliberately separated into **minimum runtime**, **full acceptance**, and **production-profile validation** requirements.
+This document covers repository-wide prerequisites. Milestone-specific additions live in `Prerequisites-M*.md` files.
 
-## 1. Supported deployment target
+## Supported baseline
 
-Primary validated target:
+The code requires Python 3.10 or newer and is designed for Linux-oriented validation/deployment workflows. Individual milestones may have additional host/platform assumptions.
 
-- Ubuntu 24.04 LTS x86_64 on Node1.
-- Python 3.11 or newer; Python 3.12 is the recommended Ubuntu 24.04 runtime.
-- At least 100 MiB free disk space for M0-M1 validation. Later milestones will require substantially more.
-- A normal non-root account with write access to the repository. `sudo` is required only when installing OS packages.
+## Core commands
 
-M0-M1 does **not** require a GPU, CUDA, NVIDIA driver, PostgreSQL, Qdrant, Docker, Kubernetes, an LLM, an external identity provider, Internet access, or Node2.
+Common workflows expect:
 
-## 2. Required OS commands
+- `python3`;
+- Python `venv` / `pip` for development environments;
+- `git`;
+- `bash`;
+- `openssl`;
+- `sha256sum`;
+- `tar` / `gzip`;
+- standard GNU user/file utilities.
 
-The preflight requires:
+Install only what is appropriate for the host and selected milestone. Do not mutate a production or evidence host merely to make an optional capability appear available.
 
-```text
-bash
-python3
-tar
-gzip
-sha256sum
-openssl
-install
-df
-awk
-find
-sort
-xargs
-```
-
-`git` is strongly recommended for source control but is not required by runtime validation.
-
-On Ubuntu 24.04, install the baseline packages with:
+## Python development environment
 
 ```bash
-sudo apt update
-sudo apt install -y --no-install-recommends \
-  python3 python3-venv python3-pip python3-pytest \
-  git openssl ca-certificates tar gzip coreutils findutils mawk
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e '.[dev]'
 ```
 
-Or use:
+Direct source execution may use:
 
 ```bash
-./deploy/install_prerequisites_ubuntu2404.sh
+export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
 ```
 
-The helper intentionally exits on non-Ubuntu-24.04 systems rather than making unverified package-manager changes.
+## Git and release prerequisites
 
-## 3. Python and virtual environment
+Operators should be able to:
 
-Required:
+- fetch and verify tags;
+- inspect exact commit identity;
+- keep the working tree clean for release evidence generation;
+- create release archives with `git archive`;
+- keep runtime evidence and secrets outside tracked source.
 
-```bash
-python3 --version
-python3 -m venv --help
-```
+## Runtime storage
 
-The repository uses the Python `src/` layout. Therefore `portable_ai_governance` is **not** importable merely because the shell is in the repository root. The deployment script performs both of these safeguards:
+Generated evidence is runtime state, not source. Keep it in protected local directories such as `var/` or milestone-specific installation paths under the user's configuration directory.
 
-1. exports `PYTHONPATH=$REPO/src` for the current process; and
-2. writes a `.pth` file into the local virtual environment.
+Private signing material must use restrictive permissions and must never be copied into verifier-only bundles.
 
-All validation scripts also explicitly export `PYTHONPATH`, so pytest and child processes do not depend on shell history.
+## Node roles
 
-## 4. Pytest and full acceptance
+The repository uses two logical roles:
 
-The built-in self-test suite is standard-library-only and remains usable offline. The full M0-M1 acceptance gate also includes the tests under `tests/`.
+- **Node1 / release authority** — may generate and sign evidence;
+- **Node2 / independent verifier** — verifies signed evidence without the private release signing key.
 
-Check:
+A milestone may be exercised locally with fixtures, but LIVE cross-node acceptance should preserve this authority split.
 
-```bash
-python3 -m pytest --version
-```
+## Current M21 additions
 
-If unavailable on Ubuntu 24.04:
-
-```bash
-sudo apt install python3-pytest
-```
-
-Or, where approved Internet/package-index access exists:
-
-```bash
-python3 -m pip install 'pytest>=7.4,<10'
-```
-
-Validation always invokes:
-
-```bash
-python -m pytest -q
-```
-
-rather than a bare `pytest`, ensuring the active interpreter is used.
-
-## 5. Network requirements
-
-M0-M1 runtime and validation are designed to work with **no network access** once OS prerequisites are present. No package download, model download, cloud API, telemetry service, or external database is required.
-
-The prerequisite installation helper uses Ubuntu repositories and therefore requires network access only when the required OS packages are not already installed.
-
-## 6. Repository prerequisites
-
-The following must exist and be readable:
-
-```text
-README.md
-instruction.md
-pyproject.toml
-docs/Architecture.md
-docs/Deployment.md
-docs/Validation.md
-docs/Milestones.md
-docs/Prerequisites.md
-src/
-schemas/
-governance/
-agents/
-tests/
-scripts/
-deploy/
-examples/
-release/
-```
-
-The repository root must be writable because validation creates `.venv/` and runtime state under `var/`.
-
-A clean source archive must **not** contain:
-
-```text
-.git/
-.venv/
-.pytest_cache/
-__pycache__/
-*.pyc
-runtime evidence/run/state files
-```
-
-## 7. Runtime directories and permissions
-
-Deployment creates:
-
-```text
-var/
-var/evidence/
-var/runs/
-var/state/
-```
-
-with mode `0700`. They contain local runtime material and must not be committed or included in release archives.
-
-Runtime files created beneath these directories must be owner-only mode `0600`. The deployment and validation entry points set `umask 077`, and the evidence writer additionally enforces `0600` explicitly after append/fsync. Acceptance checks must confirm that no file beneath `var/` is group-writable or world-writable.
-
-Verify manually:
-
-```bash
-stat -c '%a %U:%G %n' var var/evidence var/runs var/state
-find var -type f -perm -0020 -print
-find var -type f -perm -0002 -print
-```
-
-The two `find` commands must produce no output for the frozen M0-M1 baseline.
-
-## 8. Environment variables
-
-### Lab validation
-
-No secret environment variables are required. Defaults are intentionally local/test-only.
-
-```bash
-export PAG_SECURITY_PROFILE=lab
-```
-
-### Production-profile contract validation
-
-Required:
-
-```text
-PAG_SECURITY_PROFILE=production
-PAG_FAIL_CLOSED=1
-PAG_EVIDENCE_SIGNING_KEY
-PAG_REQUEST_SIGNING_KEY
-PAG_APPROVAL_SIGNING_KEY
-```
-
-Each bootstrap secret must be at least 32 characters and cryptographically independent from the other two for this M0-M1 contract validator. Production preflight and runtime validation fail closed when any two required signing keys are identical. Generate independent values, for example:
-
-```bash
-openssl rand -hex 32
-```
-
-Do not commit the secrets. Do not reuse one secret for multiple purposes. The three cryptographic domains are:
-
-```text
-PAG_EVIDENCE_SIGNING_KEY   governance/evidence envelopes
-PAG_REQUEST_SIGNING_KEY    signed request authentication/integrity
-PAG_APPROVAL_SIGNING_KEY   privileged approval artifacts
-```
-
-M0-M1 deliberately uses environment-provided symmetric bootstrap secrets only. Milestone 2 adds a `SecretProvider` abstraction, Vault/KMS/HSM adapters, key identifiers/versioning, rotation, historical-key verification, workload identity, and stronger lifecycle controls.
-
-## 9. Git prerequisites and initial commit
-
-A release archive intentionally excludes `.git/`. After extraction, initialize a fresh repository if required:
-
-```bash
-git init
-git branch -M main
-git add .
-git status
-git commit -m 'feat: bootstrap portable AI governance M0-M1'
-```
-
-Configure `user.name` and `user.email` first if Git requests them.
-
-## 10. Node2 prerequisites
-
-None for M0-M1.
-
-Node2 becomes relevant only when an application adapter needs an edge workload. Milestone 2 will define workload identity, mTLS, signed requests, persistent anti-replay, least privilege, and application-specific edge validation. The portable governance kernel must remain independently testable on Node1.
-
-## 11. Preflight
-
-Run before deployment:
-
-```bash
-./scripts/preflight_node1.sh
-```
-
-A valid baseline ends with:
-
-```text
-PREFLIGHT: PASS
-```
-
-Warnings such as missing Git or pytest identify optional/full-acceptance capabilities. Missing Python, venv, OpenSSL, archive/hash utilities, required repository paths, write access, or minimum disk space are hard failures. In `production`, preflight also hard-fails when `PAG_FAIL_CLOSED` is disabled, a required signing key is missing/short, or signing keys are reused.
-
-For the hardened M0-M1 acceptance gate, also run:
-
-```bash
-PYTHONPATH="$PWD/src" python scripts/check_production_key_separation.py
-PYTHONPATH="$PWD/src" python scripts/check_runtime_permissions.py
-```
-
-Expected summaries:
-
-```text
-KEY-SEPARATION TESTS PASS: 5/5
-RUNTIME-PERMISSION TESTS PASS
-```
-
-
-## Milestone 4 boundary
-Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
-
-
-## Milestone 5 dependencies
-
-M5 requires Python 3.10+, Bash, OpenSSL with Ed25519 support, SHA-256 utilities, tar/gzip/install, writable owner-private storage, a validated M4 material set and its signed AI-security manifest. M5 currently declares zero third-party Python runtime dependencies. Jurisdiction-specific privacy/legal frameworks, enterprise GRC APIs and third-party assurance feeds are deployment-specific adapters and are not required for the deterministic reference validation. Run `scripts/m5/preflight_dependencies.sh` before M5 verification on every node.
-
-## Milestone 6 dependencies
-
-M6 requires Python 3.10+, Bash, OpenSSL Ed25519, SHA-256 utilities, tar/gzip/install, owner-private storage, and validated M3/M4/M5 material. It declares zero third-party Python runtime dependencies and deliberately requires no LLM SDK or side-effecting tool integration. Run `scripts/m6/preflight_dependencies.sh` on every node.
-
-
-## Milestone 7 dependencies
-
-M7 requires Python 3.10+, Bash, OpenSSL with Ed25519 support, sha256sum, install, tar/gzip, validated M2 and M6 runtime material, and owner-private local storage. It adds zero third-party Python runtime dependencies. The M2 `audit_signing` secret and policy catalog are runtime dependencies for real tool invocation. Run `scripts/m7/preflight_dependencies.sh` on every node before deployment.
-
-
-## Milestone 8 — Approval-controlled actions
-M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
-
-
-## Milestone 9 — Security operations
-
-See `docs/Prerequisites-M9.md`. M9 adds no third-party Python runtime dependency.
-
-## Milestone 10 prerequisites
-
-M10 adds no third-party Python runtime dependency. It requires Python 3.10+, stdlib `fcntl`, OpenSSL Ed25519 support, SHA-256 utilities, owner-private local storage and a validated coherent M9 generation. GPU/LLM/orchestrator frameworks remain optional and are not trusted security dependencies. See `docs/Prerequisites-M10.md`.
-
-## M12 integration
-
-M12 adds no mandatory cloud dependency. Its deterministic acceptance requires Python 3.10+, OpenSSL/Ed25519, Bash, `tar`, `sha256sum`, and the frozen M11 source baseline. Live vulnerability-feed access is deliberately not required for M12 acceptance.
-
-## M13 integration boundary
-
-M13 adds deterministic CRA Article 14(5) severe-incident classification and a signed statutory-clock evidence layer. It consumes M9 security-event facts and M12 AEV candidate evidence while preserving M11 as the authoritative CRA requirement baseline. M13 records an immutable manufacturer-awareness T0, derives the applicable 24-hour and 72-hour deadlines, derives the AEV final-report deadline from corrective/mitigating-measure availability, and derives the severe-incident final-report deadline as one calendar month after the incident notification. M13 does **not** submit to ENISA/SRP, generate the M14 reporting pack, or make a CRA conformity claim. See `docs/M13-CRA-Incident-Classification-Statutory-Clock.md`, `docs/Prerequisites-M13.md`, `docs/Deployment-M13.md`, and `docs/Validation-M13.md`.
-
-## M14 integration — CRA reporting / ENISA SRP evidence pack
-
-M14 consumes the frozen M11 requirement baseline, M12 vulnerability/exploitation intelligence and M13 incident/statutory-clock evidence to build signed Early Warning, 72-hour Notification and Final Report evidence packs. M14 is an internal preparation and verification layer only: it performs no CRA SRP/network submission, makes no conformity claim, preserves Node1 signing authority / Node2 verifier-only separation, and requires an authorised Assigned Representative to complete the current SRP web-interface workflow. See `docs/M14-CRA-Reporting-ENISA-SRP-Evidence-Pack.md`, `docs/Prerequisites-M14.md`, `docs/Deployment-M14.md`, and `docs/Validation-M14.md`.
-
-## M15 integration
-
-M15 consumes the existing milestone evidence through the frozen M11–M14 contracts to prepare PSIRT/CVD, component-maintainer coordination, fixed-vulnerability advisory and Article 14(8) user-notification evidence. This document's original milestone authority is unchanged: M15 adds no automatic external dispatch, public disclosure, user notification, maintainer contact, ENISA submission or CRA conformity claim. See `docs/M15-CRA-PSIRT-CVD-User-Notification.md`, `docs/Deployment-M15.md`, and `docs/Validation-M15.md`.
-
-## M16 integration — CRA Secure Update & Product Lifecycle
-M16 consumes the existing milestone evidence without rewriting its historical responsibility. It adds support-period/lifecycle evidence, signed secure-update metadata and payload verification, anti-rollback decisions, update-retention/free-update policy checks, and end-of-support notification preparation. M16 keeps host OS/firmware modification and network rollout out of acceptance; see `docs/M16-CRA-Secure-Update-Product-Lifecycle.md`, `docs/Deployment-M16.md`, and `docs/Validation-M16.md`.
-
-## M17 — CRA Annex-I Compliance Evidence integration
-
-M17 consumes the existing M3–M16 security, vulnerability, incident, reporting, PSIRT/CVD and secure-update evidence and binds it to all Annex I Part I/II requirement rows from the frozen M11 CRA matrix. M17 records `EVIDENCED`, `PARTIAL` and `GAP` states with SHA-256 evidence references; it does not mutate M11 requirement status, perform conformity assessment, generate the Annex VII technical file, or claim CRA conformity. See `docs/M17-CRA-Annex-I-Compliance-Evidence.md` and `docs/Validation-M17.md`.
-
-## M18 integration
-
-M18 assembles the CRA Article 31 / Annex VII technical-documentation evidence file from the evidence produced by M3-M17. This document remains an input/reference to that assembly; M18 does not retroactively change this milestone's scope. The M18 technical file is explicitly a draft evidence package: it makes no CRA conformity claim, does not perform a conformity assessment, does not authorize CE marking, and does not fabricate the EU Declaration of Conformity. Product-specific production/security test evidence that remains incomplete is carried forward to M19 as an explicit readiness gap.
-
-## M19 integration — CRA Node1/Node2 Production Validation
-
-M19 consumes this milestone's evidence as part of the heterogeneous Node1/Node2 production-validation chain. The M19 signed validation bundle binds the frozen CRA baselines, checks source/version/platform parity and verifier-key isolation, and supplies a production-evidence candidate for Annex I Part II(3) regular product-security testing. M19 does not rewrite this milestone's historical claims, perform conformity assessment, or make a CRA conformity claim.
-
-## M20 integration
-
-M20 consumes the frozen evidence and controls from this milestone as part of the enterprise one-shot deployment/final-production-freeze chain. It does not rewrite this milestone or imply CRA conformity. Final-freeze readiness requires successful M19 live production validation. The M20 secure-agentic Node1/Node2 demonstration reuses the M10 constrained-authority topology and signed human-disposition model for traceable GenAI/agentic governance.
+See [`Prerequisites-M21.md`](Prerequisites-M21.md) for platform-audit tools such as `mokutil`, `fwupdmgr`, `systemd-analyze`, MAC utilities, and `tpm2-tools`.

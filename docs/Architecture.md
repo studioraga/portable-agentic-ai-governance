@@ -1,249 +1,197 @@
 # Architecture
 
-## 1. Core principle
+This document describes the architecture that remains true across milestones. Milestone-specific feature details live in the corresponding `docs/M*-*.md` files.
 
-Agents reason; deterministic controls authorize. Agents propose; typed executors act. Agents never become the security boundary.
+## 1. Architectural principle
 
-```text
-Enterprise governance
-        |
-Governance/Security/Assurance/Operations agents
-        |
-        v
-+--------------------------------------------------+
-| Deterministic Trust Kernel                       |
-| identity | RBAC/ABAC | policy | approvals        |
-| budgets | schemas | crypto | evidence | tools    |
-+--------------------------------------------------+
-        |
-        v
-Application adapters: camera | RAG | GenAI | SOC
+The repository separates **reasoning** from **authority**.
+
+Models and agents may analyze bounded inputs and produce proposals. Deterministic code remains responsible for identity, authorization, policy, budgets, schema validation, cryptographic verification, replay protection, signed evidence, approval, and release gates.
+
+```mermaid
+flowchart TD
+    Input[Request / Evidence / Event]
+    Identity[Identity + workload context]
+    AuthZ[RBAC / ABAC authorization]
+    Policy[Deterministic policy]
+    Schema[Typed schema validation]
+    Budget[Monotonic budgets]
+    Agent[Bounded agent / model reasoning]
+    Approval[Independent approval where required]
+    Action[Bounded tool or action]
+    Evidence[Signed / chained evidence]
+
+    Input --> Identity --> AuthZ --> Policy --> Schema --> Budget
+    Budget --> Agent
+    Agent --> Approval
+    Approval --> Action
+    Agent --> Evidence
+    Action --> Evidence
 ```
 
-## 2. Development hierarchy — Milestones 0 through 10
+An LLM is therefore never the final authorization boundary.
 
-### Milestone 0 — Schemas and Trust Kernel — IMPLEMENTED
-- Agent/control/risk/system/evidence schemas.
-- State graph with terminal states.
-- RBAC interface.
-- Policy engine.
-- Signed approvals.
-- Bounded budgets.
-- Request signing.
-- Persistent replay cache.
-- Chained signed evidence.
-- Artifact digest verification.
-- Fail-closed production security profile.
+## 2. Major architectural layers
 
-Acceptance: illegal transitions, budget overflow, tampered requests, replay, unknown policy controls, weak production profiles and evidence tampering fail closed.
+### Trust kernel
 
-### Milestone 1 — Governance foundation — IMPLEMENTED
-- GOV-01 AI System Inventory Agent.
-- GOV-03 AI Risk Agent.
-- GOV-06 Control Mapping Agent.
-- GOV-10 Governance Evidence Agent.
-- Golden onboarding workflow.
+`src/portable_ai_governance/kernel/`
 
-Acceptance: one AI system -> risk -> controls -> framework mappings -> signed evidence can be traced end to end. Unauthorized onboarding is denied. Agent risk acceptance is rejected.
+Provides deterministic state transitions, authorization interfaces, budgets, signed approval primitives, artifact verification, replay protection, request signing, security-profile handling, and evidence primitives.
 
-### Milestone 2 — Security control plane — NEXT
-Implement enterprise identity adapters, RBAC+ABAC, mTLS/workload identity, secrets abstraction, API security middleware, signed inter-service messages, rate limits, secure configuration drift, security event schema, and policy-as-code adapter.
+### Security control plane
 
-Acceptance: production profile cannot start without required identity/crypto/policy dependencies; negative authentication/authorization/replay/TLS tests pass.
+`src/portable_ai_governance/security/`
 
-### Milestone 3 — Supply chain
-Implement software SBOM, model/AI BOM, prompt/tool/agent locks, container/model signatures, SLSA-style provenance, vulnerability/VEX policy, secret scanning and release gates.
+Adds workload identity, protected secrets, cryptographic services, TLS/mTLS transport, security audit, rate limiting, policy adapters, and runtime security composition.
 
-Acceptance: unapproved digest, unsigned critical artifact, exploitable critical vulnerability, stale exception, or missing provenance blocks promotion.
+### Supply-chain and AI-system security
 
-### Milestone 4 — AI system security
-Implement model governance, dataset provenance, authorization-first RAG, digest-locked retrieval/reranking, AI evaluation, threat model and model/data integrity checks.
+- `src/portable_ai_governance/supply_chain/`
+- `src/portable_ai_governance/ai_security/`
 
-Acceptance: cross-tenant/resource retrieval, unknown model digest, index poisoning test fixture, or failed AI quality/security threshold blocks the operation.
+These layers bind software, models, prompts, tools, provenance, vulnerability policy, model governance, data provenance, retrieval authorization, embedding controls, evaluation, and threat modeling to deterministic evidence.
 
-### Milestone 5 — Compliance and risk automation
-Implement AI impact assessment, privacy/data classification, retention/legal hold, exception lifecycle, third-party AI registry, regulatory obligations and continuous controls.
+### Governance and bounded agents
 
-Acceptance: high/critical systems cannot reach production without owners, impact assessment, current risks, valid exceptions, and required privacy controls.
+- `src/portable_ai_governance/agents/`
+- `src/portable_ai_governance/evidence_analyst/`
+- `src/portable_ai_governance/tool_agent/`
+- `src/portable_ai_governance/action_agent/`
+- `src/portable_ai_governance/multi_agent/`
 
-### Milestone 6 — First bounded agent
-Add one read-only Evidence/Assurance Analyst with versioned model/prompt/tool identity, durable checkpoints, citation requirements, output validation and no side-effect tools.
+Agent capability expands progressively: read-only analysis, mediated typed tools, independently approved side effects, then supervised multi-agent proposals. Authority remains external to model reasoning.
 
-### Milestone 7 — Tool-using agent
-Add typed least-privilege tools. Every tool call passes schema -> principal authorization -> agent authorization -> policy -> budget -> audit.
+### Security operations
 
-### Milestone 8 — Approval-controlled actions
-Permit exactly four bounded reference side effects: `incident.create`, `rerun.request`, `ticket.create`, and `model.quarantine`. Every call passes schema -> authorization -> policy -> budget -> approval -> audit. Approval is an independent Ed25519-signed, exact-arguments-bound, short-lived, single-use artifact; ACTION-AGENT-001 cannot sign or self-approve it. Node2 receives the approval public key only. Reference executors write owner-private durable local state; external systems remain deployment adapters behind the same boundary.
+`src/portable_ai_governance/security_ops/`
 
-### Milestone 9 — Security operations
-Add SIEM/OpenTelemetry security events, incident triage, evidence preservation, containment, credential/key incident response, recovery and postmortem control feedback.
+Provides deterministic event handling, containment/recovery boundaries, and incident evidence preservation.
 
-### Milestone 10 — Multi-agent workflows
-Add supervisor-directed specialist workflows only after measured need. Supervisor owns sequence/state/dependencies/budgets, not authorization, risk acceptance, policy override, or approvals.
+### CRA-oriented evidence chain
 
-## 3. Reusable workflow 88 — AI system onboarding
+The CRA modules under `src/portable_ai_governance/cra_*` progressively add requirement mapping, vulnerability/exploitation intelligence, incident clocks, reporting-pack preparation, PSIRT/CVD, secure update/lifecycle, Annex-I evidence, Annex-VII technical-file assembly, Node1/Node2 production validation, and final-freeze evidence.
 
-Implemented golden path:
+These modules prepare and verify engineering evidence. They do not themselves perform a CRA conformity assessment or claim conformity.
 
-```text
-START
- -> VALIDATE_REQUEST
- -> AUTHORIZE
- -> LOAD_TRUSTED_CONTEXT
- -> PLAN
- -> POLICY_VALIDATE_PLAN
- -> EXECUTE_BOUNDED_TOOLS
-      -> inventory
-      -> risk
-      -> control mapping
- -> VERIFY_OUTPUT
- -> RECORD_EVIDENCE
- -> COMPLETE
+### Platform security
+
+`src/portable_ai_governance/platform_security/`
+
+M21 adds platform-profile collection and evaluation, synthetic firmware signing and anti-rollback demonstrations, TPM/PCR evidence handling, DICE semantics boundaries, debug-control evidence, boot-chain modeling, MAC capability evidence, and signed platform-security material.
+
+## 3. Node1 / Node2 trust architecture
+
+```mermaid
+flowchart LR
+    subgraph Authority[Node1 — authority domain]
+      S[Source + policy]
+      P1[Local/LIVE profile]
+      B[Build evidence]
+      K[Private signing key]
+      M[Signed milestone material]
+      S --> B
+      P1 --> B
+      K --> B
+      B --> M
+    end
+
+    subgraph Verifier[Node2 — verifier domain]
+      P2[LIVE profile]
+      V[Verifier-only material]
+      C[Digest / signature / policy checks]
+      R[PASS / FAIL evidence]
+      P2 --> C
+      V --> C --> R
+    end
+
+    P2 --> B
+    M -->|remove private signing material| V
 ```
 
-Future Milestone 5 expands this same workflow with data classification, provider assessment, impact assessment, threat model, privacy review, AI evaluation, supply-chain verification and human production approval.
+The important invariant is asymmetric authority: Node1 may sign; Node2 may verify but must not inherit the private signing key.
 
-## 4. Reusable workflow 89 — model promotion
+## 4. Evidence architecture
 
-Planned deterministic sequence:
-`candidate -> immutable digest -> license/provider -> vulnerability/security scan -> AI evaluation -> red team -> risk delta -> model BOM/SBOM -> human approval -> signed lock -> production registry`.
-
-## 5. Reusable workflow 90 — controlled AI inference
-
-Planned generic sequence:
-`request -> identity -> authorization -> policy -> approved model -> digest verification -> authorized evidence -> bounded execution -> output validation -> signed evidence`.
-
-## 6. Reusable workflow 91 — secure RAG
-
-Planned invariant: authorize before retrieval. The server constructs resource/tenant filters. Reranking may only process already-authorized candidates. Output is citation-checked and DLP-checked.
-
-## 7. Reusable workflow 92 — tool execution
-
-`agent proposes -> tool exists -> input schema -> user/workload authorized -> agent authorized -> policy -> approval if required -> budget -> executor -> signed audit result`.
-Tool outputs return to an LLM as untrusted data, never as instruction authority.
-
-## 8. Reusable workflow 93 — incident response
-
-`detect -> triage -> preserve -> contain proposal -> policy/approval -> contain -> investigate -> recover -> validate -> postmortem -> risk/control update`.
-
-## 9. What an LLM may and may not do — workflow 94
-
-Allowed: summarize, classify, correlate, recommend, generate hypotheses, draft controls, explain policy decisions.
-Forbidden authority: authentication, authorization, cryptographic verification, risk acceptance, privileged approval, deleting protected evidence, arbitrary shell execution, policy override.
-
-## 10. Testing hierarchy — workflow 95
-
-Every agent/control receives unit, schema, policy, permission, budget, negative, adversarial, integration, evidence and acceptance tests. An allowed-path test is never sufficient without denied-path tests.
-
-## 11. Required fail-closed tests — workflow 96
-
-Unknown model digest, expired approval, unknown tool, invalid schema, wrong tenant/resource, policy unavailable, missing mandatory evidence, expired identity, replay, exhausted budget and illegal transition must fail closed.
-
-## 12. Golden acceptance — workflow 97
-
-Specification -> reference implementation -> positive/negative tests -> runtime evidence -> score/decision. No production claim is based only on prose documentation.
-
-## 13. Production scorecard — workflow 98
-
-Mandatory gates: Security, Privacy, AI Evaluation, Supply Chain, Threat Assessment, Risk, Control Evidence, Exceptions, Human Approval, Observability, Incident Response and Recovery.
-
-## 14. Decision rule — workflow 99
-
-No weighted average may hide a mandatory control failure. A mandatory security/privacy/safety control failure yields `RELEASE_BLOCKED` regardless of high model accuracy.
-
-## 15. M0-M1 production cryptographic-domain separation
-
-The bootstrap production profile has three independent symmetric-key domains:
+Machine-readable governance material lives primarily under:
 
 ```text
-PAG_EVIDENCE_SIGNING_KEY
-    -> governance/evidence envelope integrity
-
-PAG_REQUEST_SIGNING_KEY
-    -> signed request authentication and body integrity
-
-PAG_APPROVAL_SIGNING_KEY
-    -> privileged approval artifact integrity
+governance/
+schemas/
+agents/
 ```
 
-The same secret MUST NOT be reused across any pair of these domains. Production preflight and the deterministic security-profile evaluator both enforce this rule and fail closed on full or partial reuse. This is an M0-M1 bootstrap control; M2 replaces direct environment-secret dependency with a provider abstraction and managed key lifecycle.
-
-## 16. M0-M1 runtime privacy boundary
-
-Runtime governance evidence and workflow state are private-by-default local security material. The required filesystem contract is:
+Executable enforcement and verification lives under:
 
 ```text
-var/            0700
-var/evidence/   0700
-var/runs/       0700
-var/state/      0700
-runtime files   0600
+src/
+scripts/
+deploy/
+tests/
 ```
 
-Deployment and validation execute with `umask 077`. The evidence ledger also forces its file to `0600` after append and `fsync`, so its confidentiality does not depend solely on the invoking shell's umask. Runtime permission validation is part of the M0-M1 acceptance evidence.
+Generated runtime evidence lives outside tracked source, normally under `var/` or an installed per-user path such as `~/.config/portable-ai-governance/<milestone>`.
 
+A signed milestone package generally contains:
 
-## Milestone 4 boundary
-Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
+1. policy/control material;
+2. captured or deterministic input evidence;
+3. generated result/summary material;
+4. artifact digests;
+5. a signed manifest;
+6. a public verification key;
+7. no private signing key in verifier-only packages.
 
+## 5. Validation architecture
 
-## Milestone 5 — Compliance and risk automation
+All milestone validation follows the same general progression:
 
-M5 consumes the secured M4 AI-system substrate and adds deterministic governance automation: impact assessment, privacy assessment, exception lifecycle, third-party risk, continuous-control freshness and evidence-backed reporting. M5 artifacts are digest-bound and signed, and the M5 manifest is cryptographically bound to the M4 AI-security manifest. The production profile requires M2 security, M3 supply-chain, M4 AI security and M5 compliance/risk gates simultaneously.
+```mermaid
+flowchart LR
+    V1[V1 Environment]
+    V2[V2 Configuration]
+    V3[V3 Tools + syntax]
+    V4[V4 Local deterministic validation]
+    V5[V5 Cross-node / milestone acceptance]
+    V6[V6 Signed release evidence]
 
-Automation boundary: M5 can assess and report, but cannot accept risk, approve its own exceptions, certify compliance, render legal opinions, or introduce LLM agent autonomy.
+    V1 --> V2 --> V3 --> V4 --> V5 --> V6
+```
 
-## Milestone 6 — First bounded Evidence Analyst
+See [`Validation.md`](Validation.md) for the detailed contract.
 
-M6 adds a read-only evidence-consumption layer above the deterministic M2–M5 control plane. A signed capability policy exposes only list/metadata/read/verify/summarize operations over a deny-by-default SHA-256 evidence catalog. No side-effecting tool exists. The M6 manifest is Ed25519 signed and bound to the exact M5 manifest. Initial portable evidence snapshots contain non-secret M3–M5 artifacts; M2 remains independently enforced by the combined production profile rather than exposing secret M2 runtime material to the agent.
+## 6. Deployment architecture
 
+Deployment support is intentionally milestone-scoped today. Scripts under `deploy/m*/` package and deploy the material needed for a specific milestone.
 
-## Milestone 7 — Mediated typed-tool agent
+The long-term repository-level interface is a progressive contract, not a claim that a universal installer already exists:
 
-M7 places a deterministic `ToolBroker` between agent reasoning and executors. A registered call follows `input schema -> RBAC/ABAC authorization -> deterministic control policy -> RunBudget -> signed pre-execution audit -> executor -> output schema -> signed result audit`. Failure at any gate is denied and audited; failure to persist the pre-execution audit prevents executor invocation. The signed M7 manifest binds policy, registry and authorization rules to the exact M6 manifest. M7 allows only non-side-effecting evidence tools; M8 owns approval-controlled side effects.
+```text
+./deploy.sh --node1
+./deploy.sh --node2
+./deploy.sh --all
+./deploy.sh --verify
+./deploy.sh --rollback
+```
 
-### Signed-generation immutability
+See [`oneshot-deployment.md`](oneshot-deployment.md).
 
-Signed cross-milestone manifests form a generation chain. Once a downstream milestone binds an upstream manifest, the bound upstream release directory is immutable. Operational refresh that changes a signed upstream manifest is a new attestation generation and requires downstream rebuild/re-signing; background mutation of a release-bound directory is fail-closed.
+## 7. Durable security invariants
 
-## M10 implemented architecture — supervised multi-agent workflow
+Across milestones:
 
-M10 implements the planned supervisor-directed specialist workflow as a fixed signed topology. Risk, Threat and Privacy specialists emit typed digest-bound handoffs; Control maps findings to deterministic controls; Assurance checks evidence/control coverage; a separate human workflow decision key finalizes the governance disposition. Direct peer calls, agent delegation, side effects, M8 approval authority and M9 SecOps authority remain prohibited to M10 agents.
+- deny by default where authority is required;
+- deterministic policy outranks model output;
+- schemas constrain inputs/outputs and handoffs;
+- budgets are monotonic and bounded;
+- approvals are independent, signed, and replay-protected when side effects are allowed;
+- signing domains remain purpose-separated;
+- verifier-only nodes do not receive private release signing keys;
+- negative tests are release evidence;
+- generated artifacts are digest-bound;
+- unavailable controls are represented explicitly rather than fabricated as PASS;
+- documentation does not create compliance or production-readiness claims.
 
-## M12 CRA vulnerability/exploitation intelligence layer
+## 8. Current architecture state
 
-M12 sits between M3 supply-chain vulnerability evidence and the future M13 statutory-clock layer. It normalizes vulnerability identifiers/aliases, correlates affected components to the product inventory, evaluates approved exploitation evidence, and emits signed AEV candidate assessments. Node1 remains the authority; Node2 independently verifies evidence. The M12 boundary explicitly keeps `starts_statutory_clock=false`, `enisa_submission=false`, and `cra_conformity_claim=false`.
-
-## M13 integration boundary
-
-M13 adds deterministic CRA Article 14(5) severe-incident classification and a signed statutory-clock evidence layer. It consumes M9 security-event facts and M12 AEV candidate evidence while preserving M11 as the authoritative CRA requirement baseline. M13 records an immutable manufacturer-awareness T0, derives the applicable 24-hour and 72-hour deadlines, derives the AEV final-report deadline from corrective/mitigating-measure availability, and derives the severe-incident final-report deadline as one calendar month after the incident notification. M13 does **not** submit to ENISA/SRP, generate the M14 reporting pack, or make a CRA conformity claim. See `docs/M13-CRA-Incident-Classification-Statutory-Clock.md`, `docs/Prerequisites-M13.md`, `docs/Deployment-M13.md`, and `docs/Validation-M13.md`.
-
-## M14 integration — CRA reporting / ENISA SRP evidence pack
-
-M14 consumes the frozen M11 requirement baseline, M12 vulnerability/exploitation intelligence and M13 incident/statutory-clock evidence to build signed Early Warning, 72-hour Notification and Final Report evidence packs. M14 is an internal preparation and verification layer only: it performs no CRA SRP/network submission, makes no conformity claim, preserves Node1 signing authority / Node2 verifier-only separation, and requires an authorised Assigned Representative to complete the current SRP web-interface workflow. See `docs/M14-CRA-Reporting-ENISA-SRP-Evidence-Pack.md`, `docs/Prerequisites-M14.md`, `docs/Deployment-M14.md`, and `docs/Validation-M14.md`.
-
-## M15 integration
-
-M15 consumes the existing milestone evidence through the frozen M11–M14 contracts to prepare PSIRT/CVD, component-maintainer coordination, fixed-vulnerability advisory and Article 14(8) user-notification evidence. This document's original milestone authority is unchanged: M15 adds no automatic external dispatch, public disclosure, user notification, maintainer contact, ENISA submission or CRA conformity claim. See `docs/M15-CRA-PSIRT-CVD-User-Notification.md`, `docs/Deployment-M15.md`, and `docs/Validation-M15.md`.
-
-## M16 integration — CRA Secure Update & Product Lifecycle
-M16 consumes the existing milestone evidence without rewriting its historical responsibility. It adds support-period/lifecycle evidence, signed secure-update metadata and payload verification, anti-rollback decisions, update-retention/free-update policy checks, and end-of-support notification preparation. M16 keeps host OS/firmware modification and network rollout out of acceptance; see `docs/M16-CRA-Secure-Update-Product-Lifecycle.md`, `docs/Deployment-M16.md`, and `docs/Validation-M16.md`.
-
-## M17 — CRA Annex-I Compliance Evidence integration
-
-M17 consumes the existing M3–M16 security, vulnerability, incident, reporting, PSIRT/CVD and secure-update evidence and binds it to all Annex I Part I/II requirement rows from the frozen M11 CRA matrix. M17 records `EVIDENCED`, `PARTIAL` and `GAP` states with SHA-256 evidence references; it does not mutate M11 requirement status, perform conformity assessment, generate the Annex VII technical file, or claim CRA conformity. See `docs/M17-CRA-Annex-I-Compliance-Evidence.md` and `docs/Validation-M17.md`.
-
-## M18 integration
-
-M18 assembles the CRA Article 31 / Annex VII technical-documentation evidence file from the evidence produced by M3-M17. This document remains an input/reference to that assembly; M18 does not retroactively change this milestone's scope. The M18 technical file is explicitly a draft evidence package: it makes no CRA conformity claim, does not perform a conformity assessment, does not authorize CE marking, and does not fabricate the EU Declaration of Conformity. Product-specific production/security test evidence that remains incomplete is carried forward to M19 as an explicit readiness gap.
-
-## M19 integration — CRA Node1/Node2 Production Validation
-
-M19 consumes this milestone's evidence as part of the heterogeneous Node1/Node2 production-validation chain. The M19 signed validation bundle binds the frozen CRA baselines, checks source/version/platform parity and verifier-key isolation, and supplies a production-evidence candidate for Annex I Part II(3) regular product-security testing. M19 does not rewrite this milestone's historical claims, perform conformity assessment, or make a CRA conformity claim.
-
-## M20 integration
-
-M20 consumes the frozen evidence and controls from this milestone as part of the enterprise one-shot deployment/final-production-freeze chain. It does not rewrite this milestone or imply CRA conformity. Final-freeze readiness requires successful M19 live production validation. The M20 secure-agentic Node1/Node2 demonstration reuses the M10 constrained-authority topology and signed human-disposition model for traceable GenAI/agentic governance.
-## M21 integration — Embedded Linux & Platform Security
-
-M21 extends the frozen M0–M20 governance/CRA baseline into demonstrable platform security for BIOS/UEFI, Jetson/embedded boot firmware, BMC/device firmware inventory, firmware signing and anti-rollback, debug restrictions, Linux least privilege and systemd isolation, AppArmor/SELinux capability evidence, TPM/DICE roots of trust, platform threat modeling and CI/CD gates. It is non-destructive: live acceptance observes platform state and uses synthetic firmware for signing/rollback demonstrations; it never burns fuses, enrolls UEFI keys or flashes firmware. See `docs/M21-Embedded-Linux-Platform-Security-Validation.md`.
+The current tagged release is M21 v0.21.1. It extends the M0–M20 governance/security/evidence architecture into embedded Linux and platform-security validation while preserving all earlier authority boundaries.

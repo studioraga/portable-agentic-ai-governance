@@ -1,109 +1,283 @@
-# instruction.md
+# Developer and Operator Workflow
 
-## Purpose
-Build and operate a portable Agentic AI security and governance control plane. Agents may reason, classify, correlate, recommend, and orchestrate bounded workflows. Deterministic identity, authorization, policy, cryptography, approvals, budgets, schema validation, evidence recording, and typed executors remain authoritative.
+`README.md` is the human orientation layer. This file is the authoritative execution workflow for developers and operators working with the repository.
 
-## Required operator reading order
-1. `README.md`
-2. `docs/Prerequisites.md`
-3. `docs/Architecture.md`
-4. `docs/Deployment.md`
-5. `docs/Validation.md`
-6. `docs/M2-Security-Control-Plane.md`
-7. `docs/Deployment-M2.md`
-8. `docs/Validation-M2.md`
-9. `docs/Milestones.md`
+## 1. Clone the repository
 
-Do not claim a milestone passed from architecture or documentation alone; execute the corresponding validation gate.
+```bash
+git clone git@github.com:studioraga/portable-agentic-ai-governance.git
+cd portable-agentic-ai-governance
+```
 
-## Non-negotiable design rules
-1. Fail closed for mandatory production controls.
-2. Never let an LLM or agent authorize itself, accept risk, approve privileged actions, verify cryptography, or bypass policy.
-3. Every privileged action is typed, schema-bound, authorized, policy-checked, budgeted, and audited.
-4. Unknown controls, tools, identities, mappings, or artifacts are not trusted.
-5. Original evidence is immutable; derived outputs create new evidence objects.
-6. Every production model, prompt, agent manifest, tool registry, and policy bundle must be versioned and digest-bound before Milestone 6+.
-7. Framework mappings are versioned data, not enforcement code.
-8. Human approval is required for risk acceptance, policy changes, sensitive exports, evidence deletion, model promotion, permission expansion, and other high-impact side effects.
-9. Agent cycles are bounded by monotonic budgets and terminal conditions.
-10. Production claims require executable validation evidence, not documentation alone.
-11. A clean source release must exclude `.git`, `.venv`, caches, bytecode, and runtime evidence/state.
-12. Because this is a Python `src/` layout, every direct source execution path must install the package or set `PYTHONPATH`; scripts must not depend on an operator remembering this manually.
-13. Full M0-M1 acceptance requires the extended pytest suite to execute; a skipped suite must be reported as skipped rather than PASS.
-14. Secrets must be purpose-separated, never committed, and eventually replaced by managed secret/KMS/HSM implementations.
+Confirm the remote and working tree before doing any milestone work:
 
-## Current status
-Milestones 0 and 1 are frozen at tag `m0-m1-v0.1.2`. Milestone 2 is implemented as the v0.2.0 security-control-plane candidate and must pass its local/distributed and node-specific validation gates before tagging. Milestones 0-6 are frozen/validated baselines; Milestone 7 is the current implementation candidate. Milestones 8-10 remain planned.
+```bash
+git remote -v
+git status
+git log --oneline --decorate -5
+```
 
-## Milestone 3 supply-chain rule
+## 2. Select the milestone release explicitly
 
-Software, models, containers, prompts, and tools are untrusted until deterministic digest locks, signed BOM/provenance, and vulnerability policy pass. Private release signing keys never deploy to verifier-only workload nodes.
+Do not assume `main` is the release you intend to reproduce.
 
+For the current release:
 
-## Milestone 4 boundary
-Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
+```bash
+git fetch origin --tags
+git checkout m21-embedded-linux-platform-security-v0.21.1
+```
 
+For development on `main`, confirm that the expected release ancestry is present:
 
-## Milestone 5 operating rule
+```bash
+git log --oneline --decorate -10
+```
 
-Compliance/risk automation may calculate, validate, monitor and report. It may not accept risk, self-approve exceptions, certify compliance, provide legal conclusions, or become an authorization boundary. Exception approval and compliance/accountability decisions remain explicit human responsibilities.
+Current release ancestry includes:
 
-## Milestone 6 operating rule
+```text
+e83ebf0  m21-embedded-linux-platform-security-v0.21.1
+558ad17  m21-embedded-linux-platform-security-v0.21.0
+8b80081  m20-cra-enterprise-final-freeze-v0.20.0
+```
 
-The Evidence Analyst is read-only. It may list, inspect, verify and summarize allowlisted evidence. It must never write/delete evidence, execute shell/network actions, modify policy, accept risk, approve exceptions, certify compliance, delegate to another agent, or replace deterministic authorization. Any future LLM reasoning adapter remains subordinate to this signed capability boundary.
+## 3. Read prerequisites before installing anything
 
+Start with:
 
-## Milestone 7 operating rule
+- [`docs/Prerequisites.md`](docs/Prerequisites.md) for common requirements;
+- the milestone-specific `docs/Prerequisites-M*.md` file for additional tools;
+- [`docs/Prerequisites-M21.md`](docs/Prerequisites-M21.md) for the current milestone.
 
-A model or agent never calls an executor directly. Every M7 tool call must use the signed registry and pass input schema validation, deterministic RBAC/ABAC authorization, deterministic policy, monotonic budget, and a signed pre-execution audit before the executor can run. Tool output is schema checked and result-audited. M7 side effects are prohibited; approval-controlled side effects begin only at M8.
+Do not treat an optional audit tool as an implicit reason to mutate the host. M21, in particular, records missing capability as evidence instead of silently installing or enabling platform security features.
 
+## 4. Restore the Python execution environment
 
-## Milestone 8 — Approval-controlled actions
-M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
+The repository uses a Python `src/` layout.
 
+A minimal local development environment is:
 
-## Milestone 9 — Security operations
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e '.[dev]'
+```
 
-Add deterministic SIEM, incidents, bounded automated containment, recovery verification, and evidence preservation without bypassing the M8 approval boundary for external side effects.
+For direct source execution paths, preserve the repository source path explicitly:
 
+```bash
+export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
+```
 
-## M10 multi-agent invariant
-Multiple agents may reason and propose only through the signed fixed topology. Direct peer delegation is prohibited. The Governance Supervisor orchestrates but does not authorize side effects, accept risk, certify compliance, override policy, contain workloads or approve recovery. M8 remains the side-effect approval boundary; M9 remains the SecOps containment/recovery boundary; final M10 workflow disposition requires an independently signed human decision.
+Scripts under `scripts/` and `deploy/` set this themselves where required; operators should not rely on the current working directory accidentally making imports succeed.
 
-## M12 operating instruction
+## 5. Run the validation ladder before milestone-specific work
 
-Treat `governance/cra/cra-requirements.json` from M11 as immutable input. M12 may add an overlay control mapping but must not rewrite M11 legal requirements. Use deterministic local fixtures for acceptance, preserve source provenance and available malicious-actor information without inventing attribution, fail closed on stale/conflicting intelligence, and keep Node2 verifier-only. M12 output is an AEV **candidate assessment**, not a statutory notification, deadline trigger, or conformity decision.
+The common validation model is documented in [`docs/Validation.md`](docs/Validation.md).
 
-## M13 integration boundary
+For M21:
 
-M13 adds deterministic CRA Article 14(5) severe-incident classification and a signed statutory-clock evidence layer. It consumes M9 security-event facts and M12 AEV candidate evidence while preserving M11 as the authoritative CRA requirement baseline. M13 records an immutable manufacturer-awareness T0, derives the applicable 24-hour and 72-hour deadlines, derives the AEV final-report deadline from corrective/mitigating-measure availability, and derives the severe-incident final-report deadline as one calendar month after the incident notification. M13 does **not** submit to ENISA/SRP, generate the M14 reporting pack, or make a CRA conformity claim. See `docs/M13-CRA-Incident-Classification-Statutory-Clock.md`, `docs/Prerequisites-M13.md`, `docs/Deployment-M13.md`, and `docs/Validation-M13.md`.
+```bash
+python3 -m pytest -q tests/platform_security
+./scripts/m21/validate_m21_local.sh
+./scripts/m21/ci_validate.sh
+```
 
-## M14 integration — CRA reporting / ENISA SRP evidence pack
+Then run the complete M0–M21 regression:
 
-M14 consumes the frozen M11 requirement baseline, M12 vulnerability/exploitation intelligence and M13 incident/statutory-clock evidence to build signed Early Warning, 72-hour Notification and Final Report evidence packs. M14 is an internal preparation and verification layer only: it performs no CRA SRP/network submission, makes no conformity claim, preserves Node1 signing authority / Node2 verifier-only separation, and requires an authorised Assigned Representative to complete the current SRP web-interface workflow. See `docs/M14-CRA-Reporting-ENISA-SRP-Evidence-Pack.md`, `docs/Prerequisites-M14.md`, `docs/Deployment-M14.md`, and `docs/Validation-M14.md`.
+```bash
+set -o pipefail
+./scripts/m21/validate_m21_regression.sh 2>&1 | tee /tmp/m21-regression.log
 
-## M15 integration
+grep -F \
+  'PASS: full M0-M21 regression + M20/M21 acceptance complete' \
+  /tmp/m21-regression.log
+```
 
-M15 consumes the existing milestone evidence through the frozen M11–M14 contracts to prepare PSIRT/CVD, component-maintainer coordination, fixed-vulnerability advisory and Article 14(8) user-notification evidence. This document's original milestone authority is unchanged: M15 adds no automatic external dispatch, public disclosure, user notification, maintainer contact, ENISA submission or CRA conformity claim. See `docs/M15-CRA-PSIRT-CVD-User-Notification.md`, `docs/Deployment-M15.md`, and `docs/Validation-M15.md`.
+Do not convert warnings, skipped suites, or missing platform capabilities into PASS results.
 
-## M16 integration — CRA Secure Update & Product Lifecycle
-M16 consumes the existing milestone evidence without rewriting its historical responsibility. It adds support-period/lifecycle evidence, signed secure-update metadata and payload verification, anti-rollback decisions, update-retention/free-update policy checks, and end-of-support notification preparation. M16 keeps host OS/firmware modification and network rollout out of acceptance; see `docs/M16-CRA-Secure-Update-Product-Lifecycle.md`, `docs/Deployment-M16.md`, and `docs/Validation-M16.md`.
+## 6. Run the current milestone
 
-## M17 — CRA Annex-I Compliance Evidence integration
+### 6.1 Local deterministic M21 validation
 
-M17 consumes the existing M3–M16 security, vulnerability, incident, reporting, PSIRT/CVD and secure-update evidence and binds it to all Annex I Part I/II requirement rows from the frozen M11 CRA matrix. M17 records `EVIDENCED`, `PARTIAL` and `GAP` states with SHA-256 evidence references; it does not mutate M11 requirement status, perform conformity assessment, generate the Annex VII technical file, or claim CRA conformity. See `docs/M17-CRA-Annex-I-Compliance-Evidence.md` and `docs/Validation-M17.md`.
+```bash
+./scripts/m21/validate_m21_local.sh
+```
 
-## M18 integration
+This uses fixture profiles and validates deterministic M21 logic. It does not prove LIVE platform readiness.
 
-M18 assembles the CRA Article 31 / Annex VII technical-documentation evidence file from the evidence produced by M3-M17. This document remains an input/reference to that assembly; M18 does not retroactively change this milestone's scope. The M18 technical file is explicitly a draft evidence package: it makes no CRA conformity claim, does not perform a conformity assessment, does not authorize CE marking, and does not fabricate the EU Declaration of Conformity. Product-specific production/security test evidence that remains incomplete is carried forward to M19 as an explicit readiness gap.
+### 6.2 LIVE Node2 profile capture
 
-## M19 integration — CRA Node1/Node2 Production Validation
+On the verifier node:
 
-M19 consumes this milestone's evidence as part of the heterogeneous Node1/Node2 production-validation chain. The M19 signed validation bundle binds the frozen CRA baselines, checks source/version/platform parity and verifier-key isolation, and supplies a production-evidence candidate for Annex I Part II(3) regular product-security testing. M19 does not rewrite this milestone's historical claims, perform conformity assessment, or make a CRA conformity claim.
+```bash
+python3 scripts/m21/collect_platform_profile.py \
+  --role independent_verifier \
+  --out /tmp/node2-platform-profile.json
+```
 
-## M20 integration
+Transfer only the profile JSON to Node1 through an operator-approved channel.
 
-M20 consumes the frozen evidence and controls from this milestone as part of the enterprise one-shot deployment/final-production-freeze chain. It does not rewrite this milestone or imply CRA conformity. Final-freeze readiness requires successful M19 live production validation. The M20 secure-agentic Node1/Node2 demonstration reuses the M10 constrained-authority topology and signed human-disposition model for traceable GenAI/agentic governance.
-## M21 integration — Embedded Linux & Platform Security
+### 6.3 LIVE Node1 authority run
 
-M21 extends the frozen M0–M20 governance/CRA baseline into demonstrable platform security for BIOS/UEFI, Jetson/embedded boot firmware, BMC/device firmware inventory, firmware signing and anti-rollback, debug restrictions, Linux least privilege and systemd isolation, AppArmor/SELinux capability evidence, TPM/DICE roots of trust, platform threat modeling and CI/CD gates. It is non-destructive: live acceptance observes platform state and uses synthetic firmware for signing/rollback demonstrations; it never burns fuses, enrolls UEFI keys or flashes firmware. See `docs/M21-Embedded-Linux-Platform-Security-Validation.md`.
+On Node1:
+
+```bash
+./deploy/m21/one_shot_node1.sh \
+  /path/to/node2-platform-profile.json \
+  "$PWD/var/m21-material"
+```
+
+Verify Node1 material:
+
+```bash
+./scripts/m21/verify_node1.sh \
+  "$PWD/var/m21-material"
+```
+
+### 6.4 Package verifier-only material
+
+```bash
+./deploy/m21/package_verifier_material.sh \
+  "$PWD/var/m21-material" \
+  "$PWD/var/m21-verifier.tar.gz"
+```
+
+The verifier archive must not contain any private signing key.
+
+### 6.5 Node2 independent verification
+
+After transferring and extracting the verifier-only material on Node2:
+
+```bash
+./deploy/m21/one_shot_node2.sh \
+  /path/to/m21-material
+```
+
+or verify an already installed bundle with:
+
+```bash
+./scripts/m21/verify_node2.sh \
+  "$HOME/.config/portable-ai-governance/m21"
+```
+
+Never run `verify_node1.sh` on Node2. A failure caused by a missing Node1 private signing key is expected on a verifier-only node.
+
+## 7. Inspect evidence, not only exit status
+
+For M21, inspect at least:
+
+```text
+platform-validation-summary.json
+m21-platform-manifest.json
+m21-platform-manifest.json.sig
+firmware-descriptor.json
+firmware-descriptor.json.sig
+rollback-positive.json
+rollback-negative.json
+dice-demo.json
+node1-platform-profile.json
+node2-platform-profile.json
+```
+
+The M21 v0.21.1 manifest separates:
+
+- `m20_baseline_commit` — immutable M20 baseline;
+- `m20_baseline_tag` — immutable M20 release identity;
+- `m21_source_commit` — source revision that generated the signed M21 evidence.
+
+Current preserved LIVE qualification is 15 PASS / 2 open required checks, with `production_ready=false`.
+
+## 8. Run negative tests
+
+Security acceptance requires fail-closed behavior, not only positive-path success.
+
+At minimum for M21:
+
+- tamper `firmware.bin` and require verifier failure;
+- inject a private signing key into Node2 material and require deployment rejection;
+- re-run the untouched bundle afterward and require a clean PASS.
+
+Keep negative-test material under temporary paths such as `/tmp/m21-*`; do not contaminate the authoritative evidence directory.
+
+## 9. Commit rules
+
+Before staging:
+
+```bash
+git diff --check
+python3 -m pytest -q
+```
+
+Stage source and documentation explicitly. Do not use `git add .` when runtime evidence or private material may exist under ignored paths.
+
+Reject staged runtime/private/cache material:
+
+```bash
+if git diff --cached --name-only | \
+  grep -Eq '(^|/)var/|private.*\.pem|\.pyc$|__pycache__'; then
+  echo 'FAIL: runtime/private/cache material staged'
+  exit 1
+fi
+```
+
+Use signed-off commits:
+
+```bash
+git commit -s
+```
+
+A milestone commit message should state:
+
+- the control/evidence capability added;
+- authority boundaries preserved;
+- validation completed;
+- important open gaps that remain;
+- whether the change affects production readiness or conformity claims.
+
+## 10. Release and tag procedure
+
+A release tag is created only after:
+
+1. focused tests pass;
+2. common/local validation passes;
+3. full regression passes;
+4. Node1 evidence generation/verification passes;
+5. Node2 independent verification passes;
+6. negative tests pass;
+7. source parity is confirmed;
+8. the working tree is clean;
+9. runtime/private material is excluded from release artifacts.
+
+Create an annotated tag and verify that it resolves to the intended release commit before pushing it.
+
+Clean source archives should be produced with `git archive`, not by tarring the whole working tree:
+
+```bash
+git archive \
+  --format=tar.gz \
+  --prefix=portable-agentic-ai-governance/ \
+  -o portable-agentic-ai-governance-source.tar.gz \
+  <release-tag>
+```
+
+## 11. Non-negotiable authority rules
+
+- LLM reasoning never replaces deterministic policy or authorization.
+- Risk acceptance and conformity decisions remain human/accountable decisions.
+- Private release signing keys remain on the authority side.
+- Verifier-only nodes must reject private signing material.
+- Agent/tool execution must pass the milestone-defined deterministic gates.
+- Runtime evidence and secrets must not be committed.
+- A document cannot upgrade a failed or unavailable control to PASS.
+- `production_ready=false` is a valid and useful release result when evidence shows open hardening gaps.
+
+## 12. Where to go next
+
+- Architecture: [`docs/Architecture.md`](docs/Architecture.md)
+- Validation model: [`docs/Validation.md`](docs/Validation.md)
+- Progressive deployment contract: [`docs/oneshot-deployment.md`](docs/oneshot-deployment.md)
+- Milestone history: [`docs/Milestones.md`](docs/Milestones.md)
+- Current M21 design: [`docs/M21-Embedded-Linux-Platform-Security-Validation.md`](docs/M21-Embedded-Linux-Platform-Security-Validation.md)

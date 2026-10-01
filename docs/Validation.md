@@ -1,302 +1,152 @@
-# Validation and Verification — Milestones 0 and 1
+# Validation Architecture
 
-Read `Prerequisites.md` first. Validation is deliberately layered so it is clear whether the machine passed only the dependency-free kernel checks or the complete M0-M1 acceptance suite.
+Validation is the mechanism that turns repository claims into reproducible evidence. This document defines the common validation layers; milestone-specific files such as `Validation-M21.md` provide concrete gates.
 
-## 1. Preflight
+## Validation principles
 
-```bash
-cd portable-agentic-ai-governance
-./scripts/preflight_node1.sh
-```
+- A skipped check is not a PASS.
+- Fixture/simulated validation proves deterministic logic, not LIVE platform readiness.
+- A verifier PASS proves evidence integrity and policy satisfaction for that verifier contract; it does not erase open platform hardening gaps.
+- Negative tests are first-class acceptance evidence.
+- Release claims must be traceable to executable tests, source identity, and signed/digest-bound artifacts.
 
-This checks OS context, commands, Python >=3.11, venv support, pytest availability, repository completeness, write permission, disk space, and—when `PAG_SECURITY_PROFILE=production`—the mandatory fail-closed secret contract, minimum secret length, and signing-key separation.
+## V1 — Environment qualification
 
-## 2. One-shot Node1 deployment and validation
+Confirm the execution environment before evaluating the product logic.
 
-```bash
-./deploy/deploy_node1.sh
-```
+Typical evidence:
 
-The script:
+- OS and architecture;
+- Python version;
+- required commands and libraries;
+- file-system permissions;
+- Node role;
+- network assumptions;
+- hardware/security-device visibility where relevant.
 
-1. runs preflight;
-2. recreates `.venv` using `--system-site-packages` so an approved system pytest can be reused offline;
-3. exports `PYTHONPATH=$REPO/src`;
-4. writes a `.pth` entry inside the venv as an additional src-layout safeguard;
-5. creates protected runtime directories;
-6. verifies package import;
-7. executes the complete validation driver.
+M21 additionally captures boot/security capability information such as UEFI/Secure Boot indicators, Jetson platform information, TPM device/tooling state, and MAC capability.
 
-## 3. Validation layers
+## V2 — Configuration and policy qualification
 
-### Layer A — syntax/import
+Confirm that configuration inputs are internally consistent and fail closed where required.
 
-```bash
-source .venv/bin/activate
-export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
-python -m compileall -q src
-python -c 'import portable_ai_governance; print(portable_ai_governance.__version__)'
-```
+Examples:
 
-### Layer B — standard-library sovereign self-tests
+- JSON policy/schema parseability;
+- Node-role contracts;
+- production-vs-lab security profile;
+- independent signing-key domains;
+- milestone baseline/source identities;
+- non-destructive safety boundaries.
 
-```bash
-python scripts/run_self_tests.py
-```
+## V3 — Tools, syntax, and static contracts
 
-Expected M0-M1 checks:
+Confirm source and reference artifacts can be parsed or validated by the relevant local tools.
 
-```text
-PASS illegal-transition
-PASS budget-fail-closed
-PASS request-signing-tamper
-PASS persistent-replay
-PASS risk-acceptance-prohibited
-PASS evidence-tamper
-PASS golden-onboarding
-PASS unauthorized-onboarding
-PASS mapping-complete
-SELF-TESTS PASS: 9/9
-```
-
-### Layer C — extended pytest acceptance suite
+Examples:
 
 ```bash
-python -m pytest -q
+python3 -m compileall -q src
+python3 -m pytest -q <focused-tests>
+python3 -m json.tool <policy.json>
+git diff --check
 ```
 
-The validation driver first tries `python -m pytest` inside the active venv. If pytest is provided by the approved base Python but is not visible inside the venv, it falls back to that recorded base interpreter. In both cases `PYTHONPATH` is set to `src/`, so test collection imports the repository package deterministically.
+M21 CI also checks the reference systemd unit and, when available, AppArmor profile syntax.
 
-If pytest is absent, the script reports that the extended suite was skipped. That is sufficient for a developer smoke test but **not** a claim that the complete M0-M1 acceptance gate ran.
+Tool absence must be reported accurately; it must not be converted into an enforcement claim.
 
-### Layer D — control/framework completeness
+## V4 — Local deterministic validation
+
+Execute the milestone logic with deterministic fixtures or local material.
+
+For M21:
 
 ```bash
-python scripts/check_control_mapping.py
+./scripts/m21/validate_m21_local.sh
+./scripts/m21/ci_validate.sh
 ```
 
-Every control in the M0-M1 catalog must have mapping data. Unknown mandatory controls fail closed.
+This layer proves material generation, signature/digest verification, policy checks, and verifier-only packaging logic using simulated profiles. It does not prove both physical nodes satisfy LIVE production-hardening policy.
 
-### Layer E — golden AI-system onboarding
+## V5 — Cross-node and milestone acceptance
+
+Exercise the trust split and the full milestone regression chain.
+
+For M21 this includes:
+
+- Node2 LIVE profile capture;
+- Node1 LIVE profile capture and signing authority;
+- verifier-only package construction;
+- Node2 independent verification;
+- firmware tamper rejection;
+- private-key injection rejection;
+- Node1/Node2 source identity/parity checks;
+- M0–M21 regression.
+
+The complete local regression entry point is:
 
 ```bash
-rm -f var/evidence/governance.jsonl
-python -m portable_ai_governance.cli onboard \
-  --input examples/golden_onboarding/system.json \
-  --run-id validation-golden-001
+./scripts/m21/validate_m21_regression.sh
 ```
 
-Expected state path:
+## V6 — Signed release and evidence package
 
-```text
-START
-VALIDATE_REQUEST
-AUTHORIZE
-LOAD_TRUSTED_CONTEXT
-PLAN
-POLICY_VALIDATE_PLAN
-EXECUTE_BOUNDED_TOOLS
-VERIFY_OUTPUT
-RECORD_EVIDENCE
-COMPLETE
+The release layer binds the executable result to source and milestone provenance.
+
+For M21 v0.21.1, the signed manifest records:
+
+- `m20_baseline_commit`;
+- `m20_baseline_tag`;
+- `m21_source_commit`;
+- SHA-256 digests of protected artifacts;
+- non-destructive boundary flags.
+
+Release evidence should be preserved with a checksum manifest and must exclude private signing material from verifier/public evidence sets.
+
+```mermaid
+flowchart TD
+    T[Source + tests]
+    L[Local deterministic PASS]
+    X[Cross-node acceptance]
+    N[Negative tests]
+    M[Signed manifest]
+    P[Verifier-only package]
+    E[Preserved evidence + SHA256SUMS]
+
+    T --> L --> X
+    X --> N
+    N --> M --> P --> E
 ```
 
-### Layer F — signed evidence verification
+## Current M21 v0.21.1 LIVE result
 
-```bash
-python -m portable_ai_governance.cli verify-evidence
-```
+The preserved LIVE evidence in the reviewed source snapshot reports:
 
-Expected result is `ok: true` / `verified`. Tampering with a recorded payload must cause verification failure.
+| Field | Result |
+|---|---|
+| `validation_mode` | `LIVE` |
+| Passed required checks | 15 |
+| Failed/open required checks | 2 |
+| `production_ready` | `false` |
+| `cra_conformity_claim` | `false` |
 
-### Layer G — security-profile contract
+Open checks:
 
-Lab:
+- `secure-boot-enabled`;
+- `mac-enforcing`.
 
-```bash
-export PAG_SECURITY_PROFILE=lab
-python -m portable_ai_governance.cli validate-security
-```
+These open checks are part of the evidence, not documentation defects to be hidden.
 
-Production-profile contract test:
+## Troubleshooting rule
 
-```bash
-export PAG_SECURITY_PROFILE=production
-export PAG_FAIL_CLOSED=1
-export PAG_EVIDENCE_SIGNING_KEY="$(openssl rand -hex 32)"
-export PAG_REQUEST_SIGNING_KEY="$(openssl rand -hex 32)"
-export PAG_APPROVAL_SIGNING_KEY="$(openssl rand -hex 32)"
-python -m portable_ai_governance.cli validate-security
-```
+When validation fails, identify the failing layer first:
 
-The keys must be independent. These environment variables are bootstrap validation only; later milestones move keys into managed secret/KMS/HSM providers.
+1. environment;
+2. configuration;
+3. tool/static contract;
+4. local deterministic logic;
+5. cross-node/release acceptance;
+6. evidence packaging/provenance.
 
-### Layer H — production signing-key separation
-
-```bash
-PYTHONPATH="$PWD/src" python scripts/check_production_key_separation.py
-```
-
-Expected:
-
-```text
-PASS production-independent-signing-keys
-PASS production-all-key-reuse-rejected
-PASS production-evidence-request-reuse-rejected
-PASS production-evidence-approval-reuse-rejected
-PASS production-request-approval-reuse-rejected
-KEY-SEPARATION TESTS PASS: 5/5
-```
-
-### Layer I — runtime filesystem privacy
-
-```bash
-PYTHONPATH="$PWD/src" python scripts/check_runtime_permissions.py
-```
-
-Expected:
-
-```text
-PASS evidence-ledger-mode-0600
-RUNTIME-PERMISSION TESTS PASS
-```
-
-Operational checks:
-
-```bash
-stat -c '%a %U:%G %n' var var/evidence var/runs var/state
-find var -type f -perm -0020 -print
-find var -type f -perm -0002 -print
-```
-
-Directories must be `0700`; runtime files must be `0600`; the two `find` commands must produce no output.
-
-## 4. Mandatory negative coverage
-
-M0-M1 must demonstrate at least:
-
-- illegal graph transition is rejected;
-- monotonic budget terminates when exceeded;
-- modified HMAC-signed body is rejected;
-- nonce replay remains rejected after reopening the persistent cache;
-- an AI Risk Agent cannot accept risk;
-- unauthorized onboarding is denied;
-- evidence modification breaks chain/signature verification;
-- an unmapped mandatory control fails acceptance;
-- production rejects reuse of all three signing keys;
-- production rejects every partial two-key reuse combination;
-- production accepts three valid independent signing keys;
-- evidence ledger files are created mode `0600`;
-- no runtime file is group-writable or world-writable.
-
-## 5. Troubleshooting
-
-### `ModuleNotFoundError: portable_ai_governance`
-
-Cause: this repository uses a `src/` layout and Python was launched without the local package installed or `PYTHONPATH` configured.
-
-Fix:
-
-```bash
-source .venv/bin/activate
-export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
-python -c 'import portable_ai_governance; print(portable_ai_governance.__version__)'
-python -m pytest -q
-```
-
-The revised `deploy_node1.sh` and `validate_node1.sh` do this automatically.
-
-### `No module named pytest`
-
-Install `python3-pytest` through the approved Ubuntu repository or an approved Python package source, then recreate/re-run deployment.
-
-### `python3 -m venv` fails
-
-```bash
-sudo apt install python3-venv
-```
-
-### production profile fails
-
-Check `PAG_FAIL_CLOSED=1`, ensure all three secrets are present, at least 32 characters, and pairwise independent, and do not include whitespace introduced by a malformed environment file. Run `scripts/check_production_key_separation.py` to distinguish key-domain failures from other production-profile failures.
-
-### runtime files are group-writable
-
-Correct existing local runtime state with:
-
-```bash
-find var -type f -exec chmod 600 {} +
-find var -type d -exec chmod 700 {} +
-```
-
-The hardened deploy/validation scripts use `umask 077`, and `EvidenceLedger` explicitly forces its ledger to `0600`, so newly created M0-M1 runtime artifacts must not regain group/world write permission.
-
-## 6. Node2
-
-Node2 is not required for M0-M1. No camera, media transport, GPU, or edge-service test belongs in the M0-M1 acceptance gate. Milestone 2 introduces generic edge workload/service identity controls; application repositories then supply their own device/media tests.
-
-
-## Milestone 4 boundary
-Milestone 4 adds deterministic AI-system-security controls for model governance, data provenance, pre-retrieval authorization, embedding policy, AI evaluation, and AI threat modeling. It introduces no autonomous LLM agent and no LLM-directed tool execution. See `docs/M4-AI-System-Security.md`.
-
-
-## Milestone 5 validation
-
-Run dependency preflight first, then `scripts/m5/validate_m5_local.sh`. Required negative gates reject expired/self-approved exceptions, required-but-unapproved DPIAs, stale continuous controls and automated certification claims. Production acceptance requires `scripts/m5/validate_combined_node.sh` to pass M2+M3+M4+M5 simultaneously.
-
-## Milestone 6 validation
-
-Run `scripts/m6/preflight_dependencies.sh`, then `scripts/m6/validate_m6_local.sh`. Negative gates reject side-effecting operations, catalog path traversal, evidence digest tampering and M5 binding drift. `scripts/m6/validate_combined_node.sh` requires the M2+M3+M4+M5+M6 production profile to pass as one fail-closed gate.
-
-
-## Milestone 7 validation
-
-Run `scripts/m7/preflight_dependencies.sh` and `scripts/m7/validate_m7_local.sh`. Required negative gates cover malformed tool arguments, unknown tools, failed authorization, failed policy, exhausted budget, unavailable pre-execution audit, invalid output schema, side-effecting registry entries, and M6 binding drift. Physical Node1/Node2 acceptance must also execute a permitted tool through `scripts/m7/run_tool_agent.py`, verify the signed tool audit chain, run the combined M2-M7 production profile, and re-prove Node2-to-Node1 mTLS.
-
-
-## Milestone 8 — Approval-controlled actions
-M8 adds exactly four typed side effects behind independently issued signed single-use approvals. See `docs/M8-Approval-Controlled-Actions.md`.
-
-
-## Milestone 9 — Security operations
-
-See `docs/Validation-M9.md` for SIEM-chain, incident, containment, recovery, evidence-preservation, distributed-node and clean-release acceptance gates.
-
-## Milestone 10 validation
-
-M10 validation proves fixed topology, typed digest-bound handoffs, bounded specialist/supervisor execution, deterministic control synthesis, assurance gating, signed single-use human workflow decision, workflow-journal integrity, Node2 private-key exclusion, M9->M10 release binding, full M0-M10 deployment and combined M2-M10 production validation. See `docs/Validation-M10.md`.
-
-## M12 integration
-
-Existing milestone validation remains unchanged and must continue to pass. M12 adds its own regression/negative gates in `docs/Validation-M12.md`; the full repository suite is run before M12 acceptance to prove no regression to this milestone.
-
-## M13 integration boundary
-
-M13 adds deterministic CRA Article 14(5) severe-incident classification and a signed statutory-clock evidence layer. It consumes M9 security-event facts and M12 AEV candidate evidence while preserving M11 as the authoritative CRA requirement baseline. M13 records an immutable manufacturer-awareness T0, derives the applicable 24-hour and 72-hour deadlines, derives the AEV final-report deadline from corrective/mitigating-measure availability, and derives the severe-incident final-report deadline as one calendar month after the incident notification. M13 does **not** submit to ENISA/SRP, generate the M14 reporting pack, or make a CRA conformity claim. See `docs/M13-CRA-Incident-Classification-Statutory-Clock.md`, `docs/Prerequisites-M13.md`, `docs/Deployment-M13.md`, and `docs/Validation-M13.md`.
-
-## M14 integration — CRA reporting / ENISA SRP evidence pack
-
-M14 consumes the frozen M11 requirement baseline, M12 vulnerability/exploitation intelligence and M13 incident/statutory-clock evidence to build signed Early Warning, 72-hour Notification and Final Report evidence packs. M14 is an internal preparation and verification layer only: it performs no CRA SRP/network submission, makes no conformity claim, preserves Node1 signing authority / Node2 verifier-only separation, and requires an authorised Assigned Representative to complete the current SRP web-interface workflow. See `docs/M14-CRA-Reporting-ENISA-SRP-Evidence-Pack.md`, `docs/Prerequisites-M14.md`, `docs/Deployment-M14.md`, and `docs/Validation-M14.md`.
-
-## M15 integration
-
-M15 consumes the existing milestone evidence through the frozen M11–M14 contracts to prepare PSIRT/CVD, component-maintainer coordination, fixed-vulnerability advisory and Article 14(8) user-notification evidence. This document's original milestone authority is unchanged: M15 adds no automatic external dispatch, public disclosure, user notification, maintainer contact, ENISA submission or CRA conformity claim. See `docs/M15-CRA-PSIRT-CVD-User-Notification.md`, `docs/Deployment-M15.md`, and `docs/Validation-M15.md`.
-
-## M16 integration — CRA Secure Update & Product Lifecycle
-M16 consumes the existing milestone evidence without rewriting its historical responsibility. It adds support-period/lifecycle evidence, signed secure-update metadata and payload verification, anti-rollback decisions, update-retention/free-update policy checks, and end-of-support notification preparation. M16 keeps host OS/firmware modification and network rollout out of acceptance; see `docs/M16-CRA-Secure-Update-Product-Lifecycle.md`, `docs/Deployment-M16.md`, and `docs/Validation-M16.md`.
-
-## M17 — CRA Annex-I Compliance Evidence integration
-
-M17 consumes the existing M3–M16 security, vulnerability, incident, reporting, PSIRT/CVD and secure-update evidence and binds it to all Annex I Part I/II requirement rows from the frozen M11 CRA matrix. M17 records `EVIDENCED`, `PARTIAL` and `GAP` states with SHA-256 evidence references; it does not mutate M11 requirement status, perform conformity assessment, generate the Annex VII technical file, or claim CRA conformity. See `docs/M17-CRA-Annex-I-Compliance-Evidence.md` and `docs/Validation-M17.md`.
-
-## M18 integration
-
-M18 assembles the CRA Article 31 / Annex VII technical-documentation evidence file from the evidence produced by M3-M17. This document remains an input/reference to that assembly; M18 does not retroactively change this milestone's scope. The M18 technical file is explicitly a draft evidence package: it makes no CRA conformity claim, does not perform a conformity assessment, does not authorize CE marking, and does not fabricate the EU Declaration of Conformity. Product-specific production/security test evidence that remains incomplete is carried forward to M19 as an explicit readiness gap.
-
-## M19 integration — CRA Node1/Node2 Production Validation
-
-M19 consumes this milestone's evidence as part of the heterogeneous Node1/Node2 production-validation chain. The M19 signed validation bundle binds the frozen CRA baselines, checks source/version/platform parity and verifier-key isolation, and supplies a production-evidence candidate for Annex I Part II(3) regular product-security testing. M19 does not rewrite this milestone's historical claims, perform conformity assessment, or make a CRA conformity claim.
-
-## M20 integration
-
-M20 consumes the frozen evidence and controls from this milestone as part of the enterprise one-shot deployment/final-production-freeze chain. It does not rewrite this milestone or imply CRA conformity. Final-freeze readiness requires successful M19 live production validation. The M20 secure-agentic Node1/Node2 demonstration reuses the M10 constrained-authority topology and signed human-disposition model for traceable GenAI/agentic governance.
+Fix the cause at that layer and rerun downstream layers. Do not edit expected results merely to make the gate green.
