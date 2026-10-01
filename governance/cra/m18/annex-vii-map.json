@@ -1,0 +1,66 @@
+{
+  "version": "0.18.0",
+  "milestone": "M18",
+  "sections": [
+    {
+      "section_id": "ANNEX-VII-1",
+      "legal_reference": "Annex VII(1)",
+      "title": "General description of the product",
+      "readiness": "READY",
+      "evidence_refs": ["tests/fixtures/m18/product-technical-profile.json", "README.md", "docs/Prerequisites.md", "docs/Deployment.md", "docs/Validation.md"],
+      "notes": "Hardware photographs/internal-layout illustrations are NOT_APPLICABLE because the scoped product is software-only."
+    },
+    {
+      "section_id": "ANNEX-VII-2",
+      "legal_reference": "Annex VII(2)",
+      "title": "Design, development, production and vulnerability handling",
+      "readiness": "READY",
+      "evidence_refs": ["docs/Architecture.md", "docs/M3-Supply-Chain.md", "docs/M15-CRA-PSIRT-CVD-User-Notification.md", "docs/M16-CRA-Secure-Update-Product-Lifecycle.md", "src/portable_ai_governance/supply_chain/bom.py", "governance/cra/m15/psirt-cvd-policy.json", "governance/cra/m16/secure-update-policy.json"]
+    },
+    {
+      "section_id": "ANNEX-VII-3",
+      "legal_reference": "Annex VII(3)",
+      "title": "Cybersecurity risk assessment and Annex-I applicability",
+      "readiness": "READY",
+      "evidence_refs": ["docs/M4-AI-System-Security.md", "docs/M5-Compliance-Risk-Automation.md", "docs/M17-CRA-Annex-I-Compliance-Evidence.md", "governance/cra/m17/annex-i-evidence-map.json"]
+    },
+    {
+      "section_id": "ANNEX-VII-4",
+      "legal_reference": "Annex VII(4)",
+      "title": "Support-period determination information",
+      "readiness": "READY",
+      "evidence_refs": ["docs/M16-CRA-Secure-Update-Product-Lifecycle.md", "governance/cra/m16/secure-update-policy.json"]
+    },
+    {
+      "section_id": "ANNEX-VII-5",
+      "legal_reference": "Annex VII(5)",
+      "title": "Standards, common specifications, certification schemes or alternative solutions",
+      "readiness": "PARTIAL",
+      "evidence_refs": ["governance/cra/m17/annex-i-evidence-map.json", "docs/M17-CRA-Annex-I-Compliance-Evidence.md"],
+      "notes": "No harmonised-standard/common-specification/certification-scheme conformity claim is made. Current internal technical solutions are indexed; formal applied-standard decisions remain product/conformity-assessment work."
+    },
+    {
+      "section_id": "ANNEX-VII-6",
+      "legal_reference": "Annex VII(6)",
+      "title": "Test reports",
+      "readiness": "PARTIAL",
+      "evidence_refs": ["docs/Validation.md", "docs/Validation-M17.md", "tests/cra_annex_evidence/test_m17_annex_evidence.py"],
+      "notes": "Repository validation evidence exists; production/product-specific security test reports remain an M19 gate."
+    },
+    {
+      "section_id": "ANNEX-VII-7",
+      "legal_reference": "Annex VII(7)",
+      "title": "EU Declaration of Conformity",
+      "readiness": "GAP",
+      "evidence_refs": [],
+      "notes": "No EU Declaration of Conformity is generated because M18 performs no conformity assessment and makes no CRA conformity claim."
+    },
+    {
+      "section_id": "ANNEX-VII-8",
+      "legal_reference": "Annex VII(8)",
+      "title": "Software bill of materials",
+      "readiness": "READY",
+      "evidence_refs": ["src/portable_ai_governance/supply_chain/bom.py", "docs/M3-Supply-Chain.md", "docs/M12-CRA-Vulnerability-Exploitation-Intelligence.md"]
+    }
+  ]
+}

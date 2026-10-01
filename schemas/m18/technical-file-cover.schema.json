@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M18 Technical File Cover",
+  "type": "object",
+  "required": ["version", "milestone", "product_id", "technical_file_status", "cra_conformity_claim"],
+  "properties": {
+    "version": {"const": "0.18.0"},
+    "milestone": {"const": "M18"},
+    "technical_file_status": {"const": "DRAFT_EVIDENCE_FILE"},
+    "cra_conformity_claim": {"const": false},
+    "eu_declaration_of_conformity_included": {"const": false}
+  }
+}

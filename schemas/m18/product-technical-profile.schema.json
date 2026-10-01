@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M18 Product Technical Profile",
+  "type": "object",
+  "required": ["product_id", "product_name", "product_type", "hardware_product", "intended_purpose", "software_versions_affecting_compliance"],
+  "properties": {
+    "product_id": {"type": "string", "minLength": 1},
+    "product_name": {"type": "string", "minLength": 1},
+    "hardware_product": {"type": "boolean"},
+    "software_versions_affecting_compliance": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

@@ -103,3 +103,10 @@ var/m17-verifier.tar.gz
 var/m17-verifier.tar.gz.sha256
 var/m17-validation/
 var/m17-validation*/
+
+# M18 generated CRA Annex-VII technical-file material/evidence
+var/m18-material/
+var/m18-verifier.tar.gz
+var/m18-verifier.tar.gz.sha256
+var/m18-validation/
+var/m18-validation*/

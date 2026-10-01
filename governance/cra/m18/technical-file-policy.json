@@ -1,0 +1,23 @@
+{
+  "version": "0.18.0",
+  "milestone": "M18",
+  "purpose": "CRA Annex-VII Technical Documentation / Technical File",
+  "article_31": {
+    "drawn_up_before_market_placement": true,
+    "continuously_updated_during_support_period": true,
+    "single_set_with_other_union_technical_documentation_when_applicable": true
+  },
+  "readiness_states": ["READY", "PARTIAL", "GAP", "NOT_APPLICABLE"],
+  "boundaries": {
+    "technical_file_generated": true,
+    "draft_evidence_file_only": true,
+    "cra_conformity_claim": false,
+    "conformity_assessment_performed": false,
+    "eu_declaration_of_conformity_generated": false,
+    "ce_marking_authorized": false,
+    "m11_status_mutation": false,
+    "m17_evidence_state_mutation": false,
+    "network_side_effects": false,
+    "node2_verifier_only": true
+  }
+}

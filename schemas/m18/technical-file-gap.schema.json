@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M18 Technical File Gap Register",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["section_id", "legal_reference", "title", "readiness"],
+    "properties": {
+      "readiness": {"enum": ["PARTIAL", "GAP", "NOT_APPLICABLE"]}
+    }
+  }
+}

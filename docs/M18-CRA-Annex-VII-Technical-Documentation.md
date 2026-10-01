@@ -1,0 +1,28 @@
+# M18 — CRA Annex-VII Technical Documentation / Technical File
+
+M18 assembles a deterministic, signed technical-documentation evidence package aligned to CRA Article 31 and Annex VII.
+
+## Scope
+
+The generated package indexes all eight Annex VII categories:
+
+1. product description, intended purpose, software versions and Annex II user information;
+2. design/development/production architecture and vulnerability-handling processes;
+3. cybersecurity risk assessment and Annex I applicability;
+4. support-period determination information;
+5. applied standards/common specifications/certification schemes or alternative technical solutions;
+6. test reports;
+7. EU Declaration of Conformity;
+8. SBOM availability where applicable.
+
+## Readiness model
+
+M18 uses `READY`, `PARTIAL`, `GAP`, and `NOT_APPLICABLE`. The present deterministic fixture is software-only, so hardware photographs are not applicable. The EU Declaration of Conformity is intentionally a GAP because M18 does not perform conformity assessment. Test reports remain PARTIAL pending M19 production validation. The standards/specifications section remains PARTIAL because M18 does not invent harmonised-standard claims.
+
+## Security boundary
+
+Node1 is the technical-file evidence/signing authority. Node2 receives verifier-only material and must reject private signing material. The signed M18 manifest binds the M11 requirement matrix and M12-M17 control overlays as well as the technical-file artifacts.
+
+## Non-claims
+
+M18 does not claim CRA conformity, does not perform conformity assessment, does not create the EU Declaration of Conformity, does not authorize CE marking, and does not mutate M11 or M17 evidence states.

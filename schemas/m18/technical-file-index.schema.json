@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M18 Annex VII Technical File Index",
+  "type": "object",
+  "required": ["version", "milestone", "entries", "cra_conformity_claim"],
+  "properties": {
+    "version": {"const": "0.18.0"},
+    "milestone": {"const": "M18"},
+    "cra_conformity_claim": {"const": false},
+    "entries": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["section_id", "legal_reference", "title", "readiness", "evidence"],
+        "properties": {
+          "section_id": {"type": "string"},
+          "legal_reference": {"type": "string"},
+          "title": {"type": "string"},
+          "readiness": {"enum": ["READY", "PARTIAL", "GAP", "NOT_APPLICABLE"]},
+          "evidence": {"type": "array"}
+        }
+      }
+    }
+  }
+}

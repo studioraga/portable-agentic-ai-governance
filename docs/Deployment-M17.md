@@ -1,3 +1,7 @@
 # M17 Deployment
 
 Node1 builds signed Annex-I evidence material with `deploy/m17/one_shot_node1.sh`, packages verifier-only material with `deploy/m17/package_verifier_material.sh`, and transfers only that package to Node2. Node2 deploys with `deploy/m17/one_shot_node2.sh`. No private signing key may reach Node2.
+
+## M18 integration
+
+M18 assembles the CRA Article 31 / Annex VII technical-documentation evidence file from the evidence produced by M3-M17. This document remains an input/reference to that assembly; M18 does not retroactively change this milestone's scope. The M18 technical file is explicitly a draft evidence package: it makes no CRA conformity claim, does not perform a conformity assessment, does not authorize CE marking, and does not fabricate the EU Declaration of Conformity. Product-specific production/security test evidence that remains incomplete is carried forward to M19 as an explicit readiness gap.

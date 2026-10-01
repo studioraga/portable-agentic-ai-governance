@@ -1,0 +1,15 @@
+{
+  "product_id": "portable-agentic-ai-governance",
+  "product_name": "Portable Agentic AI Governance",
+  "product_type": "software_product_with_digital_elements",
+  "hardware_product": false,
+  "intended_purpose": "Local-first governance, evidence, security and CRA product-security control plane for connected and AI-enabled products.",
+  "software_versions_affecting_compliance": ["0.18.0"],
+  "market_placement_planned": false,
+  "user_information_refs": ["README.md", "docs/Prerequisites.md", "docs/Deployment.md", "docs/Validation.md"],
+  "architecture_refs": ["docs/Architecture.md"],
+  "production_monitoring_refs": ["docs/Deployment.md", "docs/Validation.md"],
+  "risk_assessment_refs": ["docs/M4-AI-System-Security.md", "docs/M5-Compliance-Risk-Automation.md", "docs/M17-CRA-Annex-I-Compliance-Evidence.md"],
+  "support_period_refs": ["docs/M16-CRA-Secure-Update-Product-Lifecycle.md", "governance/cra/m16/secure-update-policy.json"],
+  "sbom_refs": ["src/portable_ai_governance/supply_chain/bom.py", "docs/M3-Supply-Chain.md"]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.18.0",
+  "milestone": "M18",
+  "controls": [
+    {"control_id":"CRA-TDOC-001","legal_reference":"Article 31; Annex VII(1)","objective":"Product description, intended purpose, software versions and Annex II user-information evidence."},
+    {"control_id":"CRA-TDOC-002","legal_reference":"Annex VII(2)","objective":"Design/development/production architecture and vulnerability-handling process evidence."},
+    {"control_id":"CRA-TDOC-003","legal_reference":"Article 13(3)-(4); Annex VII(3)","objective":"Cybersecurity risk-assessment evidence and Annex I applicability traceability."},
+    {"control_id":"CRA-TDOC-004","legal_reference":"Article 13(8); Annex VII(4)","objective":"Support-period determination evidence."},
+    {"control_id":"CRA-TDOC-005","legal_reference":"Annex VII(5)","objective":"Standards/common-specifications/certification-schemes or alternative technical-solutions register."},
+    {"control_id":"CRA-TDOC-006","legal_reference":"Annex VII(6)","objective":"Product and vulnerability-handling test-report register with explicit M19 readiness gap."},
+    {"control_id":"CRA-TDOC-007","legal_reference":"Annex VII(7)","objective":"EU Declaration of Conformity slot retained as a pre-conformity gap; no declaration fabricated."},
+    {"control_id":"CRA-TDOC-008","legal_reference":"Annex VII(8)","objective":"SBOM availability/evidence for reasoned market-surveillance requests where applicable."},
+    {"control_id":"CRA-TDOC-TRACE-001","legal_reference":"Article 31","objective":"Digest-bound technical-file index and evidence traceability."}
+  ]
+}
