@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["total","part_i","part_ii","states","cra_conformity_claim"],"properties":{"total":{"const":22},"cra_conformity_claim":{"const":false}}}

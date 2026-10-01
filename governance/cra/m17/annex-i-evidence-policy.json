@@ -1,0 +1,16 @@
+{
+  "version": "0.17.0",
+  "milestone": "M17",
+  "purpose": "CRA Annex I compliance-evidence aggregation and traceability",
+  "scope": ["Annex I Part I", "Annex I Part II"],
+  "allowed_evidence_states": ["EVIDENCED", "PARTIAL", "GAP", "NOT_APPLICABLE"],
+  "boundaries": {
+    "evidence_aggregation_only": true,
+    "cra_conformity_claim": false,
+    "conformity_assessment_performed": false,
+    "m11_status_mutation": false,
+    "technical_file_generated": false,
+    "network_side_effects": false,
+    "node2_verifier_only": true
+  }
+}

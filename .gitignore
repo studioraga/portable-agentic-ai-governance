@@ -96,3 +96,10 @@ var/m16-verifier.tar.gz
 var/m16-verifier.tar.gz.sha256
 var/m16-validation/
 var/m16-validation*/
+
+# M17 generated CRA Annex-I compliance-evidence material/evidence
+var/m17-material/
+var/m17-verifier.tar.gz
+var/m17-verifier.tar.gz.sha256
+var/m17-validation/
+var/m17-validation*/

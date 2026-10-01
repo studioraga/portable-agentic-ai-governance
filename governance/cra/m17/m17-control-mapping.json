@@ -1,0 +1,10 @@
+{
+  "version": "0.17.0",
+  "milestone": "M17",
+  "controls": [
+    {"control_id":"CRA-ANNEX1-EVID-001","title":"Annex I evidence inventory","requirements":["CRA-REQ-044","CRA-REQ-045","CRA-REQ-046","CRA-REQ-047","CRA-REQ-048","CRA-REQ-049","CRA-REQ-050","CRA-REQ-051","CRA-REQ-052","CRA-REQ-053","CRA-REQ-054","CRA-REQ-055","CRA-REQ-056","CRA-REQ-057"]},
+    {"control_id":"CRA-ANNEX1-VH-EVID-001","title":"Annex I Part II vulnerability-handling evidence inventory","requirements":["CRA-REQ-058","CRA-REQ-059","CRA-REQ-060","CRA-REQ-061","CRA-REQ-062","CRA-REQ-063","CRA-REQ-064","CRA-REQ-065"]},
+    {"control_id":"CRA-ANNEX1-TRACE-001","title":"Digest-bound requirement-to-evidence traceability","requirements":["CRA-REQ-044","CRA-REQ-058"]},
+    {"control_id":"CRA-ANNEX1-GAP-001","title":"Explicit unresolved evidence-gap register","requirements":["CRA-REQ-046","CRA-REQ-053","CRA-REQ-057","CRA-REQ-060"]}
+  ]
+}

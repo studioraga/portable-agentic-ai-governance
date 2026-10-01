@@ -1,0 +1,316 @@
+{
+  "version": "0.17.0",
+  "milestone": "M17",
+  "requirements": [
+    {
+      "requirement_id": "CRA-REQ-044",
+      "legal_reference": "Annex I Part I(1)",
+      "obligation_summary": "Provide an appropriate level of cybersecurity based on product risks.",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "docs/M4-AI-System-Security.md",
+        "src/portable_ai_governance/ai_security/threat_model.py",
+        "src/portable_ai_governance/compliance_risk/impact.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-045",
+      "legal_reference": "Annex I Part I(2)(a)",
+      "obligation_summary": "No known exploitable vulnerabilities at market placement",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/supply_chain/vulnerability.py",
+        "src/portable_ai_governance/cra_vulnerability_intel/engine.py",
+        "docs/M12-CRA-Vulnerability-Exploitation-Intelligence.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-046",
+      "legal_reference": "Annex I Part I(2)(b)",
+      "obligation_summary": "Secure-by-default configuration and reset capability",
+      "m11_status": "gap",
+      "m11_target_milestone": "M17",
+      "evidence_state": "GAP",
+      "evidence_refs": [
+        "docs/M2-Security-Control-Plane.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": "No product-specific secure-by-default/reset acceptance evidence is yet bound to this repository."
+    },
+    {
+      "requirement_id": "CRA-REQ-047",
+      "legal_reference": "Annex I Part I(2)(c)",
+      "obligation_summary": "Enable vulnerabilities to be addressed through security updates, including appropriate automatic-update behavior where applicable",
+      "m11_status": "gap",
+      "m11_target_milestone": "M17",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "src/portable_ai_governance/cra_secure_update/update.py",
+        "governance/cra/m16/secure-update-policy.json",
+        "docs/M16-CRA-Secure-Update-Product-Lifecycle.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-048",
+      "legal_reference": "Annex I Part I(2)(d)",
+      "obligation_summary": "Protect against unauthorised access using authentication/identity/access controls and report possible unauthorised access",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/security/workload_identity.py",
+        "src/portable_ai_governance/security/policy_adapter.py",
+        "src/portable_ai_governance/security/audit.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-049",
+      "legal_reference": "Annex I Part I(2)(e)",
+      "obligation_summary": "Protect confidentiality of stored, transmitted and processed data using appropriate state-of-the-art mechanisms",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/security/tls_transport.py",
+        "src/portable_ai_governance/security/secrets.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-050",
+      "legal_reference": "Annex I Part I(2)(f)",
+      "obligation_summary": "Protect integrity of data, commands, programs and configuration and report corruption",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/supply_chain/signing.py",
+        "src/portable_ai_governance/security/audit.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-051",
+      "legal_reference": "Annex I Part I(2)(g)",
+      "obligation_summary": "Apply data minimisation to intended product purpose",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/compliance_risk/privacy.py",
+        "docs/M5-Compliance-Risk-Automation.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-052",
+      "legal_reference": "Annex I Part I(2)(h)",
+      "obligation_summary": "Protect availability of essential/basic functions including after incidents and against denial-of-service",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/security/rate_limit.py",
+        "src/portable_ai_governance/security_ops/recovery.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-053",
+      "legal_reference": "Annex I Part I(2)(i)",
+      "obligation_summary": "Minimise negative impact on availability of services provided by other devices/networks",
+      "m11_status": "gap",
+      "m11_target_milestone": "M17",
+      "evidence_state": "GAP",
+      "evidence_refs": [
+        "docs/Architecture.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": "No product-specific evidence yet demonstrates minimised negative impact on availability of other devices/networks."
+    },
+    {
+      "requirement_id": "CRA-REQ-054",
+      "legal_reference": "Annex I Part I(2)(j)",
+      "obligation_summary": "Limit attack surfaces including external interfaces",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/ai_security/threat_model.py",
+        "src/portable_ai_governance/tool_agent/authorization.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-055",
+      "legal_reference": "Annex I Part I(2)(k)",
+      "obligation_summary": "Reduce incident impact with exploitation-mitigation mechanisms and techniques",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/security_ops/containment.py",
+        "docs/M9-Security-Operations.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-056",
+      "legal_reference": "Annex I Part I(2)(l)",
+      "obligation_summary": "Record/monitor security-relevant internal activity with user opt-out mechanism where required",
+      "m11_status": "partial",
+      "m11_target_milestone": "M17",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/security/audit.py",
+        "src/portable_ai_governance/security_ops/siem.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-057",
+      "legal_reference": "Annex I Part I(2)(m)",
+      "obligation_summary": "Allow users to securely and permanently remove data/settings and securely transfer data where applicable",
+      "m11_status": "gap",
+      "m11_target_milestone": "M17",
+      "evidence_state": "GAP",
+      "evidence_refs": [
+        "docs/Architecture.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": "No product-specific secure/permanent user-data removal and transfer acceptance evidence is yet bound."
+    },
+    {
+      "requirement_id": "CRA-REQ-058",
+      "legal_reference": "Annex I Part II(1)",
+      "obligation_summary": "Identify/document product vulnerabilities and components and maintain a machine-readable SBOM covering at least top-level dependencies",
+      "m11_status": "partial",
+      "m11_target_milestone": "M12",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "src/portable_ai_governance/supply_chain/bom.py",
+        "src/portable_ai_governance/supply_chain/vulnerability.py",
+        "src/portable_ai_governance/cra_vulnerability_intel/normalize.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-059",
+      "legal_reference": "Annex I Part II(2)",
+      "obligation_summary": "Address and remediate vulnerabilities without delay, including security updates; separate security/functionality updates where technically feasible",
+      "m11_status": "partial",
+      "m11_target_milestone": "M16",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "src/portable_ai_governance/cra_secure_update/update.py",
+        "governance/cra/m16/secure-update-policy.json"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-060",
+      "legal_reference": "Annex I Part II(3)",
+      "obligation_summary": "Apply effective and regular product security tests and reviews",
+      "m11_status": "partial",
+      "m11_target_milestone": "M19",
+      "evidence_state": "PARTIAL",
+      "evidence_refs": [
+        "src/portable_ai_governance/ai_security/evaluation.py",
+        "tests/cra_secure_update/test_m16_secure_update.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": "Security tests exist, but M19 production validation is still required for effective regular product-security test/review evidence."
+    },
+    {
+      "requirement_id": "CRA-REQ-061",
+      "legal_reference": "Annex I Part II(4)",
+      "obligation_summary": "After a security update, disclose fixed-vulnerability information, affected product, impact/severity and remediation guidance, subject to justified delayed disclosure",
+      "m11_status": "gap",
+      "m11_target_milestone": "M15",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "src/portable_ai_governance/cra_psirt/disclosure.py",
+        "docs/M15-CRA-PSIRT-CVD-User-Notification.md"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-062",
+      "legal_reference": "Annex I Part II(5)",
+      "obligation_summary": "Put in place and enforce a coordinated vulnerability disclosure policy",
+      "m11_status": "gap",
+      "m11_target_milestone": "M15",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "governance/cra/m15/psirt-cvd-policy.json",
+        "src/portable_ai_governance/cra_psirt/intake.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-063",
+      "legal_reference": "Annex I Part II(6)",
+      "obligation_summary": "Facilitate vulnerability information sharing and provide a vulnerability-reporting contact address",
+      "m11_status": "gap",
+      "m11_target_milestone": "M15",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "governance/cra/m15/psirt-cvd-policy.json",
+        "src/portable_ai_governance/cra_psirt/runtime.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-064",
+      "legal_reference": "Annex I Part II(7)",
+      "obligation_summary": "Securely distribute updates so vulnerabilities are fixed/mitigated timely and automatically where applicable",
+      "m11_status": "gap",
+      "m11_target_milestone": "M16",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "src/portable_ai_governance/cra_secure_update/update.py",
+        "deploy/m16/package_verifier_material.sh"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    },
+    {
+      "requirement_id": "CRA-REQ-065",
+      "legal_reference": "Annex I Part II(8)",
+      "obligation_summary": "Disseminate security updates without delay, generally free of charge, with relevant user advisories",
+      "m11_status": "gap",
+      "m11_target_milestone": "M16",
+      "evidence_state": "EVIDENCED",
+      "evidence_refs": [
+        "governance/cra/m16/secure-update-policy.json",
+        "src/portable_ai_governance/cra_secure_update/lifecycle.py"
+      ],
+      "conformity_claim": false,
+      "gap_reason": null
+    }
+  ]
+}
