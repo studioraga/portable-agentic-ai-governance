@@ -1,0 +1,58 @@
+{
+  "controls": [
+    {
+      "control_id": "CRA-PRODVAL-001",
+      "requirements": [
+        "CRA-REQ-060"
+      ],
+      "title": "Node1 release-authority runtime qualification"
+    },
+    {
+      "control_id": "CRA-PRODVAL-002",
+      "requirements": [
+        "CRA-REQ-060"
+      ],
+      "title": "Node2 independent product-verifier runtime qualification"
+    },
+    {
+      "control_id": "CRA-PRODVAL-003",
+      "requirements": [
+        "CRA-REQ-060"
+      ],
+      "title": "Cross-node source/version/platform parity"
+    },
+    {
+      "control_id": "CRA-PRODVAL-004",
+      "requirements": [
+        "CRA-REQ-060"
+      ],
+      "title": "Regular product-security test/review evidence gate"
+    },
+    {
+      "control_id": "CRA-PRODVAL-005",
+      "requirements": [
+        "CRA-REQ-060"
+      ],
+      "title": "Verifier/private-key isolation and tamper rejection"
+    },
+    {
+      "control_id": "CRA-PRODVAL-006",
+      "requirements": [
+        "CRA-REQ-046",
+        "CRA-REQ-053",
+        "CRA-REQ-057",
+        "CRA-REQ-060"
+      ],
+      "title": "M17/M18 gap-closure candidate register"
+    },
+    {
+      "control_id": "CRA-PRODVAL-EVID-001",
+      "requirements": [
+        "CRA-REQ-060"
+      ],
+      "title": "Signed digest-bound Node1/Node2 production-validation evidence"
+    }
+  ],
+  "milestone": "M19",
+  "version": "0.19.0"
+}

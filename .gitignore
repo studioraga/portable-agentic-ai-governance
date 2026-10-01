@@ -110,3 +110,9 @@ var/m18-verifier.tar.gz
 var/m18-verifier.tar.gz.sha256
 var/m18-validation/
 var/m18-validation*/
+# M19 generated CRA Node1/Node2 production-validation material/evidence
+var/m19-material/
+var/m19-verifier.tar.gz
+var/m19-verifier.tar.gz.sha256
+var/m19-validation/
+var/m19-validation*/

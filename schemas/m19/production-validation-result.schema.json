@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "case_id",
+    "status",
+    "reason"
+  ],
+  "title": "production-validation-result",
+  "type": "object"
+}

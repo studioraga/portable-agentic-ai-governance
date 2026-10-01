@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "validation_mode",
+    "total_checks",
+    "passed",
+    "failed",
+    "production_validation_complete",
+    "cra_conformity_claim"
+  ],
+  "title": "production-validation-summary",
+  "type": "object"
+}

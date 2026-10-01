@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "schema_version",
+    "milestone",
+    "capture_mode",
+    "node_id",
+    "role",
+    "architecture",
+    "os",
+    "package_version",
+    "git_head",
+    "source_fingerprints",
+    "private_signing_key_present"
+  ],
+  "title": "node-runtime-profile",
+  "type": "object"
+}

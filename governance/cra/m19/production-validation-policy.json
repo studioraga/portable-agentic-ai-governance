@@ -1,0 +1,49 @@
+{
+  "boundaries": {
+    "conformity_assessment_performed": false,
+    "cra_conformity_claim": false,
+    "destructive_test_execution": false,
+    "firmware_flash_performed": false,
+    "host_os_update_performed": false,
+    "m11_status_mutation": false,
+    "m17_evidence_state_mutation": false,
+    "m18_readiness_mutation": false,
+    "network_side_effects": false,
+    "node1_signing_authority": true,
+    "node2_verifier_only": true,
+    "production_validation_evidence": true,
+    "simulation_must_not_claim_production": true
+  },
+  "milestone": "M19",
+  "platform_contract": {
+    "node1": {
+      "architecture": "x86_64",
+      "os_id": "ubuntu",
+      "os_version_prefix": "24.04",
+      "role": "release_validation_authority"
+    },
+    "node2": {
+      "architecture": "aarch64",
+      "os_id": "ubuntu",
+      "os_version_prefix": "22.04",
+      "role": "independent_product_verifier"
+    }
+  },
+  "source_fingerprint_paths": [
+    "pyproject.toml",
+    "src/portable_ai_governance/__init__.py",
+    "governance/cra/cra-requirements.json",
+    "governance/cra/m12/m12-control-mapping.json",
+    "governance/cra/m13/m13-control-mapping.json",
+    "governance/cra/m14/m14-control-mapping.json",
+    "governance/cra/m15/m15-control-mapping.json",
+    "governance/cra/m16/m16-control-mapping.json",
+    "governance/cra/m17/m17-control-mapping.json",
+    "governance/cra/m18/m18-control-mapping.json",
+    "governance/cra/m19/m19-control-mapping.json",
+    "governance/cra/m19/production-validation-policy.json",
+    "governance/cra/m19/production-validation-plan.json"
+  ],
+  "title": "CRA Node1/Node2 Production Validation",
+  "version": "0.19.0"
+}

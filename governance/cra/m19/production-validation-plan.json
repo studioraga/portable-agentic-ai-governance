@@ -1,0 +1,72 @@
+{
+  "gap_closure_policy": {
+    "CRA-REQ-046": "Not automatically closed by M19; requires explicit secure-by-default/reset product test evidence.",
+    "CRA-REQ-053": "Not automatically closed by M19; requires explicit other-device/network availability impact evidence.",
+    "CRA-REQ-057": "Not automatically closed by M19; requires explicit secure data-removal/transfer test evidence.",
+    "CRA-REQ-060": "Can become EVIDENCE_READY_FOR_M17_REVIEW only from LIVE Node1+Node2 profiles and all required checks passing."
+  },
+  "milestone": "M19",
+  "validation_cases": [
+    {
+      "case_id": "M19-VAL-001",
+      "category": "platform",
+      "required_for_production": true,
+      "title": "Node1 platform contract"
+    },
+    {
+      "case_id": "M19-VAL-002",
+      "category": "platform",
+      "required_for_production": true,
+      "title": "Node2 platform contract"
+    },
+    {
+      "case_id": "M19-VAL-003",
+      "category": "source",
+      "required_for_production": true,
+      "title": "M19 package version parity"
+    },
+    {
+      "case_id": "M19-VAL-004",
+      "category": "source",
+      "required_for_production": true,
+      "title": "Git base-commit parity"
+    },
+    {
+      "case_id": "M19-VAL-005",
+      "category": "source",
+      "required_for_production": true,
+      "title": "Critical-source fingerprint parity"
+    },
+    {
+      "case_id": "M19-VAL-006",
+      "category": "platform",
+      "required_for_production": true,
+      "title": "Heterogeneous-node architecture contract"
+    },
+    {
+      "case_id": "M19-VAL-007",
+      "category": "security",
+      "required_for_production": true,
+      "title": "Node2 verifier-only private-key boundary"
+    },
+    {
+      "case_id": "M19-VAL-008",
+      "category": "cra",
+      "required_for_production": true,
+      "title": "Annex-I regular security-test evidence readiness"
+    },
+    {
+      "case_id": "M19-VAL-009",
+      "category": "cra",
+      "required_for_production": true,
+      "title": "Annex-VII test-report evidence readiness"
+    },
+    {
+      "case_id": "M19-VAL-010",
+      "category": "integrity",
+      "required_for_production": true,
+      "title": "M11-M18 baseline binding"
+    }
+  ],
+  "version": "0.19.0"
+}

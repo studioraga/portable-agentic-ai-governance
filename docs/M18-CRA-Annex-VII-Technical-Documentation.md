@@ -26,3 +26,7 @@ Node1 is the technical-file evidence/signing authority. Node2 receives verifier-
 ## Non-claims
 
 M18 does not claim CRA conformity, does not perform conformity assessment, does not create the EU Declaration of Conformity, does not authorize CE marking, and does not mutate M11 or M17 evidence states.
+
+## M19 integration — CRA Node1/Node2 Production Validation
+
+M19 consumes this milestone's evidence as part of the heterogeneous Node1/Node2 production-validation chain. The M19 signed validation bundle binds the frozen CRA baselines, checks source/version/platform parity and verifier-key isolation, and supplies a production-evidence candidate for Annex I Part II(3) regular product-security testing. M19 does not rewrite this milestone's historical claims, perform conformity assessment, or make a CRA conformity claim.

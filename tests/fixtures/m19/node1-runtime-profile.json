@@ -1,0 +1,38 @@
+{
+  "accelerator": {
+    "description": "fixture RTX-class GPU",
+    "kind": "nvidia"
+  },
+  "architecture": "x86_64",
+  "capture_mode": "SIMULATED",
+  "git_head": "9ea7e14561895670a2ea2dbc11819b51a36ecf21",
+  "hostname": "node1-fixture",
+  "kernel_release": "6.8.0-fixture",
+  "milestone": "M19",
+  "node_id": "node1-fixture",
+  "os": {
+    "id": "ubuntu",
+    "pretty_name": "Ubuntu 24.04 LTS",
+    "version_id": "24.04"
+  },
+  "package_version": "0.19.0",
+  "private_signing_key_present": true,
+  "python_version": "3.12.3",
+  "role": "release_validation_authority",
+  "schema_version": "1.0",
+  "source_fingerprints": {
+    "governance/cra/cra-requirements.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m12/m12-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m13/m13-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m14/m14-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m15/m15-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m16/m16-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m17/m17-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m18/m18-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m19/m19-control-mapping.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m19/production-validation-plan.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "governance/cra/m19/production-validation-policy.json": "0000000000000000000000000000000000000000000000000000000000000000",
+    "pyproject.toml": "0000000000000000000000000000000000000000000000000000000000000000",
+    "src/portable_ai_governance/__init__.py": "0000000000000000000000000000000000000000000000000000000000000000"
+  }
+}
