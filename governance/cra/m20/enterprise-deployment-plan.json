@@ -1,0 +1,26 @@
+{
+  "deployment": {
+    "destructive": false,
+    "external_network_actions": false,
+    "mode": "one-shot-config-material"
+  },
+  "milestone": "M20",
+  "node1": {
+    "actions": [
+      "verify M19 live evidence",
+      "fingerprint M11-M20 source/control baselines",
+      "assemble signed final-freeze bundle",
+      "package verifier-only material"
+    ],
+    "role": "enterprise_release_authority"
+  },
+  "node2": {
+    "actions": [
+      "verify bundle signature/digests",
+      "verify local critical-source fingerprints",
+      "reject private signing material"
+    ],
+    "role": "enterprise_independent_verifier"
+  },
+  "version": "0.20.0"
+}

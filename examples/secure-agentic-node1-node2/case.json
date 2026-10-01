@@ -1,0 +1,34 @@
+{
+  "case_id": "secure-genai-001",
+  "system_id": "node1-node2-private-ai",
+  "risk_signals": [
+    {
+      "id": "r1",
+      "severity": "high",
+      "summary": "model/tool output could request privileged action",
+      "evidence_refs": [
+        "m10:bounded-authority"
+      ]
+    }
+  ],
+  "threat_signals": [
+    {
+      "id": "t1",
+      "severity": "critical",
+      "summary": "prompt/tool-chain tampering or unauthorized delegation",
+      "evidence_refs": [
+        "m10:digest-bound-handoff"
+      ]
+    }
+  ],
+  "privacy_signals": [
+    {
+      "id": "p1",
+      "severity": "medium",
+      "summary": "sensitive local evidence must not leave customer premises",
+      "evidence_refs": [
+        "m10:no-network-side-effect"
+      ]
+    }
+  ]
+}

@@ -17,3 +17,7 @@ The primary M11 row is `CRA-REQ-060` / Annex I Part II(3): effective and regular
 ## Boundaries
 
 M19 performs no destructive test, firmware flash, host update, external network side effect, conformity assessment, or CRA conformity claim.
+
+## M20 integration
+
+M20 consumes the frozen evidence and controls from this milestone as part of the enterprise one-shot deployment/final-production-freeze chain. It does not rewrite this milestone or imply CRA conformity. Final-freeze readiness requires successful M19 live production validation. The M20 secure-agentic Node1/Node2 demonstration reuses the M10 constrained-authority topology and signed human-disposition model for traceable GenAI/agentic governance.

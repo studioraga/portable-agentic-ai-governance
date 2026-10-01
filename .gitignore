@@ -116,3 +116,11 @@ var/m19-verifier.tar.gz
 var/m19-verifier.tar.gz.sha256
 var/m19-validation/
 var/m19-validation*/
+
+# M20 generated enterprise final-freeze material/evidence
+var/m20-material/
+var/m20-verifier.tar.gz
+var/m20-verifier.tar.gz.sha256
+var/m20-validation/
+var/m20-validation*/
+examples/secure-agentic-node1-node2/runtime/

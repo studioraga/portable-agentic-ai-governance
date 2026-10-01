@@ -1,0 +1,26 @@
+{
+  "controls": [
+    {
+      "control_id": "CRA-DEPLOY-001",
+      "summary": "Enterprise one-shot deployment evidence"
+    },
+    {
+      "control_id": "CRA-FREEZE-001",
+      "summary": "Final production-freeze evidence bound to live M19 validation"
+    },
+    {
+      "control_id": "CRA-FREEZE-002",
+      "summary": "Release source/control fingerprint manifest"
+    },
+    {
+      "control_id": "CRA-FREEZE-003",
+      "summary": "Node1 authority / Node2 verifier trust separation"
+    },
+    {
+      "control_id": "CRA-FREEZE-004",
+      "summary": "Fail-closed simulation and incomplete-production gate"
+    }
+  ],
+  "milestone": "M20",
+  "version": "0.20.0"
+}

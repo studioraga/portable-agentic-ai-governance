@@ -1,0 +1,43 @@
+{
+  "boundaries": {
+    "ce_marking_authorized": false,
+    "conformity_assessment_performed": false,
+    "cra_conformity_claim": false,
+    "enterprise_one_shot_deployment": true,
+    "final_freeze_evidence": true,
+    "firmware_flash_performed": false,
+    "host_os_update_performed": false,
+    "m19_live_production_validation_required": true,
+    "network_external_side_effects": false,
+    "node1_release_authority": true,
+    "node2_verifier_only": true,
+    "prior_baseline_mutation": false,
+    "simulation_must_not_claim_final_freeze": true
+  },
+  "freeze_states": [
+    "RELEASE_CANDIDATE",
+    "FINAL_FREEZE_READY"
+  ],
+  "milestone": "M20",
+  "required_m19_state": {
+    "failed": 0,
+    "production_validation_complete": true,
+    "validation_mode": "LIVE"
+  },
+  "source_fingerprint_paths": [
+    "pyproject.toml",
+    "src/portable_ai_governance/__init__.py",
+    "governance/cra/cra-requirements.json",
+    "governance/cra/m12/m12-control-mapping.json",
+    "governance/cra/m13/m13-control-mapping.json",
+    "governance/cra/m14/m14-control-mapping.json",
+    "governance/cra/m15/m15-control-mapping.json",
+    "governance/cra/m16/m16-control-mapping.json",
+    "governance/cra/m17/m17-control-mapping.json",
+    "governance/cra/m18/m18-control-mapping.json",
+    "governance/cra/m19/m19-control-mapping.json",
+    "governance/cra/m20/m20-control-mapping.json"
+  ],
+  "title": "Enterprise One-Shot Deployment / Final Production Freeze",
+  "version": "0.20.0"
+}
