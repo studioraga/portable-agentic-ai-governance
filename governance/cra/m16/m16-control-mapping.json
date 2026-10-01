@@ -1,0 +1,95 @@
+{
+  "controls": [
+    {
+      "control_id": "CRA-LIFE-001",
+      "description": "Determine, document, communicate and enforce the product support period and vulnerability-handling lifecycle.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-008"
+    },
+    {
+      "control_id": "CRA-UPD-001",
+      "description": "Retain each support-period security update for at least ten years after issue or the remainder of support, whichever is longer.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-009"
+    },
+    {
+      "control_id": "CRA-LIFE-002",
+      "description": "Provide latest substantially modified software version to eligible prior users free of charge without additional environment-adjustment cost.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-010"
+    },
+    {
+      "control_id": "CRA-LIFE-003",
+      "description": "Communicate support-period end date and prepare technically feasible end-of-support notification.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-019"
+    },
+    {
+      "control_id": "CRA-CORR-001",
+      "description": "Prepare immediate corrective-action, withdrawal or recall evidence where non-conformity is known or reasonably suspected.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-021"
+    },
+    {
+      "control_id": "CRA-UPD-002",
+      "description": "Bind security-update/corrective-measure details to the product security evidence chain.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-029"
+    },
+    {
+      "control_id": "CRA-ER-004",
+      "description": "Provide security-update capability including automatic-update behavior where appropriate.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-047"
+    },
+    {
+      "control_id": "CRA-VH-002",
+      "description": "Remediate vulnerabilities without delay and separate security/functionality updates where technically feasible.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-059"
+    },
+    {
+      "control_id": "CRA-VH-007",
+      "description": "Securely distribute authenticated updates with anti-rollback checks and automatic handling where appropriate.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-064"
+    },
+    {
+      "control_id": "CRA-VH-008",
+      "description": "Prepare timely, generally free security-update dissemination and user-advisory evidence.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-065"
+    },
+    {
+      "control_id": "CRA-UPD-EVID-001",
+      "description": "Produce signed digest-bound secure-update and lifecycle evidence for independent verification.",
+      "implementation": [
+        "src/portable_ai_governance/cra_secure_update"
+      ],
+      "requirement_id": "CRA-REQ-064"
+    }
+  ],
+  "milestone": "M16",
+  "note": "M16 overlay; does not mutate the M11 authoritative CRA matrix.",
+  "version": "0.16.0"
+}

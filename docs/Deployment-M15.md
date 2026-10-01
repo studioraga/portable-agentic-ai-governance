@@ -9,3 +9,6 @@ Node1 is the PSIRT/CVD evidence authority and retains the M15 private signing ke
 ```
 
 No deployment action performs vulnerability publication, user notification, component-maintainer contact, or ENISA submission.
+
+## M16 integration — CRA Secure Update & Product Lifecycle
+M16 consumes the existing milestone evidence without rewriting its historical responsibility. It adds support-period/lifecycle evidence, signed secure-update metadata and payload verification, anti-rollback decisions, update-retention/free-update policy checks, and end-of-support notification preparation. M16 keeps host OS/firmware modification and network rollout out of acceptance; see `docs/M16-CRA-Secure-Update-Product-Lifecycle.md`, `docs/Deployment-M16.md`, and `docs/Validation-M16.md`.

@@ -89,3 +89,10 @@ var/m15-verifier.tar.gz
 var/m15-verifier.tar.gz.sha256
 var/m15-validation/
 var/m15-validation*/
+
+# M16 generated CRA secure-update/product-lifecycle material/evidence
+var/m16-material/
+var/m16-verifier.tar.gz
+var/m16-verifier.tar.gz.sha256
+var/m16-validation/
+var/m16-validation*/

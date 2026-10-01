@@ -1,0 +1,21 @@
+[
+  {
+    "expected_use_years": 8,
+    "market_placement_date": "2027-12-11",
+    "product_id": "product-node2",
+    "support_period_factors": [
+      "reasonable_user_expectations",
+      "intended_purpose",
+      "core_third_party_component_support"
+    ]
+  },
+  {
+    "expected_use_years": 3,
+    "market_placement_date": "2027-12-11",
+    "product_id": "product-shortlife",
+    "support_period_factors": [
+      "short_expected_use",
+      "intended_purpose"
+    ]
+  }
+]

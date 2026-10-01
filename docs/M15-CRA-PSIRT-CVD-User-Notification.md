@@ -13,3 +13,6 @@ M15 targets Article 13(6), Article 13(17), Article 14(8), Annex I Part II(4)–(
 ## Evidence
 
 Node1 signs the M15 evidence manifest. Node2 receives public-key/verifier material only and fails closed on tamper or private-key transfer.
+
+## M16 integration — CRA Secure Update & Product Lifecycle
+M16 consumes the existing milestone evidence without rewriting its historical responsibility. It adds support-period/lifecycle evidence, signed secure-update metadata and payload verification, anti-rollback decisions, update-retention/free-update policy checks, and end-of-support notification preparation. M16 keeps host OS/firmware modification and network rollout out of acceptance; see `docs/M16-CRA-Secure-Update-Product-Lifecycle.md`, `docs/Deployment-M16.md`, and `docs/Validation-M16.md`.

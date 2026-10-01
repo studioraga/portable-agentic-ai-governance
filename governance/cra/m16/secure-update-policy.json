@@ -1,0 +1,46 @@
+{
+  "boundaries": {
+    "automatic_external_rollout": false,
+    "cra_conformity_claim": false,
+    "evidence_only": true,
+    "firmware_flash_performed": false,
+    "host_os_update_performed": false,
+    "human_release_authorization_required": true,
+    "network_update_distribution": false,
+    "node2_verifier_only": true
+  },
+  "corrective_action": {
+    "withdraw_or_recall_if_appropriate": true
+  },
+  "latest_software_version": {
+    "free_access_for_prior_users": true,
+    "no_additional_environment_adjustment_cost": true
+  },
+  "milestone": "M16",
+  "policy_id": "CRA-M16-SECURE-UPDATE-LIFECYCLE",
+  "security_updates": {
+    "automatic_updates_where_applicable": true,
+    "availability_minimum_years_after_issue": 10,
+    "availability_rule": "max(issue_date_plus_10_years, support_period_end)",
+    "generally_free_of_charge": true,
+    "secure_distribution_required": true,
+    "separate_security_and_functionality_where_technically_feasible": true,
+    "without_delay_required": true
+  },
+  "support_period": {
+    "end_of_support_notification_where_technically_feasible": true,
+    "factors": [
+      "reasonable_user_expectations",
+      "product_nature_and_intended_purpose",
+      "relevant_union_law",
+      "comparable_product_support",
+      "operating_environment_availability",
+      "core_third_party_component_support"
+    ],
+    "minimum_years": 5,
+    "purchase_time_end_date_disclosure": true,
+    "short_expected_use_exception": true,
+    "technical_documentation_required": true
+  },
+  "version": "0.16.0"
+}
