@@ -1,0 +1,101 @@
+{
+  "version": "0.25.0",
+  "default_decision": "deny",
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "cra_conformity_claim": false
+  },
+  "zones": [
+    {
+      "zone_id": "management",
+      "purpose": "administrative control plane",
+      "trust_level": "high",
+      "cidrs": [
+        "10.25.0.0/24"
+      ]
+    },
+    {
+      "zone_id": "control-plane",
+      "purpose": "Node1 policy/evidence producer",
+      "trust_level": "high",
+      "cidrs": [
+        "10.25.10.0/24"
+      ]
+    },
+    {
+      "zone_id": "verifier",
+      "purpose": "Node2 independent verifier",
+      "trust_level": "medium",
+      "cidrs": [
+        "10.25.20.0/24"
+      ]
+    },
+    {
+      "zone_id": "monitoring",
+      "purpose": "security telemetry collection",
+      "trust_level": "medium",
+      "cidrs": [
+        "10.25.30.0/24"
+      ]
+    },
+    {
+      "zone_id": "external",
+      "purpose": "explicitly approved external dependencies only",
+      "trust_level": "untrusted",
+      "cidrs": [
+        "0.0.0.0/0"
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "flow_id": "NET-FLOW-001",
+      "source_zone": "management",
+      "destination_zone": "control-plane",
+      "protocol": "tcp",
+      "ports": [
+        22
+      ],
+      "requires_mtls": false,
+      "requires_encryption": true,
+      "allowed_workload_identities": []
+    },
+    {
+      "flow_id": "NET-FLOW-002",
+      "source_zone": "verifier",
+      "destination_zone": "control-plane",
+      "protocol": "tcp",
+      "ports": [
+        8443
+      ],
+      "requires_mtls": true,
+      "requires_encryption": true,
+      "allowed_workload_identities": [
+        "spiffe://pag/node2-verifier"
+      ]
+    },
+    {
+      "flow_id": "NET-FLOW-003",
+      "source_zone": "control-plane",
+      "destination_zone": "monitoring",
+      "protocol": "tcp",
+      "ports": [
+        9090,
+        3100
+      ],
+      "requires_mtls": true,
+      "requires_encryption": true,
+      "allowed_workload_identities": [
+        "spiffe://pag/node1-control-plane"
+      ]
+    }
+  ],
+  "enforcement": {
+    "host_firewall": "nftables-reference",
+    "switch_vlan_required_for_physical_separation": true,
+    "automatic_apply_during_validation": false,
+    "operator_approval_required_for_apply": true
+  }
+}

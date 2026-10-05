@@ -1,0 +1,24 @@
+{
+  "version": "0.25.0",
+  "m22_baseline_immutable": true,
+  "closures": [
+    {
+      "requirement_id": "CISSP-D4-002",
+      "m22_state": "GAP",
+      "m25_state": "EVIDENCED",
+      "controls": [
+        "ENT-NET-001",
+        "ENT-NET-002",
+        "ENT-NET-003",
+        "ENT-NET-004",
+        "ENT-NET-005",
+        "ENT-NET-006",
+        "ENT-NET-007"
+      ]
+    }
+  ],
+  "not_claimed": [
+    "physical switch/VLAN configuration is operator/environment evidence",
+    "M26 SOC/IDS platform integration and DR remain future scope"
+  ]
+}

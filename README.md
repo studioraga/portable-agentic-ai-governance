@@ -8,20 +8,20 @@ The project is intentionally framework-neutral. An LLM or orchestration framewor
 
 | Item | Value |
 |---|---|
-| Current development milestone | **M24 — Asset Security, Data Protection & Cryptographic/Data Lifecycle** |
-| Package version in working tree | `0.24.0` |
-| Latest immutable tagged release | **M23 v0.23.0** |
-| M23 tag | `m23-enterprise-identity-mfa-pam-v0.23.0` |
+| Current development milestone | **M25 — Zero-Trust Network & Micro-segmentation** |
+| Package version in working tree | `0.25.0` |
+| Latest immutable tagged release | **M24 v0.24.0** |
+| M23 tag | `m24-asset-security-data-lifecycle-v0.24.0` |
 | M23 release commit | `7f56c13bdc33993998ca8750d0cab9510e3157aa` |
-| M24 state | pre-commit / Node1+Node2 validation required before release tag |
+| M25 state | pre-commit / Node1+Node2 validation required before release tag |
 
-M24 is intentionally validated from an uncommitted working tree first. Its signed source manifest binds content digests to the immutable M23 parent instead of pretending the uncommitted tree is already a release.
+M25 is intentionally validated from an uncommitted working tree first. Its signed source manifest binds content digests to the immutable M24 parent instead of pretending the uncommitted tree is already a release.
 
 ## What problem does this project solve?
 
 AI governance often fails when policy documents are disconnected from executable controls and evidence. This repository turns governance and security requirements into deterministic, testable control paths with signed artifacts and explicit authority boundaries.
 
-The implementation provides, across M0–M24:
+The implementation provides, across M0–M25:
 
 - deterministic trust-kernel primitives;
 - identity, RBAC/ABAC, mTLS, request signing, anti-replay, protected secrets, rate limiting, and signed audit;
@@ -108,7 +108,7 @@ The local M21 validation uses deterministic fixture profiles. LIVE Node1/Node2 r
 | Understand validation layers | [`docs/Validation.md`](docs/Validation.md) |
 | Understand deployment progression | [`docs/oneshot-deployment.md`](docs/oneshot-deployment.md) |
 | Check common prerequisites | [`docs/Prerequisites.md`](docs/Prerequisites.md) |
-| See M0–M24 evolution | [`docs/Milestones.md`](docs/Milestones.md) |
+| See M0–M25 evolution | [`docs/Milestones.md`](docs/Milestones.md) |
 | Understand current M21 design | [`docs/M21-Embedded-Linux-Platform-Security-Validation.md`](docs/M21-Embedded-Linux-Platform-Security-Validation.md) |
 | Execute M21 validation | [`docs/Validation-M21.md`](docs/Validation-M21.md) |
 | Execute M21 deployment | [`docs/Deployment-M21.md`](docs/Deployment-M21.md) |
@@ -160,3 +160,7 @@ M23 extends the frozen M22 enterprise-security foundation with enterprise human 
 ## M24 relationship
 
 M24 extends the frozen M23 baseline with deterministic asset inventory/ownership/classification, retention and legal-hold handling, evidence-backed sanitization, default-deny DLP/controlled export, and cryptographic key-lifecycle evidence. This historical document remains authoritative for its original milestone; M24 consumes its reusable evidence but does not rewrite M0-M23 semantics. See `docs/M24-Asset-Security-Data-Protection-Crypto-Lifecycle.md`, `docs/Prerequisites-M24.md`, `docs/Deployment-M24.md`, and `docs/Validation-M24.md`. M24 closes only `CISSP-D2-001..003`; M21-dependent Domain-3 platform/hardware-root gaps remain open.
+
+## M25 relationship
+
+M25 extends the frozen M24 baseline with explicit network zones, default-deny micro-segmentation, mTLS workload-identity binding, egress allowlisting, network-detection policy and deterministic firewall evidence. This historical document remains authoritative for its original milestone; M25 consumes reusable evidence without rewriting M0-M24 semantics. See `docs/M25-Zero-Trust-Network-Microsegmentation.md`, `docs/Prerequisites-M25.md`, `docs/Deployment-M25.md`, and `docs/Validation-M25.md`. M25 closes the M22 `CISSP-D4-002` engineering gap while physical switch/VLAN enforcement and M26 SOC/DR integration remain environment/future-scope evidence.

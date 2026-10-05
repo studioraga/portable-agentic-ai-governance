@@ -152,3 +152,10 @@ var/m24-verifier.tar.gz
 var/m24-verifier.tar.gz.sha256
 var/m24-validation/
 var/m24-validation*/
+
+# M25 generated zero-trust network/micro-segmentation material/evidence
+var/m25-material/
+var/m25-verifier.tar.gz
+var/m25-verifier.tar.gz.sha256
+var/m25-validation/
+var/m25-validation*/

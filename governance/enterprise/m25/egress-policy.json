@@ -1,0 +1,30 @@
+{
+  "version": "0.25.0",
+  "default_egress_decision": "deny",
+  "rules": [
+    {
+      "rule_id": "EGR-001",
+      "source_zone": "control-plane",
+      "protocol": "tcp",
+      "ports": [
+        443
+      ],
+      "destinations": [
+        "approved-security-update-endpoint"
+      ],
+      "decision": "allow"
+    },
+    {
+      "rule_id": "EGR-002",
+      "source_zone": "monitoring",
+      "protocol": "tcp",
+      "ports": [
+        443
+      ],
+      "destinations": [
+        "approved-alert-endpoint"
+      ],
+      "decision": "allow"
+    }
+  ]
+}

@@ -4,15 +4,15 @@ This document is the compact release map. Feature-specific design details remain
 
 ## Current development state
 
-**M24 — Asset Security, Data Protection & Cryptographic/Data Lifecycle**
+**M25 — Zero-Trust Network & Micro-segmentation**
 
-Latest immutable tagged baseline: **M23 v0.23.0**
+Latest immutable tagged baseline: **M24 v0.24.0**
 
-Tag: `m23-enterprise-identity-mfa-pam-v0.23.0`
+Tag: `m24-asset-security-data-lifecycle-v0.24.0`
 
-Commit: `7f56c13bdc33993998ca8750d0cab9510e3157aa`
+Commit: `62a1713ff468117cefc256c03d2a71f26928f8cc`
 
-M24 remains a development milestone until physical Node1/Node2 verification, final regression, commit and release tagging are complete.
+M25 remains a development milestone until physical Node1/Node2 verification, final regression, commit and release tagging are complete.
 
 ## Milestone matrix
 
@@ -41,7 +41,8 @@ M24 remains a development milestone until physical Node1/Node2 verification, fin
 | M21 | Implemented/tagged | embedded Linux/platform-security validation and signed provenance correction |
 | M22 | Implemented/tagged | enterprise-security/CISSP-domain foundation and gap registry |
 | M23 | Implemented/tagged | enterprise identity, MFA and PAM |
-| M24 | **Current development** | asset security, data protection, DLP and cryptographic/data lifecycle |
+| M24 | Implemented/tagged | asset security, data protection, DLP and cryptographic/data lifecycle |
+| M25 | **Current development** | zero-trust network zoning, micro-segmentation, egress and detection evidence |
 
 ## Evolution
 
@@ -92,3 +93,7 @@ M24 extends the frozen M23 baseline with deterministic asset inventory/ownership
 ## M24 development milestone
 
 **M24 — Asset Security, Data Protection & Cryptographic/Data Lifecycle** builds on tagged M23. It implements the M22 Domain-2 gap closures through deterministic controls and independent evidence verification. The latest immutable tagged release remains M23 until physical Node1/Node2 validation, commit, regression, and tag completion.
+
+## M25 relationship
+
+M25 extends the frozen M24 baseline with explicit network zones, default-deny micro-segmentation, mTLS workload-identity binding, egress allowlisting, network-detection policy and deterministic firewall evidence. This historical document remains authoritative for its original milestone; M25 consumes reusable evidence without rewriting M0-M24 semantics. See `docs/M25-Zero-Trust-Network-Microsegmentation.md`, `docs/Prerequisites-M25.md`, `docs/Deployment-M25.md`, and `docs/Validation-M25.md`. M25 closes the M22 `CISSP-D4-002` engineering gap while physical switch/VLAN enforcement and M26 SOC/DR integration remain environment/future-scope evidence.

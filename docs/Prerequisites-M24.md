@@ -62,3 +62,7 @@ For pre-commit validation apply the M24 patch with `git apply`, not `git am`.
 ## 6. Safety boundaries
 
 M24 validation does not delete user data, rotate real production keys, change disk encryption, or modify physical media. Sanitization and export flows use deterministic validation records. Production data-disposal operations require separate operator-approved procedures.
+
+## M25 relationship
+
+M25 extends the frozen M24 baseline with explicit network zones, default-deny micro-segmentation, mTLS workload-identity binding, egress allowlisting, network-detection policy and deterministic firewall evidence. This historical document remains authoritative for its original milestone; M25 consumes reusable evidence without rewriting M0-M24 semantics. See `docs/M25-Zero-Trust-Network-Microsegmentation.md`, `docs/Prerequisites-M25.md`, `docs/Deployment-M25.md`, and `docs/Validation-M25.md`. M25 closes the M22 `CISSP-D4-002` engineering gap while physical switch/VLAN enforcement and M26 SOC/DR integration remain environment/future-scope evidence.

@@ -1156,6 +1156,97 @@
         "M24 asset/data validation",
         "signed M24 asset/data manifest"
       ]
+    },
+    {
+      "control_id": "ENT-NET-001",
+      "title": "Authoritative network zones and trust boundaries",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/network_security/policy.py"
+      ],
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-002",
+      "title": "Default-deny east-west micro-segmentation flow policy",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/network_security/policy.py"
+      ],
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-003",
+      "title": "mTLS workload identity binding for protected flows",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/network_security/policy.py"
+      ],
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-004",
+      "title": "Default-deny egress with explicit destination allowlisting",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/network_security/egress.py"
+      ],
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-005",
+      "title": "Management-plane and verifier-zone isolation",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/network_security/policy.py"
+      ],
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-006",
+      "title": "Network denial/identity/egress/scan detection policy",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/network_security/detection.py"
+      ],
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-007",
+      "title": "Deterministic firewall rendering and negative-path evidence",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/network_security/firewall.py"
+      ],
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ]
     }
   ]
 }

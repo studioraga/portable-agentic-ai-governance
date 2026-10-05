@@ -1217,6 +1217,97 @@
       "cissp_domain": [
         3
       ]
+    },
+    "ENT-NET-001": {
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        4
+      ]
+    },
+    "ENT-NET-002": {
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        4
+      ]
+    },
+    "ENT-NET-003": {
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        4
+      ]
+    },
+    "ENT-NET-004": {
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        4
+      ]
+    },
+    "ENT-NET-005": {
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        4
+      ]
+    },
+    "ENT-NET-006": {
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        4
+      ]
+    },
+    "ENT-NET-007": {
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        4
+      ]
     }
   }
 }

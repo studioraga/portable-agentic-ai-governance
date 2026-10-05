@@ -1,0 +1,26 @@
+{
+  "version": "0.25.0",
+  "telemetry_sources": [
+    "nftables-log",
+    "systemd-journal",
+    "application-audit"
+  ],
+  "rules": [
+    {
+      "event_type": "denied_flow",
+      "severity": "medium"
+    },
+    {
+      "event_type": "identity_mismatch",
+      "severity": "high"
+    },
+    {
+      "event_type": "unauthorized_egress",
+      "severity": "high"
+    },
+    {
+      "event_type": "port_scan",
+      "severity": "medium"
+    }
+  ]
+}

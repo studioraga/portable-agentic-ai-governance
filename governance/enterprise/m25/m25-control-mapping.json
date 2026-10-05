@@ -1,0 +1,110 @@
+{
+  "version": "0.25.0",
+  "controls": [
+    {
+      "control_id": "ENT-NET-001",
+      "objective": "Authoritative network zones and trust boundaries",
+      "cissp": [
+        "CISSP-D4-002"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_27001_2022_themes": [
+        "network security",
+        "segregation of networks"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-002",
+      "objective": "Default-deny east-west micro-segmentation flow policy",
+      "cissp": [
+        "CISSP-D4-002"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_27001_2022_themes": [
+        "network security",
+        "segregation of networks"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-003",
+      "objective": "mTLS workload identity binding for protected flows",
+      "cissp": [
+        "CISSP-D4-002"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_27001_2022_themes": [
+        "network security",
+        "segregation of networks"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-004",
+      "objective": "Default-deny egress with explicit destination allowlisting",
+      "cissp": [
+        "CISSP-D4-002"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_27001_2022_themes": [
+        "network security",
+        "segregation of networks"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-005",
+      "objective": "Management-plane and verifier-zone isolation",
+      "cissp": [
+        "CISSP-D4-002"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_27001_2022_themes": [
+        "network security",
+        "segregation of networks"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-006",
+      "objective": "Network denial/identity/egress/scan detection policy",
+      "cissp": [
+        "CISSP-D4-002"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_27001_2022_themes": [
+        "network security",
+        "segregation of networks"
+      ]
+    },
+    {
+      "control_id": "ENT-NET-007",
+      "objective": "Deterministic firewall rendering and negative-path evidence",
+      "cissp": [
+        "CISSP-D4-002"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ],
+      "iso_iec_27001_2022_themes": [
+        "network security",
+        "segregation of networks"
+      ]
+    }
+  ]
+}
