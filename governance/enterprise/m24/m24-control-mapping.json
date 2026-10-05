@@ -1,0 +1,14 @@
+{
+ "version":"0.24.0","controls":[
+  {"control_id":"ENT-ASSET-001","objective":"Authoritative deny-unregistered enterprise asset inventory","cissp":["CISSP-D2-001"],"nist_csf_2_0":["ID.AM"],"iso_iec_27001_2022_themes":["asset management"]},
+  {"control_id":"ENT-ASSET-002","objective":"Ownership, custody, criticality and classification metadata","cissp":["CISSP-D2-001"],"nist_csf_2_0":["ID.AM"],"iso_iec_27001_2022_themes":["information classification"]},
+  {"control_id":"ENT-DATA-001","objective":"Classification-driven handling and encryption requirements","cissp":["CISSP-D2-001","CISSP-D2-002"],"nist_csf_2_0":["PR.DS"]},
+  {"control_id":"ENT-DATA-002","objective":"Retention with legal-hold override","cissp":["CISSP-D2-002"],"nist_csf_2_0":["PR.DS"]},
+  {"control_id":"ENT-DATA-003","objective":"Evidence-backed sanitization and disposal","cissp":["CISSP-D2-002"],"nist_csf_2_0":["PR.DS"]},
+  {"control_id":"ENT-DLP-001","objective":"Default-deny controlled export by classification/destination","cissp":["CISSP-D2-003"],"nist_csf_2_0":["PR.DS"]},
+  {"control_id":"ENT-DLP-002","objective":"Deterministic sensitive-content inspection","cissp":["CISSP-D2-003"],"nist_csf_2_0":["PR.DS"]},
+  {"control_id":"ENT-DLP-003","objective":"Independent approval and no-payload decision audit","cissp":["CISSP-D2-003"],"nist_csf_2_0":["PR.DS","DE.CM"]},
+  {"control_id":"ENT-CRYPTO-001","objective":"Cryptographic key inventory, approved algorithms and ownership","cissp":["CISSP-D3-001"],"nist_csf_2_0":["PR.DS","PR.PS"]},
+  {"control_id":"ENT-CRYPTO-002","objective":"Rotation/revocation/exportability lifecycle policy","cissp":["CISSP-D3-001"],"nist_csf_2_0":["PR.DS","PR.PS"]}
+ ]
+}

@@ -1,0 +1,7 @@
+{
+  "version":"0.24.0","default_decision":"deny-unregistered","assets":[
+    {"asset_id":"pag-node1-control-plane","asset_type":"compute","system_id":"portable-agentic-ai-governance","owner":"platform-security","custodian":"node1-operator","data_owner":"security-governance","criticality":"critical","classification":"confidential","location":"node1","lifecycle_state":"active","retention_profile":"security-evidence"},
+    {"asset_id":"pag-node2-verifier","asset_type":"compute","system_id":"portable-agentic-ai-governance","owner":"platform-security","custodian":"node2-operator","data_owner":"security-governance","criticality":"high","classification":"confidential","location":"node2","lifecycle_state":"active","retention_profile":"security-evidence"},
+    {"asset_id":"pag-governance-evidence","asset_type":"information","system_id":"portable-agentic-ai-governance","owner":"security-governance","custodian":"evidence-service","data_owner":"security-governance","criticality":"critical","classification":"restricted","location":"node1-local-evidence-store","lifecycle_state":"active","retention_profile":"security-evidence"}
+  ]
+}

@@ -1,0 +1,14 @@
+name: M24 Asset Data Lifecycle
+on:
+  push:
+    paths: ['src/portable_ai_governance/asset_security/**','governance/enterprise/m24/**','scripts/m24/**','deploy/m24/**','tests/asset_security/**','.github/workflows/m24-asset-data.yml']
+  pull_request:
+    paths: ['src/portable_ai_governance/asset_security/**','governance/enterprise/m24/**','scripts/m24/**','deploy/m24/**','tests/asset_security/**']
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: ./scripts/m24/ci_validate.sh

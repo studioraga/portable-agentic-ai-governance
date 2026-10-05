@@ -1,0 +1,15 @@
+{
+  "version":"0.24.0","default_decision":"deny",
+  "classification_rules":{
+    "public":{"export_allowed":true,"allowed_destinations":["public-release"],"encryption_required":false,"approval_required":false,"block_pattern_matches":true},
+    "internal":{"export_allowed":true,"allowed_destinations":["enterprise-internal"],"encryption_required":true,"approval_required":false,"block_pattern_matches":true},
+    "confidential":{"export_allowed":true,"allowed_destinations":["enterprise-secure-exchange"],"encryption_required":true,"approval_required":true,"block_pattern_matches":true},
+    "restricted":{"export_allowed":true,"allowed_destinations":["regulated-secure-exchange"],"encryption_required":true,"approval_required":true,"block_pattern_matches":true}
+  },
+  "content_patterns":[
+    {"id":"AWS_ACCESS_KEY_STYLE","regex":"AKIA[0-9A-Z]{16}"},
+    {"id":"PRIVATE_KEY_HEADER","regex":"-----BEGIN (?:RSA |EC |OPENSSH |)PRIVATE KEY-----"},
+    {"id":"PASSWORD_ASSIGNMENT","regex":"(?i)password\\s*[:=]\\s*[^\\s]+"}
+  ],
+  "audit":{"record_decision":true,"record_actor":true,"record_destination":true,"record_asset_id":true,"do_not_log_payload":true}
+}

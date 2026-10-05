@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["version","m22_baseline_immutable","closures","advanced_but_not_closed"]}

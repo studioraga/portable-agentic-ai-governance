@@ -1,0 +1,8 @@
+{
+ "version":"0.24.0","m22_baseline_immutable":true,"closures":[
+  {"requirement_id":"CISSP-D2-001","m22_state":"PARTIAL","m24_state":"EVIDENCED","controls":["ENT-ASSET-001","ENT-ASSET-002","ENT-DATA-001"]},
+  {"requirement_id":"CISSP-D2-002","m22_state":"PARTIAL","m24_state":"EVIDENCED","controls":["ENT-DATA-002","ENT-DATA-003"]},
+  {"requirement_id":"CISSP-D2-003","m22_state":"GAP","m24_state":"EVIDENCED","controls":["ENT-DLP-001","ENT-DLP-002","ENT-DLP-003"]}
+ ],
+ "advanced_but_not_closed":[{"requirement_id":"CISSP-D3-001","state":"PARTIAL","reason":"M24 adds key lifecycle evidence, but platform/hardware-root and production key-provider claims remain outside M24."},{"requirement_id":"CISSP-D3-002","state":"PARTIAL","reason":"M21 secure-boot/MAC/hardware-root evidence remains authoritative and is not overridden by M24."}]
+}

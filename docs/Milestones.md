@@ -2,13 +2,17 @@
 
 This document is the compact release map. Feature-specific design details remain in the corresponding milestone documents.
 
-## Current release
+## Current development state
 
-**M21 v0.21.1 — Embedded Linux & Platform Security Validation**
+**M24 — Asset Security, Data Protection & Cryptographic/Data Lifecycle**
 
-Tag: `m21-embedded-linux-platform-security-v0.21.1`
+Latest immutable tagged baseline: **M23 v0.23.0**
 
-Commit: `e83ebf03c6d1ce2f4076ab8e3dae8282e4aeb880`
+Tag: `m23-enterprise-identity-mfa-pam-v0.23.0`
+
+Commit: `7f56c13bdc33993998ca8750d0cab9510e3157aa`
+
+M24 remains a development milestone until physical Node1/Node2 verification, final regression, commit and release tagging are complete.
 
 ## Milestone matrix
 
@@ -34,7 +38,10 @@ Commit: `e83ebf03c6d1ce2f4076ab8e3dae8282e4aeb880`
 | M18 | Implemented | CRA Annex-VII technical-file evidence assembly |
 | M19 | Implemented | Node1/Node2 production-validation evidence chain |
 | M20 | Implemented | enterprise deployment/final-freeze evidence and secure-agentic demonstration |
-| M21 | **Current — v0.21.1** | embedded Linux/platform-security validation and signed provenance correction |
+| M21 | Implemented/tagged | embedded Linux/platform-security validation and signed provenance correction |
+| M22 | Implemented/tagged | enterprise-security/CISSP-domain foundation and gap registry |
+| M23 | Implemented/tagged | enterprise identity, MFA and PAM |
+| M24 | **Current development** | asset security, data protection, DLP and cryptographic/data lifecycle |
 
 ## Evolution
 
@@ -77,3 +84,11 @@ This document remains authoritative for its historical milestone scope. M22 does
 ## M23 relationship
 
 M23 extends the frozen M22 enterprise-security foundation with enterprise human identity, OIDC federation evidence, strong MFA context, phishing-resistant privileged authentication, expiring entitlement review, signed single-use JIT privilege grants, dual-approved break-glass access, segregation of duties, and independent Node1/Node2 verification. The authoritative M23 documents are `docs/M23-Enterprise-Identity-MFA-PAM.md`, `docs/Prerequisites-M23.md`, `docs/Deployment-M23.md`, and `docs/Validation-M23.md`. Historical M0-M22 behavior and evidence remain immutable.
+
+## M24 relationship
+
+M24 extends the frozen M23 baseline with deterministic asset inventory/ownership/classification, retention and legal-hold handling, evidence-backed sanitization, default-deny DLP/controlled export, and cryptographic key-lifecycle evidence. This historical document remains authoritative for its original milestone; M24 consumes its reusable evidence but does not rewrite M0-M23 semantics. See `docs/M24-Asset-Security-Data-Protection-Crypto-Lifecycle.md`, `docs/Prerequisites-M24.md`, `docs/Deployment-M24.md`, and `docs/Validation-M24.md`. M24 closes only `CISSP-D2-001..003`; M21-dependent Domain-3 platform/hardware-root gaps remain open.
+
+## M24 development milestone
+
+**M24 — Asset Security, Data Protection & Cryptographic/Data Lifecycle** builds on tagged M23. It implements the M22 Domain-2 gap closures through deterministic controls and independent evidence verification. The latest immutable tagged release remains M23 until physical Node1/Node2 validation, commit, regression, and tag completion.

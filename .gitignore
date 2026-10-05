@@ -145,3 +145,10 @@ var/m23-verifier.tar.gz
 var/m23-verifier.tar.gz.sha256
 var/m23-validation/
 var/m23-validation*/
+
+# M24 generated asset-security/data-lifecycle/DLP material/evidence
+var/m24-material/
+var/m24-verifier.tar.gz
+var/m24-verifier.tar.gz.sha256
+var/m24-validation/
+var/m24-validation*/

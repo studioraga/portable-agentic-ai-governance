@@ -1,0 +1,9 @@
+{
+  "version":"0.24.0","default_decision":"deny-unregistered-key","private_key_plaintext_storage_allowed":false,
+  "rotation":{"overdue_active_key_action":"deny","revocation_evidence_required":true},
+  "keys":[
+    {"key_id":"m24-validation-signing","purpose":"validation-only","algorithm":"Ed25519","owner":"m24-validation","created_at":1690000000,"rotate_by":1890000000,"status":"validation-only","private_material_location":"node1-generated-runtime-only","exportable":false},
+    {"key_id":"enterprise-data-encryption-placeholder","purpose":"data-encryption","algorithm":"AES-256-GCM","owner":"security-governance","created_at":1690000000,"rotate_by":1890000000,"status":"active","private_material_location":"external-key-provider-required-for-production","exportable":false}
+  ],
+  "production_boundary":{"validation_keys_are_not_production_keys":true,"hardware_backed_keys_not_claimed":true,"m21_hardware_root_gaps_remain_open":true}
+}

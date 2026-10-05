@@ -1,0 +1,7 @@
+{
+  "version":"0.24.0",
+  "retention_profiles":{"security-evidence":{"retention_days":2555},"operational-log":{"retention_days":365},"temporary-export":{"retention_days":30}},
+  "legal_hold":{"overrides_disposal":true,"release_requires_authority":true},
+  "sanitization":{"approved_methods":["crypto-erase","secure-delete","physical-destruction"],"restricted_requires_approval":true,"evidence_digest_required":true},
+  "disposal":{"default_decision":"deny-before-retention-expiry","verification_required":true}
+}

@@ -4,24 +4,24 @@ Portable Agentic AI Governance is a deterministic security, governance, regulato
 
 The project is intentionally framework-neutral. An LLM or orchestration framework may propose, summarize, or reason, but it does not replace deterministic authorization, policy, signed evidence, replay protection, bounded execution, human approval, or release verification.
 
-## Current release
+## Current development state
 
 | Item | Value |
 |---|---|
-| Current milestone | **M21 — Embedded Linux & Platform Security Validation** |
-| Current release | **v0.21.1** |
-| Git tag | `m21-embedded-linux-platform-security-v0.21.1` |
-| Release commit | `e83ebf03c6d1ce2f4076ab8e3dae8282e4aeb880` |
-| M20 frozen baseline | `8b800814e576bcb08e12dc47c1039c5251c79d46` |
-| Package version | `0.21.1` |
+| Current development milestone | **M24 — Asset Security, Data Protection & Cryptographic/Data Lifecycle** |
+| Package version in working tree | `0.24.0` |
+| Latest immutable tagged release | **M23 v0.23.0** |
+| M23 tag | `m23-enterprise-identity-mfa-pam-v0.23.0` |
+| M23 release commit | `7f56c13bdc33993998ca8750d0cab9510e3157aa` |
+| M24 state | pre-commit / Node1+Node2 validation required before release tag |
 
-M21 v0.21.1 corrects the source-binding model introduced in v0.21.0 by separating the immutable M20 baseline from the M21 source revision that generated the signed evidence.
+M24 is intentionally validated from an uncommitted working tree first. Its signed source manifest binds content digests to the immutable M23 parent instead of pretending the uncommitted tree is already a release.
 
 ## What problem does this project solve?
 
 AI governance often fails when policy documents are disconnected from executable controls and evidence. This repository turns governance and security requirements into deterministic, testable control paths with signed artifacts and explicit authority boundaries.
 
-The implementation provides, across M0–M21:
+The implementation provides, across M0–M24:
 
 - deterministic trust-kernel primitives;
 - identity, RBAC/ABAC, mTLS, request signing, anti-replay, protected secrets, rate limiting, and signed audit;
@@ -108,7 +108,7 @@ The local M21 validation uses deterministic fixture profiles. LIVE Node1/Node2 r
 | Understand validation layers | [`docs/Validation.md`](docs/Validation.md) |
 | Understand deployment progression | [`docs/oneshot-deployment.md`](docs/oneshot-deployment.md) |
 | Check common prerequisites | [`docs/Prerequisites.md`](docs/Prerequisites.md) |
-| See M0–M21 evolution | [`docs/Milestones.md`](docs/Milestones.md) |
+| See M0–M24 evolution | [`docs/Milestones.md`](docs/Milestones.md) |
 | Understand current M21 design | [`docs/M21-Embedded-Linux-Platform-Security-Validation.md`](docs/M21-Embedded-Linux-Platform-Security-Validation.md) |
 | Execute M21 validation | [`docs/Validation-M21.md`](docs/Validation-M21.md) |
 | Execute M21 deployment | [`docs/Deployment-M21.md`](docs/Deployment-M21.md) |
@@ -156,3 +156,7 @@ M22 extends the frozen M21.1 baseline with the authoritative CISSP-domain / ente
 ## M23 relationship
 
 M23 extends the frozen M22 enterprise-security foundation with enterprise human identity, OIDC federation evidence, strong MFA context, phishing-resistant privileged authentication, expiring entitlement review, signed single-use JIT privilege grants, dual-approved break-glass access, segregation of duties, and independent Node1/Node2 verification. The authoritative M23 documents are `docs/M23-Enterprise-Identity-MFA-PAM.md`, `docs/Prerequisites-M23.md`, `docs/Deployment-M23.md`, and `docs/Validation-M23.md`. Historical M0-M22 behavior and evidence remain immutable.
+
+## M24 relationship
+
+M24 extends the frozen M23 baseline with deterministic asset inventory/ownership/classification, retention and legal-hold handling, evidence-backed sanitization, default-deny DLP/controlled export, and cryptographic key-lifecycle evidence. This historical document remains authoritative for its original milestone; M24 consumes its reusable evidence but does not rewrite M0-M23 semantics. See `docs/M24-Asset-Security-Data-Protection-Crypto-Lifecycle.md`, `docs/Prerequisites-M24.md`, `docs/Deployment-M24.md`, and `docs/Validation-M24.md`. M24 closes only `CISSP-D2-001..003`; M21-dependent Domain-3 platform/hardware-root gaps remain open.

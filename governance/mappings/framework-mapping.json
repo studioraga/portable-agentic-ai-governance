@@ -1096,6 +1096,127 @@
       "cissp_domain": [
         5
       ]
+    },
+    "ENT-ASSET-001": {
+      "nist_csf_2_0": [
+        "ID.AM"
+      ],
+      "iso_iec_42001": [
+        "data_management"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-ASSET-002": {
+      "nist_csf_2_0": [
+        "ID.AM"
+      ],
+      "iso_iec_42001": [
+        "data_management"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-DATA-001": {
+      "nist_csf_2_0": [
+        "PR.DS"
+      ],
+      "iso_iec_42001": [
+        "data_management",
+        "security"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-DATA-002": {
+      "nist_csf_2_0": [
+        "PR.DS"
+      ],
+      "iso_iec_42001": [
+        "data_management"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-DATA-003": {
+      "nist_csf_2_0": [
+        "PR.DS"
+      ],
+      "iso_iec_42001": [
+        "data_management",
+        "security"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-DLP-001": {
+      "nist_csf_2_0": [
+        "PR.DS"
+      ],
+      "iso_iec_42001": [
+        "data_management",
+        "security"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-DLP-002": {
+      "nist_csf_2_0": [
+        "PR.DS",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "data_management",
+        "security"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-DLP-003": {
+      "nist_csf_2_0": [
+        "PR.DS",
+        "DE.CM"
+      ],
+      "iso_iec_42001": [
+        "data_management",
+        "human_oversight"
+      ],
+      "cissp_domain": [
+        2
+      ]
+    },
+    "ENT-CRYPTO-001": {
+      "nist_csf_2_0": [
+        "PR.DS",
+        "PR.PS"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        3
+      ]
+    },
+    "ENT-CRYPTO-002": {
+      "nist_csf_2_0": [
+        "PR.DS",
+        "PR.PS"
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "cissp_domain": [
+        3
+      ]
     }
   }
 }

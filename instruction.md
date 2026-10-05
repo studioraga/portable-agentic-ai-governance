@@ -21,11 +21,11 @@ git log --oneline --decorate -5
 
 Do not assume `main` is the release you intend to reproduce.
 
-For the current release:
+For the latest immutable tagged baseline used by M24 development:
 
 ```bash
 git fetch origin --tags
-git checkout m21-embedded-linux-platform-security-v0.21.1
+git checkout m23-enterprise-identity-mfa-pam-v0.23.0
 ```
 
 For development on `main`, confirm that the expected release ancestry is present:
@@ -34,12 +34,13 @@ For development on `main`, confirm that the expected release ancestry is present
 git log --oneline --decorate -10
 ```
 
-Current release ancestry includes:
+Current M24 development ancestry includes:
 
 ```text
+7f56c13  m23-enterprise-identity-mfa-pam-v0.23.0
+f020822  m22-enterprise-security-foundation-v0.22.0
+ea95206  M21.1 documentation restructuring
 e83ebf0  m21-embedded-linux-platform-security-v0.21.1
-558ad17  m21-embedded-linux-platform-security-v0.21.0
-8b80081  m20-cra-enterprise-final-freeze-v0.20.0
 ```
 
 ## 3. Read prerequisites before installing anything
@@ -290,3 +291,7 @@ M22 extends the frozen M21.1 baseline with the authoritative CISSP-domain / ente
 ## M23 relationship
 
 M23 extends the frozen M22 enterprise-security foundation with enterprise human identity, OIDC federation evidence, strong MFA context, phishing-resistant privileged authentication, expiring entitlement review, signed single-use JIT privilege grants, dual-approved break-glass access, segregation of duties, and independent Node1/Node2 verification. The authoritative M23 documents are `docs/M23-Enterprise-Identity-MFA-PAM.md`, `docs/Prerequisites-M23.md`, `docs/Deployment-M23.md`, and `docs/Validation-M23.md`. Historical M0-M22 behavior and evidence remain immutable.
+
+## M24 relationship
+
+M24 extends the frozen M23 baseline with deterministic asset inventory/ownership/classification, retention and legal-hold handling, evidence-backed sanitization, default-deny DLP/controlled export, and cryptographic key-lifecycle evidence. This historical document remains authoritative for its original milestone; M24 consumes its reusable evidence but does not rewrite M0-M23 semantics. See `docs/M24-Asset-Security-Data-Protection-Crypto-Lifecycle.md`, `docs/Prerequisites-M24.md`, `docs/Deployment-M24.md`, and `docs/Validation-M24.md`. M24 closes only `CISSP-D2-001..003`; M21-dependent Domain-3 platform/hardware-root gaps remain open.

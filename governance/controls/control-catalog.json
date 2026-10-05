@@ -1026,6 +1026,136 @@
         "M23 enterprise identity validation",
         "signed M23 identity/PAM evidence"
       ]
+    },
+    {
+      "control_id": "ENT-ASSET-001",
+      "title": "Authoritative deny-unregistered enterprise asset inventory",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/inventory.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-ASSET-002",
+      "title": "Ownership, custody, criticality and classification metadata",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/inventory.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-DATA-001",
+      "title": "Classification-driven handling and encryption requirements",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/inventory.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-DATA-002",
+      "title": "Retention with legal-hold override",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/lifecycle.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-DATA-003",
+      "title": "Evidence-backed sanitization and disposal",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/lifecycle.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-DLP-001",
+      "title": "Default-deny controlled export by classification/destination",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/dlp.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-DLP-002",
+      "title": "Deterministic sensitive-content inspection",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/dlp.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-DLP-003",
+      "title": "Independent approval and no-payload decision audit",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/dlp.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-CRYPTO-001",
+      "title": "Cryptographic key inventory, approved algorithms and ownership",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/crypto_lifecycle.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
+    },
+    {
+      "control_id": "ENT-CRYPTO-002",
+      "title": "Rotation/revocation/exportability lifecycle policy",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/asset_security/crypto_lifecycle.py"
+      ],
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ]
     }
   ]
 }

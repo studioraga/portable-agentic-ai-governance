@@ -1,0 +1,8 @@
+{
+  "version":"0.24.0",
+  "default_unregistered_asset_decision":"deny",
+  "classification_levels":["public","internal","confidential","restricted"],
+  "ownership":{"owner_required":true,"custodian_required":true,"data_owner_required_for_sensitive":true},
+  "handling":{"encryption_in_transit_for_sensitive":true,"encryption_at_rest_for_confidential_and_restricted":true,"least_data_required":true},
+  "claim_boundaries":{"cissp_certification_claim":false,"iso_iec_27001_certification_claim":false,"iso_iec_42001_certification_claim":false,"cra_conformity_claim":false}
+}
