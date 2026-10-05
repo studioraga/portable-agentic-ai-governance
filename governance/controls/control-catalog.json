@@ -1377,6 +1377,123 @@
         "src/portable_ai_governance/operational_security/backup.py"
       ],
       "title": "Digest-verified recovery from immutable backup evidence"
+    },
+    {
+      "control_id": "ENT-APPSEC-001",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/sast.py"
+      ],
+      "title": "SAST release gate"
+    },
+    {
+      "control_id": "ENT-APPSEC-002",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/api_security.py"
+      ],
+      "title": "DAST and API security release gate"
+    },
+    {
+      "control_id": "ENT-APPSEC-003",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/secrets.py"
+      ],
+      "title": "Secret scanning release gate"
+    },
+    {
+      "control_id": "ENT-APPSEC-004",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/reports.py"
+      ],
+      "title": "Software composition analysis release gate"
+    },
+    {
+      "control_id": "ENT-APPSEC-005",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/iac_container.py"
+      ],
+      "title": "IaC and container security release gate"
+    },
+    {
+      "control_id": "ENT-APPSEC-006",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/fuzzing.py"
+      ],
+      "title": "Fuzzing crash and hang release gate"
+    },
+    {
+      "control_id": "ENT-APPSEC-007",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/pentest.py"
+      ],
+      "title": "Independent penetration-test evidence gate"
+    },
+    {
+      "control_id": "ENT-SDLC-001",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/reports.py"
+      ],
+      "title": "Default-deny secure SDLC release gate"
+    },
+    {
+      "control_id": "ENT-SDLC-002",
+      "enabled": true,
+      "evidence": [
+        "M27 application-security validation",
+        "signed M27 AppSec manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/application_security/runtime.py"
+      ],
+      "title": "Source-bound signed AppSec release evidence"
     }
   ]
 }

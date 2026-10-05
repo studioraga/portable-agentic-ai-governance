@@ -1,0 +1,28 @@
+{
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "production_pentest_completed_claim": false
+  },
+  "closure_scope": "CONTROL_PLANE_CAPABILITY",
+  "controls": [
+    "ENT-APPSEC-001",
+    "ENT-APPSEC-002",
+    "ENT-APPSEC-003",
+    "ENT-APPSEC-004",
+    "ENT-APPSEC-005",
+    "ENT-APPSEC-006",
+    "ENT-APPSEC-007",
+    "ENT-SDLC-001",
+    "ENT-SDLC-002"
+  ],
+  "gap_id": "GAP-CISSP-D6-002",
+  "m22_state": "GAP",
+  "m27_state": "EVIDENCED",
+  "milestone": "M27",
+  "production_readiness_condition": "Real authorized scanner outputs and independent penetration-test evidence must replace simulated validation evidence before M30 production claim.",
+  "requirement_id": "CISSP-D6-002",
+  "schema": "pag-m27-gap-closure-v1"
+}

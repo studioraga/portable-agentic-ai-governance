@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "required_security_tests",
+    "release_gate",
+    "claim_boundaries"
+  ],
+  "title": "appsec-policy.schema.json",
+  "type": "object"
+}

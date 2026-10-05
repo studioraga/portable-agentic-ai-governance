@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "category",
+    "tool",
+    "findings"
+  ],
+  "title": "m27-evidence-record.schema.json",
+  "type": "object"
+}

@@ -1,0 +1,29 @@
+{
+  "branch_protection_expected": true,
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "production_pentest_completed_claim": false
+  },
+  "code_review_expected": true,
+  "phases": [
+    "requirements",
+    "design_threat_model",
+    "implementation",
+    "code_review",
+    "security_testing",
+    "release_gate",
+    "deployment",
+    "operations_feedback"
+  ],
+  "required_release_evidence": [
+    "appsec-gate-summary.json",
+    "m3_supply_chain_evidence",
+    "signed_m27_manifest"
+  ],
+  "schema": "pag-m27-secure-sdlc-policy-v1",
+  "security_defect_sla_source": "M26 vulnerability-operations-policy.json",
+  "version": "0.27.0"
+}

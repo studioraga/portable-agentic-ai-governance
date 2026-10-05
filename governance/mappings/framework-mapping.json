@@ -975,6 +975,132 @@
         "RV.2"
       ]
     },
+    "ENT-APPSEC-001": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
+    "ENT-APPSEC-002": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
+    "ENT-APPSEC-003": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
+    "ENT-APPSEC-004": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
+    "ENT-APPSEC-005": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
+    "ENT-APPSEC-006": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
+    "ENT-APPSEC-007": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
     "ENT-ASSET-001": {
       "cissp_domain": [
         2
@@ -1370,6 +1496,42 @@
       ],
       "nist_csf_2_0": [
         "PR.AA"
+      ]
+    },
+    "ENT-SDLC-001": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
+      ]
+    },
+    "ENT-SDLC-002": {
+      "cissp": [
+        "CISSP-D6-002"
+      ],
+      "iso_iec_27001": [
+        "secure_development_lifecycle",
+        "security_testing"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "PW.7",
+        "RV.1"
       ]
     },
     "ENT-SOC-001": {

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "requirement_id",
+    "m27_state",
+    "closure_scope"
+  ],
+  "title": "m27-gap-closure.schema.json",
+  "type": "object"
+}

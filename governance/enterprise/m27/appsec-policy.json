@@ -1,0 +1,85 @@
+{
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "production_pentest_completed_claim": false
+  },
+  "dast_api": {
+    "authenticated_and_unauthenticated_profiles_required": true,
+    "recommended": [
+      "OWASP ZAP",
+      "Schemathesis"
+    ]
+  },
+  "default_deny": true,
+  "fuzzing": {
+    "crashes_allowed": 0,
+    "hangs_allowed": 0,
+    "recommended": [
+      "Atheris",
+      "Hypothesis",
+      "libFuzzer",
+      "AFL++"
+    ]
+  },
+  "iac_container": {
+    "container_image_digest_required": true,
+    "recommended": [
+      "Checkov",
+      "Trivy",
+      "Hadolint"
+    ]
+  },
+  "penetration_test": {
+    "authorization_required": true,
+    "independent_tester_required": true,
+    "production_evidence_must_be_real": true,
+    "retest_required_for_blocking_findings": true
+  },
+  "release_gate": {
+    "all_required_categories_must_report": true,
+    "block_severities": [
+      "critical",
+      "high"
+    ],
+    "default": "DENY",
+    "evidence_must_be_source_bound": true
+  },
+  "required_security_tests": [
+    "sast",
+    "dast_api",
+    "secret_scan",
+    "sca",
+    "iac_container",
+    "fuzzing",
+    "penetration_test"
+  ],
+  "sast": {
+    "builtin_validation_scanner_is_not_a_production_replacement": true,
+    "minimum_tools_in_production": 1,
+    "recommended": [
+      "Semgrep",
+      "Bandit",
+      "CodeQL"
+    ]
+  },
+  "sca": {
+    "recommended": [
+      "OSV-Scanner",
+      "Grype",
+      "Trivy"
+    ],
+    "reuse_m3_sbom_and_vulnerability_intelligence": true
+  },
+  "schema": "pag-m27-appsec-policy-v1",
+  "secret_scanning": {
+    "recommended": [
+      "Gitleaks",
+      "TruffleHog"
+    ],
+    "scan_git_history_in_production": true
+  },
+  "version": "0.27.0"
+}

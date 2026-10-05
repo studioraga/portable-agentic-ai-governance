@@ -1,0 +1,104 @@
+{
+  "controls": [
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-APPSEC-001",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-APPSEC-002",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-APPSEC-003",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-APPSEC-004",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-APPSEC-005",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-APPSEC-006",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-APPSEC-007",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-SDLC-001",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D6-002"
+      ],
+      "control_id": "ENT-SDLC-002",
+      "nist_csf_2_0": [
+        "PR.PS",
+        "ID.RA",
+        "DE.CM"
+      ]
+    }
+  ],
+  "schema": "pag-m27-control-mapping-v1"
+}

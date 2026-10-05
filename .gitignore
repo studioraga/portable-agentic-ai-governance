@@ -166,3 +166,9 @@ var/m26-verifier.tar.gz
 var/m26-verifier.tar.gz.sha256
 var/m26-validation/
 var/m26-validation*/
+# M27 generated secure-SDLC/AppSec material/evidence
+var/m27-material/
+var/m27-verifier.tar.gz
+var/m27-verifier.tar.gz.sha256
+var/m27-validation/
+var/m27-validation*/
