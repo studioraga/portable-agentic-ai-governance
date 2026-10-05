@@ -1,0 +1,27 @@
+{
+  "claim_boundaries": {
+    "bcp_exercise_completed_claim": false,
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "personnel_action_technical_proof_claim": false,
+    "physical_control_technical_proof_claim": false
+  },
+  "milestone": "M28",
+  "policy_owner": "security-governance",
+  "require_due_care_attestation": true,
+  "require_policy_owner": true,
+  "require_raci": true,
+  "required_roles": [
+    "executive_sponsor",
+    "security_owner",
+    "risk_owner",
+    "continuity_owner",
+    "facilities_owner",
+    "hr_owner"
+  ],
+  "review_days": 365,
+  "segregation_of_duties": true,
+  "version": "0.28.0"
+}

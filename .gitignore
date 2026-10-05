@@ -172,3 +172,10 @@ var/m27-verifier.tar.gz
 var/m27-verifier.tar.gz.sha256
 var/m27-validation/
 var/m27-validation*/
+
+# M28 generated organizational/personnel/physical/BCP material/evidence
+var/m28-material/
+var/m28-verifier.tar.gz
+var/m28-verifier.tar.gz.sha256
+var/m28-validation/
+var/m28-validation*/

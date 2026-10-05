@@ -1,0 +1,32 @@
+{
+  "closures": [
+    {
+      "new_state": "EVIDENCED",
+      "prior_state": "PARTIAL",
+      "requirement_id": "CISSP-D1-001",
+      "scope": "CONTROL_PLANE_AND_AUTHORITY_BOUND_EVIDENCE"
+    },
+    {
+      "new_state": "EVIDENCED",
+      "prior_state": "GAP",
+      "requirement_id": "CISSP-D1-004",
+      "scope": "CONTROL_PLANE_AND_AUTHORITY_BOUND_EVIDENCE"
+    },
+    {
+      "new_state": "EVIDENCED",
+      "prior_state": "GAP",
+      "requirement_id": "CISSP-D7-004",
+      "scope": "AUTHORITY_BOUND_PHYSICAL_ENVIRONMENTAL_EVIDENCE"
+    }
+  ],
+  "inherited_strengthening": [
+    {
+      "from": "M26",
+      "note": "M28 adds organizational BCP exercise and ownership evidence; M26 remains authority for technical backup/restore/RPO/RTO evidence.",
+      "requirement_id": "CISSP-D7-003"
+    }
+  ],
+  "milestone": "M28",
+  "production_boundary": "Local validation proves evidence schemas, signatures, freshness and authority rules only; real HR/facility/BCP records are required for production.",
+  "version": "0.28.0"
+}

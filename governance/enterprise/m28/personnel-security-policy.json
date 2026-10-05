@@ -1,0 +1,23 @@
+{
+  "awareness_max_age_days": 365,
+  "claim_boundaries": {
+    "bcp_exercise_completed_claim": false,
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "personnel_action_technical_proof_claim": false,
+    "physical_control_technical_proof_claim": false
+  },
+  "privileged_training_max_age_days": 365,
+  "production_evidence_type": "AUTHORIZED_HR_SECURITY_RECORD",
+  "required_evidence": [
+    "pre_access_screening_or_authorized_exception",
+    "confidentiality_or_acceptable_use_acknowledgement",
+    "security_awareness_training",
+    "role_specific_training",
+    "joiner_mover_leaver_review"
+  ],
+  "termination_access_revocation_sla_hours": 24,
+  "version": "0.28.0"
+}

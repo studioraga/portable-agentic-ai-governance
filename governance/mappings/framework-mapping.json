@@ -1123,6 +1123,52 @@
         "ID.AM"
       ]
     },
+    "ENT-BCP-001": {
+      "cissp_domain": [
+        1,
+        7
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
+    "ENT-BCP-002": {
+      "cissp_domain": [
+        1,
+        7
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
     "ENT-CRYPTO-001": {
       "cissp_domain": [
         3
@@ -1265,6 +1311,72 @@
         "RC.RP",
         "RC.IM",
         "PR.DS"
+      ]
+    },
+    "ENT-ENV-001": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
+    "ENT-GOV-001": {
+      "cissp_domain": [
+        1
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
+    "ENT-GOV-002": {
+      "cissp_domain": [
+        1
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
       ]
     },
     "ENT-IAM-001": {
@@ -1498,6 +1610,116 @@
         "PR.AA"
       ]
     },
+    "ENT-PEOPLE-001": {
+      "cissp_domain": [
+        1
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
+    "ENT-PEOPLE-002": {
+      "cissp_domain": [
+        1
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
+    "ENT-PEOPLE-003": {
+      "cissp_domain": [
+        1
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
+    "ENT-PHYS-001": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
+    "ENT-PHYS-002": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_27001": [
+        "organizational_controls",
+        "people_controls",
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001": [
+        "governance",
+        "competence",
+        "awareness",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT",
+        "RC.RP"
+      ]
+    },
     "ENT-SDLC-001": {
       "cissp": [
         "CISSP-D6-002"
@@ -1622,6 +1844,6 @@
       ]
     }
   },
-  "mapping_version": "0.23.0",
-  "note": "M0-M21 control mappings remain historical. M22 adds a separate enterprise-security requirement matrix and gap registry spanning CISSP domains with NIST CSF 2.0, ISO/IEC 27001:2022 theme, CRA, and ISO/IEC 42001:2023 theme references; certification/conformity claims remain external. M23 adds enterprise identity, phishing-resistant MFA, entitlement review, JIT PAM, break-glass and segregation-of-duties controls."
+  "mapping_version": "0.28.0",
+  "note": "M0-M21 control mappings remain historical. M22 adds a separate enterprise-security requirement matrix and gap registry spanning CISSP domains with NIST CSF 2.0, ISO/IEC 27001:2022 theme, CRA, and ISO/IEC 42001:2023 theme references; certification/conformity claims remain external. M23 adds enterprise identity, phishing-resistant MFA, entitlement review, JIT PAM, break-glass and segregation-of-duties controls. M28 adds organizational governance, personnel, physical/environmental and BCP evidence controls with explicit non-technical evidence boundaries."
 }

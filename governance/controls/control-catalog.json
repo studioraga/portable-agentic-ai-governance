@@ -1494,6 +1494,136 @@
         "src/portable_ai_governance/application_security/runtime.py"
       ],
       "title": "Source-bound signed AppSec release evidence"
+    },
+    {
+      "control_id": "ENT-GOV-001",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/governance.py"
+      ],
+      "title": "Security governance charter, named ownership and RACI evidence"
+    },
+    {
+      "control_id": "ENT-GOV-002",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/governance.py"
+      ],
+      "title": "Due-care policy review and accountable approval evidence"
+    },
+    {
+      "control_id": "ENT-PEOPLE-001",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/personnel.py"
+      ],
+      "title": "Personnel pre-access, agreement and lifecycle evidence"
+    },
+    {
+      "control_id": "ENT-PEOPLE-002",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/personnel.py"
+      ],
+      "title": "Security awareness and role-specific training freshness"
+    },
+    {
+      "control_id": "ENT-PEOPLE-003",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/personnel.py"
+      ],
+      "title": "Joiner/mover/leaver and timely revocation evidence"
+    },
+    {
+      "control_id": "ENT-PHYS-001",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/physical.py"
+      ],
+      "title": "Physical access and visitor-control authoritative evidence"
+    },
+    {
+      "control_id": "ENT-PHYS-002",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/physical.py"
+      ],
+      "title": "Surveillance, tamper and restricted-area evidence"
+    },
+    {
+      "control_id": "ENT-ENV-001",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/physical.py"
+      ],
+      "title": "Power, fire, HVAC and environmental resilience evidence"
+    },
+    {
+      "control_id": "ENT-BCP-001",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/bcp.py"
+      ],
+      "title": "Business-impact and continuity-plan organizational evidence"
+    },
+    {
+      "control_id": "ENT-BCP-002",
+      "enabled": true,
+      "evidence": [
+        "M28 authority-bound organizational evidence",
+        "signed M28 organizational manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/organizational_security/bcp.py"
+      ],
+      "title": "Business-continuity exercise and lessons-learned evidence"
     }
   ]
 }

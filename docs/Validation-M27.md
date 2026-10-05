@@ -83,3 +83,7 @@ git status
 ```
 
 For a production release, additionally replace simulated DAST/IaC/fuzz/pentest validation artifacts with authorized scanner and penetration-test evidence.
+
+## M28 relationship
+
+M28 adds authority-bound evidence controls for organizational governance, personnel security/training, physical/environmental security, and business-continuity exercises. This document keeps its original milestone authority; M28 consumes its applicable evidence without rewriting historical M0–M27 claims. Real-world HR/facility/BCP controls require authorized production records—local Python validation proves the evidence contract, signatures, freshness and source binding only.

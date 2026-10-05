@@ -1,0 +1,204 @@
+{
+  "controls": [
+    {
+      "cissp_domains": [
+        1
+      ],
+      "control_id": "ENT-GOV-001",
+      "iso_iec_27001_2022_themes": [
+        "organizational_controls",
+        "people_controls"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "governance",
+        "competence",
+        "awareness"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT"
+      ],
+      "title": "Security governance charter, named ownership and RACI evidence"
+    },
+    {
+      "cissp_domains": [
+        1
+      ],
+      "control_id": "ENT-GOV-002",
+      "iso_iec_27001_2022_themes": [
+        "organizational_controls",
+        "people_controls"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "governance",
+        "competence",
+        "awareness"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT"
+      ],
+      "title": "Due-care policy review and accountable approval evidence"
+    },
+    {
+      "cissp_domains": [
+        1
+      ],
+      "control_id": "ENT-PEOPLE-001",
+      "iso_iec_27001_2022_themes": [
+        "organizational_controls",
+        "people_controls"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "governance",
+        "competence",
+        "awareness"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT"
+      ],
+      "title": "Personnel pre-access, agreement and lifecycle evidence"
+    },
+    {
+      "cissp_domains": [
+        1
+      ],
+      "control_id": "ENT-PEOPLE-002",
+      "iso_iec_27001_2022_themes": [
+        "organizational_controls",
+        "people_controls"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "governance",
+        "competence",
+        "awareness"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT"
+      ],
+      "title": "Security awareness and role-specific training freshness"
+    },
+    {
+      "cissp_domains": [
+        1
+      ],
+      "control_id": "ENT-PEOPLE-003",
+      "iso_iec_27001_2022_themes": [
+        "organizational_controls",
+        "people_controls"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "governance",
+        "competence",
+        "awareness"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT"
+      ],
+      "title": "Joiner/mover/leaver and timely revocation evidence"
+    },
+    {
+      "cissp_domains": [
+        7
+      ],
+      "control_id": "ENT-PHYS-001",
+      "iso_iec_27001_2022_themes": [
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "business_continuity",
+        "security"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "RC.RP"
+      ],
+      "title": "Physical access and visitor-control authoritative evidence"
+    },
+    {
+      "cissp_domains": [
+        7
+      ],
+      "control_id": "ENT-PHYS-002",
+      "iso_iec_27001_2022_themes": [
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "business_continuity",
+        "security"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "RC.RP"
+      ],
+      "title": "Surveillance, tamper and restricted-area evidence"
+    },
+    {
+      "cissp_domains": [
+        7
+      ],
+      "control_id": "ENT-ENV-001",
+      "iso_iec_27001_2022_themes": [
+        "physical_controls",
+        "business_continuity"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "business_continuity",
+        "security"
+      ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "RC.RP"
+      ],
+      "title": "Power, fire, HVAC and environmental resilience evidence"
+    },
+    {
+      "cissp_domains": [
+        1,
+        7
+      ],
+      "control_id": "ENT-BCP-001",
+      "iso_iec_27001_2022_themes": [
+        "organizational_controls",
+        "people_controls"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "governance",
+        "competence",
+        "awareness"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT"
+      ],
+      "title": "Business-impact and continuity-plan organizational evidence"
+    },
+    {
+      "cissp_domains": [
+        1,
+        7
+      ],
+      "control_id": "ENT-BCP-002",
+      "iso_iec_27001_2022_themes": [
+        "organizational_controls",
+        "people_controls"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "governance",
+        "competence",
+        "awareness"
+      ],
+      "nist_csf_2_0": [
+        "GV.RR",
+        "PR.AT"
+      ],
+      "title": "Business-continuity exercise and lessons-learned evidence"
+    }
+  ],
+  "version": "0.28.0"
+}

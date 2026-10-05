@@ -23,3 +23,7 @@
 ## Production scanner integration
 
 Production pipelines should transform native scanner output into the normalized M27 report contract and retain the original scanner artifacts separately. M27 does not require one vendor; it requires complete categories, severity normalization, source binding, deterministic gate semantics, and verifiable evidence.
+
+## M28 relationship
+
+M28 adds authority-bound evidence controls for organizational governance, personnel security/training, physical/environmental security, and business-continuity exercises. This document keeps its original milestone authority; M28 consumes its applicable evidence without rewriting historical M0–M27 claims. Real-world HR/facility/BCP controls require authorized production records—local Python validation proves the evidence contract, signatures, freshness and source binding only.

@@ -31,3 +31,7 @@ The repository contains deterministic local validation adapters so the control p
 ## Gap closure
 
 M22 records `CISSP-D6-002` as `GAP`. M27 records a new closure artifact rather than editing the M22 history. The closure scope is `CONTROL_PLANE_CAPABILITY`; actual production scanner/pentest evidence remains a later release-readiness input.
+
+## M28 relationship
+
+M28 adds authority-bound evidence controls for organizational governance, personnel security/training, physical/environmental security, and business-continuity exercises. This document keeps its original milestone authority; M28 consumes its applicable evidence without rewriting historical M0–M27 claims. Real-world HR/facility/BCP controls require authorized production records—local Python validation proves the evidence contract, signatures, freshness and source binding only.

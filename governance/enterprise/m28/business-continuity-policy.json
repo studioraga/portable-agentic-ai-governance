@@ -1,0 +1,21 @@
+{
+  "claim_boundaries": {
+    "bcp_exercise_completed_claim": false,
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "personnel_action_technical_proof_claim": false,
+    "physical_control_technical_proof_claim": false
+  },
+  "exercise_max_age_days": 365,
+  "inherit_m26_technical_dr": true,
+  "production_evidence_type": "AUTHORIZED_BCP_EXERCISE_RECORD",
+  "require_bia": true,
+  "require_business_continuity_plan": true,
+  "require_communications_plan": true,
+  "require_dependency_register": true,
+  "require_named_crisis_roles": true,
+  "require_tabletop_or_exercise": true,
+  "version": "0.28.0"
+}

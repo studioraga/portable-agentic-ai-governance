@@ -1,0 +1,31 @@
+{
+  "attestation_max_age_days": 365,
+  "claim_boundaries": {
+    "bcp_exercise_completed_claim": false,
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "personnel_action_technical_proof_claim": false,
+    "physical_control_technical_proof_claim": false
+  },
+  "production_evidence_type": "AUTHORIZED_FACILITY_EVIDENCE",
+  "required_control_families": {
+    "environmental": [
+      "ups_or_power_resilience",
+      "fire_detection_or_suppression",
+      "temperature_hvac_monitoring",
+      "water_or_environmental_detection"
+    ],
+    "physical_access": [
+      "badge_or_equivalent_access_control",
+      "visitor_management",
+      "restricted_area_review"
+    ],
+    "surveillance_tamper": [
+      "cctv_or_equivalent_monitoring",
+      "tamper_or_rack_access_control"
+    ]
+  },
+  "version": "0.28.0"
+}

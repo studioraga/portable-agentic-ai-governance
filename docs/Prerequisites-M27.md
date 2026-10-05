@@ -25,3 +25,7 @@ The deterministic validation adapters do not install external scanners. For prod
 - Penetration test: authorized independent internal or external assessor
 
 Do not place scanner API tokens, private keys, proprietary reports, or raw sensitive payloads in Git. Generated M27 material belongs under ignored `var/m27-*` paths.
+
+## M28 relationship
+
+M28 adds authority-bound evidence controls for organizational governance, personnel security/training, physical/environmental security, and business-continuity exercises. This document keeps its original milestone authority; M28 consumes its applicable evidence without rewriting historical M0–M27 claims. Real-world HR/facility/BCP controls require authorized production records—local Python validation proves the evidence contract, signatures, freshness and source binding only.
