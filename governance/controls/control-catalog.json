@@ -2,1251 +2,1381 @@
   "catalog_version": "0.7.0",
   "controls": [
     {
-      "control_id": "AIS-GOV-001",
-      "title": "AI system onboarding is policy gated",
-      "enabled": true,
-      "required_roles": [
-        "ai_governance_admin",
-        "ai_risk_manager"
-      ],
-      "predicates": {
-        "workflow": "ai_system_onboarding"
-      },
       "approval_required": false,
-      "failure_action": "block",
-      "implementation": [
-        "src/portable_ai_governance/workflows/onboarding.py"
-      ],
+      "control_id": "AIS-GOV-001",
+      "enabled": true,
       "evidence": [
         "signed governance ledger",
         "framework mapping",
         "risk record"
-      ]
-    },
-    {
-      "control_id": "AIS-RISK-001",
-      "title": "Risk acceptance requires human authority",
-      "enabled": true,
-      "required_roles": [
-        "ai_risk_manager"
       ],
       "failure_action": "block",
       "implementation": [
+        "src/portable_ai_governance/workflows/onboarding.py"
+      ],
+      "predicates": {
+        "workflow": "ai_system_onboarding"
+      },
+      "required_roles": [
+        "ai_governance_admin",
+        "ai_risk_manager"
+      ],
+      "title": "AI system onboarding is policy gated"
+    },
+    {
+      "control_id": "AIS-RISK-001",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
         "src/portable_ai_governance/agents/governance/risk.py"
-      ]
+      ],
+      "required_roles": [
+        "ai_risk_manager"
+      ],
+      "title": "Risk acceptance requires human authority"
     },
     {
       "control_id": "AIS-EVID-001",
-      "title": "Governance evidence is chained and cryptographically signed",
       "enabled": true,
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/kernel/evidence.py"
-      ]
+      ],
+      "title": "Governance evidence is chained and cryptographically signed"
     },
     {
       "control_id": "AIS-AUTH-001",
-      "title": "Privileged governance workflows require explicit role authorization",
       "enabled": true,
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/kernel/authorization.py"
-      ]
+      ],
+      "title": "Privileged governance workflows require explicit role authorization"
     },
     {
       "control_id": "AIS-IAM-001",
-      "title": "Production identity uses an explicit non-local provider",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/kernel/identity.py",
         "src/portable_ai_governance/security/runtime.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Production identity uses an explicit non-local provider"
     },
     {
       "control_id": "AIS-ABAC-001",
-      "title": "Authorization combines RBAC and ABAC with deny-by-default semantics",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/kernel/authorization.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Authorization combines RBAC and ABAC with deny-by-default semantics"
     },
     {
       "control_id": "AIS-MTLS-001",
-      "title": "Distributed control-plane traffic requires TLS 1.3 mutual authentication",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security/tls_transport.py",
         "src/portable_ai_governance/security/workload_identity.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Distributed control-plane traffic requires TLS 1.3 mutual authentication"
     },
     {
       "control_id": "AIS-SIGN-001",
-      "title": "Inter-service requests require body-bound timestamped HMAC signatures",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/kernel/request_signing.py",
         "src/portable_ai_governance/security/gateway.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Inter-service requests require body-bound timestamped HMAC signatures"
     },
     {
       "control_id": "AIS-REPLAY-001",
-      "title": "Signed requests use persistent fail-closed anti-replay state",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/kernel/replay_cache.py",
         "src/portable_ai_governance/security/gateway.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Signed requests use persistent fail-closed anti-replay state"
     },
     {
       "control_id": "AIS-SECRETS-001",
-      "title": "Production secrets use protected provider abstraction and independent key domains",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security/secrets.py",
         "src/portable_ai_governance/kernel/security_profile.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Production secrets use protected provider abstraction and independent key domains"
     },
     {
       "control_id": "AIS-AUDIT-001",
-      "title": "Security decisions are written to a signed chained audit ledger",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security/audit.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Security decisions are written to a signed chained audit ledger"
     },
     {
       "control_id": "AIS-RATE-001",
-      "title": "Security entry points enforce deterministic bounded request rates",
       "enabled": true,
+      "evidence": [
+        "M2 security validation",
+        "signed security audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security/rate_limit.py",
         "src/portable_ai_governance/security/gateway.py"
       ],
-      "evidence": [
-        "M2 security validation",
-        "signed security audit"
-      ]
+      "title": "Security entry points enforce deterministic bounded request rates"
     },
     {
       "control_id": "AIS-SBOM-001",
-      "title": "Software releases generate a signed CycloneDX SBOM",
       "enabled": true,
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/supply_chain/bom.py"
       ],
-      "evidence": [
-        "M3 supply-chain validation",
-        "signed SBOM/AI BOM/provenance"
-      ]
+      "title": "Software releases generate a signed CycloneDX SBOM"
     },
     {
       "control_id": "AIS-AIBOM-001",
-      "title": "AI/model inventory generates a signed CycloneDX AI/ML BOM",
       "enabled": true,
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/supply_chain/bom.py"
       ],
-      "evidence": [
-        "M3 supply-chain validation",
-        "signed SBOM/AI BOM/provenance"
-      ]
+      "title": "AI/model inventory generates a signed CycloneDX AI/ML BOM"
     },
     {
       "control_id": "AIS-LOCK-001",
-      "title": "Models, containers, prompts and tools are digest locked",
       "enabled": true,
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/supply_chain/locks.py"
       ],
-      "evidence": [
-        "M3 supply-chain validation",
-        "signed SBOM/AI BOM/provenance"
-      ]
+      "title": "Models, containers, prompts and tools are digest locked"
     },
     {
       "control_id": "AIS-PROV-001",
-      "title": "Release subjects carry signed in-toto/SLSA-style provenance",
       "enabled": true,
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/supply_chain/provenance.py",
         "src/portable_ai_governance/supply_chain/signing.py"
       ],
-      "evidence": [
-        "M3 supply-chain validation",
-        "signed SBOM/AI BOM/provenance"
-      ]
+      "title": "Release subjects carry signed in-toto/SLSA-style provenance"
     },
     {
       "control_id": "AIS-SIG-001",
-      "title": "Supply-chain artifacts require asymmetric signature verification",
       "enabled": true,
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/supply_chain/signing.py"
       ],
-      "evidence": [
-        "M3 supply-chain validation",
-        "signed SBOM/AI BOM/provenance"
-      ]
+      "title": "Supply-chain artifacts require asymmetric signature verification"
     },
     {
       "control_id": "AIS-VULN-001",
-      "title": "Vulnerability policy blocks stale, unknown, high and critical findings",
       "enabled": true,
+      "evidence": [
+        "M3 supply-chain validation",
+        "signed SBOM/AI BOM/provenance"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/supply_chain/vulnerability.py"
       ],
-      "evidence": [
-        "M3 supply-chain validation",
-        "signed SBOM/AI BOM/provenance"
-      ]
+      "title": "Vulnerability policy blocks stale, unknown, high and critical findings"
     },
     {
       "control_id": "AIS-MODEL-001",
-      "title": "Production models require approved governance records bound to immutable M3 model digests",
       "enabled": true,
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/ai_security/model_governance.py"
       ],
-      "evidence": [
-        "M4 AI-security validation",
-        "signed AI-security manifest"
-      ]
+      "title": "Production models require approved governance records bound to immutable M3 model digests"
     },
     {
       "control_id": "AIS-DATA-001",
-      "title": "AI data requires provenance, ownership, classification, tenant and license/consent evidence",
       "enabled": true,
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/ai_security/provenance.py"
       ],
-      "evidence": [
-        "M4 AI-security validation",
-        "signed AI-security manifest"
-      ]
+      "title": "AI data requires provenance, ownership, classification, tenant and license/consent evidence"
     },
     {
       "control_id": "AIS-RAG-001",
-      "title": "Retrieval authorization executes before retrieval with tenant and classification default-deny controls",
       "enabled": true,
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/ai_security/retrieval.py"
       ],
-      "evidence": [
-        "M4 AI-security validation",
-        "signed AI-security manifest"
-      ]
+      "title": "Retrieval authorization executes before retrieval with tenant and classification default-deny controls"
     },
     {
       "control_id": "AIS-EMBED-001",
-      "title": "Embeddings require provenance, tenant partitioning, approved dimensions and classification policy",
       "enabled": true,
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/ai_security/embeddings.py"
       ],
-      "evidence": [
-        "M4 AI-security validation",
-        "signed AI-security manifest"
-      ]
+      "title": "Embeddings require provenance, tenant partitioning, approved dimensions and classification policy"
     },
     {
       "control_id": "AIS-EVAL-001",
-      "title": "AI security evaluations are deterministic release gates with mandatory passing results",
       "enabled": true,
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/ai_security/evaluation.py"
       ],
-      "evidence": [
-        "M4 AI-security validation",
-        "signed AI-security manifest"
-      ]
+      "title": "AI security evaluations are deterministic release gates with mandatory passing results"
     },
     {
       "control_id": "AIS-THREAT-001",
-      "title": "AI threat model covers model/data/RAG/embedding/injection/disclosure threats and mitigations",
       "enabled": true,
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/ai_security/threat_model.py"
       ],
-      "evidence": [
-        "M4 AI-security validation",
-        "signed AI-security manifest"
-      ]
+      "title": "AI threat model covers model/data/RAG/embedding/injection/disclosure threats and mitigations"
     },
     {
       "control_id": "AIS-AUTONOMY-001",
-      "title": "Milestone 4 prohibits LLM agent autonomy and LLM-directed tool execution",
       "enabled": true,
+      "evidence": [
+        "M4 AI-security validation",
+        "signed AI-security manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/ai_security/threat_model.py",
         "src/portable_ai_governance/ai_security/runtime.py"
       ],
-      "evidence": [
-        "M4 AI-security validation",
-        "signed AI-security manifest"
-      ]
+      "title": "Milestone 4 prohibits LLM agent autonomy and LLM-directed tool execution"
     },
     {
       "control_id": "AIS-IMPACT-001",
-      "title": "AI systems require evidence-backed impact assessment and residual-risk decision",
       "enabled": true,
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/compliance_risk/impact.py"
       ],
-      "evidence": [
-        "M5 compliance/risk validation",
-        "signed M5 compliance-risk manifest"
-      ]
+      "title": "AI systems require evidence-backed impact assessment and residual-risk decision"
     },
     {
       "control_id": "AIS-PRIVACY-001",
-      "title": "Privacy assessment requires purpose, data categories, legal basis, retention, rights and DPIA/transfer safeguards",
       "enabled": true,
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/compliance_risk/privacy.py"
       ],
-      "evidence": [
-        "M5 compliance/risk validation",
-        "signed M5 compliance-risk manifest"
-      ]
+      "title": "Privacy assessment requires purpose, data categories, legal basis, retention, rights and DPIA/transfer safeguards"
     },
     {
       "control_id": "AIS-EXCEPT-001",
-      "title": "Control exceptions require independent approval, compensating controls and explicit expiry",
       "enabled": true,
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/compliance_risk/exceptions.py"
       ],
-      "evidence": [
-        "M5 compliance/risk validation",
-        "signed M5 compliance-risk manifest"
-      ]
+      "title": "Control exceptions require independent approval, compensating controls and explicit expiry"
     },
     {
       "control_id": "AIS-TPRM-001",
-      "title": "Third parties require assessment, contract/data terms, residency, review and exit planning",
       "enabled": true,
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/compliance_risk/third_parties.py"
       ],
-      "evidence": [
-        "M5 compliance/risk validation",
-        "signed M5 compliance-risk manifest"
-      ]
+      "title": "Third parties require assessment, contract/data terms, residency, review and exit planning"
     },
     {
       "control_id": "AIS-CONTROL-001",
-      "title": "Continuous controls require current evidence, blocking failure action and freshness limits",
       "enabled": true,
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/compliance_risk/continuous_controls.py"
       ],
-      "evidence": [
-        "M5 compliance/risk validation",
-        "signed M5 compliance-risk manifest"
-      ]
+      "title": "Continuous controls require current evidence, blocking failure action and freshness limits"
     },
     {
       "control_id": "AIS-COMPLY-001",
-      "title": "Compliance reports are evidence-backed summaries and cannot self-certify compliance",
       "enabled": true,
+      "evidence": [
+        "M5 compliance/risk validation",
+        "signed M5 compliance-risk manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/compliance_risk/reports.py"
       ],
-      "evidence": [
-        "M5 compliance/risk validation",
-        "signed M5 compliance-risk manifest"
-      ]
+      "title": "Compliance reports are evidence-backed summaries and cannot self-certify compliance"
     },
     {
       "control_id": "AIS-AGENT-BOUND-001",
-      "title": "Evidence Analyst capabilities are explicitly allowlisted, bounded, and deny-by-default",
       "enabled": true,
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/evidence_analyst/policy.py"
       ],
-      "evidence": [
-        "M6 bounded-agent validation",
-        "signed M6 Evidence Analyst manifest"
-      ]
+      "title": "Evidence Analyst capabilities are explicitly allowlisted, bounded, and deny-by-default"
     },
     {
       "control_id": "AIS-AGENT-RO-001",
-      "title": "First production agent is read-only and has no side-effecting tools",
       "enabled": true,
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/evidence_analyst/agent.py",
         "src/portable_ai_governance/evidence_analyst/tools.py"
       ],
-      "evidence": [
-        "M6 bounded-agent validation",
-        "signed M6 Evidence Analyst manifest"
-      ]
+      "title": "First production agent is read-only and has no side-effecting tools"
     },
     {
       "control_id": "AIS-AGENT-EVID-001",
-      "title": "Evidence Analyst reads only digest-bound allowlisted evidence chained to M5",
       "enabled": true,
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/evidence_analyst/catalog.py",
         "src/portable_ai_governance/evidence_analyst/runtime.py"
       ],
-      "evidence": [
-        "M6 bounded-agent validation",
-        "signed M6 Evidence Analyst manifest"
-      ]
+      "title": "Evidence Analyst reads only digest-bound allowlisted evidence chained to M5"
     },
     {
       "control_id": "AIS-AGENT-BUDGET-001",
-      "title": "Evidence Analyst execution is constrained by deterministic step, tool-call, read-size and output budgets",
       "enabled": true,
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/evidence_analyst/policy.py",
         "src/portable_ai_governance/evidence_analyst/agent.py"
       ],
-      "evidence": [
-        "M6 bounded-agent validation",
-        "signed M6 Evidence Analyst manifest"
-      ]
+      "title": "Evidence Analyst execution is constrained by deterministic step, tool-call, read-size and output budgets"
     },
     {
       "control_id": "AIS-AGENT-BOUNDARY-001",
-      "title": "Evidence Analyst cannot become security, approval, risk-acceptance or compliance boundary",
       "enabled": true,
+      "evidence": [
+        "M6 bounded-agent validation",
+        "signed M6 Evidence Analyst manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/evidence_analyst/policy.py",
         "src/portable_ai_governance/kernel/security_profile.py"
       ],
-      "evidence": [
-        "M6 bounded-agent validation",
-        "signed M6 Evidence Analyst manifest"
-      ]
+      "title": "Evidence Analyst cannot become security, approval, risk-acceptance or compliance boundary"
     },
     {
       "control_id": "AIS-TOOL-SCHEMA-001",
-      "title": "Every M7 tool call requires typed input and output schema validation",
       "enabled": true,
+      "evidence": [
+        "M7 typed-tool validation",
+        "signed M7 tool-agent manifest",
+        "signed M7 tool audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/tool_agent/schema.py",
         "src/portable_ai_governance/tool_agent/broker.py"
       ],
-      "evidence": [
-        "M7 typed-tool validation",
-        "signed M7 tool-agent manifest",
-        "signed M7 tool audit"
-      ]
+      "title": "Every M7 tool call requires typed input and output schema validation"
     },
     {
       "control_id": "AIS-TOOL-AUTH-001",
-      "title": "Every M7 tool call is authorized through deterministic RBAC/ABAC before execution",
       "enabled": true,
+      "evidence": [
+        "M7 authorization negative tests",
+        "signed M7 tool audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/tool_agent/authorization.py",
         "src/portable_ai_governance/tool_agent/broker.py"
       ],
-      "evidence": [
-        "M7 authorization negative tests",
-        "signed M7 tool audit"
-      ]
+      "title": "Every M7 tool call is authorized through deterministic RBAC/ABAC before execution"
     },
     {
-      "control_id": "AIS-TOOL-POLICY-001",
-      "title": "Every M7 tool call requires deterministic governance policy satisfaction",
-      "enabled": true,
-      "required_roles": [
-        "tool_agent"
-      ],
-      "predicates": {
-        "tool_gateway": true,
-        "side_effecting": false
-      },
       "approval_required": false,
+      "control_id": "AIS-TOOL-POLICY-001",
+      "enabled": true,
+      "evidence": [
+        "M7 policy negative tests",
+        "signed M7 tool audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security/policy_adapter.py",
         "src/portable_ai_governance/tool_agent/broker.py"
       ],
-      "evidence": [
-        "M7 policy negative tests",
-        "signed M7 tool audit"
-      ]
+      "predicates": {
+        "side_effecting": false,
+        "tool_gateway": true
+      },
+      "required_roles": [
+        "tool_agent"
+      ],
+      "title": "Every M7 tool call requires deterministic governance policy satisfaction"
     },
     {
       "control_id": "AIS-TOOL-BUDGET-001",
-      "title": "Every M7 tool call consumes deterministic step and tool-call budget before execution",
       "enabled": true,
+      "evidence": [
+        "M7 budget exhaustion test",
+        "signed M7 tool audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/kernel/budgets.py",
         "src/portable_ai_governance/tool_agent/broker.py"
       ],
-      "evidence": [
-        "M7 budget exhaustion test",
-        "signed M7 tool audit"
-      ]
+      "title": "Every M7 tool call consumes deterministic step and tool-call budget before execution"
     },
     {
       "control_id": "AIS-TOOL-AUDIT-001",
-      "title": "M7 tool execution requires fail-closed signed pre-execution and result audit records",
       "enabled": true,
+      "evidence": [
+        "signed chained M7 tool audit",
+        "audit-unavailable negative test"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security/audit.py",
         "src/portable_ai_governance/tool_agent/broker.py"
       ],
-      "evidence": [
-        "signed chained M7 tool audit",
-        "audit-unavailable negative test"
-      ]
+      "title": "M7 tool execution requires fail-closed signed pre-execution and result audit records"
     },
     {
       "control_id": "AIS-TOOL-BOUNDARY-001",
-      "title": "M7 tool registry prohibits side effects, direct executor bypass, delegation and approval authority",
       "enabled": true,
+      "evidence": [
+        "M7 side-effect boundary test",
+        "signed M7 tool-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/tool_agent/registry.py",
         "src/portable_ai_governance/tool_agent/policy.py",
         "src/portable_ai_governance/kernel/security_profile.py"
       ],
-      "evidence": [
-        "M7 side-effect boundary test",
-        "signed M7 tool-agent manifest"
-      ]
+      "title": "M7 tool registry prohibits side effects, direct executor bypass, delegation and approval authority"
     },
     {
       "control_id": "AIS-ACTION-SCHEMA-001",
-      "title": "Every M8 side-effect action has strict typed input and output schemas",
       "enabled": true,
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/action_agent/broker.py"
       ],
-      "evidence": [
-        "M8 validation suite",
-        "signed M8 action audit"
-      ]
+      "title": "Every M8 side-effect action has strict typed input and output schemas"
     },
     {
       "control_id": "AIS-ACTION-AUTH-001",
-      "title": "Every M8 side-effect action requires deterministic RBAC/ABAC authorization",
       "enabled": true,
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/action_agent/broker.py"
       ],
-      "evidence": [
-        "M8 validation suite",
-        "signed M8 action audit"
-      ]
+      "title": "Every M8 side-effect action requires deterministic RBAC/ABAC authorization"
     },
     {
+      "approval_required": true,
       "control_id": "AIS-ACTION-POLICY-001",
-      "title": "M8 side effects require deterministic policy with approval_required=true",
       "enabled": true,
-      "failure_action": "block",
-      "implementation": [
-        "src/portable_ai_governance/action_agent/broker.py"
-      ],
       "evidence": [
         "M8 validation suite",
         "signed M8 action audit"
       ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/action_agent/broker.py"
+      ],
+      "predicates": {
+        "approval_required": true,
+        "side_effecting": true,
+        "tool_gateway": true
+      },
       "required_roles": [
         "action_agent"
       ],
-      "predicates": {
-        "tool_gateway": true,
-        "side_effecting": true,
-        "approval_required": true
-      },
-      "approval_required": true
+      "title": "M8 side effects require deterministic policy with approval_required=true"
     },
     {
       "control_id": "AIS-ACTION-BUDGET-001",
-      "title": "M8 side-effect attempts consume bounded execution budget",
       "enabled": true,
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/action_agent/broker.py"
       ],
-      "evidence": [
-        "M8 validation suite",
-        "signed M8 action audit"
-      ]
+      "title": "M8 side-effect attempts consume bounded execution budget"
     },
     {
       "control_id": "AIS-ACTION-APPROVAL-001",
-      "title": "M8 side effects require independently issued signed argument-bound approvals",
       "enabled": true,
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/action_agent/broker.py"
       ],
-      "evidence": [
-        "M8 validation suite",
-        "signed M8 action audit"
-      ]
+      "title": "M8 side effects require independently issued signed argument-bound approvals"
     },
     {
       "control_id": "AIS-ACTION-REPLAY-001",
-      "title": "M8 approvals are single-use and persistently replay-protected",
       "enabled": true,
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/action_agent/broker.py"
       ],
-      "evidence": [
-        "M8 validation suite",
-        "signed M8 action audit"
-      ]
+      "title": "M8 approvals are single-use and persistently replay-protected"
     },
     {
       "control_id": "AIS-ACTION-AUDIT-001",
-      "title": "M8 actions require signed pre-execution and result audit evidence",
       "enabled": true,
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/action_agent/broker.py"
       ],
-      "evidence": [
-        "M8 validation suite",
-        "signed M8 action audit"
-      ]
+      "title": "M8 actions require signed pre-execution and result audit evidence"
     },
     {
       "control_id": "AIS-ACTION-BOUNDARY-001",
-      "title": "M8 agent cannot self-approve, accept risk, certify compliance, delegate or bypass executors",
       "enabled": true,
+      "evidence": [
+        "M8 validation suite",
+        "signed M8 action audit"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/action_agent/broker.py"
       ],
-      "evidence": [
-        "M8 validation suite",
-        "signed M8 action audit"
-      ]
+      "title": "M8 agent cannot self-approve, accept risk, certify compliance, delegate or bypass executors"
     },
     {
       "control_id": "AIS-SECOPS-SIEM-001",
-      "title": "M9 SIEM events are normalized, append-only and hash-chained",
       "enabled": true,
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security_ops/siem.py"
       ],
-      "evidence": [
-        "M9 validation suite",
-        "signed M9 security-operations manifest"
-      ]
+      "title": "M9 SIEM events are normalized, append-only and hash-chained"
     },
     {
       "control_id": "AIS-SECOPS-INCIDENT-001",
-      "title": "M9 security incidents use deterministic severity gates and lifecycle transitions",
       "enabled": true,
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security_ops/incidents.py"
       ],
-      "evidence": [
-        "M9 validation suite",
-        "signed M9 security-operations manifest"
-      ]
+      "title": "M9 security incidents use deterministic severity gates and lifecycle transitions"
     },
     {
       "control_id": "AIS-SECOPS-CONTAIN-001",
-      "title": "M9 automated containment is restricted to signed-runbook local reversible actions",
       "enabled": true,
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security_ops/containment.py"
       ],
-      "evidence": [
-        "M9 validation suite",
-        "signed M9 security-operations manifest"
-      ]
+      "title": "M9 automated containment is restricted to signed-runbook local reversible actions"
     },
     {
       "control_id": "AIS-SECOPS-RECOVER-001",
-      "title": "M9 recovery requires contained state, operator identity, passing checks and verified evidence",
       "enabled": true,
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security_ops/engine.py"
       ],
-      "evidence": [
-        "M9 validation suite",
-        "signed M9 security-operations manifest"
-      ]
+      "title": "M9 recovery requires contained state, operator identity, passing checks and verified evidence"
     },
     {
       "control_id": "AIS-SECOPS-EVIDENCE-001",
-      "title": "M9 incident evidence is copied into owner-private digest-verified preservation vaults",
       "enabled": true,
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security_ops/evidence.py"
       ],
-      "evidence": [
-        "M9 validation suite",
-        "signed M9 security-operations manifest"
-      ]
+      "title": "M9 incident evidence is copied into owner-private digest-verified preservation vaults"
     },
     {
       "control_id": "AIS-SECOPS-BIND-001",
-      "title": "M9 security-operations material is signed and bound to the exact M8 release manifest",
       "enabled": true,
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security_ops/runtime.py"
       ],
-      "evidence": [
-        "M9 validation suite",
-        "signed M9 security-operations manifest"
-      ]
+      "title": "M9 security-operations material is signed and bound to the exact M8 release manifest"
     },
     {
       "control_id": "AIS-SECOPS-BOUNDARY-001",
-      "title": "M9 has no LLM decision authority and external side effects remain behind M8/enterprise controls",
       "enabled": true,
+      "evidence": [
+        "M9 validation suite",
+        "signed M9 security-operations manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/security_ops/runtime.py"
       ],
-      "evidence": [
-        "M9 validation suite",
-        "signed M9 security-operations manifest"
-      ]
+      "title": "M9 has no LLM decision authority and external side effects remain behind M8/enterprise controls"
     },
     {
       "control_id": "AIS-MULTI-TOPOLOGY-001",
-      "title": "M10 uses a fixed signed supervisor-specialist-control-assurance topology",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/runtime.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 uses a fixed signed supervisor-specialist-control-assurance topology"
     },
     {
       "control_id": "AIS-MULTI-HANDOFF-001",
-      "title": "M10 agent handoffs are typed and digest-bound",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/contracts.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 agent handoffs are typed and digest-bound"
     },
     {
       "control_id": "AIS-MULTI-BUDGET-001",
-      "title": "M10 workflows enforce bounded agent and signal budgets",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/workflow.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 workflows enforce bounded agent and signal budgets"
     },
     {
       "control_id": "AIS-MULTI-SUPERVISOR-001",
-      "title": "M10 Governance Supervisor may orchestrate but cannot approve or execute side effects",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/workflow.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 Governance Supervisor may orchestrate but cannot approve or execute side effects"
     },
     {
       "control_id": "AIS-MULTI-CONTROL-001",
-      "title": "M10 Control Agent produces deterministic control recommendations without execution authority",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/agents.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 Control Agent produces deterministic control recommendations without execution authority"
     },
     {
       "control_id": "AIS-MULTI-ASSURANCE-001",
-      "title": "M10 Assurance Agent gates human approval on evidence and control coverage",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/agents.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 Assurance Agent gates human approval on evidence and control coverage"
     },
     {
       "control_id": "AIS-MULTI-APPROVAL-001",
-      "title": "M10 final workflow disposition requires independently signed human decision",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/approval.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 final workflow disposition requires independently signed human decision"
     },
     {
       "control_id": "AIS-MULTI-AUDIT-001",
-      "title": "M10 workflow lifecycle is written to a hash-chained journal",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/store.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 workflow lifecycle is written to a hash-chained journal"
     },
     {
       "control_id": "AIS-MULTI-BOUNDARY-001",
-      "title": "M10 agents cannot bypass M8 side-effect or M9 security-operations authority boundaries",
       "enabled": true,
+      "evidence": [
+        "M10 validation suite",
+        "signed M10 multi-agent manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/multi_agent/runtime.py"
       ],
-      "evidence": [
-        "M10 validation suite",
-        "signed M10 multi-agent manifest"
-      ]
+      "title": "M10 agents cannot bypass M8 side-effect or M9 security-operations authority boundaries"
     },
     {
       "control_id": "ENT-IAM-001",
-      "title": "Enterprise human identity is accepted only through a configured federated identity contract",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/federation.py",
         "src/portable_ai_governance/security/runtime.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Enterprise human identity is accepted only through a configured federated identity contract"
     },
     {
       "control_id": "ENT-IAM-002",
-      "title": "Human access requires strong MFA authentication context",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/federation.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Human access requires strong MFA authentication context"
     },
     {
       "control_id": "ENT-IAM-003",
-      "title": "Privileged human access requires phishing-resistant MFA such as WebAuthn/FIDO2",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/federation.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Privileged human access requires phishing-resistant MFA such as WebAuthn/FIDO2"
     },
     {
       "control_id": "ENT-IAM-004",
-      "title": "Access entitlements are owner-approved, resource-scoped and time-bounded",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/entitlements.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Access entitlements are owner-approved, resource-scoped and time-bounded"
     },
     {
       "control_id": "ENT-IAM-005",
-      "title": "Access entitlements are subject to deterministic periodic review evidence",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/entitlements.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Access entitlements are subject to deterministic periodic review evidence"
     },
     {
       "control_id": "ENT-PAM-001",
-      "title": "Privileged actions require bounded signed JIT authorization",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/pam.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Privileged actions require bounded signed JIT authorization"
     },
     {
       "control_id": "ENT-PAM-002",
-      "title": "JIT privilege grants expire and are single-use with replay rejection",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/pam.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "JIT privilege grants expire and are single-use with replay rejection"
     },
     {
       "control_id": "ENT-PAM-003",
-      "title": "Privileged elevation requires independent approval and session evidence binding",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/pam.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Privileged elevation requires independent approval and session evidence binding"
     },
     {
       "control_id": "ENT-PAM-004",
-      "title": "Break-glass access requires dual independent approval, short TTL and post-review",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/pam.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Break-glass access requires dual independent approval, short TTL and post-review"
     },
     {
       "control_id": "ENT-SOD-001",
-      "title": "Segregation of duties forbids self-approval for privileged elevation",
       "enabled": true,
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/enterprise_identity/pam.py"
       ],
-      "evidence": [
-        "M23 enterprise identity validation",
-        "signed M23 identity/PAM evidence"
-      ]
+      "title": "Segregation of duties forbids self-approval for privileged elevation"
     },
     {
       "control_id": "ENT-ASSET-001",
-      "title": "Authoritative deny-unregistered enterprise asset inventory",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/inventory.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Authoritative deny-unregistered enterprise asset inventory"
     },
     {
       "control_id": "ENT-ASSET-002",
-      "title": "Ownership, custody, criticality and classification metadata",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/inventory.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Ownership, custody, criticality and classification metadata"
     },
     {
       "control_id": "ENT-DATA-001",
-      "title": "Classification-driven handling and encryption requirements",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/inventory.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Classification-driven handling and encryption requirements"
     },
     {
       "control_id": "ENT-DATA-002",
-      "title": "Retention with legal-hold override",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/lifecycle.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Retention with legal-hold override"
     },
     {
       "control_id": "ENT-DATA-003",
-      "title": "Evidence-backed sanitization and disposal",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/lifecycle.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Evidence-backed sanitization and disposal"
     },
     {
       "control_id": "ENT-DLP-001",
-      "title": "Default-deny controlled export by classification/destination",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/dlp.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Default-deny controlled export by classification/destination"
     },
     {
       "control_id": "ENT-DLP-002",
-      "title": "Deterministic sensitive-content inspection",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/dlp.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Deterministic sensitive-content inspection"
     },
     {
       "control_id": "ENT-DLP-003",
-      "title": "Independent approval and no-payload decision audit",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/dlp.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Independent approval and no-payload decision audit"
     },
     {
       "control_id": "ENT-CRYPTO-001",
-      "title": "Cryptographic key inventory, approved algorithms and ownership",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/crypto_lifecycle.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Cryptographic key inventory, approved algorithms and ownership"
     },
     {
       "control_id": "ENT-CRYPTO-002",
-      "title": "Rotation/revocation/exportability lifecycle policy",
       "enabled": true,
+      "evidence": [
+        "M24 asset/data validation",
+        "signed M24 asset/data manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/asset_security/crypto_lifecycle.py"
       ],
-      "evidence": [
-        "M24 asset/data validation",
-        "signed M24 asset/data manifest"
-      ]
+      "title": "Rotation/revocation/exportability lifecycle policy"
     },
     {
       "control_id": "ENT-NET-001",
-      "title": "Authoritative network zones and trust boundaries",
       "enabled": true,
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/network_security/policy.py"
       ],
-      "evidence": [
-        "M25 zero-trust network validation",
-        "signed M25 network manifest"
-      ]
+      "title": "Authoritative network zones and trust boundaries"
     },
     {
       "control_id": "ENT-NET-002",
-      "title": "Default-deny east-west micro-segmentation flow policy",
       "enabled": true,
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/network_security/policy.py"
       ],
-      "evidence": [
-        "M25 zero-trust network validation",
-        "signed M25 network manifest"
-      ]
+      "title": "Default-deny east-west micro-segmentation flow policy"
     },
     {
       "control_id": "ENT-NET-003",
-      "title": "mTLS workload identity binding for protected flows",
       "enabled": true,
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/network_security/policy.py"
       ],
-      "evidence": [
-        "M25 zero-trust network validation",
-        "signed M25 network manifest"
-      ]
+      "title": "mTLS workload identity binding for protected flows"
     },
     {
       "control_id": "ENT-NET-004",
-      "title": "Default-deny egress with explicit destination allowlisting",
       "enabled": true,
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/network_security/egress.py"
       ],
-      "evidence": [
-        "M25 zero-trust network validation",
-        "signed M25 network manifest"
-      ]
+      "title": "Default-deny egress with explicit destination allowlisting"
     },
     {
       "control_id": "ENT-NET-005",
-      "title": "Management-plane and verifier-zone isolation",
       "enabled": true,
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/network_security/policy.py"
       ],
-      "evidence": [
-        "M25 zero-trust network validation",
-        "signed M25 network manifest"
-      ]
+      "title": "Management-plane and verifier-zone isolation"
     },
     {
       "control_id": "ENT-NET-006",
-      "title": "Network denial/identity/egress/scan detection policy",
       "enabled": true,
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/network_security/detection.py"
       ],
-      "evidence": [
-        "M25 zero-trust network validation",
-        "signed M25 network manifest"
-      ]
+      "title": "Network denial/identity/egress/scan detection policy"
     },
     {
       "control_id": "ENT-NET-007",
-      "title": "Deterministic firewall rendering and negative-path evidence",
       "enabled": true,
+      "evidence": [
+        "M25 zero-trust network validation",
+        "signed M25 network manifest"
+      ],
       "failure_action": "block",
       "implementation": [
         "src/portable_ai_governance/network_security/firewall.py"
       ],
+      "title": "Deterministic firewall rendering and negative-path evidence"
+    },
+    {
+      "control_id": "ENT-SOC-001",
+      "enabled": true,
       "evidence": [
-        "M25 zero-trust network validation",
-        "signed M25 network manifest"
-      ]
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/soc.py"
+      ],
+      "title": "Centralized normalized telemetry and append-only SOC evidence"
+    },
+    {
+      "control_id": "ENT-SOC-002",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/soc.py"
+      ],
+      "title": "Deterministic correlation and alert generation"
+    },
+    {
+      "control_id": "ENT-SOC-003",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/soc.py"
+      ],
+      "title": "SOC evidence retention and approved telemetry sources"
+    },
+    {
+      "control_id": "ENT-VULN-001",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/vulnerability.py"
+      ],
+      "title": "Severity-based vulnerability remediation SLA"
+    },
+    {
+      "control_id": "ENT-VULN-002",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/vulnerability.py"
+      ],
+      "title": "Known-exploited vulnerability emergency prioritization"
+    },
+    {
+      "control_id": "ENT-IR-001",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/incident.py"
+      ],
+      "title": "Executable ordered incident-response playbook"
+    },
+    {
+      "control_id": "ENT-IR-002",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/incident.py"
+      ],
+      "title": "Incident notification and forensic-evidence retention"
+    },
+    {
+      "control_id": "ENT-DR-001",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/backup.py"
+      ],
+      "title": "Encrypted 3-copy backup with offsite immutable copy"
+    },
+    {
+      "control_id": "ENT-DR-002",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/backup.py"
+      ],
+      "title": "BIA-defined RPO/RTO and restore exercise"
+    },
+    {
+      "control_id": "ENT-DR-003",
+      "enabled": true,
+      "evidence": [
+        "M26 operational-security validation",
+        "signed M26 operational-security manifest"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/operational_security/backup.py"
+      ],
+      "title": "Digest-verified recovery from immutable backup evidence"
     }
   ]
 }

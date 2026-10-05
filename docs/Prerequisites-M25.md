@@ -40,3 +40,6 @@ Document the actual Node1/Node2 management IPs, verifier path, monitoring destin
 ## Safety
 
 Do not apply generated firewall rules over an SSH-only management path without an out-of-band recovery method. First validate M25 in evidence-only mode, compare generated rules with actual interfaces/routes, then apply production changes under an approved change procedure.
+## M26 relationship
+
+M26 adds the enterprise operational-security evidence layer for centralized SOC telemetry/correlation, vulnerability-remediation operations, executable incident response, and immutable backup/restore/DR validation. This document retains its original milestone authority; M26 consumes its established controls/evidence without rewriting historical behavior. See `docs/M26-SOC-Vulnerability-Incident-Backup-DR.md`, `docs/Prerequisites-M26.md`, `docs/Deployment-M26.md`, and `docs/Validation-M26.md`.

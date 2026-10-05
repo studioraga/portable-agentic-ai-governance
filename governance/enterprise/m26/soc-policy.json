@@ -1,0 +1,46 @@
+{
+  "approved_sources": [
+    "m9-siem",
+    "m25-network",
+    "auditd",
+    "journald",
+    "application-audit"
+  ],
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false
+  },
+  "correlation_rules": [
+    {
+      "alert_severity": "critical",
+      "event_types": [
+        "denied_flow",
+        "unauthorized_egress"
+      ],
+      "rule_id": "SOC-RULE-001",
+      "severities": [
+        "high",
+        "critical"
+      ],
+      "threshold": 2
+    },
+    {
+      "alert_severity": "high",
+      "event_types": [
+        "authentication_failure"
+      ],
+      "rule_id": "SOC-RULE-002",
+      "severities": [
+        "medium",
+        "high",
+        "critical"
+      ],
+      "threshold": 3
+    }
+  ],
+  "default_action": "retain-and-evaluate",
+  "retention_days": 400,
+  "schema": "pag-m26-soc-policy-v1"
+}

@@ -1,49 +1,263 @@
 {
-  "mapping_version": "0.23.0",
-  "note": "M0-M21 control mappings remain historical. M22 adds a separate enterprise-security requirement matrix and gap registry spanning CISSP domains with NIST CSF 2.0, ISO/IEC 27001:2022 theme, CRA, and ISO/IEC 42001:2023 theme references; certification/conformity claims remain external. M23 adds enterprise identity, phishing-resistant MFA, entitlement review, JIT PAM, break-glass and segregation-of-duties controls.",
   "controls": {
-    "AIS-GOV-001": {
+    "AIS-ABAC-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency_mitigation"
+      ]
+    },
+    "AIS-ACTION-APPROVAL-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-ACTION-AUDIT-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-ACTION-AUTH-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-ACTION-BOUNDARY-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-ACTION-BUDGET-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-ACTION-POLICY-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-ACTION-REPLAY-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-ACTION-SCHEMA-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA",
+        "DE.CM"
+      ]
+    },
+    "AIS-AGENT-BOUND-001": {
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-BOUNDARY-001": {
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-BUDGET-001": {
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-EVID-001": {
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AGENT-RO-001": {
+      "iso_iec_42001": [
+        "governance",
+        "human_oversight",
+        "monitoring"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.PO",
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency",
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-AIBOM-001": {
       "nist_ai_rmf": [
         "GOVERN",
         "MAP"
       ],
       "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RR",
-        "ID.AM"
-      ],
-      "iso_iec_42001": [
-        "governance",
-        "risk_management"
-      ],
-      "owasp_genai": [
-        "governance_supporting_control"
+        "ID.AM",
+        "GV.SC"
       ]
     },
-    "AIS-RISK-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.RM"
-      ],
-      "iso_iec_42001": [
-        "risk_management",
-        "human_oversight"
-      ]
-    },
-    "AIS-EVID-001": {
+    "AIS-AUDIT-001": {
       "nist_ai_rmf": [
         "MEASURE",
         "MANAGE"
       ],
       "nist_csf_2_0": [
-        "PR.DS",
-        "DE.CM"
-      ],
-      "nist_ssdf": [
-        "protect_and_preserve_release_integrity"
+        "DE.CM",
+        "RS.AN"
       ]
     },
     "AIS-AUTH-001": {
@@ -58,160 +272,34 @@
         "excessive_agency_mitigation"
       ]
     },
-    "AIS-IAM-001": {
+    "AIS-AUTONOMY-001": {
       "nist_ai_rmf": [
         "GOVERN",
         "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control"
-      ]
-    },
-    "AIS-ABAC-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.AA"
       ],
       "owasp_genai": [
-        "excessive_agency_mitigation"
+        "excessive_agency"
       ]
     },
-    "AIS-MTLS-001": {
-      "nist_ai_rmf": [
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.DS",
-        "PR.AA"
-      ]
-    },
-    "AIS-SIGN-001": {
-      "nist_ai_rmf": [
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.DS"
-      ]
-    },
-    "AIS-REPLAY-001": {
-      "nist_ai_rmf": [
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.DS",
-        "DE.CM"
-      ]
-    },
-    "AIS-SECRETS-001": {
+    "AIS-COMPLY-001": {
       "nist_ai_rmf": [
         "GOVERN",
+        "MEASURE",
         "MANAGE"
       ],
       "nist_csf_2_0": [
-        "PR.AA",
-        "PR.DS"
+        "GV.OV",
+        "RS.AN"
       ]
     },
-    "AIS-AUDIT-001": {
+    "AIS-CONTROL-001": {
       "nist_ai_rmf": [
         "MEASURE",
         "MANAGE"
       ],
       "nist_csf_2_0": [
         "DE.CM",
-        "RS.AN"
-      ]
-    },
-    "AIS-RATE-001": {
-      "nist_ai_rmf": [
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.PS",
-        "DE.CM"
-      ],
-      "owasp_genai": [
-        "unbounded_consumption_mitigation"
-      ]
-    },
-    "AIS-SBOM-001": {
-      "nist_csf_2_0": [
-        "ID.AM",
-        "GV.SC"
-      ],
-      "nist_ssdf": [
-        "PS.3",
-        "PW.4"
-      ]
-    },
-    "AIS-AIBOM-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP"
-      ],
-      "nist_csf_2_0": [
-        "ID.AM",
-        "GV.SC"
-      ]
-    },
-    "AIS-LOCK-001": {
-      "nist_ai_rmf": [
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.PS",
-        "GV.SC"
-      ],
-      "nist_ssdf": [
-        "PS.1",
-        "PS.2"
-      ]
-    },
-    "AIS-PROV-001": {
-      "nist_csf_2_0": [
-        "GV.SC",
-        "PR.DS"
-      ],
-      "nist_ssdf": [
-        "PS.2",
-        "PS.3"
-      ]
-    },
-    "AIS-SIG-001": {
-      "nist_csf_2_0": [
-        "PR.DS",
-        "GV.SC"
-      ],
-      "nist_ssdf": [
-        "PS.2"
-      ]
-    },
-    "AIS-VULN-001": {
-      "nist_csf_2_0": [
-        "ID.RA",
-        "GV.SC",
-        "DE.CM"
-      ],
-      "nist_ssdf": [
-        "RV.1",
-        "RV.2"
-      ]
-    },
-    "AIS-MODEL-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MANAGE"
-      ],
-      "owasp_genai": [
-        "data_model_poisoning",
-        "supply_chain"
+        "GV.OV"
       ]
     },
     "AIS-DATA-001": {
@@ -227,20 +315,6 @@
       "owasp_genai": [
         "data_model_poisoning",
         "sensitive_information_disclosure"
-      ]
-    },
-    "AIS-RAG-001": {
-      "nist_ai_rmf": [
-        "MAP",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.AA",
-        "PR.DS"
-      ],
-      "owasp_genai": [
-        "sensitive_information_disclosure",
-        "vector_embedding_weaknesses"
       ]
     },
     "AIS-EMBED-001": {
@@ -263,6 +337,523 @@
         "ai_security_evaluation"
       ]
     },
+    "AIS-EVID-001": {
+      "nist_ai_rmf": [
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "DE.CM"
+      ],
+      "nist_ssdf": [
+        "protect_and_preserve_release_integrity"
+      ]
+    },
+    "AIS-EXCEPT-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.RM",
+        "GV.RR"
+      ]
+    },
+    "AIS-GOV-001": {
+      "iso_iec_42001": [
+        "governance",
+        "risk_management"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RR",
+        "ID.AM"
+      ],
+      "owasp_genai": [
+        "governance_supporting_control"
+      ]
+    },
+    "AIS-IAM-001": {
+      "iso_iec_42001": [
+        "access_control"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "AIS-IMPACT-001": {
+      "iso_iec_42001": [
+        "impact_assessment",
+        "risk_management"
+      ],
+      "nist_ai_rmf": [
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ]
+    },
+    "AIS-LOCK-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "GV.SC"
+      ],
+      "nist_ssdf": [
+        "PS.1",
+        "PS.2"
+      ]
+    },
+    "AIS-MODEL-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MANAGE"
+      ],
+      "owasp_genai": [
+        "data_model_poisoning",
+        "supply_chain"
+      ]
+    },
+    "AIS-MTLS-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "PR.AA"
+      ]
+    },
+    "AIS-MULTI-APPROVAL-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-ASSURANCE-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-AUDIT-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-BOUNDARY-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-BUDGET-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-CONTROL-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-HANDOFF-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-SUPERVISOR-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-MULTI-TOPOLOGY-001": {
+      "iso_iec_42001": [
+        "roles_and_responsibilities",
+        "risk_management",
+        "human_oversight",
+        "traceability"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.OC",
+        "GV.RM",
+        "ID.RA",
+        "RS.MA"
+      ]
+    },
+    "AIS-PRIVACY-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MAP",
+        "MANAGE"
+      ],
+      "nist_privacy_framework": [
+        "IDENTIFY-P",
+        "GOVERN-P",
+        "CONTROL-P"
+      ]
+    },
+    "AIS-PROV-001": {
+      "nist_csf_2_0": [
+        "GV.SC",
+        "PR.DS"
+      ],
+      "nist_ssdf": [
+        "PS.2",
+        "PS.3"
+      ]
+    },
+    "AIS-RAG-001": {
+      "nist_ai_rmf": [
+        "MAP",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA",
+        "PR.DS"
+      ],
+      "owasp_genai": [
+        "sensitive_information_disclosure",
+        "vector_embedding_weaknesses"
+      ]
+    },
+    "AIS-RATE-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.PS",
+        "DE.CM"
+      ],
+      "owasp_genai": [
+        "unbounded_consumption_mitigation"
+      ]
+    },
+    "AIS-REPLAY-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "DE.CM"
+      ]
+    },
+    "AIS-RISK-001": {
+      "iso_iec_42001": [
+        "risk_management",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "GV.RM"
+      ]
+    },
+    "AIS-SBOM-001": {
+      "nist_csf_2_0": [
+        "ID.AM",
+        "GV.SC"
+      ],
+      "nist_ssdf": [
+        "PS.3",
+        "PW.4"
+      ]
+    },
+    "AIS-SECOPS-BIND-001": {
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ]
+    },
+    "AIS-SECOPS-BOUNDARY-001": {
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ]
+    },
+    "AIS-SECOPS-CONTAIN-001": {
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ]
+    },
+    "AIS-SECOPS-EVIDENCE-001": {
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ]
+    },
+    "AIS-SECOPS-INCIDENT-001": {
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ]
+    },
+    "AIS-SECOPS-RECOVER-001": {
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ]
+    },
+    "AIS-SECOPS-SIEM-001": {
+      "iso_iec_42001": [
+        "monitoring",
+        "incident_management",
+        "traceability",
+        "human_oversight"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE",
+        "MEASURE"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "RS.MA",
+        "RS.AN",
+        "RC.RP"
+      ]
+    },
+    "AIS-SECRETS-001": {
+      "nist_ai_rmf": [
+        "GOVERN",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA",
+        "PR.DS"
+      ]
+    },
+    "AIS-SIG-001": {
+      "nist_csf_2_0": [
+        "PR.DS",
+        "GV.SC"
+      ],
+      "nist_ssdf": [
+        "PS.2"
+      ]
+    },
+    "AIS-SIGN-001": {
+      "nist_ai_rmf": [
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS"
+      ]
+    },
     "AIS-THREAT-001": {
       "nist_ai_rmf": [
         "GOVERN",
@@ -279,177 +870,74 @@
         "excessive_agency"
       ]
     },
-    "AIS-AUTONOMY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "owasp_genai": [
-        "excessive_agency"
-      ]
-    },
-    "AIS-IMPACT-001": {
-      "nist_ai_rmf": [
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
+    "AIS-TOOL-AUDIT-001": {
       "iso_iec_42001": [
-        "impact_assessment",
-        "risk_management"
-      ]
-    },
-    "AIS-PRIVACY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MANAGE"
+        "monitoring",
+        "traceability"
       ],
-      "nist_privacy_framework": [
-        "IDENTIFY-P",
-        "GOVERN-P",
-        "CONTROL-P"
-      ]
-    },
-    "AIS-EXCEPT-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.RM",
-        "GV.RR"
-      ]
-    },
-    "AIS-TPRM-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.SC"
-      ]
-    },
-    "AIS-CONTROL-001": {
       "nist_ai_rmf": [
         "MEASURE",
         "MANAGE"
       ],
       "nist_csf_2_0": [
         "DE.CM",
-        "GV.OV"
-      ]
-    },
-    "AIS-COMPLY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OV",
         "RS.AN"
       ]
     },
-    "AIS-AGENT-BOUND-001": {
+    "AIS-TOOL-AUTH-001": {
       "nist_ai_rmf": [
         "GOVERN",
-        "MEASURE",
+        "MANAGE"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ],
+      "owasp_genai": [
+        "excessive_agency_mitigation"
+      ]
+    },
+    "AIS-TOOL-BOUNDARY-001": {
+      "iso_iec_42001": [
+        "human_oversight",
+        "access_control"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN",
         "MANAGE"
       ],
       "nist_csf_2_0": [
         "GV.PO",
         "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "governance",
-        "human_oversight",
-        "monitoring"
       ],
       "owasp_genai": [
         "excessive_agency",
         "governance_supporting_control"
       ]
     },
-    "AIS-AGENT-RO-001": {
+    "AIS-TOOL-BUDGET-001": {
       "nist_ai_rmf": [
-        "GOVERN",
         "MEASURE",
         "MANAGE"
       ],
       "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "governance",
-        "human_oversight",
-        "monitoring"
+        "PR.PS",
+        "DE.CM"
       ],
       "owasp_genai": [
-        "excessive_agency",
-        "governance_supporting_control"
+        "unbounded_consumption_mitigation"
       ]
     },
-    "AIS-AGENT-EVID-001": {
+    "AIS-TOOL-POLICY-001": {
       "nist_ai_rmf": [
         "GOVERN",
-        "MEASURE",
         "MANAGE"
       ],
       "nist_csf_2_0": [
         "GV.PO",
         "PR.AA"
       ],
-      "iso_iec_42001": [
-        "governance",
-        "human_oversight",
-        "monitoring"
-      ],
       "owasp_genai": [
-        "excessive_agency",
-        "governance_supporting_control"
-      ]
-    },
-    "AIS-AGENT-BUDGET-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "governance",
-        "human_oversight",
-        "monitoring"
-      ],
-      "owasp_genai": [
-        "excessive_agency",
-        "governance_supporting_control"
-      ]
-    },
-    "AIS-AGENT-BOUNDARY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "governance",
-        "human_oversight",
-        "monitoring"
-      ],
-      "owasp_genai": [
-        "excessive_agency",
-        "governance_supporting_control"
+        "excessive_agency_mitigation"
       ]
     },
     "AIS-TOOL-SCHEMA-001": {
@@ -466,848 +954,512 @@
         "excessive_agency_mitigation"
       ]
     },
-    "AIS-TOOL-AUTH-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "owasp_genai": [
-        "excessive_agency_mitigation"
-      ]
-    },
-    "AIS-TOOL-POLICY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA"
-      ],
-      "owasp_genai": [
-        "excessive_agency_mitigation"
-      ]
-    },
-    "AIS-TOOL-BUDGET-001": {
-      "nist_ai_rmf": [
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "PR.PS",
-        "DE.CM"
-      ],
-      "owasp_genai": [
-        "unbounded_consumption_mitigation"
-      ]
-    },
-    "AIS-TOOL-AUDIT-001": {
-      "nist_ai_rmf": [
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.AN"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "traceability"
-      ]
-    },
-    "AIS-TOOL-BOUNDARY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control"
-      ],
-      "owasp_genai": [
-        "excessive_agency",
-        "governance_supporting_control"
-      ]
-    },
-    "AIS-ACTION-SCHEMA-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-ACTION-AUTH-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-ACTION-POLICY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-ACTION-BUDGET-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-ACTION-APPROVAL-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-ACTION-REPLAY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-ACTION-AUDIT-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-ACTION-BOUNDARY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.PO",
-        "PR.AA",
-        "DE.CM"
-      ],
-      "iso_iec_42001": [
-        "human_oversight",
-        "access_control",
-        "traceability"
-      ]
-    },
-    "AIS-SECOPS-SIEM-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE",
-        "MEASURE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.MA",
-        "RS.AN",
-        "RC.RP"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "incident_management",
-        "traceability",
-        "human_oversight"
-      ]
-    },
-    "AIS-SECOPS-INCIDENT-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE",
-        "MEASURE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.MA",
-        "RS.AN",
-        "RC.RP"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "incident_management",
-        "traceability",
-        "human_oversight"
-      ]
-    },
-    "AIS-SECOPS-CONTAIN-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE",
-        "MEASURE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.MA",
-        "RS.AN",
-        "RC.RP"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "incident_management",
-        "traceability",
-        "human_oversight"
-      ]
-    },
-    "AIS-SECOPS-RECOVER-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE",
-        "MEASURE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.MA",
-        "RS.AN",
-        "RC.RP"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "incident_management",
-        "traceability",
-        "human_oversight"
-      ]
-    },
-    "AIS-SECOPS-EVIDENCE-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE",
-        "MEASURE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.MA",
-        "RS.AN",
-        "RC.RP"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "incident_management",
-        "traceability",
-        "human_oversight"
-      ]
-    },
-    "AIS-SECOPS-BIND-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE",
-        "MEASURE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.MA",
-        "RS.AN",
-        "RC.RP"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "incident_management",
-        "traceability",
-        "human_oversight"
-      ]
-    },
-    "AIS-SECOPS-BOUNDARY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MANAGE",
-        "MEASURE"
-      ],
-      "nist_csf_2_0": [
-        "DE.CM",
-        "RS.MA",
-        "RS.AN",
-        "RC.RP"
-      ],
-      "iso_iec_42001": [
-        "monitoring",
-        "incident_management",
-        "traceability",
-        "human_oversight"
-      ]
-    },
-    "AIS-MULTI-TOPOLOGY-001": {
+    "AIS-TPRM-001": {
       "nist_ai_rmf": [
         "GOVERN",
         "MAP",
-        "MEASURE",
         "MANAGE"
       ],
       "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
+        "GV.SC"
+      ]
+    },
+    "AIS-VULN-001": {
+      "nist_csf_2_0": [
         "ID.RA",
-        "RS.MA"
+        "GV.SC",
+        "DE.CM"
       ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-HANDOFF-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-BUDGET-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-SUPERVISOR-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-CONTROL-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-ASSURANCE-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-APPROVAL-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-AUDIT-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "AIS-MULTI-BOUNDARY-001": {
-      "nist_ai_rmf": [
-        "GOVERN",
-        "MAP",
-        "MEASURE",
-        "MANAGE"
-      ],
-      "nist_csf_2_0": [
-        "GV.OC",
-        "GV.RM",
-        "ID.RA",
-        "RS.MA"
-      ],
-      "iso_iec_42001": [
-        "roles_and_responsibilities",
-        "risk_management",
-        "human_oversight",
-        "traceability"
-      ]
-    },
-    "ENT-IAM-001": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-IAM-002": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-IAM-003": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-IAM-004": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-IAM-005": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-PAM-001": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-PAM-002": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-PAM-003": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-PAM-004": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
-      ]
-    },
-    "ENT-SOD-001": {
-      "nist_csf_2_0": [
-        "PR.AA"
-      ],
-      "iso_iec_42001": [
-        "access_control",
-        "human_oversight"
-      ],
-      "cissp_domain": [
-        5
+      "nist_ssdf": [
+        "RV.1",
+        "RV.2"
       ]
     },
     "ENT-ASSET-001": {
-      "nist_csf_2_0": [
-        "ID.AM"
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management"
       ],
-      "cissp_domain": [
-        2
+      "nist_csf_2_0": [
+        "ID.AM"
       ]
     },
     "ENT-ASSET-002": {
-      "nist_csf_2_0": [
-        "ID.AM"
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management"
       ],
+      "nist_csf_2_0": [
+        "ID.AM"
+      ]
+    },
+    "ENT-CRYPTO-001": {
       "cissp_domain": [
-        2
+        3
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "PR.PS"
+      ]
+    },
+    "ENT-CRYPTO-002": {
+      "cissp_domain": [
+        3
+      ],
+      "iso_iec_42001": [
+        "security",
+        "robustness"
+      ],
+      "nist_csf_2_0": [
+        "PR.DS",
+        "PR.PS"
       ]
     },
     "ENT-DATA-001": {
-      "nist_csf_2_0": [
-        "PR.DS"
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management",
         "security"
       ],
-      "cissp_domain": [
-        2
+      "nist_csf_2_0": [
+        "PR.DS"
       ]
     },
     "ENT-DATA-002": {
-      "nist_csf_2_0": [
-        "PR.DS"
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management"
       ],
-      "cissp_domain": [
-        2
+      "nist_csf_2_0": [
+        "PR.DS"
       ]
     },
     "ENT-DATA-003": {
-      "nist_csf_2_0": [
-        "PR.DS"
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management",
         "security"
       ],
-      "cissp_domain": [
-        2
+      "nist_csf_2_0": [
+        "PR.DS"
       ]
     },
     "ENT-DLP-001": {
-      "nist_csf_2_0": [
-        "PR.DS"
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management",
         "security"
       ],
-      "cissp_domain": [
-        2
+      "nist_csf_2_0": [
+        "PR.DS"
       ]
     },
     "ENT-DLP-002": {
-      "nist_csf_2_0": [
-        "PR.DS",
-        "DE.CM"
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management",
         "security"
       ],
-      "cissp_domain": [
-        2
-      ]
-    },
-    "ENT-DLP-003": {
       "nist_csf_2_0": [
         "PR.DS",
         "DE.CM"
+      ]
+    },
+    "ENT-DLP-003": {
+      "cissp_domain": [
+        2
       ],
       "iso_iec_42001": [
         "data_management",
         "human_oversight"
       ],
-      "cissp_domain": [
-        2
-      ]
-    },
-    "ENT-CRYPTO-001": {
       "nist_csf_2_0": [
         "PR.DS",
-        "PR.PS"
+        "DE.CM"
+      ]
+    },
+    "ENT-DR-001": {
+      "cissp_domain": [
+        7
       ],
       "iso_iec_42001": [
         "security",
-        "robustness"
+        "monitoring",
+        "business_continuity"
       ],
-      "cissp_domain": [
-        3
+      "nist_csf_2_0": [
+        "RC.RP",
+        "RC.IM",
+        "PR.DS"
       ]
     },
-    "ENT-CRYPTO-002": {
-      "nist_csf_2_0": [
-        "PR.DS",
-        "PR.PS"
+    "ENT-DR-002": {
+      "cissp_domain": [
+        7
       ],
       "iso_iec_42001": [
         "security",
-        "robustness"
+        "monitoring",
+        "business_continuity"
       ],
+      "nist_csf_2_0": [
+        "RC.RP",
+        "RC.IM",
+        "PR.DS"
+      ]
+    },
+    "ENT-DR-003": {
       "cissp_domain": [
-        3
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "RC.RP",
+        "RC.IM",
+        "PR.DS"
+      ]
+    },
+    "ENT-IAM-001": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-IAM-002": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-IAM-003": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-IAM-004": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-IAM-005": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-IR-001": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "RS.MA",
+        "RS.AN",
+        "RS.MI",
+        "RC.CO"
+      ]
+    },
+    "ENT-IR-002": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "RS.MA",
+        "RS.AN",
+        "RS.MI",
+        "RC.CO"
       ]
     },
     "ENT-NET-001": {
-      "nist_csf_2_0": [
-        "PR.IR",
-        "DE.CM"
+      "cissp_domain": [
+        4
       ],
       "iso_iec_42001": [
         "security",
         "robustness"
       ],
-      "cissp_domain": [
-        4
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
       ]
     },
     "ENT-NET-002": {
-      "nist_csf_2_0": [
-        "PR.IR",
-        "DE.CM"
+      "cissp_domain": [
+        4
       ],
       "iso_iec_42001": [
         "security",
         "robustness"
       ],
-      "cissp_domain": [
-        4
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
       ]
     },
     "ENT-NET-003": {
-      "nist_csf_2_0": [
-        "PR.IR",
-        "DE.CM"
+      "cissp_domain": [
+        4
       ],
       "iso_iec_42001": [
         "security",
         "robustness"
       ],
-      "cissp_domain": [
-        4
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
       ]
     },
     "ENT-NET-004": {
-      "nist_csf_2_0": [
-        "PR.IR",
-        "DE.CM"
+      "cissp_domain": [
+        4
       ],
       "iso_iec_42001": [
         "security",
         "robustness"
       ],
-      "cissp_domain": [
-        4
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
       ]
     },
     "ENT-NET-005": {
-      "nist_csf_2_0": [
-        "PR.IR",
-        "DE.CM"
+      "cissp_domain": [
+        4
       ],
       "iso_iec_42001": [
         "security",
         "robustness"
       ],
-      "cissp_domain": [
-        4
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
       ]
     },
     "ENT-NET-006": {
-      "nist_csf_2_0": [
-        "PR.IR",
-        "DE.CM"
+      "cissp_domain": [
+        4
       ],
       "iso_iec_42001": [
         "security",
         "robustness"
       ],
-      "cissp_domain": [
-        4
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
       ]
     },
     "ENT-NET-007": {
-      "nist_csf_2_0": [
-        "PR.IR",
-        "DE.CM"
+      "cissp_domain": [
+        4
       ],
       "iso_iec_42001": [
         "security",
         "robustness"
       ],
+      "nist_csf_2_0": [
+        "PR.IR",
+        "DE.CM"
+      ]
+    },
+    "ENT-PAM-001": {
       "cissp_domain": [
-        4
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-PAM-002": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-PAM-003": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-PAM-004": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-SOC-001": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "DE.AE",
+        "RS.AN"
+      ]
+    },
+    "ENT-SOC-002": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "DE.AE",
+        "RS.AN"
+      ]
+    },
+    "ENT-SOC-003": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "DE.CM",
+        "DE.AE",
+        "RS.AN"
+      ]
+    },
+    "ENT-SOD-001": {
+      "cissp_domain": [
+        5
+      ],
+      "iso_iec_42001": [
+        "access_control",
+        "human_oversight"
+      ],
+      "nist_csf_2_0": [
+        "PR.AA"
+      ]
+    },
+    "ENT-VULN-001": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "ID.RA",
+        "RS.MI",
+        "PR.PS"
+      ]
+    },
+    "ENT-VULN-002": {
+      "cissp_domain": [
+        7
+      ],
+      "iso_iec_42001": [
+        "security",
+        "monitoring",
+        "business_continuity"
+      ],
+      "nist_csf_2_0": [
+        "ID.RA",
+        "RS.MI",
+        "PR.PS"
       ]
     }
-  }
+  },
+  "mapping_version": "0.23.0",
+  "note": "M0-M21 control mappings remain historical. M22 adds a separate enterprise-security requirement matrix and gap registry spanning CISSP domains with NIST CSF 2.0, ISO/IEC 27001:2022 theme, CRA, and ISO/IEC 42001:2023 theme references; certification/conformity claims remain external. M23 adds enterprise identity, phishing-resistant MFA, entitlement review, JIT PAM, break-glass and segregation-of-duties controls."
 }

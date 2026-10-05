@@ -1,0 +1,23 @@
+{
+  "approval_required_for_recovery": true,
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false
+  },
+  "evidence_retention_days": 400,
+  "forensic_integrity_required": true,
+  "notify_severities": [
+    "high",
+    "critical"
+  ],
+  "required_steps": [
+    "triaged",
+    "contained",
+    "eradicated",
+    "recovered",
+    "closed"
+  ],
+  "schema": "pag-m26-incident-response-policy-v1"
+}

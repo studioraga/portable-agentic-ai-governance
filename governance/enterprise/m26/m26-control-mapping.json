@@ -1,0 +1,117 @@
+{
+  "controls": [
+    {
+      "cissp_requirements": [
+        "CISSP-D7-001"
+      ],
+      "control_id": "ENT-SOC-001",
+      "nist_csf_2_0": [
+        "DE.CM",
+        "DE.AE",
+        "RS.AN"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-001"
+      ],
+      "control_id": "ENT-SOC-002",
+      "nist_csf_2_0": [
+        "DE.CM",
+        "DE.AE",
+        "RS.AN"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-001"
+      ],
+      "control_id": "ENT-SOC-003",
+      "nist_csf_2_0": [
+        "DE.CM",
+        "DE.AE",
+        "RS.AN"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-002"
+      ],
+      "control_id": "ENT-VULN-001",
+      "nist_csf_2_0": [
+        "ID.RA",
+        "RS.MI",
+        "PR.PS"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-002"
+      ],
+      "control_id": "ENT-VULN-002",
+      "nist_csf_2_0": [
+        "ID.RA",
+        "RS.MI",
+        "PR.PS"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-001"
+      ],
+      "control_id": "ENT-IR-001",
+      "nist_csf_2_0": [
+        "RS.MA",
+        "RS.AN",
+        "RS.MI",
+        "RC.CO"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-001"
+      ],
+      "control_id": "ENT-IR-002",
+      "nist_csf_2_0": [
+        "RS.MA",
+        "RS.AN",
+        "RS.MI",
+        "RC.CO"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-003"
+      ],
+      "control_id": "ENT-DR-001",
+      "nist_csf_2_0": [
+        "RC.RP",
+        "RC.IM",
+        "PR.DS"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-003"
+      ],
+      "control_id": "ENT-DR-002",
+      "nist_csf_2_0": [
+        "RC.RP",
+        "RC.IM",
+        "PR.DS"
+      ]
+    },
+    {
+      "cissp_requirements": [
+        "CISSP-D7-003"
+      ],
+      "control_id": "ENT-DR-003",
+      "nist_csf_2_0": [
+        "RC.RP",
+        "RC.IM",
+        "PR.DS"
+      ]
+    }
+  ],
+  "schema": "pag-m26-control-mapping-v1"
+}

@@ -61,3 +61,6 @@ External egress is separately default-deny.
 ## Claim boundary
 
 M25 is an engineering evidence/control milestone. It does not assert CISSP certification, ISO/IEC 27001 certification, ISO/IEC 42001 certification or CRA conformity.
+## M26 relationship
+
+M26 adds the enterprise operational-security evidence layer for centralized SOC telemetry/correlation, vulnerability-remediation operations, executable incident response, and immutable backup/restore/DR validation. This document retains its original milestone authority; M26 consumes its established controls/evidence without rewriting historical behavior. See `docs/M26-SOC-Vulnerability-Incident-Backup-DR.md`, `docs/Prerequisites-M26.md`, `docs/Deployment-M26.md`, and `docs/Validation-M26.md`.

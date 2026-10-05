@@ -1,0 +1,22 @@
+{
+  "bia": {
+    "business_owner": "security-operations",
+    "critical_service": "portable-agentic-ai-governance-control-plane",
+    "maximum_tolerable_downtime_hours": 8
+  },
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false
+  },
+  "copies_required": 3,
+  "encryption_required": true,
+  "immutable_copies_required": 1,
+  "offsite_copies_required": 1,
+  "restore_test_frequency_days": 90,
+  "retention_days": 35,
+  "rpo_hours": 24,
+  "rto_hours": 4,
+  "schema": "pag-m26-backup-dr-policy-v1"
+}

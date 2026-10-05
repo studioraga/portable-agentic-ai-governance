@@ -159,3 +159,10 @@ var/m25-verifier.tar.gz
 var/m25-verifier.tar.gz.sha256
 var/m25-validation/
 var/m25-validation*/
+
+# M26 generated SOC/vulnerability/IR/backup-DR material/evidence
+var/m26-material/
+var/m26-verifier.tar.gz
+var/m26-verifier.tar.gz.sha256
+var/m26-validation/
+var/m26-validation*/

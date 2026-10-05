@@ -1,0 +1,38 @@
+{
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false
+  },
+  "closures": [
+    {
+      "evidence_controls": [
+        "ENT-SOC-001",
+        "ENT-SOC-002",
+        "ENT-SOC-003",
+        "ENT-IR-001",
+        "ENT-IR-002"
+      ],
+      "m22_state": "PARTIAL",
+      "m26_state": "EVIDENCED",
+      "requirement_id": "CISSP-D7-001"
+    },
+    {
+      "evidence_controls": [
+        "ENT-DR-001",
+        "ENT-DR-002",
+        "ENT-DR-003"
+      ],
+      "m22_state": "GAP",
+      "m26_state": "EVIDENCED",
+      "requirement_id": "CISSP-D7-003"
+    }
+  ],
+  "m22_gap_register_immutable": true,
+  "schema": "pag-m26-gap-closure-v1",
+  "unchanged_future_gaps": [
+    "CISSP-D6-002",
+    "CISSP-D7-004"
+  ]
+}
