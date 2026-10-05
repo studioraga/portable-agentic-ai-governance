@@ -1,5 +1,5 @@
 {
-  "catalog_version": "0.7.0",
+  "catalog_version": "0.29.0",
   "controls": [
     {
       "approval_required": false,
@@ -1624,6 +1624,71 @@
         "src/portable_ai_governance/organizational_security/bcp.py"
       ],
       "title": "Business-continuity exercise and lessons-learned evidence"
+    },
+    {
+      "control_id": "ENT-XVAL-001",
+      "enabled": true,
+      "evidence": [
+        "M29 signed cross-domain manifest",
+        "Node2 independent verification"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_validation/runtime.py"
+      ],
+      "title": "Signed M22-M28 evidence aggregation and provenance"
+    },
+    {
+      "control_id": "ENT-XVAL-002",
+      "enabled": true,
+      "evidence": [
+        "M29 signed cross-domain manifest",
+        "Node2 independent verification"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_validation/runtime.py"
+      ],
+      "title": "Cross-domain CISSP requirement-state reconciliation"
+    },
+    {
+      "control_id": "ENT-XVAL-003",
+      "enabled": true,
+      "evidence": [
+        "M29 signed cross-domain manifest",
+        "Node2 independent verification"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_validation/runtime.py"
+      ],
+      "title": "Fail-closed enterprise production-readiness gate"
+    },
+    {
+      "control_id": "ENT-XVAL-004",
+      "enabled": true,
+      "evidence": [
+        "M29 signed cross-domain manifest",
+        "Node2 independent verification"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_validation/runtime.py"
+      ],
+      "title": "Independent Node2 verifier-only cross-domain validation"
+    },
+    {
+      "control_id": "ENT-XVAL-005",
+      "enabled": true,
+      "evidence": [
+        "M29 signed cross-domain manifest",
+        "Node2 independent verification"
+      ],
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_validation/runtime.py"
+      ],
+      "title": "Nested evidence, source-digest and tamper verification"
     }
   ]
 }

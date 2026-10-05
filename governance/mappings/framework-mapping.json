@@ -1842,8 +1842,108 @@
         "RS.MI",
         "PR.PS"
       ]
+    },
+    "ENT-XVAL-001": {
+      "cissp_domain": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ]
+    },
+    "ENT-XVAL-002": {
+      "cissp_domain": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ]
+    },
+    "ENT-XVAL-003": {
+      "cissp_domain": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ]
+    },
+    "ENT-XVAL-004": {
+      "cissp_domain": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ]
+    },
+    "ENT-XVAL-005": {
+      "cissp_domain": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "iso_iec_42001": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ]
     }
   },
-  "mapping_version": "0.28.0",
+  "mapping_version": "0.29.0",
   "note": "M0-M21 control mappings remain historical. M22 adds a separate enterprise-security requirement matrix and gap registry spanning CISSP domains with NIST CSF 2.0, ISO/IEC 27001:2022 theme, CRA, and ISO/IEC 42001:2023 theme references; certification/conformity claims remain external. M23 adds enterprise identity, phishing-resistant MFA, entitlement review, JIT PAM, break-glass and segregation-of-duties controls. M28 adds organizational governance, personnel, physical/environmental and BCP evidence controls with explicit non-technical evidence boundaries."
 }

@@ -1,0 +1,135 @@
+{
+  "controls": [
+    {
+      "cissp_domains": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ENT-XVAL-001",
+      "iso_iec_27001_2022_themes": [
+        "monitoring_measurement",
+        "internal_audit"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ],
+      "title": "Signed M22-M28 evidence aggregation and provenance"
+    },
+    {
+      "cissp_domains": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ENT-XVAL-002",
+      "iso_iec_27001_2022_themes": [
+        "monitoring_measurement",
+        "internal_audit"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ],
+      "title": "Cross-domain CISSP requirement-state reconciliation"
+    },
+    {
+      "cissp_domains": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ENT-XVAL-003",
+      "iso_iec_27001_2022_themes": [
+        "monitoring_measurement",
+        "internal_audit"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ],
+      "title": "Fail-closed enterprise production-readiness gate"
+    },
+    {
+      "cissp_domains": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ENT-XVAL-004",
+      "iso_iec_27001_2022_themes": [
+        "monitoring_measurement",
+        "internal_audit"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ],
+      "title": "Independent Node2 verifier-only cross-domain validation"
+    },
+    {
+      "cissp_domains": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ENT-XVAL-005",
+      "iso_iec_27001_2022_themes": [
+        "monitoring_measurement",
+        "internal_audit"
+      ],
+      "iso_iec_42001_2023_themes": [
+        "monitoring",
+        "evaluation"
+      ],
+      "nist_csf_2_0": [
+        "GV.OV",
+        "ID.IM"
+      ],
+      "title": "Nested evidence, source-digest and tamper verification"
+    }
+  ],
+  "schema": "pag-m29-control-mapping-v1"
+}

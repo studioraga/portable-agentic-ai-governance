@@ -1,0 +1,47 @@
+{
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "enterprise_production_ready_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false
+  },
+  "milestone": "M29",
+  "platform_prerequisite": "M21",
+  "production_gates": [
+    "all_23_requirements_evidenced",
+    "m21_platform_production_ready",
+    "m27_real_authorized_pentest_evidence",
+    "m28_real_authority_bound_organizational_evidence",
+    "node2_independent_verification",
+    "no_private_keys_in_verifier_package"
+  ],
+  "required_cissp_domains": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "required_enterprise_milestones": [
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M28"
+  ],
+  "requirement_count": 23,
+  "schema": "pag-m29-cross-domain-validation-policy-v1",
+  "validation_semantics": {
+    "default_production_verdict": "DENY",
+    "evidence_integrity_can_pass_when_production_readiness_fails": true,
+    "historical_milestones_immutable": true,
+    "node2_must_be_verifier_only": true
+  },
+  "version": "0.29.0"
+}

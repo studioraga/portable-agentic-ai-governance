@@ -179,3 +179,10 @@ var/m28-verifier.tar.gz
 var/m28-verifier.tar.gz.sha256
 var/m28-validation/
 var/m28-validation*/
+
+# M29 generated enterprise cross-domain validation material/evidence
+var/m29-material/
+var/m29-verifier.tar.gz
+var/m29-verifier.tar.gz.sha256
+var/m29-validation/
+var/m29-validation*/

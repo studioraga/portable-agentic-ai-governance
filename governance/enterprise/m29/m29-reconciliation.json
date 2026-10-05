@@ -1,0 +1,27 @@
+{
+  "non_override_rules": [
+    {
+      "reason": "M21 platform production readiness remains false until secure-boot-enabled and mac-enforcing are evidenced.",
+      "requirements": [
+        "CISSP-D3-001",
+        "CISSP-D3-002"
+      ],
+      "state": "PARTIAL"
+    }
+  ],
+  "rules": [
+    {
+      "basis_controls": [
+        "ENT-SDLC-001",
+        "ENT-SDLC-002"
+      ],
+      "prior_m22_state": "GAP",
+      "reason": "M27 Secure-SDLC release gates directly evidence the M22 Domain-8 secure-development objective; M27 historical closure record remains unchanged.",
+      "reconciled_state": "EVIDENCED",
+      "requirement_id": "CISSP-D8-002",
+      "source_milestone": "M27"
+    }
+  ],
+  "schema": "pag-m29-reconciliation-v1",
+  "version": "0.29.0"
+}
