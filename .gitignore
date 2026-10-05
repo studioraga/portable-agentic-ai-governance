@@ -138,3 +138,10 @@ var/m22-verifier.tar.gz
 var/m22-verifier.tar.gz.sha256
 var/m22-validation/
 var/m22-validation*/
+
+# M23 generated enterprise identity/MFA/PAM material/evidence
+var/m23-material/
+var/m23-verifier.tar.gz
+var/m23-verifier.tar.gz.sha256
+var/m23-validation/
+var/m23-validation*/

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["version","source_gap_register","closed_by_m23","remaining_m22_gaps_unchanged"],"properties":{"version":{"const":"0.23.0"},"closed_by_m23":{"type":"array","minItems":3,"maxItems":3}}}

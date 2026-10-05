@@ -1,0 +1,11 @@
+{
+  "version": "0.23.0",
+  "source_gap_register": "governance/enterprise/m22/gap-register.json",
+  "closed_by_m23": [
+    {"gap_id":"GAP-CISSP-D5-001","requirement_id":"CISSP-D5-001","m22_state":"PARTIAL","m23_state":"EVIDENCED","closure":"Entitlement ownership/expiry/review and segregation-of-duties evidence added while preserving RBAC/ABAC default deny."},
+    {"gap_id":"GAP-CISSP-D5-002","requirement_id":"CISSP-D5-002","m22_state":"GAP","m23_state":"EVIDENCED","closure":"Federated OIDC claims contract, strong MFA context, phishing-resistant privileged authentication and negative assertion validation added."},
+    {"gap_id":"GAP-CISSP-D5-003","requirement_id":"CISSP-D5-003","m22_state":"GAP","m23_state":"EVIDENCED","closure":"Signed bounded JIT grants, replay protection, independent approval, dual-approval break-glass and post-review evidence added."}
+  ],
+  "remaining_m22_gaps_unchanged": true,
+  "note": "M22 is immutable. M23 records closure evidence without rewriting the historical M22 gap register."
+}

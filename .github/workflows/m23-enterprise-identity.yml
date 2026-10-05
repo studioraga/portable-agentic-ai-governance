@@ -1,0 +1,26 @@
+name: M23 Enterprise Identity MFA PAM
+on:
+  push:
+    paths:
+      - 'src/portable_ai_governance/enterprise_identity/**'
+      - 'governance/enterprise/m23/**'
+      - 'scripts/m23/**'
+      - 'deploy/m23/**'
+      - 'tests/enterprise_identity/**'
+      - '.github/workflows/m23-enterprise-identity.yml'
+  pull_request:
+    paths:
+      - 'src/portable_ai_governance/enterprise_identity/**'
+      - 'governance/enterprise/m23/**'
+      - 'scripts/m23/**'
+      - 'deploy/m23/**'
+      - 'tests/enterprise_identity/**'
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: ./scripts/m23/ci_validate.sh

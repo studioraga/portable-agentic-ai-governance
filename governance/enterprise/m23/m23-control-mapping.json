@@ -1,0 +1,45 @@
+{
+  "version": "0.23.0",
+  "baseline": {
+    "commit": "f020822162591f7d279f7004dea628efb7989525",
+    "tag": "m22-enterprise-security-foundation-v0.22.0",
+    "historical_m0_m22_immutable": true
+  },
+  "requirements": [
+    {
+      "requirement_id": "CISSP-D5-001",
+      "m22_state": "PARTIAL",
+      "m23_state": "EVIDENCED",
+      "controls": ["AIS-IAM-001", "AIS-ABAC-001", "AIS-AUTH-001", "ENT-IAM-004", "ENT-IAM-005", "ENT-SOD-001"],
+      "evidence": ["RBAC/ABAC deny-by-default remains authoritative", "expiring resource-scoped entitlements", "periodic entitlement review", "self-approval prohibition"]
+    },
+    {
+      "requirement_id": "CISSP-D5-002",
+      "m22_state": "GAP",
+      "m23_state": "EVIDENCED",
+      "controls": ["ENT-IAM-001", "ENT-IAM-002", "ENT-IAM-003", "ENT-IAM-004"],
+      "evidence": ["OIDC claims validation", "MFA authentication context", "phishing-resistant WebAuthn/FIDO2 policy", "fresh authentication enforcement"]
+    },
+    {
+      "requirement_id": "CISSP-D5-003",
+      "m22_state": "GAP",
+      "m23_state": "EVIDENCED",
+      "controls": ["ENT-PAM-001", "ENT-PAM-002", "ENT-PAM-003", "ENT-PAM-004", "ENT-SOD-001"],
+      "evidence": ["bounded signed JIT elevation", "TTL and single-use replay protection", "independent approver", "dual-approval break-glass", "mandatory post-review flag"]
+    }
+  ],
+  "framework_refs": {
+    "nist_csf_2_0": ["PR.AA"],
+    "nist_sp_800_63b_4": ["authentication assurance", "phishing resistance", "replay resistance"],
+    "webauthn": "W3C Web Authentication Level 3",
+    "iso_iec_27001_2022_themes": ["identity management", "authentication information", "access rights", "privileged access rights"],
+    "iso_iec_42001_2023_themes": ["access_control", "human_oversight"],
+    "cra_existing_program_refs": ["CRA-REQ-001"]
+  },
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false,
+    "cra_conformity_claim": false
+  }
+}

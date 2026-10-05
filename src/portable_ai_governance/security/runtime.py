@@ -32,6 +32,12 @@ def build_runtime_dependencies(environ: dict[str, str] | None = None) -> Securit
         if not path:
             raise SecurityDependencyError("PAG_IDENTITY_FILE required for file identity provider")
         identity: IdentityProvider = FileIdentityProvider(path)
+    elif identity_kind == "oidc":
+        from ..enterprise_identity.federation import FederationPolicy, OIDCIdentityProvider
+        issuer=env.get("PAG_OIDC_ISSUER","").strip(); audience=env.get("PAG_OIDC_AUDIENCE","").strip(); public_key=env.get("PAG_OIDC_PUBLIC_KEY","").strip(); acr=env.get("PAG_OIDC_REQUIRED_ACR","").strip()
+        if not all((issuer,audience,public_key,acr)):
+            raise SecurityDependencyError("PAG_OIDC_ISSUER/AUDIENCE/PUBLIC_KEY/REQUIRED_ACR are required")
+        identity = OIDCIdentityProvider(public_key=public_key, policy=FederationPolicy(issuer,audience,acr))
     elif identity_kind == "local" and profile == "lab":
         identity = LocalIdentityProvider([])
     else:

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["milestone","control","result","evidence"],"properties":{"milestone":{"const":"M23"},"control":{"type":"string"},"result":{"enum":["PASS","FAIL"]},"evidence":{"type":"object"}}}

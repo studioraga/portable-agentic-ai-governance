@@ -895,6 +895,137 @@
         "M10 validation suite",
         "signed M10 multi-agent manifest"
       ]
+    },
+    {
+      "control_id": "ENT-IAM-001",
+      "title": "Enterprise human identity is accepted only through a configured federated identity contract",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/federation.py",
+        "src/portable_ai_governance/security/runtime.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-IAM-002",
+      "title": "Human access requires strong MFA authentication context",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/federation.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-IAM-003",
+      "title": "Privileged human access requires phishing-resistant MFA such as WebAuthn/FIDO2",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/federation.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-IAM-004",
+      "title": "Access entitlements are owner-approved, resource-scoped and time-bounded",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/entitlements.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-IAM-005",
+      "title": "Access entitlements are subject to deterministic periodic review evidence",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/entitlements.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-PAM-001",
+      "title": "Privileged actions require bounded signed JIT authorization",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/pam.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-PAM-002",
+      "title": "JIT privilege grants expire and are single-use with replay rejection",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/pam.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-PAM-003",
+      "title": "Privileged elevation requires independent approval and session evidence binding",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/pam.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-PAM-004",
+      "title": "Break-glass access requires dual independent approval, short TTL and post-review",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/pam.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
+    },
+    {
+      "control_id": "ENT-SOD-001",
+      "title": "Segregation of duties forbids self-approval for privileged elevation",
+      "enabled": true,
+      "failure_action": "block",
+      "implementation": [
+        "src/portable_ai_governance/enterprise_identity/pam.py"
+      ],
+      "evidence": [
+        "M23 enterprise identity validation",
+        "signed M23 identity/PAM evidence"
+      ]
     }
   ]
 }

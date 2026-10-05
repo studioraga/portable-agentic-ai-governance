@@ -20,3 +20,7 @@ openssl version
 ```
 
 Expected parent HEAD before M22 changes: `ea95206...`. M22 development is intentionally allowed with uncommitted changes; do not commit generated `var/m22-*` material.
+
+## M23 relationship
+
+M23 extends the frozen M22 enterprise-security foundation with enterprise human identity, OIDC federation evidence, strong MFA context, phishing-resistant privileged authentication, expiring entitlement review, signed single-use JIT privilege grants, dual-approved break-glass access, segregation of duties, and independent Node1/Node2 verification. The authoritative M23 documents are `docs/M23-Enterprise-Identity-MFA-PAM.md`, `docs/Prerequisites-M23.md`, `docs/Deployment-M23.md`, and `docs/Validation-M23.md`. Historical M0-M22 behavior and evidence remain immutable.

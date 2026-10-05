@@ -75,3 +75,7 @@ After validation, commit the exact validated tree, rebuild M22 material, rerun v
 - M28 — personnel, physical, BCP and organizational controls
 - M29 — enterprise Node1/Node2 cross-domain validation
 - M30 — enterprise-security production freeze
+
+## M23 relationship
+
+M23 extends the frozen M22 enterprise-security foundation with enterprise human identity, OIDC federation evidence, strong MFA context, phishing-resistant privileged authentication, expiring entitlement review, signed single-use JIT privilege grants, dual-approved break-glass access, segregation of duties, and independent Node1/Node2 verification. The authoritative M23 documents are `docs/M23-Enterprise-Identity-MFA-PAM.md`, `docs/Prerequisites-M23.md`, `docs/Deployment-M23.md`, and `docs/Validation-M23.md`. Historical M0-M22 behavior and evidence remain immutable.
