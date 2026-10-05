@@ -1,6 +1,6 @@
 {
-  "mapping_version": "0.10.0",
-  "note": "Outcome mappings are maintained as data so framework revisions do not alter enforcement code. M10 adds supervised typed multi-agent cooperation, assurance, human decision, traceability, and preserved M8/M9 authority boundaries.",
+  "mapping_version": "0.22.0",
+  "note": "M0-M21 control mappings remain historical. M22 adds a separate enterprise-security requirement matrix and gap registry spanning CISSP domains with NIST CSF 2.0, ISO/IEC 27001:2022 theme, CRA, and ISO/IEC 42001:2023 theme references; certification/conformity claims remain external.",
   "controls": {
     "AIS-GOV-001": {
       "nist_ai_rmf": [

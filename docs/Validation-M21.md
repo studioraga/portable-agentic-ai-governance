@@ -96,3 +96,8 @@ Open required checks:
 - `mac-enforcing`.
 
 The verifier may still return `ok=true` for evidence integrity while the platform validation summary truthfully reports `production_ready=false`.
+
+
+### M22 relationship
+
+This document remains authoritative for its historical milestone scope. M22 does not rewrite that milestone; it inventories and maps its reusable controls/evidence into the enterprise-security foundation and records remaining gaps in `governance/enterprise/m22/gap-register.json`. See `docs/M22-CISSP-Enterprise-Security-Control-Foundation.md`.

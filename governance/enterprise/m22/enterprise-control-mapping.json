@@ -1,0 +1,542 @@
+{
+  "baseline": {
+    "commit": "ea952069938a6435ccb298f5424bab158197ce05",
+    "historical_milestones_immutable": true,
+    "tag": "m21-embedded-linux-platform-security-v0.21.1"
+  },
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false
+  },
+  "mappings": [
+    {
+      "domain": 1,
+      "existing_controls": [
+        "AIS-GOV-001",
+        "AIS-COMPLY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001",
+          "CRA-REQ-002",
+          "CRA-REQ-003"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "ISMS governance"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "governance",
+          "leadership"
+        ],
+        "nist_csf_2_0": [
+          "GV.OC",
+          "GV.RR",
+          "GV.PO"
+        ]
+      },
+      "requirement_id": "CISSP-D1-001",
+      "state": "PARTIAL"
+    },
+    {
+      "domain": 1,
+      "existing_controls": [
+        "AIS-RISK-001",
+        "AIS-EXCEPT-001",
+        "AIS-IMPACT-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-002",
+          "CRA-REQ-003",
+          "CRA-REQ-007"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "risk treatment"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "risk_management"
+        ],
+        "nist_csf_2_0": [
+          "GV.RM",
+          "ID.RA"
+        ]
+      },
+      "requirement_id": "CISSP-D1-002",
+      "state": "EVIDENCED"
+    },
+    {
+      "domain": 1,
+      "existing_controls": [
+        "AIS-TPRM-001",
+        "AIS-SBOM-001",
+        "AIS-PROV-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-005",
+          "CRA-REQ-006"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "supplier relationships"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "supplier_management"
+        ],
+        "nist_csf_2_0": [
+          "GV.SC"
+        ]
+      },
+      "requirement_id": "CISSP-D1-003",
+      "state": "EVIDENCED"
+    },
+    {
+      "domain": 1,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "people controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "competence",
+          "awareness"
+        ],
+        "nist_csf_2_0": [
+          "GV.RR"
+        ]
+      },
+      "requirement_id": "CISSP-D1-004",
+      "state": "GAP"
+    },
+    {
+      "domain": 2,
+      "existing_controls": [
+        "AIS-DATA-001",
+        "AIS-AIBOM-001",
+        "AIS-SBOM-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-007",
+          "CRA-REQ-013"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "asset management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "data_management"
+        ],
+        "nist_csf_2_0": [
+          "ID.AM"
+        ]
+      },
+      "requirement_id": "CISSP-D2-001",
+      "state": "PARTIAL"
+    },
+    {
+      "domain": 2,
+      "existing_controls": [
+        "AIS-PRIVACY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-013"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "information lifecycle"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "data_management"
+        ],
+        "nist_csf_2_0": [
+          "PR.DS"
+        ]
+      },
+      "requirement_id": "CISSP-D2-002",
+      "state": "PARTIAL"
+    },
+    {
+      "domain": 2,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "data leakage prevention"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "data_management"
+        ],
+        "nist_csf_2_0": [
+          "PR.DS"
+        ]
+      },
+      "requirement_id": "CISSP-D2-003",
+      "state": "GAP"
+    },
+    {
+      "domain": 3,
+      "existing_controls": [
+        "AIS-MTLS-001",
+        "AIS-SIGN-001",
+        "AIS-SECRETS-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "technology controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security",
+          "robustness"
+        ],
+        "nist_csf_2_0": [
+          "PR.DS",
+          "PR.PS"
+        ]
+      },
+      "requirement_id": "CISSP-D3-001",
+      "state": "PARTIAL"
+    },
+    {
+      "domain": 3,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "technology controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.PS"
+        ]
+      },
+      "requirement_id": "CISSP-D3-002",
+      "state": "PARTIAL"
+    },
+    {
+      "domain": 4,
+      "existing_controls": [
+        "AIS-MTLS-001",
+        "AIS-SIGN-001",
+        "AIS-REPLAY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "network security"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA",
+          "PR.DS"
+        ]
+      },
+      "requirement_id": "CISSP-D4-001",
+      "state": "EVIDENCED"
+    },
+    {
+      "domain": 4,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "network security"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.IR",
+          "DE.CM"
+        ]
+      },
+      "requirement_id": "CISSP-D4-002",
+      "state": "GAP"
+    },
+    {
+      "domain": 5,
+      "existing_controls": [
+        "AIS-IAM-001",
+        "AIS-ABAC-001",
+        "AIS-AUTH-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "identity and access control"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "access_control"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA"
+        ]
+      },
+      "requirement_id": "CISSP-D5-001",
+      "state": "PARTIAL"
+    },
+    {
+      "domain": 5,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "identity and access control"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "access_control"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA"
+        ]
+      },
+      "requirement_id": "CISSP-D5-002",
+      "state": "GAP"
+    },
+    {
+      "domain": 5,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "privileged access"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "access_control",
+          "human_oversight"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA"
+        ]
+      },
+      "requirement_id": "CISSP-D5-003",
+      "state": "GAP"
+    },
+    {
+      "domain": 6,
+      "existing_controls": [
+        "AIS-EVAL-001",
+        "AIS-CONTROL-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-014"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "monitoring and measurement"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "monitoring"
+        ],
+        "nist_csf_2_0": [
+          "ID.IM",
+          "GV.OV"
+        ]
+      },
+      "requirement_id": "CISSP-D6-001",
+      "state": "EVIDENCED"
+    },
+    {
+      "domain": 6,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "technical vulnerability management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "ID.RA",
+          "DE.CM"
+        ]
+      },
+      "requirement_id": "CISSP-D6-002",
+      "state": "GAP"
+    },
+    {
+      "domain": 7,
+      "existing_controls": [
+        "AIS-AUDIT-001",
+        "AIS-COMPLY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-021",
+          "CRA-REQ-030"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "incident management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "monitoring"
+        ],
+        "nist_csf_2_0": [
+          "DE.CM",
+          "RS.MA",
+          "RS.AN"
+        ]
+      },
+      "requirement_id": "CISSP-D7-001",
+      "state": "PARTIAL"
+    },
+    {
+      "domain": 7,
+      "existing_controls": [
+        "AIS-VULN-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-006",
+          "CRA-REQ-008",
+          "CRA-REQ-009",
+          "CRA-REQ-029"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "vulnerability management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "ID.RA",
+          "RS.MI",
+          "PR.PS"
+        ]
+      },
+      "requirement_id": "CISSP-D7-002",
+      "state": "EVIDENCED"
+    },
+    {
+      "domain": 7,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "business continuity"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "business_continuity"
+        ],
+        "nist_csf_2_0": [
+          "RC.RP",
+          "RC.CO"
+        ]
+      },
+      "requirement_id": "CISSP-D7-003",
+      "state": "GAP"
+    },
+    {
+      "domain": 7,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "physical controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "infrastructure"
+        ],
+        "nist_csf_2_0": [
+          "PR.IR"
+        ]
+      },
+      "requirement_id": "CISSP-D7-004",
+      "state": "GAP"
+    },
+    {
+      "domain": 8,
+      "existing_controls": [
+        "AIS-SBOM-001",
+        "AIS-AIBOM-001",
+        "AIS-PROV-001",
+        "AIS-SIG-001",
+        "AIS-LOCK-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-005"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "secure development"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "AI_system_lifecycle"
+        ],
+        "nist_csf_2_0": [
+          "GV.SC",
+          "ID.AM",
+          "PR.DS"
+        ]
+      },
+      "requirement_id": "CISSP-D8-001",
+      "state": "EVIDENCED"
+    },
+    {
+      "domain": 8,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "secure development"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "AI_system_lifecycle",
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.PS",
+          "ID.IM"
+        ]
+      },
+      "requirement_id": "CISSP-D8-002",
+      "state": "GAP"
+    },
+    {
+      "domain": 8,
+      "existing_controls": [
+        "AIS-MODEL-001",
+        "AIS-DATA-001",
+        "AIS-RAG-001",
+        "AIS-THREAT-001",
+        "AIS-EVAL-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001",
+          "CRA-REQ-002"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "secure development"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "risk_management",
+          "impact_assessment",
+          "monitoring"
+        ],
+        "nist_csf_2_0": [
+          "ID.RA",
+          "PR.DS"
+        ]
+      },
+      "requirement_id": "CISSP-D8-003",
+      "state": "EVIDENCED"
+    }
+  ],
+  "version": "0.22.0"
+}

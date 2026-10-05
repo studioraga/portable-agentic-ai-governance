@@ -109,3 +109,13 @@ sequenceDiagram
 ```
 
 M21 deployment is intentionally non-destructive with respect to platform firmware/security configuration. It does not burn fuses, enroll UEFI keys, flash firmware, or install MAC policy.
+
+
+## M22 enterprise-security extension
+
+M22 extends the frozen M21.1 baseline with the authoritative CISSP-domain / enterprise-security control foundation. See `docs/M22-CISSP-Enterprise-Security-Control-Foundation.md`, `docs/Prerequisites-M22.md`, `docs/Deployment-M22.md`, and `docs/Validation-M22.md`. M0–M21 historical behavior remains unchanged; M22 records alignment and gaps and does not assert CISSP, ISO/IEC 27001, ISO/IEC 42001, or CRA certification/conformity.
+
+
+### M22 relationship
+
+This document remains authoritative for its historical milestone scope. M22 does not rewrite that milestone; it inventories and maps its reusable controls/evidence into the enterprise-security foundation and records remaining gaps in `governance/enterprise/m22/gap-register.json`. See `docs/M22-CISSP-Enterprise-Security-Control-Foundation.md`.

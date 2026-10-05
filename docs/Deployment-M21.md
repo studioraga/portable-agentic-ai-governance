@@ -88,3 +88,8 @@ Before closing a release:
 ## Non-destructive boundary
 
 These scripts do not burn fuses, enroll UEFI keys, flash firmware, or enable/install MAC policy. M21 reports observed platform state and open hardening gaps.
+
+
+### M22 relationship
+
+This document remains authoritative for its historical milestone scope. M22 does not rewrite that milestone; it inventories and maps its reusable controls/evidence into the enterprise-security foundation and records remaining gaps in `governance/enterprise/m22/gap-register.json`. See `docs/M22-CISSP-Enterprise-Security-Control-Foundation.md`.

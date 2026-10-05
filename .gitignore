@@ -131,3 +131,10 @@ var/m21-verifier.tar.gz
 var/m21-verifier.tar.gz.sha256
 var/m21-validation/
 var/m21-validation*/
+
+# M22 generated enterprise-security control foundation material/evidence
+var/m22-material/
+var/m22-verifier.tar.gz
+var/m22-verifier.tar.gz.sha256
+var/m22-validation/
+var/m22-validation*/

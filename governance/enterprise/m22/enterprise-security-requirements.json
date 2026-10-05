@@ -1,0 +1,577 @@
+{
+  "requirements": [
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 1,
+      "existing_controls": [
+        "AIS-GOV-001",
+        "AIS-COMPLY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001",
+          "CRA-REQ-002",
+          "CRA-REQ-003"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "ISMS governance"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "governance",
+          "leadership"
+        ],
+        "nist_csf_2_0": [
+          "GV.OC",
+          "GV.RR",
+          "GV.PO"
+        ]
+      },
+      "id": "CISSP-D1-001",
+      "objective": "Security governance, roles, policy ownership and due-care evidence",
+      "state": "PARTIAL"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 1,
+      "existing_controls": [
+        "AIS-RISK-001",
+        "AIS-EXCEPT-001",
+        "AIS-IMPACT-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-002",
+          "CRA-REQ-003",
+          "CRA-REQ-007"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "risk treatment"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "risk_management"
+        ],
+        "nist_csf_2_0": [
+          "GV.RM",
+          "ID.RA"
+        ]
+      },
+      "id": "CISSP-D1-002",
+      "objective": "Risk assessment, treatment, acceptance and exception governance",
+      "state": "EVIDENCED"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 1,
+      "existing_controls": [
+        "AIS-TPRM-001",
+        "AIS-SBOM-001",
+        "AIS-PROV-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-005",
+          "CRA-REQ-006"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "supplier relationships"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "supplier_management"
+        ],
+        "nist_csf_2_0": [
+          "GV.SC"
+        ]
+      },
+      "id": "CISSP-D1-003",
+      "objective": "Third-party and supply-chain risk management",
+      "state": "EVIDENCED"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 1,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "people controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "competence",
+          "awareness"
+        ],
+        "nist_csf_2_0": [
+          "GV.RR"
+        ]
+      },
+      "id": "CISSP-D1-004",
+      "objective": "Security awareness, personnel security and training evidence",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 2,
+      "existing_controls": [
+        "AIS-DATA-001",
+        "AIS-AIBOM-001",
+        "AIS-SBOM-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-007",
+          "CRA-REQ-013"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "asset management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "data_management"
+        ],
+        "nist_csf_2_0": [
+          "ID.AM"
+        ]
+      },
+      "id": "CISSP-D2-001",
+      "objective": "Information and asset inventory, ownership and classification",
+      "state": "PARTIAL"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 2,
+      "existing_controls": [
+        "AIS-PRIVACY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-013"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "information lifecycle"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "data_management"
+        ],
+        "nist_csf_2_0": [
+          "PR.DS"
+        ]
+      },
+      "id": "CISSP-D2-002",
+      "objective": "Data handling, retention, disposal and sanitization",
+      "state": "PARTIAL"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 2,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "data leakage prevention"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "data_management"
+        ],
+        "nist_csf_2_0": [
+          "PR.DS"
+        ]
+      },
+      "id": "CISSP-D2-003",
+      "objective": "Data-loss prevention and controlled export",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 3,
+      "existing_controls": [
+        "AIS-MTLS-001",
+        "AIS-SIGN-001",
+        "AIS-SECRETS-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "technology controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security",
+          "robustness"
+        ],
+        "nist_csf_2_0": [
+          "PR.DS",
+          "PR.PS"
+        ]
+      },
+      "id": "CISSP-D3-001",
+      "objective": "Secure architecture, cryptography, platform hardening and trusted computing",
+      "state": "PARTIAL"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 3,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "technology controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.PS"
+        ]
+      },
+      "id": "CISSP-D3-002",
+      "objective": "Secure boot, mandatory access control and hardware-root evidence",
+      "state": "PARTIAL"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 4,
+      "existing_controls": [
+        "AIS-MTLS-001",
+        "AIS-SIGN-001",
+        "AIS-REPLAY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "network security"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA",
+          "PR.DS"
+        ]
+      },
+      "id": "CISSP-D4-001",
+      "objective": "Authenticated encrypted service-to-service communications",
+      "state": "EVIDENCED"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 4,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "network security"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.IR",
+          "DE.CM"
+        ]
+      },
+      "id": "CISSP-D4-002",
+      "objective": "Network zoning, segmentation, egress control and attack detection",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 5,
+      "existing_controls": [
+        "AIS-IAM-001",
+        "AIS-ABAC-001",
+        "AIS-AUTH-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "identity and access control"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "access_control"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA"
+        ]
+      },
+      "id": "CISSP-D5-001",
+      "objective": "RBAC/ABAC authorization with least privilege and deny-by-default",
+      "state": "PARTIAL"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 5,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "identity and access control"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "access_control"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA"
+        ]
+      },
+      "id": "CISSP-D5-002",
+      "objective": "Enterprise identity federation and strong MFA",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 5,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "privileged access"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "access_control",
+          "human_oversight"
+        ],
+        "nist_csf_2_0": [
+          "PR.AA"
+        ]
+      },
+      "id": "CISSP-D5-003",
+      "objective": "Privileged access management, JIT elevation and break-glass controls",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 6,
+      "existing_controls": [
+        "AIS-EVAL-001",
+        "AIS-CONTROL-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-014"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "monitoring and measurement"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "monitoring"
+        ],
+        "nist_csf_2_0": [
+          "ID.IM",
+          "GV.OV"
+        ]
+      },
+      "id": "CISSP-D6-001",
+      "objective": "Deterministic validation, negative testing and independent verification",
+      "state": "EVIDENCED"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 6,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "technical vulnerability management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "ID.RA",
+          "DE.CM"
+        ]
+      },
+      "id": "CISSP-D6-002",
+      "objective": "SAST, DAST, secret scanning, fuzzing and penetration-test evidence",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 7,
+      "existing_controls": [
+        "AIS-AUDIT-001",
+        "AIS-COMPLY-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-021",
+          "CRA-REQ-030"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "incident management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "monitoring"
+        ],
+        "nist_csf_2_0": [
+          "DE.CM",
+          "RS.MA",
+          "RS.AN"
+        ]
+      },
+      "id": "CISSP-D7-001",
+      "objective": "Signed audit, SIEM-style event integrity and incident response",
+      "state": "PARTIAL"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 7,
+      "existing_controls": [
+        "AIS-VULN-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-006",
+          "CRA-REQ-008",
+          "CRA-REQ-009",
+          "CRA-REQ-029"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "vulnerability management"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "ID.RA",
+          "RS.MI",
+          "PR.PS"
+        ]
+      },
+      "id": "CISSP-D7-002",
+      "objective": "Vulnerability intelligence, response and secure-update lifecycle",
+      "state": "EVIDENCED"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 7,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "business continuity"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "business_continuity"
+        ],
+        "nist_csf_2_0": [
+          "RC.RP",
+          "RC.CO"
+        ]
+      },
+      "id": "CISSP-D7-003",
+      "objective": "Immutable backup, tested restoration, BIA, RPO/RTO and disaster recovery",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 7,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "physical controls"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "infrastructure"
+        ],
+        "nist_csf_2_0": [
+          "PR.IR"
+        ]
+      },
+      "id": "CISSP-D7-004",
+      "objective": "Physical and environmental security evidence",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 8,
+      "existing_controls": [
+        "AIS-SBOM-001",
+        "AIS-AIBOM-001",
+        "AIS-PROV-001",
+        "AIS-SIG-001",
+        "AIS-LOCK-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-005"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "secure development"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "AI_system_lifecycle"
+        ],
+        "nist_csf_2_0": [
+          "GV.SC",
+          "ID.AM",
+          "PR.DS"
+        ]
+      },
+      "id": "CISSP-D8-001",
+      "objective": "SBOM, AI BOM, provenance, dependency integrity and release signing",
+      "state": "EVIDENCED"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 8,
+      "existing_controls": [],
+      "framework_refs": {
+        "cra_existing_program_refs": [],
+        "iso_iec_27001_2022_themes": [
+          "secure development"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "AI_system_lifecycle",
+          "security"
+        ],
+        "nist_csf_2_0": [
+          "PR.PS",
+          "ID.IM"
+        ]
+      },
+      "id": "CISSP-D8-002",
+      "objective": "Secure SDLC security gates and secure coding requirements",
+      "state": "GAP"
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 8,
+      "existing_controls": [
+        "AIS-MODEL-001",
+        "AIS-DATA-001",
+        "AIS-RAG-001",
+        "AIS-THREAT-001",
+        "AIS-EVAL-001"
+      ],
+      "framework_refs": {
+        "cra_existing_program_refs": [
+          "CRA-REQ-001",
+          "CRA-REQ-002"
+        ],
+        "iso_iec_27001_2022_themes": [
+          "secure development"
+        ],
+        "iso_iec_42001_2023_themes": [
+          "risk_management",
+          "impact_assessment",
+          "monitoring"
+        ],
+        "nist_csf_2_0": [
+          "ID.RA",
+          "PR.DS"
+        ]
+      },
+      "id": "CISSP-D8-003",
+      "objective": "AI model/data/RAG threat controls and release evaluation",
+      "state": "EVIDENCED"
+    }
+  ],
+  "version": "0.22.0"
+}

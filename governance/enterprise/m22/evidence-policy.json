@@ -1,0 +1,32 @@
+{
+  "claim_boundaries": {
+    "cissp_certification_claim": false,
+    "cra_conformity_claim": false,
+    "iso_iec_27001_certification_claim": false,
+    "iso_iec_42001_certification_claim": false
+  },
+  "node1": {
+    "private_key_allowed": true,
+    "role": "evidence_producer_and_signing_authority"
+  },
+  "node2": {
+    "private_key_allowed": false,
+    "role": "independent_verifier"
+  },
+  "principles": [
+    "reasoning_is_not_authority",
+    "deny_by_default",
+    "evidence_before_claim",
+    "historical_milestones_immutable",
+    "node2_verifier_only"
+  ],
+  "required_evidence": [
+    "domain catalog",
+    "enterprise requirements",
+    "control mapping",
+    "gap register",
+    "source manifest",
+    "signed M22 manifest"
+  ],
+  "version": "0.22.0"
+}

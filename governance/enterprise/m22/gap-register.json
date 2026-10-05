@@ -1,0 +1,151 @@
+{
+  "closed_by_m22": [],
+  "open_gaps": [
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 1,
+      "gap_id": "GAP-CISSP-D1-001",
+      "requirement_id": "CISSP-D1-001",
+      "state": "PARTIAL",
+      "target_milestone": "M28"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 1,
+      "gap_id": "GAP-CISSP-D1-004",
+      "requirement_id": "CISSP-D1-004",
+      "state": "GAP",
+      "target_milestone": "M28"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 2,
+      "gap_id": "GAP-CISSP-D2-001",
+      "requirement_id": "CISSP-D2-001",
+      "state": "PARTIAL",
+      "target_milestone": "M24"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 2,
+      "gap_id": "GAP-CISSP-D2-002",
+      "requirement_id": "CISSP-D2-002",
+      "state": "PARTIAL",
+      "target_milestone": "M24"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 2,
+      "gap_id": "GAP-CISSP-D2-003",
+      "requirement_id": "CISSP-D2-003",
+      "state": "GAP",
+      "target_milestone": "M24"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 3,
+      "gap_id": "GAP-CISSP-D3-001",
+      "requirement_id": "CISSP-D3-001",
+      "state": "PARTIAL",
+      "target_milestone": "M23/M24"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 3,
+      "gap_id": "GAP-CISSP-D3-002",
+      "requirement_id": "CISSP-D3-002",
+      "state": "PARTIAL",
+      "target_milestone": "M23/M24"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 4,
+      "gap_id": "GAP-CISSP-D4-002",
+      "requirement_id": "CISSP-D4-002",
+      "state": "GAP",
+      "target_milestone": "M25"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 5,
+      "gap_id": "GAP-CISSP-D5-001",
+      "requirement_id": "CISSP-D5-001",
+      "state": "PARTIAL",
+      "target_milestone": "M23"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 5,
+      "gap_id": "GAP-CISSP-D5-002",
+      "requirement_id": "CISSP-D5-002",
+      "state": "GAP",
+      "target_milestone": "M23"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 5,
+      "gap_id": "GAP-CISSP-D5-003",
+      "requirement_id": "CISSP-D5-003",
+      "state": "GAP",
+      "target_milestone": "M23"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 6,
+      "gap_id": "GAP-CISSP-D6-002",
+      "requirement_id": "CISSP-D6-002",
+      "state": "GAP",
+      "target_milestone": "M27"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 7,
+      "gap_id": "GAP-CISSP-D7-001",
+      "requirement_id": "CISSP-D7-001",
+      "state": "PARTIAL",
+      "target_milestone": "M26/M28"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 7,
+      "gap_id": "GAP-CISSP-D7-003",
+      "requirement_id": "CISSP-D7-003",
+      "state": "GAP",
+      "target_milestone": "M26/M28"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 7,
+      "gap_id": "GAP-CISSP-D7-004",
+      "requirement_id": "CISSP-D7-004",
+      "state": "GAP",
+      "target_milestone": "M26/M28"
+    },
+    {
+      "blocking_for_m30": true,
+      "closure_rule": "Must have deterministic implementation/evidence where technically enforceable, positive and negative tests, Node1 evidence generation, and Node2 independent verification. Administrative/physical controls require authoritative signed evidence rather than fabricated technical enforcement.",
+      "domain": 8,
+      "gap_id": "GAP-CISSP-D8-002",
+      "requirement_id": "CISSP-D8-002",
+      "state": "GAP",
+      "target_milestone": "M27"
+    }
+  ],
+  "policy": "M22 catalogs gaps; it does not falsely close controls implemented in later milestones.",
+  "version": "0.22.0"
+}

@@ -44,3 +44,8 @@ M21 does not invoke fuse-programming, firmware-flashing, or irreversible Secure 
 ## Authority prerequisite
 
 Node1 may contain M21 private signing material during evidence generation. Node2 must not.
+
+
+### M22 relationship
+
+This document remains authoritative for its historical milestone scope. M22 does not rewrite that milestone; it inventories and maps its reusable controls/evidence into the enterprise-security foundation and records remaining gaps in `governance/enterprise/m22/gap-register.json`. See `docs/M22-CISSP-Enterprise-Security-Control-Foundation.md`.

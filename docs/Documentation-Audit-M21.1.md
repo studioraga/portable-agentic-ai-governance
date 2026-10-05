@@ -148,3 +148,8 @@ The refactor was checked for:
 - local Markdown-link resolution;
 - removal of stale current-release statements from canonical docs;
 - consistency with source paths and M21 v0.21.1 manifest/evidence fields.
+
+
+### M22 relationship
+
+This document remains authoritative for its historical milestone scope. M22 does not rewrite that milestone; it inventories and maps its reusable controls/evidence into the enterprise-security foundation and records remaining gaps in `governance/enterprise/m22/gap-register.json`. See `docs/M22-CISSP-Enterprise-Security-Control-Foundation.md`.

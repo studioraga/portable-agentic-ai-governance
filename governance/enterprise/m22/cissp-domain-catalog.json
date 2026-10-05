@@ -1,0 +1,58 @@
+{
+  "basis": {
+    "authoritative_source": "ISC2 CISSP Certification Exam Outline",
+    "cissp_exam_outline_effective": "2024-04-15",
+    "note": "CISSP is a professional certification knowledge framework, not an organizational or product certification. M22 records domain alignment only."
+  },
+  "catalog_version": "0.22.0",
+  "domains": [
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 1,
+      "name": "Security and Risk Management",
+      "weight_percent": 16
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 2,
+      "name": "Asset Security",
+      "weight_percent": 10
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 3,
+      "name": "Security Architecture and Engineering",
+      "weight_percent": 13
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 4,
+      "name": "Communication and Network Security",
+      "weight_percent": 13
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 5,
+      "name": "Identity and Access Management (IAM)",
+      "weight_percent": 13
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 6,
+      "name": "Security Assessment and Testing",
+      "weight_percent": 12
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 7,
+      "name": "Security Operations",
+      "weight_percent": 13
+    },
+    {
+      "claim_type": "ALIGNMENT_ONLY",
+      "domain": 8,
+      "name": "Software Development Security",
+      "weight_percent": 10
+    }
+  ]
+}

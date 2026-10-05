@@ -1,0 +1,31 @@
+name: M22 Enterprise Security Foundation
+on:
+  push:
+    paths:
+      - 'governance/enterprise/m22/**'
+      - 'src/portable_ai_governance/enterprise_security/**'
+      - 'scripts/m22/**'
+      - 'deploy/m22/**'
+      - 'tests/enterprise_security/**'
+      - 'schemas/m22/**'
+      - '.github/workflows/m22-enterprise-security.yml'
+  pull_request:
+    paths:
+      - 'governance/enterprise/m22/**'
+      - 'src/portable_ai_governance/enterprise_security/**'
+      - 'scripts/m22/**'
+      - 'deploy/m22/**'
+      - 'tests/enterprise_security/**'
+      - 'schemas/m22/**'
+      - '.github/workflows/m22-enterprise-security.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: ./scripts/m22/ci_validate.sh
